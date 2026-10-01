@@ -300,6 +300,12 @@ const config: Config = {
               docsPluginId: 'api',
               className: 'navbar-icon--mcp-server',
             },
+            {
+              type: 'docSidebar',
+              sidebarId: 'docspaceUiKit',
+              label: 'UI Kit',
+              docsPluginId: 'api',
+            },
           ],
         },
         {
