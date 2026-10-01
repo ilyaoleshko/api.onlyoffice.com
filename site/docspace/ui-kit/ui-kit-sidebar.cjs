@@ -59,626 +59,646 @@ const uiKitSidebar = { items: [
   },
   {
     "type": "category",
-    "label": "Providers",
+    "label": "Components",
     "link": {
       "type": "doc",
-      "id": "docspace/ui-kit/providers/index"
+      "id": "docspace/ui-kit/components/index"
     },
     "items": [
       {
-        "type": "doc",
-        "id": "docspace/ui-kit/providers/error-boundary",
-        "label": "ErrorProvider"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/providers/theme",
-        "label": "ThemeProvider"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/providers/translation",
-        "label": "TranslationProvider"
+        "type": "category",
+        "label": "Providers",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/components/providers/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/providers/error-boundary",
+            "label": "ErrorProvider"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/providers/theme",
+            "label": "ThemeProvider"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/providers/translation",
+            "label": "TranslationProvider"
+          }
+        ]
       }
     ]
   },
   {
     "type": "category",
-    "label": "Data display",
+    "label": "UI",
     "link": {
       "type": "doc",
-      "id": "docspace/ui-kit/data-display/index"
+      "id": "docspace/ui-kit/ui/index"
     },
     "items": [
       {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/avatar",
-        "label": "Avatar"
+        "type": "category",
+        "label": "Form controls",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/form-controls/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/access-right-select",
+            "label": "AccessRightSelect"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/calendar",
+            "label": "Calendar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/checkbox",
+            "label": "Checkbox"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/color-input",
+            "label": "ColorInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/color-picker",
+            "label": "ColorPicker"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/combobox",
+            "label": "ComboBox"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/date-picker",
+            "label": "DatePicker"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/date-time-picker",
+            "label": "DateTimePicker"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/email-input",
+            "label": "EmailInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/field-container",
+            "label": "FieldContainer"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/file-input",
+            "label": "FileInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/form-wrapper",
+            "label": "FormWrapper"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/input-block",
+            "label": "InputBlock"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/label",
+            "label": "Label"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/password-input",
+            "label": "PasswordInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/quantity-picker",
+            "label": "QuantityPicker"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/radio-button-group",
+            "label": "RadioButtonGroup"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/radio-button",
+            "label": "RadioButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/search-input",
+            "label": "SearchInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/slider",
+            "label": "Slider"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/text-input",
+            "label": "TextInput"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/textarea",
+            "label": "Textarea"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/time-picker",
+            "label": "TimePicker"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/form-controls/toggle-button",
+            "label": "ToggleButton"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Interactive elements",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/interactive-elements/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/action-button",
+            "label": "ActionButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/add-button",
+            "label": "AddButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/button",
+            "label": "Button"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/context-menu-button",
+            "label": "ContextMenuButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/drag-and-drop",
+            "label": "DragAndDrop"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/dropzone",
+            "label": "Dropzone"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/floating-button",
+            "label": "FloatingButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/help-button",
+            "label": "HelpButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/icon-button",
+            "label": "IconButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/link-with-dropdown",
+            "label": "LinkWithDropdown"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/main-button-mobile",
+            "label": "MainButtonMobile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/main-button",
+            "label": "MainButton"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Status components",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/status-components/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/status-components/app-loader",
+            "label": "AppLoader"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/status-components/infinite-loader",
+            "label": "InfiniteLoader"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/status-components/loader-wrapper",
+            "label": "LoaderWrapper"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/status-components/loader",
+            "label": "Loader"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/status-components/progress-bar",
+            "label": "ProgressBar"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Layout",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/layout/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/portal",
+            "label": "Portal"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/scrollbar",
+            "label": "Scrollbar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/selection-area",
+            "label": "SelectionArea"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/theme-provider",
+            "label": "ThemeProviderComponent"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Layout components",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/layout-components/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout-components/empty-screen-container",
+            "label": "EmptyScreenContainer"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout-components/empty-view",
+            "label": "EmptyView"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout-components/error-container",
+            "label": "ErrorContainer"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Overlays",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/overlays/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/aside",
+            "label": "Aside"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/aside-header",
+            "label": "AsideHeader"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/backdrop",
+            "label": "Backdrop"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/context-menu",
+            "label": "ContextMenu"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/drop-down-item",
+            "label": "DropDownItem"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/drop-down",
+            "label": "DropDown"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/modal-dialog",
+            "label": "ModalDialog"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/selector",
+            "label": "Selector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/tooltip",
+            "label": "Tooltip"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Data display",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/data-display/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/avatar",
+            "label": "Avatar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/badge",
+            "label": "Badge"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/card",
+            "label": "Card"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/category-item",
+            "label": "CategoryItem"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/collapsible-card",
+            "label": "CollapsibleCard"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/heading",
+            "label": "Heading"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/mcp-icon",
+            "label": "MCPIcon"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/quick-actions",
+            "label": "QuickActions"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/room-icon",
+            "label": "RoomIcon"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/room-logo",
+            "label": "RoomLogo"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/selected-item",
+            "label": "SelectedItem"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/tag",
+            "label": "Tag"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/tags",
+            "label": "Tags"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/text",
+            "label": "Text"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Skeletons",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/skeletons/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/skeletons/circle",
+            "label": "Circle"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/skeletons/rectangle",
+            "label": "Rectangle"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Feedback",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/feedback/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/columnar-info-bar",
+            "label": "ColumnarInfoBar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/loading-button",
+            "label": "LoadingButton"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/public-room-bar",
+            "label": "PublicRoomBar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/snackbar",
+            "label": "SnackBar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/status-message",
+            "label": "StatusMessage"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/toast",
+            "label": "Toast"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/top-loading-indicator",
+            "label": "TopLoader"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Navigation",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/navigation/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/link",
+            "label": "Link"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/nav-menu",
+            "label": "NavMenu"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/paging",
+            "label": "Paging"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/tab-item",
+            "label": "TabItem"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/tabs",
+            "label": "Tabs"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Rows",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/rows/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/rows/row-container",
+            "label": "RowContainer"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/rows/row-content",
+            "label": "RowContent"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/rows/row",
+            "label": "Row"
+          }
+        ]
       },
       {
         "type": "doc",
-        "id": "docspace/ui-kit/data-display/badge",
-        "label": "Badge"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/card",
-        "label": "Card"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/category-item",
-        "label": "CategoryItem"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/collapsible-card",
-        "label": "CollapsibleCard"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/heading",
-        "label": "Heading"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/mcp-icon",
-        "label": "MCPIcon"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/quick-actions",
-        "label": "QuickActions"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/room-icon",
-        "label": "RoomIcon"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/room-logo",
-        "label": "RoomLogo"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/selected-item",
-        "label": "SelectedItem"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/table",
+        "id": "docspace/ui-kit/ui/table/index",
         "label": "Table"
       },
       {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/tag",
-        "label": "Tag"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/tags",
-        "label": "Tags"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/data-display/text",
-        "label": "Text"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Feedback",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/feedback/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/columnar-info-bar",
-        "label": "ColumnarInfoBar"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/loading-button",
-        "label": "LoadingButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/public-room-bar",
-        "label": "PublicRoomBar"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/snackbar",
-        "label": "SnackBar"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/status-message",
-        "label": "StatusMessage"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/toast",
-        "label": "Toast"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/feedback/top-loading-indicator",
-        "label": "TopLoader"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Form controls",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/form-controls/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/access-right-select",
-        "label": "AccessRightSelect"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/calendar",
-        "label": "Calendar"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/checkbox",
-        "label": "Checkbox"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/color-input",
-        "label": "ColorInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/color-picker",
-        "label": "ColorPicker"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/combobox",
-        "label": "ComboBox"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/date-picker",
-        "label": "DatePicker"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/date-time-picker",
-        "label": "DateTimePicker"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/email-input",
-        "label": "EmailInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/field-container",
-        "label": "FieldContainer"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/file-input",
-        "label": "FileInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/form-wrapper",
-        "label": "FormWrapper"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/input-block",
-        "label": "InputBlock"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/label",
-        "label": "Label"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/password-input",
-        "label": "PasswordInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/quantity-picker",
-        "label": "QuantityPicker"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/radio-button",
-        "label": "RadioButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/radio-button-group",
-        "label": "RadioButtonGroup"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/search-input",
-        "label": "SearchInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/slider",
-        "label": "Slider"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/textarea",
-        "label": "Textarea"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/text-input",
-        "label": "TextInput"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/time-picker",
-        "label": "TimePicker"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/form-controls/toggle-button",
-        "label": "ToggleButton"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Interactive elements",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/interactive-elements/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/action-button",
-        "label": "ActionButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/add-button",
-        "label": "AddButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/button",
-        "label": "Button"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/context-menu-button",
-        "label": "ContextMenuButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/drag-and-drop",
-        "label": "DragAndDrop"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/dropzone",
-        "label": "Dropzone"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/floating-button",
-        "label": "FloatingButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/help-button",
-        "label": "HelpButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/icon-button",
-        "label": "IconButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/link-with-dropdown",
-        "label": "LinkWithDropdown"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/main-button",
-        "label": "MainButton"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/interactive-elements/main-button-mobile",
-        "label": "MainButtonMobile"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Layout",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/layout/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout/portal",
-        "label": "Portal"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout/scrollbar",
-        "label": "Scrollbar"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout/selection-area",
-        "label": "SelectionArea"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout/theme-provider",
-        "label": "ThemeProviderComponent"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Layout components",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/layout-components/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout-components/empty-screen-container",
-        "label": "EmptyScreenContainer"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout-components/empty-view",
-        "label": "EmptyView"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/layout-components/error-container",
-        "label": "ErrorContainer"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Navigation",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/navigation/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/navigation/link",
-        "label": "Link"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/navigation/nav-menu",
-        "label": "NavMenu"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/navigation/paging",
-        "label": "Paging"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/navigation/tab-item",
-        "label": "TabItem"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/navigation/tabs",
-        "label": "Tabs"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Overlays",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/overlays/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/aside",
-        "label": "Aside"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/aside-header",
-        "label": "AsideHeader"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/backdrop",
-        "label": "Backdrop"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/context-menu",
-        "label": "ContextMenu"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/drop-down",
-        "label": "DropDown"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/drop-down-item",
-        "label": "DropDownItem"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/modal-dialog",
-        "label": "ModalDialog"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/selector",
-        "label": "Selector"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/overlays/tooltip",
-        "label": "Tooltip"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Rows",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/rows/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/rows/row",
-        "label": "Row"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/rows/row-container",
-        "label": "RowContainer"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/rows/row-content",
-        "label": "RowContent"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Skeletons",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/skeletons/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/skeletons/circle",
-        "label": "Circle"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/skeletons/rectangle",
-        "label": "Rectangle"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Status components",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/status-components/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/status-components/app-loader",
-        "label": "AppLoader"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/status-components/infinite-loader",
-        "label": "InfiniteLoader"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/status-components/loader",
-        "label": "Loader"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/status-components/loader-wrapper",
-        "label": "LoaderWrapper"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/status-components/progress-bar",
-        "label": "ProgressBar"
-      }
-    ]
-  },
-  {
-    "type": "category",
-    "label": "Tiles",
-    "link": {
-      "type": "doc",
-      "id": "docspace/ui-kit/tiles/index"
-    },
-    "items": [
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/base-tile",
-        "label": "BaseTile"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/file-tile",
-        "label": "FileTile"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/folder-tile",
-        "label": "FolderTile"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/room-tile",
-        "label": "RoomTile"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/template-tile",
-        "label": "TemplateTile"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/tile-container",
-        "label": "TileContainer"
-      },
-      {
-        "type": "doc",
-        "id": "docspace/ui-kit/tiles/tile-content",
-        "label": "TileContent"
+        "type": "category",
+        "label": "Tiles",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/tiles/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/base-tile",
+            "label": "BaseTile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/file-tile",
+            "label": "FileTile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/folder-tile",
+            "label": "FolderTile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/room-tile",
+            "label": "RoomTile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/template-tile",
+            "label": "TemplateTile"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/tile-container",
+            "label": "TileContainer"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/tile-content",
+            "label": "TileContent"
+          }
+        ]
       }
     ]
   }
