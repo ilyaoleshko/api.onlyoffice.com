@@ -54,8 +54,11 @@ const config: Config = {
     'API documentation for ONLYOFFICE Docs and ONLYOFFICE DocSpace: editor integration and configuration, plugins, macros, and the Office JavaScript API.',
   favicon: 'img/favicon.ico',
 
-  url: siteUrl,
-  baseUrl: '/',
+  // SITE_URL and BASE_URL let a fork serve a preview from GitHub Pages
+  // (.github/workflows/preview-pages.yaml), where the site lives under
+  // https://<owner>.github.io/<repo>/. Unset, the site is at the root.
+  url: process.env.SITE_URL ?? siteUrl,
+  baseUrl: process.env.BASE_URL ?? '/',
 
   trailingSlash: false,
 
@@ -299,6 +302,12 @@ const config: Config = {
               label: 'MCP Server',
               docsPluginId: 'api',
               className: 'navbar-icon--mcp-server',
+            },
+            {
+              type: 'docSidebar',
+              sidebarId: 'docspaceUiKit',
+              label: 'UI Kit',
+              docsPluginId: 'api',
             },
           ],
         },

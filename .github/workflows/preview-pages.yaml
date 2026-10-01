@@ -1,0 +1,68 @@
+# A preview of the site on GitHub Pages, from a fork: a push to the
+# ui-kit-preview branch (or a manual run) builds the English site and serves
+# it at https://<owner>.github.io/<repo>/. The Pages site is created on the
+# first run; nothing has to be switched on by hand. noIndex stays on because
+# site_mode is not production.
+name: Preview on GitHub Pages
+run-name: "Preview ${{ github.ref_name }} on GitHub Pages"
+
+on:
+  push:
+    branches: [ui-kit-preview]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: preview-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Build the site
+        env:
+          SITE_URL: https://${{ github.repository_owner }}.github.io
+          BASE_URL: /${{ github.event.repository.name }}/
+          NODE_OPTIONS: --max-old-space-size=6144
+        run: |
+          npm run generate-samples
+          npm run generate-schema
+          npx docusaurus build --locale en
+
+      - name: Upload the build
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -132,6 +132,14 @@ export const docspaceSections = {
       description:
         'Connect AI tools directly to ONLYOFFICE DocSpace to execute actions through natural language interactions.',
     },
+    {
+      id: 'ui-kit',
+      name: 'UI Kit',
+      link: 'ui-kit',
+      sidebar: 'docspaceUiKit',
+      description:
+        'The React component library every ONLYOFFICE Apps product and DocSpace plugin is built with.',
+    },
   ],
 } as const satisfies SectionGroup;
 

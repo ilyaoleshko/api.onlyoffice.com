@@ -38,6 +38,7 @@ const icons: Record<SectionId, ReactNode> = {
   'embed-sdk': <SdkIcon/>,
   'plugins-sdk': <PluginIcon/>,
   'mcp-server': <MCPServerIcon/>,
+  'ui-kit': <SdkIcon/>,
   'workspace-api': <DocSpaceApiIcon/>,
   'workspace-hosting': <HostingIcon/>,
 };
