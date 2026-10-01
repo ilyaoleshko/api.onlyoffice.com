@@ -219,9 +219,13 @@ export function MemberListPlaceholder({ rows }: { rows: number }) {
 
 ## Test ids
 
+<APITable>
+
 | Element | `data-testid`     |
 | ------- | ----------------- |
 | The SVG | `circle-skeleton` |
+
+</APITable>
 
 It cannot be overridden by a prop, so several skeletons on a page share it — query them with
 `getAllByTestId`.

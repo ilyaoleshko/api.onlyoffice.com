@@ -48,19 +48,19 @@ The bare square with a plus, for a list that needs one more item and has room fo
 
 A label says what gets added when a bare plus would leave the reader guessing, and clicking the words adds too. **Add user** is the grey square; **Add group** is the accent tint (`isAction`).
 
-<ThemedImage alt="With Label" width={384} sources={{ light: require('./add-button--with-label-light.png').default, dark: require('./add-button--with-label-dark.png').default }} />
+<ThemedImage alt="With Label" width={374} sources={{ light: require('./add-button--with-label-light.png').default, dark: require('./add-button--with-label-dark.png').default }} />
 
 ### Disabled States
 
 A disabled button stays in place so the reader sees the action exists but is not available now: the square turns a lighter grey, the icon greys out and the label dims, and clicks and Enter are ignored (`isDisabled`).
 
-<ThemedImage alt="Disabled States" width={438} sources={{ light: require('./add-button--disabled-states-light.png').default, dark: require('./add-button--disabled-states-dark.png').default }} />
+<ThemedImage alt="Disabled States" width={428} sources={{ light: require('./add-button--disabled-states-light.png').default, dark: require('./add-button--disabled-states-dark.png').default }} />
 
 ### Accent Style
 
 The accent tint marks the add button that matters most on a screen. **Default** is the grey square; **Accent** is tinted with the theme's accent colour (`isAction`).
 
-<ThemedImage alt="Accent Style" width={311} sources={{ light: require('./add-button--accent-style-light.png').default, dark: require('./add-button--accent-style-dark.png').default }} />
+<ThemedImage alt="Accent Style" width={301} sources={{ light: require('./add-button--accent-style-light.png').default, dark: require('./add-button--accent-style-dark.png').default }} />
 
 ### Loading State
 
@@ -78,7 +78,7 @@ In a narrow column a long label is cut with an ellipsis instead of wrapping unde
 
 A bigger square and icon suit a roomier layout. **Default** is the 32px square with a 12px icon; **Large icon** is a 36px square (`size`) with a 16px icon (`iconSize`).
 
-<ThemedImage alt="Custom Icon Size" width={315} sources={{ light: require('./add-button--custom-icon-size-light.png').default, dark: require('./add-button--custom-icon-size-dark.png').default }} />
+<ThemedImage alt="Custom Icon Size" width={305} sources={{ light: require('./add-button--custom-icon-size-light.png').default, dark: require('./add-button--custom-icon-size-dark.png').default }} />
 
 ### With Custom Icon
 
@@ -234,6 +234,8 @@ export function AddTag({ onAdd }: { onAdd: () => void }) {
 
 Set them on any ancestor.
 
+<APITable>
+
 | Variable                         | Default     | Effect                                                            |
 | -------------------------------- | ----------- | ----------------------------------------------------------------- |
 | `--add-button-dimension`         | `32px`      | Side of the square; the `size` prop wins over it.                 |
@@ -246,6 +248,8 @@ Set them on any ancestor.
 | `--add-button-icon-color-active` | theme token | Fill of the icon while pressed, with the same limit as the hover. |
 | `--add-button-text-gap`          | `8px`       | Space between the square and the label.                           |
 | `--add-button-text-disabled`     | theme grey  | Label colour while disabled.                                      |
+
+</APITable>
 
 - **`isAction` and `isDisabled` override the square's colours.** Under `isAction` the
   background and the icon take the accent colour, and while disabled the theme's own greys
@@ -271,10 +275,14 @@ Set them on any ancestor.
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                      |
 | ----------- | ---------------------------------- |
 | The wrapper | `selector-add-button-container`    |
 | The square  | `selector-add-button`, or `testId` |
+
+</APITable>
 
 Only the square's id can be overridden, through `testId` rather than `dataTestId`.
 

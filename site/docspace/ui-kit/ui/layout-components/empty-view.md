@@ -231,6 +231,8 @@ export function EmptyFolder({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                             | Default     | Effect                                                     |
 | ------------------------------------ | ----------- | ---------------------------------------------------------- |
 | `--empty-view-width`                 | `480px`     | Maximum width of the whole block                           |
@@ -255,6 +257,8 @@ export function EmptyFolder({
 | `--empty-view-item-desc-color`       | theme       | Description colour of an item                              |
 | `--empty-view-divider-color`         | theme       | Text colour of a `separator` option                        |
 
+</APITable>
+
 `--empty-view-link-accent` loses to `--accent-main`: wherever the host page defines that
 token, it colours the link options instead. An `action` option has no variable of its own —
 its colour is `--accent-main`, or a fixed blue without it. The pressed backgrounds of links and
@@ -277,10 +281,14 @@ items have no override either.
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`     |
 | ---------------- | ----------------- |
 | The wrapper      | `empty-view`      |
 | The options body | `empty-view-body` |
+
+</APITable>
 
 Neither can be overridden by a prop.
 

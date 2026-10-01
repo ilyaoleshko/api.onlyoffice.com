@@ -13,7 +13,7 @@ The text of a row, laid out by the position of its children rather than by named
 first child is the title, the second the icons beside it, and the rest are flattened into one
 line of text under them.
 
-<ThemedImage alt="RowContent" width={790} sources={{ light: require('./row-content--primary-light.png').default, dark: require('./row-content--primary-dark.png').default }} />
+<ThemedImage alt="RowContent" width={1014} sources={{ light: require('./row-content--primary-light.png').default, dark: require('./row-content--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -47,19 +47,19 @@ whatever you put inside.
 
 The content of one file row: the title, a status icon beside it, and the details **Modified today**, **24 KB** and **Version 2** joined into one line under them. Click anywhere in it to see `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./row-content--default-light.png').default, dark: require('./row-content--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./row-content--default-light.png').default, dark: require('./row-content--default-dark.png').default }} />
 
 ### Element At The End
 
 A details line that ends in something to click: **Version 2** stays a link at the end of the line instead of being joined in as plain text (`convertSideInfo` off). It follows the joined text directly, with no bar or space before it, and only the last child is kept this way.
 
-<ThemedImage alt="Element At The End" width={790} sources={{ light: require('./row-content--element-at-the-end-light.png').default, dark: require('./row-content--element-at-the-end-dark.png').default }} />
+<ThemedImage alt="Element At The End" width={1014} sources={{ light: require('./row-content--element-at-the-end-light.png').default, dark: require('./row-content--element-at-the-end-dark.png').default }} />
 
 ### Details Colour
 
 Details that step back from the title: the joined line is drawn in grey (`sideColor`) while the title keeps its own colour.
 
-<ThemedImage alt="Details Colour" width={790} sources={{ light: require('./row-content--details-colour-light.png').default, dark: require('./row-content--details-colour-dark.png').default }} />
+<ThemedImage alt="Details Colour" width={1014} sources={{ light: require('./row-content--details-colour-light.png').default, dark: require('./row-content--details-colour-dark.png').default }} />
 
 ### Title Only
 
@@ -71,7 +71,7 @@ A row that needs only its title and a control of its own: the checkbox takes the
 
 The content in a right-to-left interface: the title and its icon start at the right edge, and the details are joined in reverse order, so reading from the right the last of them, **24 KB**, comes first.
 
-<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./row-content--right-to-left-light.png').default, dark: require('./row-content--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./row-content--right-to-left-light.png').default, dark: require('./row-content--right-to-left-dark.png').default }} />
 
 ## Minimal example
 
@@ -178,12 +178,16 @@ export function FileDetails({
 
 ## Test ids
 
+<APITable>
+
 | Element                  | `data-testid`            |
 | ------------------------ | ------------------------ |
 | The content              | `row-content`            |
 | The title and its icons  | `main-container-wrapper` |
 | Each hidden side element | `side-container`         |
 | The joined line of text  | `tablet-side-info`       |
+
+</APITable>
 
 None of them can be overridden by a prop.
 

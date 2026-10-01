@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Multi-line text field that grows with its content, with optional line numbers, a copy button
 and a JSON mode. It is controlled: the value you pass is what it shows.
 
-<ThemedImage alt="Textarea" width={790} sources={{ light: require('./textarea--primary-light.png').default, dark: require('./textarea--primary-dark.png').default }} />
+<ThemedImage alt="Textarea" width={1014} sources={{ light: require('./textarea--primary-light.png').default, dark: require('./textarea--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,7 +41,7 @@ the surface, border and scrollbar colours.
 
 An empty field with a placeholder and a fixed height, the shape most forms start from (`placeholder`, `heightTextArea`); change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./textarea--default-light.png').default, dark: require('./textarea--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./textarea--default-light.png').default, dark: require('./textarea--default-dark.png').default }} />
 
 ### States
 
@@ -52,7 +52,7 @@ Four copies of the same field, one per state a form puts it in:
 - **Disabled textarea** — greyed out and unfocusable (`isDisabled`)
 - **Read-only textarea** — looks like the plain one but rejects typing (`isReadOnly`)
 
-<ThemedImage alt="States" width={790} sources={{ light: require('./textarea--states-light.png').default, dark: require('./textarea--states-dark.png').default }} />
+<ThemedImage alt="States" width={1014} sources={{ light: require('./textarea--states-light.png').default, dark: require('./textarea--states-dark.png').default }} />
 
 ### With Copy
 
@@ -73,7 +73,7 @@ Two JSON fields, for values a reader edits as configuration:
 - **Left** — a valid object, pretty-printed with line numbers (`isJSONField`, `hasNumeration`)
 - **Right** — a truncated object, which keeps the red border until the text parses as JSON
 
-<ThemedImage alt="JSON Field" width={790} sources={{ light: require('./textarea--json-field-light.png').default, dark: require('./textarea--json-field-dark.png').default }} />
+<ThemedImage alt="JSON Field" width={676} sources={{ light: require('./textarea--json-field-light.png').default, dark: require('./textarea--json-field-dark.png').default }} />
 
 ### Custom Heights
 
@@ -83,7 +83,7 @@ Three heights of the same field, to pick the one that fits the surrounding form 
 - **Medium textarea** — 150px
 - **Large textarea** — 250px
 
-<ThemedImage alt="Custom Heights" width={790} sources={{ light: require('./textarea--custom-heights-light.png').default, dark: require('./textarea--custom-heights-dark.png').default }} />
+<ThemedImage alt="Custom Heights" width={1014} sources={{ light: require('./textarea--custom-heights-light.png').default, dark: require('./textarea--custom-heights-dark.png').default }} />
 
 ### Grows With Content
 
@@ -262,6 +262,8 @@ export function WebhookPayload() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default          | Effect                                                                                                                                                                 |
 | ----------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--text-input-bg`                   | theme            | Background, shared with the other text inputs                                                                                                                          |
@@ -279,6 +281,8 @@ export function WebhookPayload() {
 | `--textarea-font-size`              | `13px`           | Font size of the line numbers, only while `fontSize` is left at 13; the text follows `fontSize` inline, so any other value puts the numbers out of step with the lines |
 | `--textarea-padding`                | `5px 8px 2px`    | Top, end and bottom padding of the text; the start side stays 8px, or the line-number gutter under `hasNumeration`                                                     |
 | `--textarea-numeration-text-color`  | theme            | Colour of the line numbers under `hasNumeration`                                                                                                                       |
+
+</APITable>
 
 ## Accessibility
 
@@ -302,9 +306,13 @@ export function WebhookPayload() {
 
 ## Test ids
 
+<APITable>
+
 | Element      | `data-testid`                             |
 | ------------ | ----------------------------------------- |
 | The textarea | `textarea`, overridable with `dataTestId` |
+
+</APITable>
 
 ## Related
 

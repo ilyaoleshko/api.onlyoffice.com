@@ -13,7 +13,7 @@ Row offering one kind of room, with its glyph, its translated name and its descr
 the "choose a room type" step of the portal's create-room flow, in three layouts: a card in the
 list, the collapsed button at the top of a dropdown, and an entry inside that dropdown.
 
-<ThemedImage alt="RoomType" width={790} sources={{ light: require('./room-type--primary-light.png').default, dark: require('./room-type--primary-dark.png').default }} />
+<ThemedImage alt="RoomType" width={1014} sources={{ light: require('./room-type--primary-light.png').default, dark: require('./room-type--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -50,13 +50,13 @@ backgrounds.
 
 A single card as it appears in a list of room types to choose from; pick another type or layout in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./room-type--default-light.png').default, dark: require('./room-type--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./room-type--default-light.png').default, dark: require('./room-type--default-dark.png').default }} />
 
 ### Dropdown Button
 
 The collapsed button at the top of a picker, drawn open: the border takes the accent colour and the arrow points up (`isOpen`). Clear `isOpen` in the Controls panel to see it closed, arrow pointing down.
 
-<ThemedImage alt="Dropdown Button" width={790} sources={{ light: require('./room-type--dropdown-button-light.png').default, dark: require('./room-type--dropdown-button-dark.png').default }} />
+<ThemedImage alt="Dropdown Button" width={1014} sources={{ light: require('./room-type--dropdown-button-light.png').default, dark: require('./room-type--dropdown-button-dark.png').default }} />
 
 ### Dropdown Item
 
@@ -68,7 +68,7 @@ An entry inside the picker's dropdown: no border and no arrow, only a background
 
 Every room type the row can describe, each with its own glyph, name and description (`roomType`) — what a room-type picker lists.
 
-<ThemedImage alt="Room Types" width={790} sources={{ light: require('./room-type--room-types-light.png').default, dark: require('./room-type--room-types-dark.png').default }} />
+<ThemedImage alt="Room Types" width={1014} sources={{ light: require('./room-type--room-types-light.png').default, dark: require('./room-type--room-types-dark.png').default }} />
 
 ### Disabled State
 
@@ -79,7 +79,7 @@ Rows for a room type the user may not create right now, shown but refusing the c
 
 Click either one: the Actions panel stays empty.
 
-<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./room-type--disabled-state-light.png').default, dark: require('./room-type--disabled-state-dark.png').default }} />
+<ThemedImage alt="Disabled State" width={1014} sources={{ light: require('./room-type--disabled-state-light.png').default, dark: require('./room-type--disabled-state-dark.png').default }} />
 
 ### From Template
 
@@ -88,19 +88,19 @@ The two ways a template shows up in a picker:
 - **From template** — the entry that starts a room from a template: both lines take the template wording and the glyph its template form (`isTemplate`)
 - **Collaboration room** — a room type offered from a template: the glyph changes, the name and description stay (`isTemplateRoom`)
 
-<ThemedImage alt="From Template" width={790} sources={{ light: require('./room-type--from-template-light.png').default, dark: require('./room-type--from-template-dark.png').default }} />
+<ThemedImage alt="From Template" width={1014} sources={{ light: require('./room-type--from-template-light.png').default, dark: require('./room-type--from-template-dark.png').default }} />
 
 ### Form Space
 
 The row worded for a form space rather than a room, for a picker opened from the forms section (`isFormSection`). Turn on `isTemplate` in the Controls panel below to see the form-space template wording.
 
-<ThemedImage alt="Form Space" width={790} sources={{ light: require('./room-type--form-space-light.png').default, dark: require('./room-type--form-space-dark.png').default }} />
+<ThemedImage alt="Form Space" width={1014} sources={{ light: require('./room-type--form-space-light.png').default, dark: require('./room-type--form-space-dark.png').default }} />
 
 ### Right To Left
 
 The card in a right-to-left interface: the glyph moves to the right edge, the text aligns right and the forward arrow sits on the left, pointing left.
 
-<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./room-type--right-to-left-light.png').default, dark: require('./room-type--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./room-type--right-to-left-light.png').default, dark: require('./room-type--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
@@ -275,6 +275,8 @@ export function RoomTypeSelect() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                        | Default    | Effect                                        |
 | ------------------------------- | ---------- | --------------------------------------------- |
 | `--room-type-item-bg`           | none       | Background of every layout                    |
@@ -284,6 +286,8 @@ export function RoomTypeSelect() {
 | `--room-type-item-radius`       | `6px`      | Corner radius of the list item and button     |
 | `--room-type-item-padding`      | `16px`     | Inner padding                                 |
 | `--room-type-gap`               | `12px`     | Gap between the glyph, the text and the arrow |
+
+</APITable>
 
 A disabled row keeps its grey whatever `--room-type-item-bg` and `--room-type-item-hover-bg`
 say. The dropdown entry has no border and no radius, so the border and radius variables do
@@ -303,11 +307,15 @@ nothing to it.
 
 ## Test ids
 
+<APITable>
+
 | Layout           | `data-testid`               |
 | ---------------- | --------------------------- |
 | `listItem`       | `room-type-list-item`       |
 | `dropdownButton` | `room-type-dropdown-button` |
 | `dropdownItem`   | `room-type-dropdown-item`   |
+
+</APITable>
 
 Every layout also carries `data-selected-id`. There is no prop to change any of these.
 

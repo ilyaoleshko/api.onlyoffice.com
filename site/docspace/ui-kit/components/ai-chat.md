@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 {/*
 (c) Copyright Ascensio System SIA 2009-2026
 
@@ -39,7 +41,7 @@ Every section of ONLYOFFICE Apps mounts the same chat; what changes between them
 of props — which chips it suggests, whether the model can be changed, whether the user may
 write at all.
 
-<ThemedImage alt="Default" width={788} sources={{ light: require('./ai-chat--default-light.png').default, dark: require('./ai-chat--default-dark.png').default }} />
+<ThemedImage alt="Default" width={458} sources={{ light: require('./ai-chat--default-light.png').default, dark: require('./ai-chat--default-dark.png').default }} />
 
 ### Putting it on a screen
 
@@ -95,21 +97,21 @@ Chips on the empty chat put a ready prompt into the composer. The host passes a
 `multipleFiles` for more — and the provider switches between them itself, since only it sees
 what is attached.
 
-<ThemedImage alt="With Suggestions" width={788} sources={{ light: require('./ai-chat--with-suggestions-light.png').default, dark: require('./ai-chat--with-suggestions-dark.png').default }} />
+<ThemedImage alt="With Suggestions" width={458} sources={{ light: require('./ai-chat--with-suggestions-light.png').default, dark: require('./ai-chat--with-suggestions-dark.png').default }} />
 
 ### A fixed model, not shown
 
 `hideProfilePicker` removes the picker and its label altogether, for a chat that always talks
 to one assistant.
 
-<ThemedImage alt="Without Model Picker" width={788} sources={{ light: require('./ai-chat--without-model-picker-light.png').default, dark: require('./ai-chat--without-model-picker-dark.png').default }} />
+<ThemedImage alt="Without Model Picker" width={458} sources={{ light: require('./ai-chat--without-model-picker-light.png').default, dark: require('./ai-chat--without-model-picker-dark.png').default }} />
 
 ### Read-only access
 
 `composerDisabled` locks the composer while the history stays readable, and `composerHeader`
 says why, above it.
 
-<ThemedImage alt="Read Only" width={788} sources={{ light: require('./ai-chat--read-only-light.png').default, dark: require('./ai-chat--read-only-dark.png').default }} />
+<ThemedImage alt="Read Only" width={458} sources={{ light: require('./ai-chat--read-only-light.png').default, dark: require('./ai-chat--read-only-dark.png').default }} />
 
 ### No AI model configured yet
 
@@ -120,16 +122,16 @@ buttons; a button is drawn only when its handler is passed.
 On a cloud portal an admin can activate AI on the spot — `onActivateAI` with a linked card,
 `onTopUpAndActivateAI` without one:
 
-<ThemedImage alt="Not Configured" width={788} sources={{ light: require('./ai-chat--not-configured-light.png').default, dark: require('./ai-chat--not-configured-dark.png').default }} />
+<ThemedImage alt="Not Configured" width={458} sources={{ light: require('./ai-chat--not-configured-light.png').default, dark: require('./ai-chat--not-configured-dark.png').default }} />
 
 On a server installation (`standalone`) an admin is sent to connect a provider, through
 `goToAISettings`:
 
-<ThemedImage alt="Not Configured On Server" width={788} sources={{ light: require('./ai-chat--not-configured-on-server-light.png').default, dark: require('./ai-chat--not-configured-on-server-dark.png').default }} />
+<ThemedImage alt="Not Configured On Server" width={458} sources={{ light: require('./ai-chat--not-configured-on-server-light.png').default, dark: require('./ai-chat--not-configured-on-server-dark.png').default }} />
 
 Anyone else is told to ask their administrator:
 
-<ThemedImage alt="Not Configured For User" width={788} sources={{ light: require('./ai-chat--not-configured-for-user-light.png').default, dark: require('./ai-chat--not-configured-for-user-dark.png').default }} />
+<ThemedImage alt="Not Configured For User" width={458} sources={{ light: require('./ai-chat--not-configured-for-user-light.png').default, dark: require('./ai-chat--not-configured-for-user-dark.png').default }} />
 
 A host with no settings page to send the user to — the embedded sdk layouts — leaves both out
 and gets the chat widget's own setup screen, which configures a model in place.
@@ -160,4 +162,14 @@ model. **Connect a portal** on the banner opens the API Config form.
 
 ## Properties
 
-<ThemedImage alt="Controls" width={838} sources={{ light: require('./ai-chat--block0-light.png').default, dark: require('./ai-chat--block0-dark.png').default }} />
+<APITable>
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `locale`? | `string` | Language of the chat widget; also sets its direction. Default: `en`. |
+| `canUseAi`? | `boolean` | Whether the session may reach the AI API at all. Default: `true`. |
+| `isAvailable`? | `boolean` | Whether this view offers AI. Default: `false`. |
+| `aiReady`? | `boolean` | Whether the portal has a usable AI profile; false with noAccessProps shows the not-configured screen. |
+| `noAccessProps`? | `-` | Wiring for the not-configured screen: who the user is and where its buttons lead. |
+
+</APITable>

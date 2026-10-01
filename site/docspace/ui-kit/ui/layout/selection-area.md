@@ -56,7 +56,7 @@ A grid of tiles, the layout the rectangle's column and row arithmetic is built f
 
 A list of equal-height rows, where only the rectangle's vertical extent decides what is covered: drag down from any row and every row it crosses turns blue, however far to the side the pointer goes (`viewAs`). Each row keeps its `value` on a child, found by `itemClass`.
 
-<ThemedImage alt="Row View" width={759} sources={{ light: require('./selection-area--row-view-light.png').default, dark: require('./selection-area--row-view-dark.png').default }} />
+<ThemedImage alt="Row View" width={784} sources={{ light: require('./selection-area--row-view-light.png').default, dark: require('./selection-area--row-view-dark.png').default }} />
 
 ### Right To Left
 
@@ -260,11 +260,15 @@ export function ControlledSelection({ ids }: { ids: string[] }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                   | Default                   | Effect                          |
 | -------------------------- | ------------------------- | ------------------------------- |
 | `--selection-area-bg`      | `rgba(68, 170, 255, 0.5)` | Fill of the rectangle           |
 | `--selection-area-border`  | `1px solid #5299e0`       | Border of the rectangle         |
 | `--selection-area-z-index` | `1000`                    | Stacking order of the rectangle |
+
+</APITable>
 
 ## Accessibility
 
@@ -278,9 +282,13 @@ export function ControlledSelection({ ids }: { ids: string[] }) {
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`    |
 | ------------- | ---------------- |
 | The rectangle | `selection-area` |
+
+</APITable>
 
 It is not settable. The element also carries the stable class `selection-area`.
 

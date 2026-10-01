@@ -85,7 +85,7 @@ For a picker near the right edge of the window, such as the last column of a too
 
 For an inclusive end of a period, such as a "valid until" date: pick a day and the value above ends in 23:59:59.999, so the whole day is covered (`useMaxTime`). Without the prop the day is reported at the current time of day.
 
-<ThemedImage alt="End Of Day Value" width={790} sources={{ light: require('./date-picker--end-of-day-value-light.png').default, dark: require('./date-picker--end-of-day-value-dark.png').default }} />
+<ThemedImage alt="End Of Day Value" width={1014} sources={{ light: require('./date-picker--end-of-day-value-light.png').default, dark: require('./date-picker--end-of-day-value-dark.png').default }} />
 
 ### Right To Left
 
@@ -209,6 +209,8 @@ DatePicker's own stylesheet exposes nothing that reaches the rendered picker; it
 the three components inside it, so their variables, set on any ancestor, restyle it. The ones
 that show here:
 
+<APITable>
+
 | Variable                                                                            | Default              | Effect                                                                                                           |
 | ----------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `--add-button-bg`, `-bg-hover`, `-bg-active`                                        | theme                | Background of the square before the **Select date** text, at rest, hovered and pressed                           |
@@ -226,6 +228,8 @@ that show here:
 | `--calendar-current-radius`, `--calendar-focused-radius`, `--calendar-hover-radius` | `50%`                | Corner radius of today, of the chosen day and of a day under the pointer                                         |
 | `--calendar-hover-bg`                                                               | theme                | Background of a day under the pointer                                                                            |
 | `--calendar-past`, `--calendar-disabled`                                            | theme                | Text colour of the neighbouring months' days, and of the days outside `minDate` and `maxDate`                    |
+
+</APITable>
 
 The full lists, with the caveats, are in [`AddButton`](../interactive-elements/add-button.md#css-variables),
 [`SelectedItem`](../data-display/selected-item.md#css-variables) and
@@ -245,12 +249,16 @@ with a fixed grey that no variable reaches.
 
 ## Test ids
 
+<APITable>
+
 | Element                   | `data-testid`              |
 | ------------------------- | -------------------------- |
 | The wrapper               | `date-picker`, or `testId` |
 | The "select date" control | `date-selector`            |
 | The chip's label          | `selected-label`           |
 | The calendar glyph        | `calendar-icon`            |
+
+</APITable>
 
 ## Related
 

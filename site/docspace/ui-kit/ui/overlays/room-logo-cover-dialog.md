@@ -13,7 +13,7 @@ Dialog for a room's generated logo: a colour from the palette and an optional gl
 preview. It is what a room gets instead of an uploaded picture — the tile that
 [`RoomIcon`](../data-display/room-icon.md) then draws.
 
-<ThemedImage alt="RoomLogoCoverDialog" width={800} sources={{ light: require('./room-logo-cover-dialog--primary-light.png').default, dark: require('./room-logo-cover-dialog--primary-dark.png').default }} />
+<ThemedImage alt="RoomLogoCoverDialog" width={1024} sources={{ light: require('./room-logo-cover-dialog--primary-light.png').default, dark: require('./room-logo-cover-dialog--primary-dark.png').default }} />
 
 **Portal-internal.** `t` is required, and the icon picker asks for keys outside the `Common`
 namespace the package ships, so two of its labels are empty anywhere but in DocSpace.
@@ -57,37 +57,37 @@ whether to wash the colour out, and that context falls back to light rather than
 
 The dialog as it opens for a room with no logo yet: the first preset colour, no icon and no title. Pick a colour and an icon to watch the preview change, and apply or cancel to see the callbacks in the Actions panel; the button reopens it.
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./room-logo-cover-dialog--default-light.png').default, dark: require('./room-logo-cover-dialog--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1024} sources={{ light: require('./room-logo-cover-dialog--default-light.png').default, dark: require('./room-logo-cover-dialog--default-dark.png').default }} />
 
 ### With Preselected Cover
 
 Reopening the dialog for a room that already has a logo: its icon is on the tile and its colour, which is not one of the presets, sits as an extra swatch after them with a pencil to change it (`initialCover`, `initialColor`).
 
-<ThemedImage alt="With Preselected Cover" width={800} sources={{ light: require('./room-logo-cover-dialog--with-preselected-cover-light.png').default, dark: require('./room-logo-cover-dialog--with-preselected-cover-dark.png').default }} />
+<ThemedImage alt="With Preselected Cover" width={1024} sources={{ light: require('./room-logo-cover-dialog--with-preselected-cover-light.png').default, dark: require('./room-logo-cover-dialog--with-preselected-cover-dark.png').default }} />
 
 ### Initials From Title
 
 With no icon chosen the tile carries the room's initials, here QR for a room called Quarterly reports (`title`). Pick an icon and it replaces them; the without-icon chip brings them back.
 
-<ThemedImage alt="Initials From Title" width={800} sources={{ light: require('./room-logo-cover-dialog--initials-from-title-light.png').default, dark: require('./room-logo-cover-dialog--initials-from-title-dark.png').default }} />
+<ThemedImage alt="Initials From Title" width={1024} sources={{ light: require('./room-logo-cover-dialog--initials-from-title-light.png').default, dark: require('./room-logo-cover-dialog--initials-from-title-dark.png').default }} />
 
 ### With Accent Colors
 
 Pass the portal's colour scheme so the chosen icon sits on a tint of its accent colour; without it the chosen icon looks like the rest (`currentColorScheme`).
 
-<ThemedImage alt="With Accent Colors" width={800} sources={{ light: require('./room-logo-cover-dialog--with-accent-colors-light.png').default, dark: require('./room-logo-cover-dialog--with-accent-colors-dark.png').default }} />
+<ThemedImage alt="With Accent Colors" width={1024} sources={{ light: require('./room-logo-cover-dialog--with-accent-colors-light.png').default, dark: require('./room-logo-cover-dialog--with-accent-colors-dark.png').default }} />
 
 ### Without Icon Picker
 
 When there are no icons to offer, the icon picker is left out and the dialog chooses only the colour behind the initials (`covers={[]}`).
 
-<ThemedImage alt="Without Icon Picker" width={800} sources={{ light: require('./room-logo-cover-dialog--without-icon-picker-light.png').default, dark: require('./room-logo-cover-dialog--without-icon-picker-dark.png').default }} />
+<ThemedImage alt="Without Icon Picker" width={1024} sources={{ light: require('./room-logo-cover-dialog--without-icon-picker-light.png').default, dark: require('./room-logo-cover-dialog--without-icon-picker-dark.png').default }} />
 
 ### On Phone
 
 On a phone the dialog becomes a full-screen panel, with the preview and the icons centred, and the plus button opens the colour picker in a modal of its own.
 
-<ThemedImage alt="On Phone" width={800} sources={{ light: require('./room-logo-cover-dialog--on-phone-light.png').default, dark: require('./room-logo-cover-dialog--on-phone-dark.png').default }} />
+<ThemedImage alt="On Phone" width={1024} sources={{ light: require('./room-logo-cover-dialog--on-phone-light.png').default, dark: require('./room-logo-cover-dialog--on-phone-dark.png').default }} />
 
 ## Minimal example
 
@@ -369,6 +369,8 @@ types are, for typing a re-implementation.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element                | `data-testid`                   |
 | ---------------------- | ------------------------------- |
 | Dialog                 | `room_logo_cover_dialog`        |
@@ -376,6 +378,8 @@ types are, for typing a re-implementation.
 | Cancel button          | `room_logo_cover_cancel_button` |
 | "Without icon" control | `room_logo_cover_without_icon`  |
 | Add-a-colour button    | `color_item_add_custom`         |
+
+</APITable>
 
 The swatches are `color_item_<index>`, the chosen one `color_item_selected_<index>`, a chosen
 custom colour `color_item_custom_selected`, and the glyphs `room_logo_cover_icon_<index>`; each

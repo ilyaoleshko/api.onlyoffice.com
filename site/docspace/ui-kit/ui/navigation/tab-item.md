@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Rounded pill that fills in when it is selected. It is a single item, not a tab bar: laying
 several out and deciding which is active is yours to do.
 
-<ThemedImage alt="TabItem" width={790} sources={{ light: require('./tab-item--primary-light.png').default, dark: require('./tab-item--primary-dark.png').default }} />
+<ThemedImage alt="TabItem" width={1014} sources={{ light: require('./tab-item--primary-light.png').default, dark: require('./tab-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,25 +42,25 @@ accent colour it supplies.
 
 An unselected pill: click it to see it fill in, and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./tab-item--default-light.png').default, dark: require('./tab-item--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./tab-item--default-light.png').default, dark: require('./tab-item--default-dark.png').default }} />
 
 ### Active State
 
 The filled look of a selected pill, for a filter that is already applied when the screen opens (`isActive`).
 
-<ThemedImage alt="Active State" width={790} sources={{ light: require('./tab-item--active-state-light.png').default, dark: require('./tab-item--active-state-dark.png').default }} />
+<ThemedImage alt="Active State" width={1014} sources={{ light: require('./tab-item--active-state-light.png').default, dark: require('./tab-item--active-state-dark.png').default }} />
 
 ### Disabled State
 
 A dimmed pill that ignores clicks, for an option that does not apply right now (`isDisabled`).
 
-<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./tab-item--disabled-state-light.png').default, dark: require('./tab-item--disabled-state-dark.png').default }} />
+<ThemedImage alt="Disabled State" width={1014} sources={{ light: require('./tab-item--disabled-state-light.png').default, dark: require('./tab-item--disabled-state-dark.png').default }} />
 
 ### With React Node Label
 
 Tab with a React node as label, allowing custom content like icons alongside text. The label renders inside a `<p>`, so the node has to be phrasing content -- a `<span>`, not a `<div>`.
 
-<ThemedImage alt="With React Node Label" width={790} sources={{ light: require('./tab-item--with-react-node-label-light.png').default, dark: require('./tab-item--with-react-node-label-dark.png').default }} />
+<ThemedImage alt="With React Node Label" width={1014} sources={{ light: require('./tab-item--with-react-node-label-light.png').default, dark: require('./tab-item--with-react-node-label-dark.png').default }} />
 
 ### Tab Group
 
@@ -207,6 +207,8 @@ export function TypeFilters() {
 
 Set them on any ancestor.
 
+<APITable>
+
 | Variable                      | Default       | Effect                                           |
 | ----------------------------- | ------------- | ------------------------------------------------ |
 | `--tab-item-active-bg`        | accent colour | Background and border while selected or pressed. |
@@ -215,6 +217,8 @@ Set them on any ancestor.
 | `--tab-item-radius`           | `16px`        | Corner radius.                                   |
 | `--tab-item-padding`          | `4px 16px`    | Inner padding.                                   |
 | `--tab-item-disabled-opacity` | `0.5`         | Opacity while disabled and not active.           |
+
+</APITable>
 
 ## Accessibility
 
@@ -229,10 +233,14 @@ Set them on any ancestor.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`               |
 | --------- | --------------------------- |
 | The pill  | `tab-item`, or `dataTestId` |
 | Its label | `tab-item-text`             |
+
+</APITable>
 
 ## Related
 

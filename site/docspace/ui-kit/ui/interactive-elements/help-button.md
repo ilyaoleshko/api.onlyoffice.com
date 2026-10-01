@@ -263,11 +263,15 @@ so a value set around the component never reaches it: pass the variables in `too
 which lands on the tooltip box itself, or set them on `:root`. A string tooltip is drawn by the
 shared `RootTooltip`, which `tooltipStyle` does not reach.
 
+<APITable>
+
 | Variable                    | Default                             | Effect                                                                      |
 | --------------------------- | ----------------------------------- | --------------------------------------------------------------------------- |
 | `--tooltip-bg`              | theme surface                       | Background of the tooltip                                                   |
 | `--tooltip-color`           | theme text                          | Text colour of the tooltip                                                  |
 | `--tooltip-max-width-value` | `--tooltip-max-width`, i.e. `320px` | Widest the tooltip grows before its text wraps; wins over `tooltipMaxWidth` |
+
+</APITable>
 
 The rest of the tooltip's variables are listed in its README. The icon's colour is not a
 variable you can set from outside: `IconButton` writes `--icon-button-color` on the icon
@@ -285,9 +289,13 @@ element itself, so use the `color` prop.
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                                |
 | ----------- | -------------------------------------------- |
 | The wrapper | `help-button`, overridable with `dataTestId` |
+
+</APITable>
 
 The icon inside carries `icon-button` from [`IconButton`](./icon-button.md).
 

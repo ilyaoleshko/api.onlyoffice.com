@@ -70,7 +70,7 @@ Matches the icon to the surface it sits on: each button has its own colour, and 
 
 Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The example opens the menu in a bordered box (`displayIconBorder`), so every variable is on screen at once; hover the dots to see `--cmb-hover-border`. The menu is kept inline (`usePortal={false}`): in a portal it leaves the wrapper, so set the `--dropdown-*` variables on `document.body` instead.
 
-<ThemedImage alt="Css Customization" width={105} sources={{ light: require('./context-menu-button--css-customization-light.png').default, dark: require('./context-menu-button--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={97} sources={{ light: require('./context-menu-button--css-customization-light.png').default, dark: require('./context-menu-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -146,9 +146,13 @@ export function RowActions({
 
 ### Enums
 
+<APITable>
+
 | Enum                           | Members                      |
 | ------------------------------ | ---------------------------- |
 | `ContextMenuButtonDisplayType` | `dropdown`, `toggle`, `auto` |
+
+</APITable>
 
 ## Recipes
 
@@ -215,6 +219,8 @@ export function MaybeActions({ canEdit }: { canEdit: boolean }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable             | Default               | Effect                                     |
 | -------------------- | --------------------- | ------------------------------------------ |
 | `--cmb-size`         | `32px`                | Width and height of the bordered box       |
@@ -222,6 +228,8 @@ export function MaybeActions({ canEdit }: { canEdit: boolean }) {
 | `--cmb-icon-padding` | `6px 7px`             | Padding between the border and the icon    |
 | `--cmb-border`       | a theme grey, no line | Border of the box, as a `border` shorthand |
 | `--cmb-hover-border` | theme grey            | Colour of the border on hover              |
+
+</APITable>
 
 All five apply only with `displayIconBorder`. The theme's value for `--cmb-border` is a colour
 with no width or style, so by default the box draws no line at all, and `--cmb-hover-border`
@@ -246,10 +254,14 @@ variable.
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                                    |
 | ----------- | ------------------------------------------------ |
 | The wrapper | `context-menu-button`, overridable with `testId` |
 | An item     | the item's `dataTestId`, otherwise `<key>_item`  |
+
+</APITable>
 
 ## Related
 

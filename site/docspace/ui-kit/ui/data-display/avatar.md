@@ -176,10 +176,14 @@ export function MemberAvatar({ name }: { name: string }) {
 
 ### Enums
 
+<APITable>
+
 | Enum         | Members                                                              |
 | ------------ | -------------------------------------------------------------------- |
 | `AvatarSize` | `max`, `big`, `medium`, `base`, `small`, `min`, `extraSmall`         |
 | `AvatarRole` | `owner`, `admin`, `guest`, `user`, `manager`, `collaborator`, `none` |
+
+</APITable>
 
 ## Recipes
 
@@ -312,12 +316,16 @@ export function ProfileAvatar({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                   | Default      | Effect                                                                                       |
 | -------------------------- | ------------ | -------------------------------------------------------------------------------------------- |
 | `--avatar-radius`          | `50%`        | Corner radius of the avatar and of its picture — square it here                              |
 | `--avatar-bg`              | theme grey   | Background of an avatar with neither `source` nor `userName`: the camera or the illustration |
 | `--avatar-initials-bg`     | theme accent | Background behind a person's initials; a group's initials keep their own background          |
 | `--avatar-initials-weight` | `600`        | Weight of a person's initials; a group's stay at `700`                                       |
+
+</APITable>
 
 Behind a `source` the background is a theme colour that none of these overrides. The kit's
 illustration stays round whatever `--avatar-radius` says, and so does the edit button.
@@ -340,11 +348,15 @@ set from the theme on the avatar element and can be overridden the same way.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid`                           |
 | --------------- | --------------------------------------- |
 | The avatar      | `avatar`, overridable with `dataTestId` |
 | The edit button | `edit_avatar_icon_button`               |
 | The file input  | `file-input`                            |
+
+</APITable>
 
 Each entry of `model` becomes a menu item whose test id is that entry's `key`.
 

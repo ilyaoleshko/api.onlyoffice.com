@@ -294,6 +294,8 @@ export function BadgedFileTile() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                           | Default                          | Effect                                                                                                                 |
 | ---------------------------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `--tile-bg`                        | the theme's tile background      | Background of the tile                                                                                                 |
@@ -322,6 +324,8 @@ export function BadgedFileTile() {
 | `--tile-hotkey-color`              | the theme's hotkey colour        | Border colour under `showHotkeyBorder`                                                                                 |
 | `--highlightColor`                 | none                             | Colour that fades out of the name row while `isHighlight` plays                                                        |
 
+</APITable>
+
 **`isHighlight` shows nothing on its own.** The kit sets no `--highlightColor`; set one on the tile
 or an ancestor, and the fade plays once, for two seconds, when the tile mounts.
 
@@ -340,10 +344,14 @@ or an ancestor, and the fade plays once, for two seconds, when the tile mounts.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                      |
 | ------------- | ---------------------------------- |
 | Outer element | `tile`, overridden by `dataTestId` |
 | Thumbnail     | `file-thumbnail`                   |
+
+</APITable>
 
 The checkbox, the three-dot button and the menu carry their own components' ids.
 

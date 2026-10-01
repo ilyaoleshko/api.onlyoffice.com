@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Container the transient notifications are stacked in, driven by the imperative `toastr`. You
 mount it once; every message after that is a function call from anywhere in the app.
 
-<ThemedImage alt="Toast" width={336} sources={{ light: require('./toast--primary-light.png').default, dark: require('./toast--primary-dark.png').default }} />
+<ThemedImage alt="Toast" width={328} sources={{ light: require('./toast--primary-light.png').default, dark: require('./toast--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -152,9 +152,13 @@ arguments of `toastr`.
 
 ### Enums
 
+<APITable>
+
 | Enum        | Members                               |
 | ----------- | ------------------------------------- |
 | `ToastType` | `success`, `error`, `warning`, `info` |
+
+</APITable>
 
 `ToastType` names the four looks, but you do not pass it: each member has its own `toastr`
 method.
@@ -284,6 +288,8 @@ Set them through the `style` prop of `Toast`. The container is portalled into `#
 any wrapper of yours, so a value set on a wrapper never arrives; `#root` or `:root` would work
 for all but `--toast-top-offset`.
 
+<APITable>
+
 | Variable             | Default | Effect                                                                                                                                                       |
 | -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `--toast-width`      | `320px` | Width of the container, above phone width; a phone always gets the viewport minus 32px.                                                                      |
@@ -292,6 +298,8 @@ for all but `--toast-top-offset`.
 | `--toast-padding`    | `12px`  | Padding inside one toast.                                                                                                                                    |
 | `--toast-text-size`  | `12px`  | Font size of custom content that sets none of its own; the title and a string message stay at 12px.                                                          |
 | `--toast-top-offset` | `16px`  | Distance from the top. Declared on the container itself, so only `style` overrides it — an ancestor's value, the one written on `<html>` included, does not. |
+
+</APITable>
 
 The per-type colours (`--toast-success-bg`, `--toastr-title-error-color` and their siblings)
 are set by the theme class and are not meant to be overridden one by one.
@@ -312,10 +320,14 @@ are set by the theme class and are not meant to be overridden one by one.
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`   |
 | ---------------- | --------------- |
 | The container    | `toast`         |
 | One toast's body | `toast-content` |
+
+</APITable>
 
 The body also carries `data-type` with the toast's type, which is how the colours are selected.
 Neither id can be overridden by a prop.

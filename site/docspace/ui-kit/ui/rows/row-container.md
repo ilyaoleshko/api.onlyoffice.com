@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Scrolling list the rows go in, virtualised and paged in as the user reaches the end. Its
 virtualisation is built for the DocSpace portal and needs the portal's own scroll element.
 
-<ThemedImage alt="RowContainer" width={783} sources={{ light: require('./row-container--primary-light.png').default, dark: require('./row-container--primary-dark.png').default }} />
+<ThemedImage alt="RowContainer" width={1007} sources={{ light: require('./row-container--primary-light.png').default, dark: require('./row-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -45,19 +45,19 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the row
 
 A short list of twenty files rendered as it is, with virtualisation off (`useReactWindow`), which is how the list works on a page that has no portal section around it. Select the text of a row to see that selection is allowed; change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={783} sources={{ light: require('./row-container--default-light.png').default, dark: require('./row-container--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1007} sources={{ light: require('./row-container--default-light.png').default, dark: require('./row-container--default-dark.png').default }} />
 
 ### No Text Selection
 
 A list whose rows are picked with clicks and drags rather than read and copied: dragging across a title selects no text (`noSelect`).
 
-<ThemedImage alt="No Text Selection" width={783} sources={{ light: require('./row-container--no-text-selection-light.png').default, dark: require('./row-container--no-text-selection-dark.png').default }} />
+<ThemedImage alt="No Text Selection" width={1007} sources={{ light: require('./row-container--no-text-selection-light.png').default, dark: require('./row-container--no-text-selection-dark.png').default }} />
 
 ### Virtualised
 
 A list of a hundred files of which twenty are loaded: scroll the box and only the rows in view are mounted, each 56px high (`itemHeight`). Near the end of the loaded rows the list asks for the next range (`fetchMoreFiles`, logged in the Actions panel) and shows skeleton rows until it arrives half a second later.
 
-<ThemedImage alt="Virtualised" width={767} sources={{ light: require('./row-container--virtualised-light.png').default, dark: require('./row-container--virtualised-dark.png').default }} />
+<ThemedImage alt="Virtualised" width={991} sources={{ light: require('./row-container--virtualised-light.png').default, dark: require('./row-container--virtualised-dark.png').default }} />
 
 ## Minimal example
 
@@ -182,9 +182,13 @@ export function PagedList({
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`   |
 | ------------- | --------------- |
 | The container | `row-container` |
+
+</APITable>
 
 It cannot be overridden by a prop.
 

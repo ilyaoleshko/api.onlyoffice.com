@@ -13,7 +13,7 @@ Bar of label-and-value columns for context the reader does not have to act on. P
 after a social sign-up, the metadata of a webhook delivery: facts laid out in a row, with an
 optional caption and an optional close cross.
 
-<ThemedImage alt="ColumnarInfoBar" width={790} sources={{ light: require('./columnar-info-bar--primary-light.png').default, dark: require('./columnar-info-bar--primary-dark.png').default }} />
+<ThemedImage alt="ColumnarInfoBar" width={1014} sources={{ light: require('./columnar-info-bar--primary-light.png').default, dark: require('./columnar-info-bar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -47,37 +47,37 @@ text on the page background.
 
 The warning bar with a heading and four columns and no close button: the starting point for a details strip. Change any prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./columnar-info-bar--default-light.png').default, dark: require('./columnar-info-bar--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./columnar-info-bar--default-light.png').default, dark: require('./columnar-info-bar--default-dark.png').default }} />
 
 ### Profile Details
 
 A close button in the top trailing corner lets the reader dismiss details they have read once (`onAction`); clicking it only calls the handler, so the host takes the bar out of the tree. Its spoken name comes from `closeLabel`.
 
-<ThemedImage alt="Profile Details" width={790} sources={{ light: require('./columnar-info-bar--profile-details-light.png').default, dark: require('./columnar-info-bar--profile-details-dark.png').default }} />
+<ThemedImage alt="Profile Details" width={1014} sources={{ light: require('./columnar-info-bar--profile-details-light.png').default, dark: require('./columnar-info-bar--profile-details-dark.png').default }} />
 
 ### Event Details
 
 Without `headerText` and `onAction` the bar is a plain strip of columns that stays on screen, for metadata the surrounding page already names. Narrow the window to see the columns wrap.
 
-<ThemedImage alt="Event Details" width={790} sources={{ light: require('./columnar-info-bar--event-details-light.png').default, dark: require('./columnar-info-bar--event-details-dark.png').default }} />
+<ThemedImage alt="Event Details" width={1014} sources={{ light: require('./columnar-info-bar--event-details-light.png').default, dark: require('./columnar-info-bar--event-details-dark.png').default }} />
 
 ### Neutral Variant
 
 A rounded card with a light blue border and a blue heading, for information that is not a warning (`variant="neutral"`); it slides open when it mounts.
 
-<ThemedImage alt="Neutral Variant" width={782} sources={{ light: require('./columnar-info-bar--neutral-variant-light.png').default, dark: require('./columnar-info-bar--neutral-variant-dark.png').default }} />
+<ThemedImage alt="Neutral Variant" width={1006} sources={{ light: require('./columnar-info-bar--neutral-variant-light.png').default, dark: require('./columnar-info-bar--neutral-variant-dark.png').default }} />
 
 ### Page Variant
 
 A padded block with the close button beside the heading and the columns in a two-column grid, for a details section inside a page rather than a notice above it (`variant="page"`).
 
-<ThemedImage alt="Page Variant" width={790} sources={{ light: require('./columnar-info-bar--page-variant-light.png').default, dark: require('./columnar-info-bar--page-variant-dark.png').default }} />
+<ThemedImage alt="Page Variant" width={1014} sources={{ light: require('./columnar-info-bar--page-variant-light.png').default, dark: require('./columnar-info-bar--page-variant-dark.png').default }} />
 
 ### Css Customization
 
 The variables are listed under CSS variables on this page. All four are set here through the bar's `style` prop, because a wrapper cannot reach them.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./columnar-info-bar--css-customization-light.png').default, dark: require('./columnar-info-bar--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./columnar-info-bar--css-customization-light.png').default, dark: require('./columnar-info-bar--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -102,10 +102,14 @@ export function DeliveryDetails() {
 
 `columns` is an array of `ColumnarInfoBarColumn`, exported from the same subpath:
 
+<APITable>
+
 | Field   | Type        | Description                                                    |
 | ------- | ----------- | -------------------------------------------------------------- |
 | `label` | `ReactNode` | Caption above the value, at 12px                               |
 | `value` | `ReactNode` | The value, in a flex row with an 8px gap for an icon beside it |
+
+</APITable>
 
 
 <APITable>
@@ -240,12 +244,16 @@ export function ErrorFacts() {
 
 Set them through `style` on the component.
 
+<APITable>
+
 | Variable             | Default                            | Effect                                                                                            |
 | -------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `--cib-bg`           | a pale warning cream; grey in dark | Background of the bar                                                                             |
 | `--cib-color`        | black; white in dark               | Text colour, and the label at 60% opacity; in `page` the label keeps its own grey at full opacity |
 | `--cib-accent`       | the warning orange                 | The 4px leading edge; `transparent` in the other two variants                                     |
 | `--cib-header-color` | `--cib-accent`                     | Colour of `headerText`; `neutral` and `page` set their own                                        |
+
+</APITable>
 
 The bar's own stylesheet declares `--cib-bg`, `--cib-color` and `--cib-accent` on the bar
 element under both the light and the dark theme — and `neutral` and `page` add

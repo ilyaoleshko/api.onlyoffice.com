@@ -142,7 +142,7 @@ Put a dismissable bar above the list for a notice the reader can read once and c
 
 Open Selector as a side panel over the page when picking is a step on its own. The panel slides in from the edge of the window over a dimmed backdrop, and a click on the backdrop calls `onClose` (`useAside`); without it, Selector is a plain box that fills its parent.
 
-<ThemedImage alt="In Side Panel" width={800} sources={{ light: require('./selector--in-side-panel-light.png').default, dark: require('./selector--in-side-panel-dark.png').default }} />
+<ThemedImage alt="In Side Panel" width={1024} sources={{ light: require('./selector--in-side-panel-light.png').default, dark: require('./selector--in-side-panel-dark.png').default }} />
 
 ### Right To Left
 
@@ -448,10 +448,14 @@ and the inline name field.
 
 ### Enums
 
+<APITable name="Enums">
+
 | Enum                       | Members                                                              |
 | -------------------------- | -------------------------------------------------------------------- |
 | `SelectorAccessRightsMode` | `Compact`, `Detailed`                                                |
 | `AvatarRole`               | `owner`, `admin`, `guest`, `user`, `manager`, `collaborator`, `none` |
+
+</APITable>
 
 ## Recipes
 
@@ -777,6 +781,8 @@ export function SaveAs({
 
 ## CSS variables
 
+<APITable name="CSS-variables">
+
 | Variable                                       | Default        | Effect                                                                                                                                       |
 | ---------------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--selector-border`                            | 1px solid grey | Footer's top line and the "select all" rule, as a `border` shorthand                                                                         |
@@ -792,6 +798,8 @@ export function SaveAs({
 | `--selector-item-input-button-border-hover`    | theme grey     | Border and icon colour of that tick and cross on hover                                                                                       |
 | `--selector-empty-screen-description-color`    | theme grey     | Paragraph on the empty screen                                                                                                                |
 | `--selector-empty-screen-pressed-button-color` | theme grey     | Paragraph on the other empty screen, drawn without `withSearch` when the create row sets `isRoomsOnly` with a form-filling or data room type |
+
+</APITable>
 
 The two empty-screen variables show only while the list is empty. The theme also defines
 `--selector-empty-screen-button-color` and `--selector-empty-screen-hover-button-color`, but
@@ -820,6 +828,8 @@ the stylesheet reads neither, so setting them changes nothing.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element               | `data-testid`                                          |
 | --------------------- | ------------------------------------------------------ |
 | The outermost element | `selector`, or `dataTestId`                            |
@@ -834,6 +844,8 @@ the stylesheet reads neither, so setting them changes nothing.
 | Its tick and cross    | `selector_new_item_accept`, `selector_new_item_cancel` |
 | `RowLoader`           | `row-loader`, with `isContainer`                       |
 | `BreadCrumbsLoader`   | `bread-crumbs-loader`                                  |
+
+</APITable>
 
 Only the first can be overridden by a prop.
 

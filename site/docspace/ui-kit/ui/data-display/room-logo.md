@@ -222,10 +222,14 @@ export function SelectableRoom({
 
 ## CSS variables
 
+<APITable>
+
 | Variable             | Default | Effect                                                   |
 | -------------------- | ------- | -------------------------------------------------------- |
 | `--room-logo-size`   | `32px`  | Width and height of the box, and its minimums            |
 | `--room-logo-radius` | `6px`   | Corner radius applied to the glyph, not to the outer box |
+
+</APITable>
 
 The glyphs are SVG assets with baked-in colours; neither variable recolours them. Nor does
 `--room-logo-size` scale them: each SVG is drawn at a fixed 32px, so a larger box only adds
@@ -243,9 +247,13 @@ empty space around the glyph, and a smaller one leaves it overflowing the box.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid` |
 | ------------- | ------------- |
 | Outer element | `room-logo`   |
+
+</APITable>
 
 The icon wrapper and the checkbox carry the class names `room-logo_icon-container`,
 `room-logo_icon` and `room-logo_checkbox` instead, which is what to select on.

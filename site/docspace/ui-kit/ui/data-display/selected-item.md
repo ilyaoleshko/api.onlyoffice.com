@@ -55,7 +55,7 @@ For a value the user may see but not take back: the label and the cross grey out
 
 For a list of picked values stacked one per row: the chip fills the width of its container and pushes the cross to the far end (`isInline={false}`).
 
-<ThemedImage alt="Block Display" width={790} sources={{ light: require('./selected-item--block-display-light.png').default, dark: require('./selected-item--block-display-dark.png').default }} />
+<ThemedImage alt="Block Display" width={1014} sources={{ light: require('./selected-item--block-display-light.png').default, dark: require('./selected-item--block-display-dark.png').default }} />
 
 ### All Variants
 
@@ -65,7 +65,7 @@ How the modes sit together in a filter bar:
 - **Inline disabled** — the same chip with its label and cross greyed out (`isDisabled`)
 - **Block display item** — a chip that fills the row (`isInline={false}`)
 
-<ThemedImage alt="All Variants" width={790} sources={{ light: require('./selected-item--all-variants-light.png').default, dark: require('./selected-item--all-variants-dark.png').default }} />
+<ThemedImage alt="All Variants" width={1014} sources={{ light: require('./selected-item--all-variants-light.png').default, dark: require('./selected-item--all-variants-dark.png').default }} />
 
 ### With Icon
 
@@ -242,6 +242,8 @@ export function AuthorFilter() {
 
 Set them on any ancestor.
 
+<APITable>
+
 | Variable                        | Default     | Effect                                                                  |
 | ------------------------------- | ----------- | ----------------------------------------------------------------------- |
 | `--selected-item-bg`            | theme token | Background of the chip.                                                 |
@@ -255,6 +257,8 @@ Set them on any ancestor.
 | `--selected-item-margin-inline` | `4px`       | Trailing margin.                                                        |
 | `--selected-item-margin-bottom` | `4px`       | Bottom margin.                                                          |
 | `--selected-item-label-margin`  | `10px`      | Gap between the label and the cross.                                    |
+
+</APITable>
 
 ## Accessibility
 
@@ -272,10 +276,14 @@ Set them on any ancestor.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`                    |
 | --------- | -------------------------------- |
 | The chip  | `selected-item`, or `dataTestId` |
 | The cross | `icon-button`                    |
+
+</APITable>
 
 The cross's id comes from [`IconButton`](../interactive-elements/icon-button.md) and cannot be set from here;
 query it by the `selected-tag-removed` class instead when there are several chips.

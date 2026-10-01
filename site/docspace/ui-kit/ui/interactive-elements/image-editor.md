@@ -289,6 +289,8 @@ the replace control it is a `<div>`, so it is not keyboard-operable.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid`           |
 | --------------- | ----------------------- |
 | Cropper         | `image-cropper`         |
@@ -296,6 +298,8 @@ the replace control it is a `<div>`, so it is not keyboard-operable.
 | Zoom out        | `zoom_out_icon_button`  |
 | Zoom in         | `zoom_in_icon_button`   |
 | `ButtonDelete`  | `cropper_delete_button` |
+
+</APITable>
 
 None is settable. The outer element and the cropper wrapper carry `image-editor` and
 `image-cropper-wrapper` under the misspelt attribute `data-test-id`, which the usual query does

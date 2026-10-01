@@ -13,7 +13,7 @@ Centred empty state: an illustration, a heading, up to two lines of explanation 
 actions. It is the older of the kit's two empty states and the one that takes an image URL of
 your own.
 
-<ThemedImage alt="EmptyScreenContainer" width={496} sources={{ light: require('./empty-screen-container--primary-light.png').default, dark: require('./empty-screen-container--primary-dark.png').default }} />
+<ThemedImage alt="EmptyScreenContainer" width={656} sources={{ light: require('./empty-screen-container--primary-light.png').default, dark: require('./empty-screen-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -46,7 +46,7 @@ those declarations are invalid and every line inherits the surrounding text colo
 
 The full layout, for a list a filter has emptied: a header, a subheading and a description explain why nothing is shown, and a reset action under them offers the way back.
 
-<ThemedImage alt="Default" width={496} sources={{ light: require('./empty-screen-container--default-light.png').default, dark: require('./empty-screen-container--default-dark.png').default }} />
+<ThemedImage alt="Default" width={656} sources={{ light: require('./empty-screen-container--default-light.png').default, dark: require('./empty-screen-container--default-dark.png').default }} />
 
 ### Minimal Content
 
@@ -216,6 +216,8 @@ export function NoResults() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                           | Default              | Effect                                            |
 | ---------------------------------- | -------------------- | ------------------------------------------------- |
 | `--empty-screen-header-color`      | black; white in dark | Colour of the heading                             |
@@ -223,6 +225,8 @@ export function NoResults() {
 | `--empty-screen-link-color`        | the link blue        | Colour of links and SVG paths in the buttons area |
 | `--empty-screen-text-color`        | black; white in dark | Colour of bare `span`s in the buttons area        |
 | `--empty-screen-width`             | `640px`              | Width of the element — above 1424px only          |
+
+</APITable>
 
 ## Accessibility
 
@@ -239,9 +243,13 @@ export function NoResults() {
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                          |
 | ------------- | -------------------------------------- |
 | Outer element | `empty-screen-container`, not settable |
+
+</APITable>
 
 The three text lines carry `Text`'s own `text` id; the image and the buttons area carry none —
 use the `ec-image` and `ec-buttons` classes.

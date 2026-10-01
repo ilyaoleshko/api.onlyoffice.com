@@ -2,7 +2,7 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/AgentSkills.mdx"
 ---
 
-import ThemedImage from '@theme/ThemedImage';
+import APITable from '@site/src/components/APITable/APITable';
 
 # Agent skills
 
@@ -19,18 +19,44 @@ read it.
 It knows this kit the way its authors do, with a page for every component copied from the
 kit's own READMEs:
 
-<ThemedImage alt="SkillBenefits" width={851} sources={{ light: require('./agent-skills--block0-light.png').default, dark: require('./agent-skills--block0-dark.png').default }} />
+- **The right prop, first time** -- Knows which name each component shows and hides with: `visible · isOpen · opened · open`
+- **Labels and translations in place** -- Mounts the two providers the kit expects: `<ThemeProvider> + <TranslationProvider>`
+- **Forms that read well** -- Captions, required markers and focus wired to each field: `labelVisible · labelFor · id`
+- **Layouts that fit** -- Gives the controls that need it a size of their own: `ToggleButton · Textarea · Loader`
+- **Only the CSS you use** -- Each component brings its own styles, nothing to import: `import { Button } from "@onlyoffice/apps-ui-kit"`
+- **The right modules for the job** -- Keeps to the public components in your own app: `components · hooks · providers/theme`
 
 ## Why it matters for vibe coding
 
 You don't read every line, so a mistake has to surface without you. With the skill, the
 agent checks its own work before handing it over:
 
-<ThemedImage alt="VibeFlow" width={851} sources={{ light: require('./agent-skills--block1-light.png').default, dark: require('./agent-skills--block1-dark.png').default }} />
+**Without**
+
+1. You describe the screen
+2. The agent guesses -- props, defaults, imports
+3. It looks right -- compiles, renders
+4. It breaks later -- dark theme, another language, the keyboard
+
+**With the skill**
+
+1. You describe the screen
+2. The skill loads itself -- from what you asked
+3. The agent follows its rules -- version checked first
+4. check-usage.mjs runs -- finds the silent faults
+5. Handed over checked
 
 And it is measured, not assumed:
 
-<ThemedImage alt="EvalResults" width={851} sources={{ light: require('./agent-skills--block2-light.png').default, dark: require('./agent-skills--block2-dark.png').default }} />
+<APITable>
+
+| Suite | With the skill | Without |
+| --- | --- | --- |
+| ui-kit: five build tasks | 70/70 | 58/70 |
+| ui-kit: review a faulty file | 13/13 | 8/13 |
+| Plugin and embed questions | 100% | 32% |
+
+</APITable>
 
 ## Install
 
@@ -58,4 +84,7 @@ the kit version it read and what `check-usage.mjs` found. If yours doesn't, ask 
 
 ## For people changing this kit
 
-<ThemedImage alt="SyncDiagram" width={851} sources={{ light: require('./agent-skills--block3-light.png').default, dark: require('./agent-skills--block3-dark.png').default }} />
+- **components/*/README.md** (this repository) -> sync-ui-kit.mjs -> **ui-kit skill pages** (generated, never edited) -> the agent
+- **kit source** (defaults, margins, sizes) -> sync-ui-kit-reference -> **plugin-sdk: references/ui-kit.md** (hand-written, checked on demand)
+
+_A README here is read by people and by agents: a stale sentence misleads both, after the next sync._

@@ -79,7 +79,7 @@ Keeps several operations behind one button: it shows three dots and the tooltip 
 - **Uploading files**, **Copying documents** — secondary operations, each with a spinner (`operations`)
 - **Moving folder** — an operation with its own panel, with a progress ring and a cancel cross; click the row to open its panel (`panelOperations`, `showPanel`)
 
-<ThemedImage alt="Multiple Operations" width={73} sources={{ light: require('./operations-progress-button--multiple-operations-light.png').default, dark: require('./operations-progress-button--multiple-operations-dark.png').default }} />
+<ThemedImage alt="Multiple Operations" width={71} sources={{ light: require('./operations-progress-button--multiple-operations-light.png').default, dark: require('./operations-progress-button--multiple-operations-dark.png').default }} />
 
 ### Stopped Operation
 
@@ -109,7 +109,7 @@ In a right-to-left layout the button sits in the bottom-left corner instead of t
 
 Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The button shows the three `--floating-*` variables; click it to open the list, which shows the rest: **Moving files** is finished and failed, **Moving to trash** was aborted. Hover **Moving files**' clear icon for `--ops-progress-icon-hover`.
 
-<ThemedImage alt="Css Customization" width={73} sources={{ light: require('./operations-progress-button--css-customization-light.png').default, dark: require('./operations-progress-button--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={71} sources={{ light: require('./operations-progress-button--css-customization-light.png').default, dark: require('./operations-progress-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -143,7 +143,7 @@ export function UploadBadge({
 ## Props
 
 
-<APITable>
+<APITable name="Props">
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -172,6 +172,8 @@ export function UploadBadge({
 
 An `Operation` is:
 
+<APITable name="Props">
+
 | Field                 | Type                                              | Effect                                                                           |
 | --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------- |
 | `operation`           | `string`                                          | Key of `OPERATIONS_NAME`; picks the icon. An unknown value gets the generic one. |
@@ -187,6 +189,8 @@ An `Operation` is:
 | `iconUrl`             | `string`                                          | Image drawn instead of the built-in icon.                                        |
 | `id`                  | `string`                                          | Key of the row; otherwise one is built from the operation.                       |
 | `dragged`             | `string \| null`                                  | Identity of the drag that started an upload, so the drop animation plays once.   |
+
+</APITable>
 
 ## Recipes
 
@@ -313,6 +317,8 @@ export function UploadOutcome({
 
 Set them on any ancestor.
 
+<APITable name="CSS-variables">
+
 | Variable                         | Default        | Effect                                                                              |
 | -------------------------------- | -------------- | ----------------------------------------------------------------------------------- |
 | `--ops-progress-dropdown-bg`     | theme grey     | Background of the list.                                                             |
@@ -328,6 +334,8 @@ Set them on any ancestor.
 | `--ops-progress-success-icon`    | theme positive | Nothing visible: the theme colour is set over it on a row's tick.                   |
 | `--ops-progress-error-icon`      | theme negative | Exclamation mark inside a failed row's warning; the warning keeps the theme colour. |
 | `--ops-progress-stopped-icon`    | theme warning  | Colour of an aborted row's stop sign.                                               |
+
+</APITable>
 
 The three status variables colour the badges on the rows of the list, not the corner badge.
 

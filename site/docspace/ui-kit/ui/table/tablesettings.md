@@ -5,6 +5,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # TableSettings
 
 TableSettings is the cog at the end of a TableHeader that opens a list of the columns, each with a checkbox that shows or hides it.
@@ -15,7 +17,14 @@ The Table README describes it in full.
 
 ## Props
 
-<ThemedImage alt="TableSettings props" width={851} sources={{ light: require('./tablesettings--controls-light.png').default, dark: require('./tablesettings--controls-dark.png').default }} />
+<APITable>
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `columns` | `TTableColumn[]` | The table's columns; only those with an onChange and without isDisabled get a checkbox. |
+| `disableSettings`? | `booleanundefined` | Greys the cog out and stops the list of columns opening. Default: `false`. |
+
+</APITable>
 
 ## Stories
 

@@ -48,13 +48,13 @@ An empty field that checks the address as you type: an incomplete one turns the 
 
 Pick the height that matches the rest of the form: base and middle share 13px text, large grows to 16px (`size`). Type into any of them to see the result of the check under the field.
 
-<ThemedImage alt="Sizes" width={711} sources={{ light: require('./email-input--sizes-light.png').default, dark: require('./email-input--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1019} sources={{ light: require('./email-input--sizes-light.png').default, dark: require('./email-input--sizes-dark.png').default }} />
 
 ### States
 
 The field in each state a form puts it in: **user@example.com** is valid and plain; **disabled@example.com** is greyed out and cannot be focused (`isDisabled`); **readonly@example.com** can be focused and selected but not edited (`isReadOnly`); **invalid-email** has its red border forced on (`hasError`), which the check would also have done on its own.
 
-<ThemedImage alt="States" width={584} sources={{ light: require('./email-input--states-light.png').default, dark: require('./email-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={865} sources={{ light: require('./email-input--states-light.png').default, dark: require('./email-input--states-dark.png').default }} />
 
 ### With Custom Validation
 
@@ -66,13 +66,13 @@ Enforce a rule the parser does not know, such as a single allowed domain: the fu
 
 Without `hasError` the field decides for itself: **name@example.com** parses and stays plain, **name@example** has no top-level domain and is red from the start. Edit either one to watch the border follow the check.
 
-<ThemedImage alt="Automatic Error State" width={584} sources={{ light: require('./email-input--automatic-error-state-light.png').default, dark: require('./email-input--automatic-error-state-dark.png').default }} />
+<ThemedImage alt="Automatic Error State" width={527} sources={{ light: require('./email-input--automatic-error-state-light.png').default, dark: require('./email-input--automatic-error-state-dark.png').default }} />
 
 ### Accepted Address Forms
 
 Decide which forms of address count as valid: the same address with a display name is refused by the first field and accepted by the second, which allows names (`emailSettings` with `allowName`). Punycode, IP-address domains, spaces and local domain names are switched the same way.
 
-<ThemedImage alt="Accepted Address Forms" width={790} sources={{ light: require('./email-input--accepted-address-forms-light.png').default, dark: require('./email-input--accepted-address-forms-dark.png').default }} />
+<ThemedImage alt="Accepted Address Forms" width={676} sources={{ light: require('./email-input--accepted-address-forms-light.png').default, dark: require('./email-input--accepted-address-forms-dark.png').default }} />
 
 ### Right To Left
 
@@ -271,6 +271,8 @@ export function AccountEmail({ email }: { email: string }) {
 The field is a [`TextInput`](./text-input.md), so its variables apply here; set them on
 any ancestor. `--email-input-align` is this component's own.
 
+<APITable>
+
 | Variable                    | Default                 | Effect                                                                                                               |
 | --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `--email-input-align`       | `left`                  | Alignment of the value and the placeholder. Ignored under a right-to-left interface (`.rtl`), where both align right |
@@ -281,6 +283,8 @@ any ancestor. `--email-input-align` is this component's own.
 | `--text-input-border-focus` | `--input-border-focus`  | Border colour while focused                                                                                          |
 | `--text-input-radius`       | `--input-border-radius` | Border radius                                                                                                        |
 | `--text-input-font-size`    | `13px` / `16px`         | Font size of every size at once; unset, `base` and `middle` are 13px and `large` 16px                                |
+
+</APITable>
 
 While the field is in its error state the theme's error colour replaces all three border
 variables; the background, text colour, radius, font size and alignment still apply.
@@ -299,9 +303,13 @@ variables; the background, text colour, radius, font size and alignment still ap
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`                  |
 | --------- | ------------------------------ |
 | The field | `email-input`, or `dataTestId` |
+
+</APITable>
 
 ## Related
 

@@ -259,6 +259,8 @@ export function SelectableFolderTile() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                       | Default                          | Effect                                                                                                                                 |
 | ------------------------------ | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `--tile-bg`                    | the theme's tile background      | Background of the tall layout, and of the box behind the icon on hover and when `checked`; the single row has no background of its own |
@@ -276,6 +278,8 @@ export function SelectableFolderTile() {
 | `--tile-badge-radius`          | `4px`                            | Corner radius of each badge over the picture                                                                                           |
 | `--tile-badge-box-shadow`      | the theme's badge shadow         | Shadow of each badge over the picture                                                                                                  |
 | `--tile-icon-color`            | the theme's icon colour          | Fill of a `.is-pinned` badge inside the content's `.badges`; the three-dot button does not read it                                     |
+
+</APITable>
 
 The three badge variables apply only in the tall layout: in the single row the badges sit in the
 name row, outside the element that reads them. `--folder-tile-border-style` and the file tile's
@@ -296,10 +300,14 @@ fallback for both.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                             |
 | ------------- | ----------------------------------------- |
 | Outer element | `tile`, overridden by `dataTestId`        |
 | Picture       | `file-thumbnail`, in the tall layout only |
+
+</APITable>
 
 ## Related
 

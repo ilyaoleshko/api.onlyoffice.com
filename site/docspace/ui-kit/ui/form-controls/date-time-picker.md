@@ -193,6 +193,8 @@ export function ScheduledSend() {
 Set these on an ancestor to retheme the time display. Everything else the stylesheet defines is
 private to it.
 
+<APITable>
+
 | Variable                          | Default   | Effect                                    |
 | --------------------------------- | --------- | ----------------------------------------- |
 | `--date-time-picker-cell-bg`      | theme     | Background of the shown time              |
@@ -200,6 +202,8 @@ private to it.
 | `--date-time-picker-cell-height`  | `32px`    | Height of the shown time                  |
 | `--date-time-picker-cell-radius`  | `3px`     | Corner radius of the shown time           |
 | `--date-time-picker-cell-padding` | `6px 8px` | Padding inside the shown time             |
+
+</APITable>
 
 The parts it is built from keep their own variables, which reach them from the same ancestor:
 `--time-input-*` for the time editor (see [`TimePicker`](./time-picker.md)),
@@ -226,12 +230,16 @@ The parts it is built from keep their own variables, which reach them from the s
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`                       |
 | ---------------- | ----------------------------------- |
 | The wrapper      | `date-time-picker`, or `dataTestId` |
 | The time area    | `date-time-picker-time-wrapper`     |
 | The time display | `date-time-picker-time-display`     |
 | The clock glyph  | `date-time-picker-clock-icon`       |
+
+</APITable>
 
 ## Related
 

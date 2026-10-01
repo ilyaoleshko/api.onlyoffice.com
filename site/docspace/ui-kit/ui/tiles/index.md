@@ -3,6 +3,8 @@ description: "The card view of the DocSpace listing: a sorting container, four k
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/tiles/README.md"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Tiles
 
 The card view of the DocSpace listing: a sorting container, four kinds of tile and the slot their
@@ -92,6 +94,8 @@ export function Listing() {
 
 ### Which tile to reach for
 
+<APITable>
+
 | The item is     | Use                                       | Because                                                      |
 | --------------- | ----------------------------------------- | ------------------------------------------------------------ |
 | a document      | [`FileTile`](./file-tile.md)         | it is the only one with a thumbnail and its failure fallback |
@@ -99,6 +103,8 @@ export function Listing() {
 | a room          | [`RoomTile`](./room-tile.md)         | it builds the tag row, including the generated room-type tag |
 | a room template | [`TemplateTile`](./template-tile.md) | it shows the owner and the storage instead of tags           |
 | anything else   | [`BaseTile`](./base-tile.md)         | the shell, with both halves yours to fill                    |
+
+</APITable>
 
 ### Selection across the listing
 
@@ -188,6 +194,8 @@ export function LoadingListing() {
 
 ## Sub-components
 
+<APITable>
+
 | Part                                        | For                                                              |
 | ------------------------------------------- | ---------------------------------------------------------------- |
 | [`TileContainer`](./tile-container.md) | sorting the tiles into four groups and laying each out as a grid |
@@ -197,6 +205,8 @@ export function LoadingListing() {
 | [`FolderTile`](./folder-tile.md)       | a folder, short or tall                                          |
 | [`RoomTile`](./room-tile.md)           | a room, with its tag row                                         |
 | [`TemplateTile`](./template-tile.md)   | a room template, with owner and storage                          |
+
+</APITable>
 
 `TilesSkeleton` and `TileSkeleton` are in `sub-components/skeletons` and are imported from that
 subpath.
@@ -224,9 +234,13 @@ component sets `aria-busy` — mark the loading region with it yourself.
 The container's own knob is below; each tile's variables are documented on its own page, and they
 share the `--tile-*` prefix. They inherit, so a value set on the container reaches every tile.
 
+<APITable>
+
 | Variable               | Default | Effect                           |
 | ---------------------- | ------- | -------------------------------- |
 | `--tile-container-gap` | `16px`  | Gap between tiles in every group |
+
+</APITable>
 
 The group headings have no variable: the container's stylesheet has rules reading
 `--tile-container-sort-font-size` and `--tile-container-sort-font-weight`, but under a selector

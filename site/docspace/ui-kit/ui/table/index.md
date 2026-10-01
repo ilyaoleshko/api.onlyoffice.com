@@ -491,6 +491,8 @@ export function SelectableRows({ names }: { names: string[] }) {
 
 ## Sub-components
 
+<APITable name="Sub-components">
+
 | Export           | What it is                                                                       |
 | ---------------- | -------------------------------------------------------------------------------- |
 | `TableContainer` | The grid the header writes to. Give it a ref and hand the same ref to the header |
@@ -500,14 +502,20 @@ export function SelectableRows({ names }: { names: string[] }) {
 | `TableCell`      | One cell. It has no width of its own — the grid decides                          |
 | `TableGroupMenu` | The bar that replaces the header while rows are selected                         |
 
+</APITable>
+
 ## CSS variables
 
 The table styles itself from the theme; the column widths are written as inline
 `grid-template-columns`. The group menu reads one variable a consumer may set.
 
+<APITable name="CSS-variables">
+
 | Variable                             | Default | Effect                                                                                                          |
 | ------------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------- |
 | `--table-group-menu-checkbox-margin` | `28px`  | `margin-inline-start` of the select-all checkbox or `headerLabel`, on desktop only; below it the margin is 24px |
+
+</APITable>
 
 The `checkboxMargin` prop writes the same variable onto the toolbar itself, so when it is set it
 wins over a value set on a wrapper.
@@ -531,6 +539,8 @@ wins over a value set on a wrapper.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element          | `data-testid`                                        |
 | ---------------- | ---------------------------------------------------- |
 | The container    | `table-container`                                    |
@@ -541,6 +551,8 @@ wins over a value set on a wrapper.
 | A row            | `table-row`, overridable with `dataTestId`           |
 | A cell           | `table-cell`, overridable with `dataTestId`          |
 | The group menu   | `table-group-menu`                                   |
+
+</APITable>
 
 ## Related
 

@@ -69,8 +69,6 @@ import { BillingRoot, MainTariff } from "@onlyoffice/apps-ui-kit/billing";
 </BillingRoot>;
 ```
 
----
-
 ## Main Tariff
 
 Main billing page. Shows the current tariff plan with a pricing slider for adjusting manager count, per-user cost, total price, and upgrade/downgrade actions. Fetches tariff status, portal quotas, and payment plans on mount.
@@ -85,15 +83,13 @@ import { BillingRoot, MainTariff } from "@onlyoffice/apps-ui-kit/billing";
 </BillingRoot>;
 ```
 
----
-
 ## Wallet
 
 Portal wallet — the central balance used to pay for all ONLYOFFICE Apps services (AI tools, backup, additional disk storage). When a service is active, its costs are automatically deducted from the wallet balance.
 
 **Non-payer admins:** the top-up button and auto-payment settings are hidden. The page shows balance and transaction history in read-only mode.
 
-<ThemedImage alt="Wallet" width={800} sources={{ light: require('./billing--wallet-light.png').default, dark: require('./billing--wallet-dark.png').default }} />
+<ThemedImage alt="Wallet" width={1024} sources={{ light: require('./billing--wallet-light.png').default, dark: require('./billing--wallet-dark.png').default }} />
 
 ```tsx
 import { BillingRoot, Wallet } from "@onlyoffice/apps-ui-kit/billing";
@@ -111,8 +107,6 @@ import { BillingRoot, Wallet } from "@onlyoffice/apps-ui-kit/billing";
 - **Transaction history** — Full filtering: by date range, type (all/credit/debit), and participant; export as report. In service pages the history is scoped to the service with date and participant filters only
 - **Service payments** — Wallet funds are used to pay for AI tools usage, backup creation, and additional storage
 
----
-
 ## Payment Method
 
 Payment card and payer management page. Adapts to multiple states:
@@ -122,7 +116,7 @@ Payment card and payer management page. Adapts to multiple states:
 - **Payer not found** — If the payer email doesn't match any portal user, a message suggests choosing a new payer (for owners) or contacting the owner (for admins)
 - **No card** — Shows an "Add payment method" button that redirects to card linking
 
-<ThemedImage alt="Method" width={800} sources={{ light: require('./billing--method-light.png').default, dark: require('./billing--method-dark.png').default }} />
+<ThemedImage alt="Method" width={668} sources={{ light: require('./billing--method-light.png').default, dark: require('./billing--method-dark.png').default }} />
 
 ```tsx
 import { BillingRoot, PaymentMethod } from "@onlyoffice/apps-ui-kit/billing";
@@ -136,8 +130,6 @@ import { BillingRoot, PaymentMethod } from "@onlyoffice/apps-ui-kit/billing";
 
 The payer is the person responsible for billing. Only the portal owner and the current payer have access to the Stripe customer portal, where they can reassign the payer role or manage payment details. Other admins see payer info in read-only mode. When the payer email doesn't match any portal user, the component shows contextual guidance — owners are prompted to choose a new payer, while admins are advised to contact the owner.
 
----
-
 ## Services
 
 Service subscription management with three service cards:
@@ -146,7 +138,7 @@ Service subscription management with three service cards:
 - **Backup** — Enable/disable paid backups, view available backup count based on wallet balance
 - **Disk Storage** — Purchase additional storage on top of the base tariff, manage or cancel the subscription
 
-<ThemedImage alt="Services" width={800} sources={{ light: require('./billing--services-light.png').default, dark: require('./billing--services-dark.png').default }} />
+<ThemedImage alt="Services" width={1024} sources={{ light: require('./billing--services-light.png').default, dark: require('./billing--services-dark.png').default }} />
 
 ```tsx
 import { BillingRoot, ServicesList } from "@onlyoffice/apps-ui-kit/billing";
@@ -172,8 +164,6 @@ Each service toggle follows a confirmation flow:
 
 Once a service is paid for, the service card becomes clickable and navigates to a dedicated detail page with usage breakdown, transaction history, and service-specific settings (e.g. AI model configuration, storage subscription management, backup quotas).
 
----
-
 ## AI Tools
 
 Dedicated page for managing the AI tools service. Provides a separate AI credits balance (sub-account of the portal wallet), model configuration, and usage tracking.
@@ -188,8 +178,6 @@ Dedicated page for managing the AI tools service. Provides a separate AI credits
   - **Model Settings** — Table to configure available AI models (enable/disable individual models)
 - **Last top-up info** — Shows the amount and date of the last credit deposit
 
----
-
 ## Backup
 
 Dedicated page for managing the backup service. Displays free and paid backup quotas, with a toggle to enable/disable paid backups.
@@ -201,8 +189,6 @@ Dedicated page for managing the backup service. Displays free and paid backup qu
 - **Paid backups** — Available backup count based on wallet balance and price per backup
 - **Transaction history** — Scoped to backup service with date and participant filters
 - **Top-up prompt** — If the wallet balance is insufficient, prompts to top up before enabling
-
----
 
 ## Disk Storage
 
@@ -216,8 +202,6 @@ Dedicated page for managing additional disk storage purchased on top of the base
 - **Scheduled changes** — Visual indicator when an upgrade, downgrade, or cancellation is scheduled for the next billing cycle
 - **Renewal info** — Different messages for auto-renewal with/without pending changes
 - **Transaction history** — Scoped to storage service with date and participant filters
-
----
 
 ## Configuration reference
 
@@ -263,10 +247,8 @@ type TPaymentNavigationEvent =
   | { action: "open-backup" };
 ```
 
----
-
 ## Loading States
 
 Each page has its own skeleton loader shown while fetching data on mount. Use the tabs to preview all four loaders.
 
-<ThemedImage alt="Loading States" width={800} sources={{ light: require('./billing--loading-states-light.png').default, dark: require('./billing--loading-states-dark.png').default }} />
+<ThemedImage alt="Loading States" width={718} sources={{ light: require('./billing--loading-states-light.png').default, dark: require('./billing--loading-states-dark.png').default }} />

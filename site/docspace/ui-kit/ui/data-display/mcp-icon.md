@@ -116,9 +116,13 @@ export function ServerMark() {
 
 ### Enums
 
+<APITable>
+
 | Enum          | Members                           |
 | ------------- | --------------------------------- |
 | `MCPIconSize` | `Small`, `Medium`, `Big`, `Large` |
+
+</APITable>
 
 ## Recipes
 
@@ -202,6 +206,8 @@ export function LocalServerMark() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable             | Default                               | Effect                                                                                           |
 | -------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | `--mcp-icon-bg`      | `#a3a9ae`                             | Colour of the tile behind the letter; an icon with an image has no tile                          |
@@ -209,6 +215,8 @@ export function LocalServerMark() {
 | `--mcp-icon-opacity` | `1`, `0.1` in dark                    | Opacity of the tile; once set, it replaces the theme's value in both themes                      |
 | `--mcp-icon-weight`  | `700`                                 | Weight of the letter                                                                             |
 | `--mcp-icon-radius`  | `3px` / `4px` / `6px` / `6px` by size | Corner radius of the tile; once set, one value for every size, and an image is not clipped to it |
+
+</APITable>
 
 ## Accessibility
 
@@ -221,9 +229,13 @@ export function LocalServerMark() {
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                          |
 | ------------- | -------------------------------------- |
 | Outer element | `mcp-icon`, overridden by `dataTestId` |
+
+</APITable>
 
 The image and the letter carry none.
 

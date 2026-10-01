@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Checkbox with a label, an indeterminate state and an optional help button. It is the control
 for a choice the user confirms later, by submitting the form around it.
 
-<ThemedImage alt="Checkbox" width={787} sources={{ light: require('./checkbox--primary-light.png').default, dark: require('./checkbox--primary-dark.png').default }} />
+<ThemedImage alt="Checkbox" width={1011} sources={{ light: require('./checkbox--primary-light.png').default, dark: require('./checkbox--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,31 +42,31 @@ Without it the box renders in the light palette and ignores the dark theme.
 
 A single checkbox with a label, the starting point for any form choice; click it to tick it, and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={787} sources={{ light: require('./checkbox--default-light.png').default, dark: require('./checkbox--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1011} sources={{ light: require('./checkbox--default-light.png').default, dark: require('./checkbox--default-dark.png').default }} />
 
 ### Checked States
 
 The two states a user switches between: **Checked** starts ticked (`isChecked`) and **Unchecked** starts empty; clicking either flips it.
 
-<ThemedImage alt="Checked States" width={523} sources={{ light: require('./checkbox--checked-states-light.png').default, dark: require('./checkbox--checked-states-dark.png').default }} />
+<ThemedImage alt="Checked States" width={504} sources={{ light: require('./checkbox--checked-states-light.png').default, dark: require('./checkbox--checked-states-dark.png').default }} />
 
 ### Indeterminate States
 
 For a select-all whose children are only partly selected: **Indeterminate** shows a filled square instead of a tick (`isIndeterminate`), and **Disabled Indeterminate** is the same square greyed out (`isDisabled`).
 
-<ThemedImage alt="Indeterminate States" width={523} sources={{ light: require('./checkbox--indeterminate-states-light.png').default, dark: require('./checkbox--indeterminate-states-dark.png').default }} />
+<ThemedImage alt="Indeterminate States" width={504} sources={{ light: require('./checkbox--indeterminate-states-light.png').default, dark: require('./checkbox--indeterminate-states-dark.png').default }} />
 
 ### Disabled States
 
 For a choice the user cannot change right now: each state keeps its mark but the box and the label turn grey and clicks are ignored (`isDisabled`).
 
-<ThemedImage alt="Disabled States" width={786} sources={{ light: require('./checkbox--disabled-states-light.png').default, dark: require('./checkbox--disabled-states-dark.png').default }} />
+<ThemedImage alt="Disabled States" width={757} sources={{ light: require('./checkbox--disabled-states-light.png').default, dark: require('./checkbox--disabled-states-dark.png').default }} />
 
 ### Error States
 
 For a required choice the form rejected: the box border and the label turn the error colour, checked or not (`hasError`); the message itself comes from a wrapping `FieldContainer`.
 
-<ThemedImage alt="Error States" width={523} sources={{ light: require('./checkbox--error-states-light.png').default, dark: require('./checkbox--error-states-dark.png').default }} />
+<ThemedImage alt="Error States" width={504} sources={{ light: require('./checkbox--error-states-light.png').default, dark: require('./checkbox--error-states-dark.png').default }} />
 
 ### With Truncation
 
@@ -78,19 +78,19 @@ For a label longer than the space it gets: in a 200px container the text stays o
 
 For a short explanation the label has no room for: rest the pointer on the checkbox to open the tooltip (`title`). The tooltip is the kit's shared one, so the app must mount `RootTooltip` once, as this story does.
 
-<ThemedImage alt="With Title" width={787} sources={{ light: require('./checkbox--with-title-light.png').default, dark: require('./checkbox--with-title-dark.png').default }} />
+<ThemedImage alt="With Title" width={1011} sources={{ light: require('./checkbox--with-title-light.png').default, dark: require('./checkbox--with-title-dark.png').default }} />
 
 ### With Help Button
 
 For a choice that needs more explanation than its label: an info icon follows the label (`helpButton`); click it to read the hint, and the checkbox stays as it was. A `HelpButton` with a text hint uses the shared tooltip, so `RootTooltip` is mounted here too.
 
-<ThemedImage alt="With Help Button" width={787} sources={{ light: require('./checkbox--with-help-button-light.png').default, dark: require('./checkbox--with-help-button-dark.png').default }} />
+<ThemedImage alt="With Help Button" width={1011} sources={{ light: require('./checkbox--with-help-button-light.png').default, dark: require('./checkbox--with-help-button-dark.png').default }} />
 
 ### Css Customization
 
 The variables are listed under CSS variables on this page. The example is one checked box on a wrapper that sets every overridable one, so it shows them all at once: the wider gap, the taller row, the light fill, the blue border and the blue tick.
 
-<ThemedImage alt="Css Customization" width={787} sources={{ light: require('./checkbox--css-customization-light.png').default, dark: require('./checkbox--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1011} sources={{ light: require('./checkbox--css-customization-light.png').default, dark: require('./checkbox--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -232,6 +232,8 @@ export function RoomPicker() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                  | Default     | Effect                                                                                                               |
 | ------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------- |
 | `--checkbox-gap`          | `12px`      | Space between the box and the label                                                                                  |
@@ -239,6 +241,8 @@ export function RoomPicker() {
 | `--checkbox-fill-color`   | theme-based | Fill of the box while it is checked; an indeterminate box uses it too, for its outer box and its inner square's edge |
 | `--checkbox-border-color` | theme-based | Border of the box; hover, focus, error and disabled draw their own border colour over it                             |
 | `--checkbox-arrow-color`  | theme-based | Colour of the tick in a checked box                                                                                  |
+
+</APITable>
 
 The other colour variables (`--checkbox-fill-color-default`, `--checkbox-error-color` and the
 rest) are **not** consumer settings: the stylesheet assigns them on the component's own
@@ -260,10 +264,14 @@ colours.
 
 ## Test ids
 
+<APITable>
+
 | Element               | `data-testid`                             |
 | --------------------- | ----------------------------------------- |
 | The `<label>` wrapper | `checkbox`, overridable with `dataTestId` |
 | The help button slot  | `checkbox-help-button`                    |
+
+</APITable>
 
 ## Related
 

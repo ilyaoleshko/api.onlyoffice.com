@@ -43,7 +43,7 @@ Unauthorized error page (401). Displayed when the user is not authenticated.
 - **Consistent Styling** built on ErrorContainer
 - **Auto-Redirect Support**
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./error401--default-light.png').default, dark: require('./error401--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./error401--default-light.png').default, dark: require('./error401--default-dark.png').default }} />
 
 ### Usage
 

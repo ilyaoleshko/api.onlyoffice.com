@@ -13,7 +13,7 @@ Layout wrapper for one form field: an optional label with a help tooltip, the co
 and its error message. It owns the spacing between fields and the horizontal-versus-vertical
 arrangement of label and control.
 
-<ThemedImage alt="FieldContainer" width={189} sources={{ light: require('./field-container--primary-light.png').default, dark: require('./field-container--primary-dark.png').default }} />
+<ThemedImage alt="FieldContainer" width={299} sources={{ light: require('./field-container--primary-light.png').default, dark: require('./field-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -45,19 +45,19 @@ unset value without the provider.
 
 The label sits in a fixed-width column beside the control, with a help icon that opens a tooltip on click. Click the caption to focus the input (`labelFor`); change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={189} sources={{ light: require('./field-container--default-light.png').default, dark: require('./field-container--default-dark.png').default }} />
+<ThemedImage alt="Default" width={299} sources={{ light: require('./field-container--default-light.png').default, dark: require('./field-container--default-dark.png').default }} />
 
 ### Required
 
 Marks a field the form cannot be sent without: an asterisk follows the caption, and the label is announced as required (`isRequired`).
 
-<ThemedImage alt="Required" width={189} sources={{ light: require('./field-container--required-light.png').default, dark: require('./field-container--required-dark.png').default }} />
+<ThemedImage alt="Required" width={299} sources={{ light: require('./field-container--required-light.png').default, dark: require('./field-container--required-dark.png').default }} />
 
 ### With Error
 
 Tells the user what to correct right under the field: the message appears only while `hasError` is set, in `errorColor`, wrapped at `errorMessageWidth`. The red border belongs to the input, which gets its own `hasError`.
 
-<ThemedImage alt="With Error" width={309} sources={{ light: require('./field-container--with-error-light.png').default, dark: require('./field-container--with-error-dark.png').default }} />
+<ThemedImage alt="With Error" width={419} sources={{ light: require('./field-container--with-error-light.png').default, dark: require('./field-container--with-error-dark.png').default }} />
 
 ### Vertical Layout
 
@@ -69,13 +69,11 @@ For narrow forms and long captions: the label stacks above the control, and both
 
 Makes the help icon part of the caption: it is rendered inside the label, after its text, so it follows the caption's own layout instead of standing as a separate element beside it (`inlineHelpButton`).
 
-<ThemedImage alt="With Inline Help" width={189} sources={{ light: require('./field-container--with-inline-help-light.png').default, dark: require('./field-container--with-inline-help-dark.png').default }} />
+<ThemedImage alt="With Inline Help" width={299} sources={{ light: require('./field-container--with-inline-help-light.png').default, dark: require('./field-container--with-inline-help-dark.png').default }} />
 
 ### Custom Styling
 
 Sets the container apart from the page, here with a background, padding and rounded corners, through `style` and `className`.
-
-<ThemedImage alt="Custom Styling" width={790} sources={{ light: require('./field-container--custom-styling-light.png').default, dark: require('./field-container--custom-styling-dark.png').default }} />
 
 ### Css Customization
 
@@ -84,7 +82,7 @@ Every overridable variable set on one wrapper -- the variables are listed under 
 - **Full Name** — the error message shows the custom colour and top padding
 - **Email** — the gap between the two fields is the custom container margin
 
-<ThemedImage alt="Css Customization" width={309} sources={{ light: require('./field-container--css-customization-light.png').default, dark: require('./field-container--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={449} sources={{ light: require('./field-container--css-customization-light.png').default, dark: require('./field-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -269,11 +267,15 @@ export function QuotaField({ children }: { children: ReactElement }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                      | Default            | Effect                                                                  |
 | ----------------------------- | ------------------ | ----------------------------------------------------------------------- |
 | `--field-container-margin`    | `0 0 16px 0`       | The container's whole margin. `removeMargin` sets it to `0` regardless. |
 | `--field-container-error-top` | `4px`              | Gap between the control and the error message                           |
 | `--error-color`               | theme error colour | Error text colour when `errorColor` is not given                        |
+
+</APITable>
 
 `--label-width` and `--error-width` are written onto the element from the `maxLabelWidth`
 and `errorMessageWidth` props, so setting them from a stylesheet has no effect; set the
@@ -298,10 +300,14 @@ light and dark themes, so it cannot be overridden from outside.
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`              | Override                                                                             |
 | ----------- | -------------------------- | ------------------------------------------------------------------------------------ |
 | Container   | `field-container`          | `dataTestId`                                                                         |
 | Help button | `<dataTestId>_help_button` | Only set when `dataTestId` is given; otherwise the help button keeps its own default |
+
+</APITable>
 
 The container also carries `data-vertical` and `data-label-width`, which the component's own
 tests assert against.

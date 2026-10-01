@@ -2,11 +2,71 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Welcome.mdx"
 ---
 
-import ThemedImage from '@theme/ThemedImage';
+import APITable from '@site/src/components/APITable/APITable';
 
-# Welcome
+# ONLYOFFICE Apps UI Kit
 
-<ThemedImage alt="WelcomePage" width={851} sources={{ light: require('./welcome--block0-light.png').default, dark: require('./welcome--block0-dark.png').default }} />
+Version 4.0.0 • AGPL-3.0-only • not on the public npm registry yet -- [How to install it](#installation)
+
+**The package at a glance**
+
+<APITable>
+
+| Package | Version | Licence | Peers |
+| --- | --- | --- | --- |
+| @onlyoffice/apps-ui-kit | 4.0.0 | AGPL-3.0-only | react 19, react-dom 19, i18next |
+
+</APITable>
+
+## What is inside
+
+The published surface, the portal-coupled modules that ship alongside it without the same compatibility promise, and two guides: who may do what on a portal, and building with an AI agent.
+
+### Components
+
+_Public API._ 98 components -- buttons, inputs, tables, tiles, dialogs -- each self-contained and shipping its own CSS.
+
+[Open Structure](./structure.md)
+
+### Hooks and utils
+
+_Public API._ 11 React hooks and 32 helper modules: dates, devices, URLs, cookies, e-mail and the rest.
+
+[Open Hooks](./hooks.md)
+
+### Theming
+
+_Public API._ Light, dark, RTL and the colour tokens every component reads. No component hardcodes a colour.
+
+[Open Themes](./themes.md)
+
+### Portal modules
+
+_Portal-only._ The REST client, MobX-backed selectors, billing, the uploader, the editor wrapper and the AI agent.
+
+[Open API](./api.md)
+
+### Types and roles
+
+_Portal rules._ Who may do what: the five user types, the eight room roles, and how to check access in code.
+
+[Open Types and roles](./types-and-roles.md)
+
+### Agent skills
+
+_For AI agents._ Connect them before an AI agent writes code with the kit: it follows the kit's rules and checks its own work.
+
+[Open Agent skills](./agent-skills.md)
+
+## The rest of the documentation
+
+Helpers, constants, translations and the two places this package comes from.
+
+- [Utils](./utils.md)
+- [Constants and enums](./constants.md)
+- [Translation](./translation.md)
+- [GitHub repository](https://github.com/ONLYOFFICE/docspace-ui-kit-react)
+- [ONLYOFFICE Apps API](https://api.onlyoffice.com/docspace/)
 
 ## Installation
 

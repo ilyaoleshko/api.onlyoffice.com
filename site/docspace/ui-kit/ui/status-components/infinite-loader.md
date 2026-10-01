@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Virtualised list or grid that asks for the next page as the user scrolls towards the end. It is
 built for the DocSpace portal's layout and looks for the portal's own elements by id.
 
-<ThemedImage alt="InfiniteLoader" width={765} sources={{ light: require('./infinite-loader--primary-light.png').default, dark: require('./infinite-loader--primary-dark.png').default }} />
+<ThemedImage alt="InfiniteLoader" width={989} sources={{ light: require('./infinite-loader--primary-light.png').default, dark: require('./infinite-loader--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -47,31 +47,31 @@ between pages.
 
 Scroll the box: when the end of the loaded items comes near, the loader asks for the next range, and the new items arrive half a second later (`loadMoreItems`, logged in the Actions panel). In the `tile` layout each child is one row of the grid; here a plain box stands in for a row of tiles. Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={765} sources={{ light: require('./infinite-loader--default-light.png').default, dark: require('./infinite-loader--default-dark.png').default }} />
+<ThemedImage alt="Default" width={989} sources={{ light: require('./infinite-loader--default-light.png').default, dark: require('./infinite-loader--default-dark.png').default }} />
 
 ### Row Layout
 
 A list of rows of one height (`viewAs="row"`, `itemSize`). Scroll to the end: the rows after the last loaded item are skeleton rows until the next page arrives, and a jump of more than 800px, such as dragging the scrollbar, turns every row in view into a skeleton while the scrolling lasts.
 
-<ThemedImage alt="Row Layout" width={765} sources={{ light: require('./infinite-loader--row-layout-light.png').default, dark: require('./infinite-loader--row-layout-dark.png').default }} />
+<ThemedImage alt="Row Layout" width={989} sources={{ light: require('./infinite-loader--row-layout-light.png').default, dark: require('./infinite-loader--row-layout-dark.png').default }} />
 
 ### Table Layout
 
 A table whose rows share one column layout (`viewAs="table"`). The layout is not passed as a prop: the loader reads it from `localStorage` under the key it is given (`columnStorageName`, or `columnInfoPanelStorageName` while `infoPanelVisible` is set), which lets the table header that saves the widths and the rows below stay in step. The rows not loaded yet show the table skeleton.
 
-<ThemedImage alt="Table Layout" width={794} sources={{ light: require('./infinite-loader--table-layout-light.png').default, dark: require('./infinite-loader--table-layout-dark.png').default }} />
+<ThemedImage alt="Table Layout" width={1018} sources={{ light: require('./infinite-loader--table-layout-light.png').default, dark: require('./infinite-loader--table-layout-dark.png').default }} />
 
 ### Right To Left
 
 The row layout in a right-to-left interface: the text of each row starts at the right edge of the row instead of the left.
 
-<ThemedImage alt="Right To Left" width={765} sources={{ light: require('./infinite-loader--right-to-left-light.png').default, dark: require('./infinite-loader--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={989} sources={{ light: require('./infinite-loader--right-to-left-light.png').default, dark: require('./infinite-loader--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 The three tile variables set on one wrapper -- the variables are listed under CSS variables on this page. They size only the skeleton tiles, which appear for a moment when the box is scrolled by more than 800px at once — drag the scrollbar quickly to see them.
 
-<ThemedImage alt="Css Customization" width={765} sources={{ light: require('./infinite-loader--css-customization-light.png').default, dark: require('./infinite-loader--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={989} sources={{ light: require('./infinite-loader--css-customization-light.png').default, dark: require('./infinite-loader--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -212,12 +212,16 @@ export function LoadableList({
 
 Set these on an ancestor. Everything else the stylesheet defines is private to it.
 
+<APITable>
+
 | Variable                          | Default        | Effect                                                                                                                        |
 | --------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `--infinite-loader-tile-gap`      | `14px 16px`    | Gap between the skeleton tiles of a `tile` row during a long scroll jump; on tablet and smaller screens it is fixed at `14px` |
 | `--infinite-loader-tile-min-size` | `216px`        | Smallest width of those skeleton tiles                                                                                        |
 | `--infinite-loader-tile-max-size` | `360px`        | Largest width of those skeleton tiles                                                                                         |
 | `--infinite-loader-list-width`    | measured width | Width of the list in the `row` and `table` layouts, in place of the measured container width                                  |
+
+</APITable>
 
 The three tile variables size only the skeletons shown for a moment after a jump of more than
 800px; the real tiles are whatever the children render. `--infinite-loader-table-width` is not
@@ -233,10 +237,14 @@ from outside, so use `--infinite-loader-list-width` instead.
 
 ## Test ids
 
+<APITable>
+
 | Element  | `data-testid`                    |
 | -------- | -------------------------------- |
 | The list | `infinite-loader-container-list` |
 | The grid | `infinite-loader-container-grid` |
+
+</APITable>
 
 Neither can be overridden by a prop.
 

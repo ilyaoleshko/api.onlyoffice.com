@@ -13,7 +13,7 @@ Sticky tab bar that scrolls sideways and renders the selected tab's content unde
 component draws two different bars — an underlined row and a segmented control — chosen with
 `type`.
 
-<ThemedImage alt="Tabs" width={790} sources={{ light: require('./tabs--primary-light.png').default, dark: require('./tabs--primary-dark.png').default }} />
+<ThemedImage alt="Tabs" width={1014} sources={{ light: require('./tabs--primary-light.png').default, dark: require('./tabs--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -43,49 +43,49 @@ the segmented fill are both theme tokens.
 
 The underlined row, for splitting one page into sections the reader switches between: click a tab to show its content below the bar. **Contacts** is greyed out and ignores clicks (`isDisabled`). Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./tabs--default-light.png').default, dark: require('./tabs--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./tabs--default-light.png').default, dark: require('./tabs--default-dark.png').default }} />
 
 ### Secondary
 
 The segmented control (`type={TabsTypes.Secondary}`), for switching between views of the same content; every tab takes the width of the widest label and the selected background slides to the clicked tab. Click a tab, then press Tab and use the arrow keys, Home, End and Enter to pick one from the keyboard.
 
-<ThemedImage alt="Secondary" width={790} sources={{ light: require('./tabs--secondary-light.png').default, dark: require('./tabs--secondary-dark.png').default }} />
+<ThemedImage alt="Secondary" width={1014} sources={{ light: require('./tabs--secondary-light.png').default, dark: require('./tabs--secondary-dark.png').default }} />
 
 ### Scaled
 
 The segmented control spread across the whole width of its container, every tab an equal share (`scaled`) — for a bar that should line up with the edges of the panel it sits in. The underlined row ignores `scaled`.
 
-<ThemedImage alt="Scaled" width={790} sources={{ light: require('./tabs--scaled-light.png').default, dark: require('./tabs--scaled-dark.png').default }} />
+<ThemedImage alt="Scaled" width={1014} sources={{ light: require('./tabs--scaled-light.png').default, dark: require('./tabs--scaled-dark.png').default }} />
 
 ### Loading
 
 While the labels are still arriving, the segmented bar is kept hidden so that it is not sized to placeholder text (`isLoading`); only the selected tab's content shows. Turn `isLoading` off in the Controls panel below and the bar appears, every tab as wide as the widest label. The component draws no loader of its own, and the underlined row ignores `isLoading`.
 
-<ThemedImage alt="Loading" width={790} sources={{ light: require('./tabs--loading-light.png').default, dark: require('./tabs--loading-dark.png').default }} />
+<ThemedImage alt="Loading" width={1014} sources={{ light: require('./tabs--loading-light.png').default, dark: require('./tabs--loading-dark.png').default }} />
 
 ### With Badges
 
 A count after the label of **Overview** and **Documents** (the item's `badge`) — for telling the reader how many new entries wait behind a tab. The segmented control does not draw badges.
 
-<ThemedImage alt="With Badges" width={790} sources={{ light: require('./tabs--with-badges-light.png').default, dark: require('./tabs--with-badges-dark.png').default }} />
+<ThemedImage alt="With Badges" width={1014} sources={{ light: require('./tabs--with-badges-light.png').default, dark: require('./tabs--with-badges-dark.png').default }} />
 
 ### With Icons
 
 An icon before every label of the segmented control (the item's `iconName`, an SVG URL), recoloured with the label as a tab is selected or hovered — for tabs that are recognised faster by a picture. The underlined row does not draw icons.
 
-<ThemedImage alt="With Icons" width={790} sources={{ light: require('./tabs--with-icons-light.png').default, dark: require('./tabs--with-icons-dark.png').default }} />
+<ThemedImage alt="With Icons" width={1014} sources={{ light: require('./tabs--with-icons-light.png').default, dark: require('./tabs--with-icons-dark.png').default }} />
 
 ### Animated Selection
 
 Click **Documents**: its underline grows and the old content stays dimmed for the second and a half the tab's `onClick` promise takes, then the new content replaces it (`withAnimation`) — for tabs whose content is fetched when they are selected. The segmented control ignores `withAnimation`.
 
-<ThemedImage alt="Animated Selection" width={790} sources={{ light: require('./tabs--animated-selection-light.png').default, dark: require('./tabs--animated-selection-dark.png').default }} />
+<ThemedImage alt="Animated Selection" width={1014} sources={{ light: require('./tabs--animated-selection-light.png').default, dark: require('./tabs--animated-selection-dark.png').default }} />
 
 ### With Sticky Header
 
 Scroll the box: the heading and the tab bar stay at its top while the content moves under them (`stickyHeader`) — for a section title that should stay in view together with the bar. The heading sticks only with `stickyTop` set, here to `0px`; a larger value moves both further down. The segmented control does not draw a sticky header.
 
-<ThemedImage alt="With Sticky Header" width={790} sources={{ light: require('./tabs--with-sticky-header-light.png').default, dark: require('./tabs--with-sticky-header-dark.png').default }} />
+<ThemedImage alt="With Sticky Header" width={1014} sources={{ light: require('./tabs--with-sticky-header-light.png').default, dark: require('./tabs--with-sticky-header-dark.png').default }} />
 
 ### Overflowing Tabs
 
@@ -94,19 +94,19 @@ More tabs than a 360px column holds, for a bar whose tabs cannot be cut down:
 - **Underlined row** — scrolls sideways; the edge that hides more tabs fades out
 - **Segmented control** — adds an arrow at each end that selects the previous or next tab, not only scrolls to it (the arrows are left out on phones)
 
-<ThemedImage alt="Overflowing Tabs" width={795} sources={{ light: require('./tabs--overflowing-tabs-light.png').default, dark: require('./tabs--overflowing-tabs-dark.png').default }} />
+<ThemedImage alt="Overflowing Tabs" width={1019} sources={{ light: require('./tabs--overflowing-tabs-light.png').default, dark: require('./tabs--overflowing-tabs-dark.png').default }} />
 
 ### Right To Left
 
 The overflowing bars in a right-to-left layout: the first tab sits at the right-hand end, the fade moves to the left edge, and the segmented arrows swap sides so the right one selects the previous tab. The wrapper carries `dir="rtl"` for the layout; the fade direction and the scroll correction come from the theme's `interfaceDirection` (the Direction toolbar).
 
-<ThemedImage alt="Right To Left" width={795} sources={{ light: require('./tabs--right-to-left-light.png').default, dark: require('./tabs--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1019} sources={{ light: require('./tabs--right-to-left-light.png').default, dark: require('./tabs--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 Every variable either bar can show without overflowing, set on one wrapper -- the variables are listed under CSS variables on this page. The first instance is the underlined row, for the `--tabs-primary-*`, underline and weight variables; the second is the segmented control (`type={TabsTypes.Secondary}`), for the `--tabs-secondary-*` ones. Hover the tabs to see the hover colours.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./tabs--css-customization-light.png').default, dark: require('./tabs--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./tabs--css-customization-light.png').default, dark: require('./tabs--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -180,9 +180,13 @@ Each entry of `items`:
 
 ### Enums
 
+<APITable name="Enums">
+
 | Enum        | Members                |
 | ----------- | ---------------------- |
 | `TabsTypes` | `Primary`, `Secondary` |
+
+</APITable>
 
 ## Recipes
 
@@ -299,6 +303,8 @@ export function LazyTabs() {
 
 Set them on any ancestor.
 
+<APITable name="CSS-variables">
+
 | Variable                       | Default       | Effect                                                                                 |
 | ------------------------------ | ------------- | -------------------------------------------------------------------------------------- |
 | `--tabs-primary-height`        | `32px`        | Height of the underlined bar.                                                          |
@@ -324,6 +330,8 @@ Set them on any ancestor.
 | `--tabs-secondary-hover-icon`  | theme token   | Icon colour of a hovered arrow.                                                        |
 | `--tabs-fade`                  | theme token   | Colour the scroll edges fade to.                                                       |
 
+</APITable>
+
 `--tabs-secondary-tab-radius` also rounds the sliding selected background, and
 `--tabs-underline` draws only under the underlined bar. `--tabs-fade` shows only while the tabs
 overflow, and `--tabs-secondary-hover-icon` only while the segmented tabs overflow and so have
@@ -348,10 +356,14 @@ arrows.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element               | `data-testid` |
 | --------------------- | ------------- |
 | A tab, underlined bar | `<id>_tab`    |
 | A tab, segmented bar  | `<id>_subtab` |
+
+</APITable>
 
 `<id>` is the item's own `id`. The bar itself sets none; query it by `className`.
 

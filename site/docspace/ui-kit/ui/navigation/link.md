@@ -48,19 +48,19 @@ A page link that opens its address in a new tab. Hover it to see the underline, 
 
 Page links navigate to another address; hover the regular one to see the solid underline a page link grows. **Bold page link** (`isBold`), **Hovered page link** keeps the underline on without a pointer (`isHovered`), **Semitransparent page link** is drawn at half opacity (`isSemitransparent`).
 
-<ThemedImage alt="Page Links" width={790} sources={{ light: require('./link--page-links-light.png').default, dark: require('./link--page-links-dark.png').default }} />
+<ThemedImage alt="Page Links" width={1014} sources={{ light: require('./link--page-links-light.png').default, dark: require('./link--page-links-dark.png').default }} />
 
 ### Action Links
 
 Action links run code in place instead of navigating, for filtering a list or opening a menu; hover the regular one to see the dashed underline that sets them apart from page links. The four links show the same states as the page links above.
 
-<ThemedImage alt="Action Links" width={790} sources={{ light: require('./link--action-links-light.png').default, dark: require('./link--action-links-dark.png').default }} />
+<ThemedImage alt="Action Links" width={1014} sources={{ light: require('./link--action-links-light.png').default, dark: require('./link--action-links-dark.png').default }} />
 
 ### All Variants
 
 Page and action links side by side, to compare the two underlines and the states each type shares: bold, hovered and semitransparent.
 
-<ThemedImage alt="All Variants" width={790} sources={{ light: require('./link--all-variants-light.png').default, dark: require('./link--all-variants-dark.png').default }} />
+<ThemedImage alt="All Variants" width={1014} sources={{ light: require('./link--all-variants-light.png').default, dark: require('./link--all-variants-dark.png').default }} />
 
 ### Hovered State
 
@@ -108,7 +108,7 @@ Colour draws the eye to a link inside plain text: the label takes any CSS colour
 
 A link inside a paragraph is easier to spot when it is underlined before the pointer reaches it. **Underlined link** keeps a solid underline, **Dashed action link** a dashed one (`textDecoration`); the line stays the same on hover.
 
-<ThemedImage alt="Text Decorations" width={790} sources={{ light: require('./link--text-decorations-light.png').default, dark: require('./link--text-decorations-dark.png').default }} />
+<ThemedImage alt="Text Decorations" width={1014} sources={{ light: require('./link--text-decorations-light.png').default, dark: require('./link--text-decorations-dark.png').default }} />
 
 ### Css Customization
 
@@ -116,7 +116,7 @@ Overridable variables set on a wrapper and on the link itself -- the variables a
 
 **Custom color link** is a page link: it takes the colour from the wrapper, and on hover shows no underline (`--link-hover-page-text-decoration`). **Custom action link** is there for the variables an action link reads: hover it for a wavy underline (`--link-hover-text-decoration`); at rest it carries a dotted underline and a taller line (`--link-text-decoration`, `--link-line-height`, through its `style` prop). `--link-display` is not shown: in a column of links its effect cannot be seen.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./link--css-customization-light.png').default, dark: require('./link--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./link--css-customization-light.png').default, dark: require('./link--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -282,11 +282,15 @@ export function FileLink({ href, name }: { href: string; name: string }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default            | Effect                                                     |
 | ----------------------------------- | ------------------ | ---------------------------------------------------------- |
 | `--link-text-color`                 | theme text         | Colour of the label; the `color` prop wins over it         |
 | `--link-hover-page-text-decoration` | `underline`        | Line a `page` link shows on hover and under `isHovered`    |
 | `--link-hover-text-decoration`      | `underline dashed` | Line an `action` link shows on hover and under `isHovered` |
+
+</APITable>
 
 The other `--link-*` names in the stylesheet — `--link-text-decoration` (the line at rest,
 `none`), `--link-line-height` (`calc(100% + 6px)`) and `--link-display` (`inline-block`, read
@@ -305,9 +309,13 @@ set on an ancestor is overridden. Set them through the link's own `style` prop, 
 
 ## Test ids
 
+<APITable>
+
 | Element    | `data-testid`                         |
 | ---------- | ------------------------------------- |
 | The anchor | `link`, overridable with `dataTestId` |
+
+</APITable>
 
 ## Related
 

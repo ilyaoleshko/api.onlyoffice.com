@@ -13,7 +13,7 @@ The bar above a file listing: search, a filter panel, a sort menu, a view switch
 what is in force. It holds no filter state of its own — you tell it what is selected through two
 getters and it tells you what changed.
 
-<ThemedImage alt="Filter" width={790} sources={{ light: require('./filter--primary-light.png').default, dark: require('./filter--primary-dark.png').default }} />
+<ThemedImage alt="Filter" width={1014} sources={{ light: require('./filter--primary-light.png').default, dark: require('./filter--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -48,37 +48,37 @@ management tooltip render as **empty strings** without one.
 
 The bar as a desktop listing shows it: the search box, the filter button, the sort button and the button that switches to the other view. Change any prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./filter--default-light.png').default, dark: require('./filter--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./filter--default-light.png').default, dark: require('./filter--default-dark.png').default }} />
 
 ### Document Types
 
 The filter panel with one group of options, opened for you when the story loads. Pick a type and press Apply to see the selection reach `onFilter` in the Actions panel.
 
-<ThemedImage alt="Document Types" width={800} sources={{ light: require('./filter--document-types-light.png').default, dark: require('./filter--document-types-dark.png').default }} />
+<ThemedImage alt="Document Types" width={1024} sources={{ light: require('./filter--document-types-light.png').default, dark: require('./filter--document-types-dark.png').default }} />
 
 ### With Selected Filters
 
 A filter already in force when the bar mounts: its chip is under the search box and its option is highlighted in the panel, opened for you when the story loads (`initSelectedFilterData`). Apply stays disabled until the selection changes.
 
-<ThemedImage alt="With Selected Filters" width={800} sources={{ light: require('./filter--with-selected-filters-light.png').default, dark: require('./filter--with-selected-filters-dark.png').default }} />
+<ThemedImage alt="With Selected Filters" width={1024} sources={{ light: require('./filter--with-selected-filters-light.png').default, dark: require('./filter--with-selected-filters-dark.png').default }} />
 
 ### Multiple Filter Groups
 
 Several groups in one panel, each under its heading and divided by a line, so a listing can be narrowed by type, status and author at once. The panel opens for you when the story loads; one option can be picked per group.
 
-<ThemedImage alt="Multiple Filter Groups" width={800} sources={{ light: require('./filter--multiple-filter-groups-light.png').default, dark: require('./filter--multiple-filter-groups-dark.png').default }} />
+<ThemedImage alt="Multiple Filter Groups" width={1024} sources={{ light: require('./filter--multiple-filter-groups-light.png').default, dark: require('./filter--multiple-filter-groups-dark.png').default }} />
 
 ### Rooms Filter
 
 The panel of a listing of rooms: it shows a loading skeleton for half a second before the options appear, and passes the rooms flag on to `renderSelector` (`isRooms`). The panel opens for you when the story loads.
 
-<ThemedImage alt="Rooms Filter" width={800} sources={{ light: require('./filter--rooms-filter-light.png').default, dark: require('./filter--rooms-filter-dark.png').default }} />
+<ThemedImage alt="Rooms Filter" width={1024} sources={{ light: require('./filter--rooms-filter-light.png').default, dark: require('./filter--rooms-filter-dark.png').default }} />
 
 ### Disabled Filter
 
 The bar while the listing is being reordered, when searching, filtering and sorting would fight the new order: the search box is disabled and the filter button is gone (`isIndexEditingMode`), and so are the sort button and the view switch (`isIndexing`).
 
-<ThemedImage alt="Disabled Filter" width={790} sources={{ light: require('./filter--disabled-filter-light.png').default, dark: require('./filter--disabled-filter-dark.png').default }} />
+<ThemedImage alt="Disabled Filter" width={1014} sources={{ light: require('./filter--disabled-filter-light.png').default, dark: require('./filter--disabled-filter-dark.png').default }} />
 
 ### View Selector Default
 
@@ -102,7 +102,7 @@ The single button the bar shows on a desktop: it carries the icon of the view yo
 
 The filters in force as chips under the bar, so the reader sees what narrows the listing and can drop any of it in one click. Click a chip to remove it (`removeSelectedItem`); the "Clear all" link appears once more than one chip is shown (`clearAll`).
 
-<ThemedImage alt="With Filter Chips" width={790} sources={{ light: require('./filter--with-filter-chips-light.png').default, dark: require('./filter--with-filter-chips-dark.png').default }} />
+<ThemedImage alt="With Filter Chips" width={1014} sources={{ light: require('./filter--with-filter-chips-light.png').default, dark: require('./filter--with-filter-chips-dark.png').default }} />
 
 ### Panel Option Kinds
 
@@ -112,37 +112,37 @@ The kinds of option a group can hold besides tags, for filters that are not a ch
 - **Anywhere** — a drop-down list of values (`withOptions` with `options`)
 - **Exclude subfolders** — a checkbox, in a group without a heading (`isCheckbox`, `withoutHeader`)
 
-<ThemedImage alt="Panel Option Kinds" width={800} sources={{ light: require('./filter--panel-option-kinds-light.png').default, dark: require('./filter--panel-option-kinds-dark.png').default }} />
+<ThemedImage alt="Panel Option Kinds" width={1024} sources={{ light: require('./filter--panel-option-kinds-light.png').default, dark: require('./filter--panel-option-kinds-dark.png').default }} />
 
 ### Sort Menu On Tablet
 
 The sort menu on a device narrower than a desktop, opened for you when the story loads: the view switch has left the bar and heads the menu, above the sort fields (`currentDeviceType`). The current field carries an arrow for its direction; pick it again to reverse it (`onSort`).
 
-<ThemedImage alt="Sort Menu On Tablet" width={790} sources={{ light: require('./filter--sort-menu-on-tablet-light.png').default, dark: require('./filter--sort-menu-on-tablet-dark.png').default }} />
+<ThemedImage alt="Sort Menu On Tablet" width={1014} sources={{ light: require('./filter--sort-menu-on-tablet-light.png').default, dark: require('./filter--sort-menu-on-tablet-dark.png').default }} />
 
 ### With Grouping Row
 
 A row of group chips under the bar, for a listing its host has sorted into groups: "All rooms" first, the chosen group highlighted (`currentGroupId`), and the groups that do not fit behind the "..." button. Click a chip to choose it (`onFilterByGroup`); the button at the end of the row opens the host's group management (`setEditRoomGroupsDialogVisible`).
 
-<ThemedImage alt="With Grouping Row" width={790} sources={{ light: require('./filter--with-grouping-row-light.png').default, dark: require('./filter--with-grouping-row-dark.png').default }} />
+<ThemedImage alt="With Grouping Row" width={1014} sources={{ light: require('./filter--with-grouping-row-light.png').default, dark: require('./filter--with-grouping-row-dark.png').default }} />
 
 ### With Main Button
 
 A main button inside the search box, for a listing that has no room for one of its own beside the bar (`showMainButton`, `mainButtonProps`).
 
-<ThemedImage alt="With Main Button" width={790} sources={{ light: require('./filter--with-main-button-light.png').default, dark: require('./filter--with-main-button-dark.png').default }} />
+<ThemedImage alt="With Main Button" width={1014} sources={{ light: require('./filter--with-main-button-light.png').default, dark: require('./filter--with-main-button-dark.png').default }} />
 
 ### Right To Left
 
 The bar in a right-to-left interface: the search box starts at the right edge, the filter, sort and view buttons line up at the left, and the chips and the "Clear all" link run from right to left.
 
-<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./filter--right-to-left-light.png').default, dark: require('./filter--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./filter--right-to-left-light.png').default, dark: require('./filter--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 The variables of the bar set on one wrapper -- the variables are listed under CSS variables on this page. Hover the filter and view buttons, and open the sort menu, to see the hover and menu values. The sort menu's view icons appear only below the desktop layout, so set those two with `currentDeviceType` in the Controls panel; the panel's variables apply only on `:root` or `body`, because it renders in a portal.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./filter--css-customization-light.png').default, dark: require('./filter--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./filter--css-customization-light.png').default, dark: require('./filter--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -454,6 +454,8 @@ export function FilterWithChips() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                        | Default | Effect                                                                                                          |
 | ------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------- |
 | `--filter-btn-border`           | theme   | Border of the filter button, as a `border` shorthand                                                            |
@@ -477,6 +479,8 @@ export function FilterWithChips() {
 | `--filter-separator`            | theme   | Colour of the line between groups in the filter panel                                                           |
 | `--filter-bg`                   | theme   | Background of the step `renderSelector` fills inside the panel — not of the panel itself                        |
 | `--filter-width`                | `480px` | Width of that step                                                                                              |
+
+</APITable>
 
 The two sort-menu view icons are coloured by position, not by which view they are: the rules
 assume the row view comes first in `getViewSettingsData`, so a different order swaps the colours.
@@ -505,6 +509,8 @@ the chips and the buttons inside the bar read their own components' variables �
 
 ## Test ids
 
+<APITable>
+
 | Element              | `data-testid`                   |
 | -------------------- | ------------------------------- |
 | The bar              | `filter_container`              |
@@ -512,6 +518,8 @@ the chips and the buttons inside the bar read their own components' variables �
 | One chip             | `filter_selected_item_<key>`    |
 | A room group chip    | `room_group_tag_<id>`           |
 | The overflow control | `rooms_groups_overflow_trigger` |
+
+</APITable>
 
 None of them are settable.
 

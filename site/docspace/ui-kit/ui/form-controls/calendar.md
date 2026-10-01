@@ -56,7 +56,7 @@ Calendar with min and max date constraints. Only dates within the current year a
 
 Calendar rendered in different locales. Shows how month names, weekday headers, and date formatting adapt to each locale.
 
-<ThemedImage alt="Locale Examples" width={790} sources={{ light: require('./calendar--locale-examples-light.png').default, dark: require('./calendar--locale-examples-dark.png').default }} />
+<ThemedImage alt="Locale Examples" width={1014} sources={{ light: require('./calendar--locale-examples-light.png').default, dark: require('./calendar--locale-examples-dark.png').default }} />
 
 ### Right To Left
 
@@ -186,6 +186,8 @@ export function ExpiresAt() {
 Set these on an ancestor to retheme or resize the calendar. Without them it takes its colours
 from the theme; everything else the stylesheet defines is private to it.
 
+<APITable>
+
 | Variable                    | Default               | Effect                                                                                                    |
 | --------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------- |
 | `--calendar-bg`             | theme                 | Background of the calendar                                                                                |
@@ -212,6 +214,8 @@ from the theme; everything else the stylesheet defines is private to it.
 | `--calendar-past`           | theme                 | Text colour of the days of the previous and next month, and of the items outside the shown year or decade |
 | `--calendar-disabled`       | theme                 | Text colour of the items outside `minDate` and `maxDate`                                                  |
 
+</APITable>
+
 "The mobile layout" is the one below 600px of window width, not `isMobile`.
 
 ## Accessibility
@@ -231,9 +235,13 @@ platform's:
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`               |
 | ----------- | --------------------------- |
 | The wrapper | `calendar`, or `dataTestId` |
+
+</APITable>
 
 ## Related
 

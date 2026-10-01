@@ -13,7 +13,7 @@ Modal that frames an uploaded picture: the kit's crop window between a title and
 cancel pair. It owns the preview it hands back on save, and nothing else — the picture, the crop
 and the open state all stay in your code.
 
-<ThemedImage alt="AvatarEditorDialog" width={800} sources={{ light: require('./avatar-editor-dialog--primary-light.png').default, dark: require('./avatar-editor-dialog--primary-dark.png').default }} />
+<ThemedImage alt="AvatarEditorDialog" width={1024} sources={{ light: require('./avatar-editor-dialog--primary-light.png').default, dark: require('./avatar-editor-dialog--primary-dark.png').default }} />
 
 **Portal-internal.** `t` is required, and the two footer labels and the editor's replace control
 are asked for by key, so the component needs the portal's translation context. Outside DocSpace,
@@ -53,19 +53,19 @@ those three labels are empty.
 
 The dialog as it opens on a chosen picture: drag the picture to frame it, zoom with the slider or the buttons, and press Save or Cancel. The story keeps the picture in its own state and closes the dialog from both handlers, as your code has to; reopen it with the button. Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./avatar-editor-dialog--default-light.png').default, dark: require('./avatar-editor-dialog--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1024} sources={{ light: require('./avatar-editor-dialog--default-light.png').default, dark: require('./avatar-editor-dialog--default-dark.png').default }} />
 
 ### Loading
 
 What the user sees while the cropped picture uploads: a spinner on Save and Cancel greyed out, while the picture no longer drags and the zoom row no longer responds (`isLoading`). The header cross, Escape and the backdrop still close the dialog, so guard `onClose` yourself if a close must wait for the upload.
 
-<ThemedImage alt="Loading" width={800} sources={{ light: require('./avatar-editor-dialog--loading-light.png').default, dark: require('./avatar-editor-dialog--loading-dark.png').default }} />
+<ThemedImage alt="Loading" width={1024} sources={{ light: require('./avatar-editor-dialog--loading-light.png').default, dark: require('./avatar-editor-dialog--loading-dark.png').default }} />
 
 ### Square Crop
 
 A crop window with square corners, for a picture that is not shown round, such as a logo or a cover (`editorBorderRadius` of 0). The radius is measured on the editor's 648px canvas: the default 110 gives rounded corners, 324 a circle.
 
-<ThemedImage alt="Square Crop" width={800} sources={{ light: require('./avatar-editor-dialog--square-crop-light.png').default, dark: require('./avatar-editor-dialog--square-crop-dark.png').default }} />
+<ThemedImage alt="Square Crop" width={1024} sources={{ light: require('./avatar-editor-dialog--square-crop-light.png').default, dark: require('./avatar-editor-dialog--square-crop-dark.png').default }} />
 
 ## Minimal example
 
@@ -287,9 +287,13 @@ export function LogoDialog({ t, file }: { t: TTranslation; file: File }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable              | Default | Effect                                                                                                       |
 | --------------------- | ------- | ------------------------------------------------------------------------------------------------------------ |
 | `--modal-body-height` | `auto`  | Height of the dialog body. The component sets it inline on short screens, which wins over any value you set. |
+
+</APITable>
 
 ## Accessibility
 
@@ -305,9 +309,13 @@ export function LogoDialog({ t, file }: { t: TTranslation; file: File }) {
 
 ## Test ids
 
+<APITable>
+
 | Element | `data-testid`                                              |
 | ------- | ---------------------------------------------------------- |
 | Dialog  | the value of `dataTestId`, else `modal` from `ModalDialog` |
+
+</APITable>
 
 Everything inside carries the ids of [`ImageEditor`](../interactive-elements/image-editor.md) and the kit's
 button.

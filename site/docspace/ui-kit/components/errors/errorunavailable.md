@@ -43,7 +43,7 @@ Unavailable error page. Displayed when the portal has been deactivated.
 - **Consistent Styling**
 - **Deactivation Notice**
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./errorunavailable--default-light.png').default, dark: require('./errorunavailable--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./errorunavailable--default-light.png').default, dark: require('./errorunavailable--default-dark.png').default }} />
 
 ### Usage
 

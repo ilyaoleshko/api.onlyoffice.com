@@ -46,7 +46,7 @@ the icon's default colour and for `color="accent"`.
 
 Hover over the buttons to see the alternate icon and colour, a cue that the button reacts before it is clicked (`iconHoverName`, `hoverColor`).
 
-<ThemedImage alt="With Hover State" width={120} sources={{ light: require('./icon-button--with-hover-state-light.png').default, dark: require('./icon-button--with-hover-state-dark.png').default }} />
+<ThemedImage alt="With Hover State" width={119} sources={{ light: require('./icon-button--with-hover-state-light.png').default, dark: require('./icon-button--with-hover-state-dark.png').default }} />
 
 ### With Click State
 
@@ -58,19 +58,19 @@ Press and hold the button to see the alternate icon and colour that confirm the 
 
 Icon buttons at 16, 20, 25, 32 and 40px, so a size can be picked to match the surrounding text or row height (`size`).
 
-<ThemedImage alt="Sizes" width={372} sources={{ light: require('./icon-button--sizes-light.png').default, dark: require('./icon-button--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={368} sources={{ light: require('./icon-button--sizes-light.png').default, dark: require('./icon-button--sizes-dark.png').default }} />
 
 ### Disabled
 
 Disabled icon buttons ignore clicks and hover and keep their default icon and colour (`isDisabled`). They look the same as enabled ones apart from the arrow cursor, so pair them with a visible reason when the difference matters.
 
-<ThemedImage alt="Disabled" width={120} sources={{ light: require('./icon-button--disabled-light.png').default, dark: require('./icon-button--disabled-dark.png').default }} />
+<ThemedImage alt="Disabled" width={119} sources={{ light: require('./icon-button--disabled-light.png').default, dark: require('./icon-button--disabled-dark.png').default }} />
 
 ### With Stroke
 
 Stroke mode colours the outlines of the icon's shapes and leaves their own fill as drawn, which suits outline icons (`isStroke`). The two filled icons here show that: each keeps its fill and gains a grey outline.
 
-<ThemedImage alt="With Stroke" width={120} sources={{ light: require('./icon-button--with-stroke-light.png').default, dark: require('./icon-button--with-stroke-dark.png').default }} />
+<ThemedImage alt="With Stroke" width={119} sources={{ light: require('./icon-button--with-stroke-light.png').default, dark: require('./icon-button--with-stroke-dark.png').default }} />
 
 ### With Custom Node
 
@@ -241,11 +241,15 @@ The component declares these on its own element and writes them into its inline 
 change them; the `style` prop also works, because it is applied after them. `color` accepts
 the name of a custom property (`color="--accent-main"`), which it wraps in `var()`.
 
+<APITable>
+
 | Variable                    | Default             | Effect                                                                                                                                                                                 |
 | --------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--icon-button-color`       | theme               | Icon colour, as fill, or as stroke under `isStroke`                                                                                                                                    |
 | `--icon-button-hover-color` | theme               | Icon colour while a mouse pointer is over the button; not on touch screens. Once `color` is set, the component writes the same value here, so the hover colour comes from `hoverColor` |
 | `--icon-button-size`        | `20px`, from `size` | Width and height of the button                                                                                                                                                         |
+
+</APITable>
 
 ## Accessibility
 
@@ -260,10 +264,14 @@ the name of a custom property (`color="--accent-main"`), which it wraps in `var(
 
 ## Test ids
 
+<APITable>
+
 | Element                          | `data-testid`                                |
 | -------------------------------- | -------------------------------------------- |
 | The button                       | `icon-button`, overridable with `dataTestId` |
 | The fetched SVG, with `iconName` | `icon-button-svg`                            |
+
+</APITable>
 
 ## Related
 

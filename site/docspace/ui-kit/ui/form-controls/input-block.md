@@ -13,7 +13,7 @@ Text field with an icon at the end and room for a prefix before it, inside one b
 [`TextInput`](./text-input.md) and [`IconButton`](../interactive-elements/icon-button.md) in a group
 that draws the border for them.
 
-<ThemedImage alt="InputBlock" width={790} sources={{ light: require('./input-block--primary-light.png').default, dark: require('./input-block--primary-dark.png').default }} />
+<ThemedImage alt="InputBlock" width={1014} sources={{ light: require('./input-block--primary-light.png').default, dark: require('./input-block--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -44,19 +44,19 @@ background colours.
 
 A text field with a search icon at its end, inside one border. Type in it, and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./input-block--default-light.png').default, dark: require('./input-block--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./input-block--default-light.png').default, dark: require('./input-block--default-dark.png').default }} />
 
 ### Sizes
 
 Match the field to the controls around it: **Base size**, **Middle size** and **Large size** differ in text size, padding and the height of the icon box (`size`).
 
-<ThemedImage alt="Sizes" width={790} sources={{ light: require('./input-block--sizes-light.png').default, dark: require('./input-block--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1014} sources={{ light: require('./input-block--sizes-light.png').default, dark: require('./input-block--sizes-dark.png').default }} />
 
 ### States
 
 How the field reads in each state: **Error state** and **Warning state** recolour the border of the whole group (`hasError`, `hasWarning`); **Disabled** greys the field out and drops the icon (`isDisabled`); **Read-only content** keeps the look and the icon and only stops typing (`isReadOnly`).
 
-<ThemedImage alt="States" width={790} sources={{ light: require('./input-block--states-light.png').default, dark: require('./input-block--states-dark.png').default }} />
+<ThemedImage alt="States" width={1014} sources={{ light: require('./input-block--states-light.png').default, dark: require('./input-block--states-dark.png').default }} />
 
 ### Password Type
 
@@ -74,7 +74,7 @@ An icon that does something, such as clearing the field or opening a picker, nee
 
 A fixed part of the value that the user does not type sits in front of the input, inside the same border (`children`). **Amount** has a currency sign and no icon at its end (`noIcon`); **Phone number** has a country code and keeps its icon.
 
-<ThemedImage alt="With Prefix" width={790} sources={{ light: require('./input-block--with-prefix-light.png').default, dark: require('./input-block--with-prefix-dark.png').default }} />
+<ThemedImage alt="With Prefix" width={676} sources={{ light: require('./input-block--with-prefix-light.png').default, dark: require('./input-block--with-prefix-dark.png').default }} />
 
 ### Right To Left
 
@@ -192,10 +192,14 @@ Plus 299 more props inherited from `React.AriaAttributes`, `React.DOMAttributes`
 
 ### Enums
 
+<APITable>
+
 | Enum        | Members                                                |
 | ----------- | ------------------------------------------------------ |
 | `InputSize` | `base`, `middle`, `large`                              |
 | `InputType` | `text`, `password`, `email`, `tel`, `search`, `number` |
+
+</APITable>
 
 ## Recipes
 
@@ -336,6 +340,8 @@ export function Subdomain() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                         | Default                  | Effect                                                                   |
 | -------------------------------- | ------------------------ | ------------------------------------------------------------------------ |
 | `--input-block-icon-padding`     | `8px`                    | Space after the icon at `base` and `middle`; one length, not a shorthand |
@@ -349,6 +355,8 @@ export function Subdomain() {
 | `--text-input-border-focus`      | `--input-border-focus`   | Border colour of the group while the field has focus                     |
 | `--text-input-radius`            | `--input-border-radius`  | Corner radius of the group                                               |
 | `--text-input-font-size`         | `13px` (`16px` at large) | Font size of the field, at every size at once                            |
+
+</APITable>
 
 The `--text-input-*` variables come from the shared input styles, so they mean what they mean
 for [`TextInput`](./text-input.md); here the group reads them, because the inner field
@@ -369,10 +377,14 @@ draws no border of its own. Set them on the group or any ancestor.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`                   |
 | --------- | ------------------------------- |
 | The group | `input-block`, or `dataTestId`  |
 | The input | `testId`, passed to `TextInput` |
+
+</APITable>
 
 ## Related
 

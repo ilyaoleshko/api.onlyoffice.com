@@ -59,31 +59,31 @@ Pick the width by the room the form gives the field: 173px for a short value, 30
 
 Match `type` to the value so the browser supplies the right keyboard and value rules: password hides the characters, number rejects letters, email and tel bring up their own touch keyboards.
 
-<ThemedImage alt="Types" width={715} sources={{ light: require('./text-input--types-light.png').default, dark: require('./text-input--types-dark.png').default }} />
+<ThemedImage alt="Types" width={949} sources={{ light: require('./text-input--types-light.png').default, dark: require('./text-input--types-dark.png').default }} />
 
 ### States
 
 Every state the field can be in, side by side: a red border on `hasError`, an orange one on `hasWarning`, a grey box that ignores input on `isDisabled`, a field that blocks typing without changing its look on `isReadOnly`, and the bare text of `withBorder={false}` for inline use.
 
-<ThemedImage alt="States" width={715} sources={{ light: require('./text-input--states-light.png').default, dark: require('./text-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={949} sources={{ light: require('./text-input--states-light.png').default, dark: require('./text-input--states-dark.png').default }} />
 
 ### With Mask
 
 Use a mask when the value has one fixed shape, such as a date or a phone number: the field inserts the separators as the user types and refuses characters that do not fit (`mask`). The date and phone fields show the whole pattern up front with underscores for the missing digits (`guide`); only the date field keeps the other digits in place when one is deleted (`keepCharPositions`). The third field passes a function instead of an array, so the pattern is chosen from the value as it is typed: a plain digit starts a four-digit extension, a leading `+` switches to the full number; without `guide` the mask grows with the value.
 
-<ThemedImage alt="With Mask" width={715} sources={{ light: require('./text-input--with-mask-light.png').default, dark: require('./text-input--with-mask-dark.png').default }} />
+<ThemedImage alt="With Mask" width={696} sources={{ light: require('./text-input--with-mask-light.png').default, dark: require('./text-input--with-mask-dark.png').default }} />
 
 ### Scaled Inputs
 
 Let the field fill its column instead of its size's fixed width, for form grids and side panels (`scale`); font size and padding still follow `size`.
 
-<ThemedImage alt="Scaled Inputs" width={790} sources={{ light: require('./text-input--scaled-inputs-light.png').default, dark: require('./text-input--scaled-inputs-dark.png').default }} />
+<ThemedImage alt="Scaled Inputs" width={1014} sources={{ light: require('./text-input--scaled-inputs-light.png').default, dark: require('./text-input--scaled-inputs-dark.png').default }} />
 
 ### Bold Text
 
 Emphasize a value with `isBold` (600) or pass any `fontWeight`; the middle size is already 600, so `isBold` changes nothing there.
 
-<ThemedImage alt="Bold Text" width={715} sources={{ light: require('./text-input--bold-text-light.png').default, dark: require('./text-input--bold-text-dark.png').default }} />
+<ThemedImage alt="Bold Text" width={696} sources={{ light: require('./text-input--bold-text-light.png').default, dark: require('./text-input--bold-text-dark.png').default }} />
 
 ### Auto Focused
 
@@ -182,10 +182,14 @@ Plus 299 more props inherited from `React.AriaAttributes`, `React.DOMAttributes`
 
 ### Enums
 
+<APITable>
+
 | Enum        | Members                                                |
 | ----------- | ------------------------------------------------------ |
 | `InputType` | `text`, `password`, `email`, `tel`, `search`, `number` |
 | `InputSize` | `base`, `middle`, `large`                              |
+
+</APITable>
 
 ## Recipes
 
@@ -336,6 +340,8 @@ export function PhoneField() {
 
 Set these on any ancestor; the stylesheet reads them through a fallback to the theme token.
 
+<APITable>
+
 | Variable                    | Default                 | Effect                                                                          |
 | --------------------------- | ----------------------- | ------------------------------------------------------------------------------- |
 | `--text-input-bg`           | `--input-bg`            | Background, applied as a large inset box-shadow so autofill does not repaint it |
@@ -347,6 +353,8 @@ Set these on any ancestor; the stylesheet reads them through a fallback to the t
 | `--text-input-font-size`    | per-size value          | Overrides the font size of all three sizes at once                              |
 | `--text-input-disabled-bg`  | `--input-disabled-bg`   | Background while disabled                                                       |
 
+</APITable>
+
 Two states set their colours from the theme directly and ignore these overrides. Under
 `hasError` or `hasWarning` the border comes from the theme's error or warning tokens, so
 `--text-input-border-color`, `-hover` and `-focus` stop applying. A disabled field takes its
@@ -356,6 +364,8 @@ text, caret and border colours from the theme as well; only `--text-input-radius
 The theme tokens below are declared on the `<input>` element itself, so a value set on an
 ancestor never reaches it. Override them through the `style` prop only.
 
+<APITable>
+
 | Variable                                               | Default                     | Effect                                   |
 | ------------------------------------------------------ | --------------------------- | ---------------------------------------- |
 | `--input-width-base` / `-middle` / `-large`            | `173px` / `300px` / `550px` | Width per `InputSize`                    |
@@ -363,6 +373,8 @@ ancestor never reaches it. Override them through the `style` prop only.
 | `--text-input-padding-base` / `-middle` / `-large`     | theme values                | Padding per size                         |
 | `--text-input-line-height-base` / `-middle` / `-large` | theme values                | Line height per size                     |
 | `--text-input-placeholder-color`                       | theme value                 | Placeholder colour; disabled has its own |
+
+</APITable>
 
 ## Accessibility
 
@@ -379,9 +391,13 @@ ancestor never reaches it. Override them through the `style` prop only.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid` | Override |
 | ------------- | ------------- | -------- |
 | The `<input>` | `text-input`  | `testId` |
+
+</APITable>
 
 The element also carries `data-size`, and `data-error`, `data-warning`, `data-scale`,
 `data-without-border`, `data-keep-char-positions` and `data-guide`, each set to `"true"`

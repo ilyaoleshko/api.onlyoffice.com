@@ -432,6 +432,8 @@ export function SidebarWithDialog() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default                  | Effect                                                                     |
 | ----------------------------------- | ------------------------ | -------------------------------------------------------------------------- |
 | `--nav-menu-group-label-color`      | theme-based              | Group caption text                                                         |
@@ -443,6 +445,8 @@ export function SidebarWithDialog() {
 | `--nav-menu-item-bg-active`         | theme-based              | Highlight under the active entry                                           |
 | `--nav-menu-signal-dot-color`       | theme-based (the accent) | Dot on the icon of an entry with a badge; only the collapsed rail shows it |
 | `--nav-menu-separator-color`        | none — no line is drawn  | Line above a sub-item with `withTopSeparator`                              |
+
+</APITable>
 
 **Every variable but the last is declared on the menu's own `nav` element**, under the theme
 class (`.light .root`, `.dark .root`), so a value set on a wrapper never arrives. Set them in a

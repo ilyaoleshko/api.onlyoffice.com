@@ -2,6 +2,8 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Structure.mdx"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Structure
 
 `@onlyoffice/apps-ui-kit` is a standalone repository. It builds, tests and runs this
@@ -57,6 +59,8 @@ The sidebar is grouped by what a reader is looking for, not by folder. **UI** ho
 general-purpose components, and **Components** holds the larger portal-level pieces,
 some of which are public (Providers, Errors) and some are not.
 
+<APITable>
+
 | Sidebar entry                    | Source                                                 | Tier                 |
 | -------------------------------- | ------------------------------------------------------ | -------------------- |
 | Getting started                  | `docs/*.mdx`                                           | Documentation        |
@@ -71,6 +75,8 @@ some of which are public (Providers, Errors) and some are not.
 | Components / Providers           | `providers/` (theme, translation, error boundary, api) | Public, except `api` |
 | Components / Errors              | `errors/`                                              | Public               |
 | Samples                          | `docs/samples/`                                        | Demo only            |
+
+</APITable>
 
 There is no "AI Agent" entry: the `ai-agent/` folder appears as two. **AI Chat** is the
 chat panel, and the toolbar, intro and new-chat screen are parts of it that show up inside

@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 {/*
 (c) Copyright Ascensio System SIA 2009-2026
 
@@ -49,7 +51,7 @@ AIAgentSelector is a selector panel for choosing an AI agent room.
 
 A basic AIAgentSelector with default settings.
 
-<ThemedImage alt="Default" width={795} sources={{ light: require('./aiagentselector--default-light.png').default, dark: require('./aiagentselector--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1019} sources={{ light: require('./aiagentselector--default-light.png').default, dark: require('./aiagentselector--default-dark.png').default }} />
 
 ```tsx
 import AIAgentSelector from "@onlyoffice/apps-ui-kit/selectors/AIAgent";
@@ -63,4 +65,21 @@ import AIAgentSelector from "@onlyoffice/apps-ui-kit/selectors/AIAgent";
 
 ## Properties
 
-<ThemedImage alt="Controls" width={851} sources={{ light: require('./aiagentselector--block0-light.png').default, dark: require('./aiagentselector--block0-dark.png').default }} />
+<APITable>
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `id`? | `stringundefined` | HTML id attribute for the root element. |
+| `className`? | `stringundefined` | Additional CSS class name for the root element. |
+| `style`? | `CSSPropertiesundefined` |  |
+| `onSubmit` | `(items: TSelectorItem[]) => void \| Promise<void>` | Called with the selected TSelectorItem array on confirm. |
+| `excludeItems`? | `(string \| number \| undefined)[] \| undefined` | List of item ids to exclude from the selector list. |
+| `setIsDataReady`? | `((value: boolean) => void) \| undefined` | Called with true/false when data loading state changes. |
+| `withPadding`? | `booleanundefined` | Add inner padding to the selector panel. Default: `false`. |
+| `onClose` | `() => void` | Called when the selector panel is dismissed. |
+| `disableBySecurity`? | `stringundefined` | Message shown on items where UseChat security permission is missing. |
+| `externalInfoBarData`? | `TInfoBarDataundefined` |  |
+| `withInit`? | `trueundefined` | Use pre-loaded init data instead of fetching from the API. Default: `false`. |
+| `initItems`? | `FolderDtoInteger[] \| undefined` |  |
+
+</APITable>

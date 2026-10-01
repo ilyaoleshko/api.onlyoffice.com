@@ -50,19 +50,19 @@ The field on its own, starting on the kit's blue. Type a hex code or click the s
 
 Pick the size that matches the other fields in the same form: **base**, **middle** and **large** differ in width, and **large** also in text size and padding, while all three keep the same height (`size`).
 
-<ThemedImage alt="Sizes" width={795} sources={{ light: require('./color-input--sizes-light.png').default, dark: require('./color-input--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1019} sources={{ light: require('./color-input--sizes-light.png').default, dark: require('./color-input--sizes-dark.png').default }} />
 
 ### States
 
 Show whether the entered color is accepted: the first field is in its normal state, the second has a red border (`hasError`), the third an orange one (`hasWarning`), and the fourth is greyed out and its swatch no longer opens the picker (`isDisabled`).
 
-<ThemedImage alt="States" width={707} sources={{ light: require('./color-input--states-light.png').default, dark: require('./color-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={941} sources={{ light: require('./color-input--states-light.png').default, dark: require('./color-input--states-dark.png').default }} />
 
 ### Scaled Input
 
 Use it where the field shares a column with full-width inputs: the field stretches across its container and the swatch stays at its end (`scale`).
 
-<ThemedImage alt="Scaled Input" width={790} sources={{ light: require('./color-input--scaled-input-light.png').default, dark: require('./color-input--scaled-input-dark.png').default }} />
+<ThemedImage alt="Scaled Input" width={1014} sources={{ light: require('./color-input--scaled-input-light.png').default, dark: require('./color-input--scaled-input-dark.png').default }} />
 
 ### Css Customization
 
@@ -188,6 +188,8 @@ export function AccentColour() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                      | Default   | Effect                                                                                 |
 | ----------------------------- | --------- | -------------------------------------------------------------------------------------- |
 | `--color-input-height`        | `32px`    | Height of the hex field                                                                |
@@ -195,6 +197,8 @@ export function AccentColour() {
 | `--color-input-swatch-size`   | `20px`    | Width and height of the swatch                                                         |
 | `--color-input-swatch-radius` | `2px`     | Corner radius of the swatch                                                            |
 | `--block-color`               | the value | Fill of the swatch; written by the component                                           |
+
+</APITable>
 
 The field's border, background and sizes come from the shared input styles, so they follow
 [`TextInput`](./text-input.md): `--text-input-color`, `--text-input-border-color`,
@@ -218,9 +222,13 @@ white (black in the dark theme).
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                  |
 | ----------- | ------------------------------ |
 | The wrapper | `color-input`, or `dataTestId` |
+
+</APITable>
 
 The picker inside carries its own ids — see [`ColorPicker`](./color-picker.md).
 

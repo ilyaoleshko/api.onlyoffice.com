@@ -229,6 +229,8 @@ export function DetailsHeader({
 Set these on the header or an ancestor; each is read through a bridge variable, so the theme's
 own value is the fallback.
 
+<APITable>
+
 | Variable                          | Default         | Effect                                                                                                                      |
 | --------------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | `--aside-header-color`            | theme text      | Colour of a node title; a string title ignores it                                                                           |
@@ -244,6 +246,8 @@ own value is the fallback.
 | `--aside-header-title-inset`      | `auto`          | `inset-inline-start` of the title                                                                                           |
 | `--aside-header-title-transform`  | `none`          | `transform` of the title                                                                                                    |
 | `--aside-header-title-text-align` | `start`         | `text-align` of the title; visible only on a title wider than its text                                                      |
+
+</APITable>
 
 `--aside-header-custom-height` is the exception to setting a variable on an ancestor: the theme
 rules redefine it on the header itself, so only `headerHeight` changes it.
@@ -272,12 +276,16 @@ a neighbouring header's title away from its back arrow.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid`                                 |
 | --------------- | --------------------------------------------- |
 | The header      | `aside-header`, overridable with `dataTestId` |
 | The back arrow  | `aside_header_back_icon_button`               |
 | The close cross | `aside_header_close_icon_button`              |
 | The icon strip  | `icons-container`                             |
+
+</APITable>
 
 While `isLoading`, the header's only child is the skeleton, which carries `rectangle-skeleton`.
 

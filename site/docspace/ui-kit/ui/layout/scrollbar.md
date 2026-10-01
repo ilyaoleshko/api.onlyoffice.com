@@ -62,7 +62,7 @@ The thumb stays at its wider 8px thickness on desktop instead of widening only w
 
 Content that overflows sideways gets a horizontal track along the bottom edge, drawn the same way as the vertical one.
 
-<ThemedImage alt="With Horizontal Scroll" width={791} sources={{ light: require('./scrollbar--with-horizontal-scroll-light.png').default, dark: require('./scrollbar--with-horizontal-scroll-dark.png').default }} />
+<ThemedImage alt="With Horizontal Scroll" width={1015} sources={{ light: require('./scrollbar--with-horizontal-scroll-light.png').default, dark: require('./scrollbar--with-horizontal-scroll-dark.png').default }} />
 
 ### With Both Scrollbars
 
@@ -214,6 +214,8 @@ export function ShortList({ names }: { names: string[] }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                         | Default    | Effect                                                                                           |
 | -------------------------------- | ---------- | ------------------------------------------------------------------------------------------------ |
 | `--scrollbar-bg`                 | theme grey | Colour of the thumb                                                                              |
@@ -225,6 +227,8 @@ export function ShortList({ names }: { names: string[] }) {
 | `--scrollbar-padding-end`        | `17px`     | Space between the content and the side the vertical track is on; `paddingInlineEnd` overrides it |
 | `--scrollbar-padding-end-mobile` | `8px`      | The same space on screens up to 600px wide; `paddingInlineEnd` overrides it too                  |
 | `--scrollbar-last-padding`       | unset      | Space after the last item, also a prop                                                           |
+
+</APITable>
 
 The track itself is transparent, so `--scrollbar-radius` shows only where it clips a thumb that
 reaches the track's corner — with `--scrollbar-track-padding: 0`.
@@ -241,11 +245,15 @@ reaches the track's corner — with `--scrollbar-track-padding: 0`.
 
 ## Test ids
 
+<APITable>
+
 | Element               | `data-testid` |
 | --------------------- | ------------- |
 | The outermost element | `scrollbar`   |
 | The scrolling element | `scroller`    |
 | The content element   | `scroll-body` |
+
+</APITable>
 
 None of them can be overridden by a prop.
 

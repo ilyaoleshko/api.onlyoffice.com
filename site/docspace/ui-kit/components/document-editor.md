@@ -2,8 +2,6 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/document-editor/DocumentEditor.mdx"
 ---
 
-import ThemedImage from '@theme/ThemedImage';
-
 # Document Editor
 
 DocumentEditor wraps the \`@onlyoffice/document-editor-react\` component, embedding an ONLYOFFICE Document Server editor into the UI.
@@ -11,8 +9,6 @@ DocumentEditor wraps the \`@onlyoffice/document-editor-react\` component, embedd
 ### Document editor sample
 
 This example opens a document in full edit mode, showing how the wrapper passes the config and callbacks to the embedded editor.
-
-<ThemedImage alt="Default" width={596} sources={{ light: require('./document-editor--default-light.png').default, dark: require('./document-editor--default-dark.png').default }} />
 
 Mounting the editor with an ID, file ID, and fixed size. Editing is allowed by default.
 
@@ -24,8 +20,6 @@ Mounting the editor with an ID, file ID, and fixed size. Editing is allowed by d
 
 Demonstrates read-only viewing for a file with navigation controls enabled but editing disabled.
 
-<ThemedImage alt="View Mode" width={596} sources={{ light: require('./document-editor--view-mode-light.png').default, dark: require('./document-editor--view-mode-dark.png').default }} />
-
 The same component in view-only mode via `isView`, with an explicit size and unique instance ID.
 
 ```tsx
@@ -35,8 +29,6 @@ The same component in view-only mode via `isView`, with an explicit size and uni
 ### Document editor with custom event
 
 Demonstrates how to use custom events to interact with the editor.
-
-<ThemedImage alt="With Custom Event" width={596} sources={{ light: require('./document-editor--with-custom-event-light.png').default, dark: require('./document-editor--with-custom-event-dark.png').default }} />
 
 ```tsx
 const onDocumentReady = () => {
@@ -57,8 +49,6 @@ const onDocumentReady = () => {
 ### Document editor with auto-fill sample
 
 Shows how to open a spreadsheet, pick a sheet from the selector, then auto-fill it with a chosen dataset using the Document Editor connector API.
-
-<ThemedImage alt="Fill Spreadsheet With Data" width={596} sources={{ light: require('./document-editor--fill-spreadsheet-with-data-light.png').default, dark: require('./document-editor--fill-spreadsheet-with-data-dark.png').default }} />
 
 ```tsx
 const [fileId, setFileId] = useState<number | null>(null);

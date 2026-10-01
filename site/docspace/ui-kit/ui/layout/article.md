@@ -13,7 +13,7 @@ DocSpace's left panel: a fixed column with a header slot, a main button, a scrol
 profile block. Almost everything in it is decided by the portal — the tariff, the Zendesk account,
 the developer tools, the signed-in person — which is why it takes some thirty props.
 
-<ThemedImage alt="Article" width={259} sources={{ light: require('./article--primary-light.png').default, dark: require('./article--primary-dark.png').default }} />
+<ThemedImage alt="Article" width={268} sources={{ light: require('./article--primary-light.png').default, dark: require('./article--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -50,67 +50,67 @@ labels from the kit's shared translations and render **empty strings** without i
 
 The panel as a desktop page shows it: the logo, the body, the developer tools entry, the download links and the profile block. Click the dots beside the name to open the actions menu (`getActions`), and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={259} sources={{ light: require('./article--default-light.png').default, dark: require('./article--default-dark.png').default }} />
+<ThemedImage alt="Default" width={268} sources={{ light: require('./article--default-light.png').default, dark: require('./article--default-dark.png').default }} />
 
 ### With Main Button
 
 **New document** — the page's primary command, kept above the navigation where it is always in reach (`withMainButton`, `Article.MainButton`).
 
-<ThemedImage alt="With Main Button" width={259} sources={{ light: require('./article--with-main-button-light.png').default, dark: require('./article--with-main-button-dark.png').default }} />
+<ThemedImage alt="With Main Button" width={268} sources={{ light: require('./article--with-main-button-light.png').default, dark: require('./article--with-main-button-dark.png').default }} />
 
 ### Custom Header
 
 **Documents** — the application's own title in the header row in place of the logo, for a layout that names the panel itself (`withCustomArticleHeader`, `Article.Header`).
 
-<ThemedImage alt="Custom Header" width={259} sources={{ light: require('./article--custom-header-light.png').default, dark: require('./article--custom-header-dark.png').default }} />
+<ThemedImage alt="Custom Header" width={268} sources={{ light: require('./article--custom-header-light.png').default, dark: require('./article--custom-header-dark.png').default }} />
 
 ### With Back Button
 
 **Back** — a way out of a nested section at the top of the body. It calls `onBack`, or navigates home when there is none (`showBackButton`).
 
-<ThemedImage alt="With Back Button" width={259} sources={{ light: require('./article--with-back-button-light.png').default, dark: require('./article--with-back-button-dark.png').default }} />
+<ThemedImage alt="With Back Button" width={268} sources={{ light: require('./article--with-back-button-light.png').default, dark: require('./article--with-back-button-dark.png').default }} />
 
 ### Loading State
 
 Skeletons in place of the logo and the profile block while the page's data is still arriving, so the panel keeps its shape; the body slot is still rendered (`isBurgerLoading`, `showArticleLoader`).
 
-<ThemedImage alt="Loading State" width={259} sources={{ light: require('./article--loading-state-light.png').default, dark: require('./article--loading-state-dark.png').default }} />
+<ThemedImage alt="Loading State" width={268} sources={{ light: require('./article--loading-state-light.png').default, dark: require('./article--loading-state-dark.png').default }} />
 
 ### With Custom Slot
 
 **Storage: 2 GB of 10 GB** — a notice that belongs to the panel rather than to the navigation, placed between the body and the developer tools entry (`customSlot`).
 
-<ThemedImage alt="With Custom Slot" width={259} sources={{ light: require('./article--with-custom-slot-light.png').default, dark: require('./article--with-custom-slot-dark.png').default }} />
+<ThemedImage alt="With Custom Slot" width={268} sources={{ light: require('./article--with-custom-slot-light.png').default, dark: require('./article--with-custom-slot-dark.png').default }} />
 
 ### Without Footer Blocks
 
 The body with nothing below it, for a page that shows the person and the download links elsewhere: no profile block (`hideProfileBlock`), no download links (`hideAppsBlock`) and no developer tools entry for a person who is not an administrator (`limitedAccessDevToolsForUsers`).
 
-<ThemedImage alt="Without Footer Blocks" width={259} sources={{ light: require('./article--without-footer-blocks-light.png').default, dark: require('./article--without-footer-blocks-dark.png').default }} />
+<ThemedImage alt="Without Footer Blocks" width={268} sources={{ light: require('./article--without-footer-blocks-light.png').default, dark: require('./article--without-footer-blocks-dark.png').default }} />
 
 ### Collapsed On Tablet
 
 A 60px column of icons in a tablet-width window, which leaves the page most of the screen (`showText` off). Click the handle at the foot to expand it and again to collapse it (`toggleShowText`).
 
-<ThemedImage alt="Collapsed On Tablet" width={76} sources={{ light: require('./article--collapsed-on-tablet-light.png').default, dark: require('./article--collapsed-on-tablet-dark.png').default }} />
+<ThemedImage alt="Collapsed On Tablet" width={268} sources={{ light: require('./article--collapsed-on-tablet-light.png').default, dark: require('./article--collapsed-on-tablet-dark.png').default }} />
 
 ### On Phone
 
 The panel on a phone: it covers the page below a 64px top strip, over a backdrop, and drops the profile block. Close it with the cross in its header or a tap on the backdrop (`toggleArticleOpen`); switch `articleOpen` in the Controls panel of the story canvas to open it again.
 
-<ThemedImage alt="On Phone" width={800} sources={{ light: require('./article--on-phone-light.png').default, dark: require('./article--on-phone-dark.png').default }} />
+<ThemedImage alt="On Phone" width={1024} sources={{ light: require('./article--on-phone-light.png').default, dark: require('./article--on-phone-dark.png').default }} />
 
 ### Right To Left
 
 The panel in a right-to-left interface: its border moves to the left edge, the back arrow points right and the dots button sits on the left of the profile block.
 
-<ThemedImage alt="Right To Left" width={259} sources={{ light: require('./article--right-to-left-light.png').default, dark: require('./article--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={268} sources={{ light: require('./article--right-to-left-light.png').default, dark: require('./article--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 Five of the panel's variables set on one wrapper -- the variables are listed under CSS variables on this page. The first panel shows the background, the borders and the profile block; the second adds the back button (`showBackButton`) for `--article-back-color`.
 
-<ThemedImage alt="Css Customization" width={534} sources={{ light: require('./article--css-customization-light.png').default, dark: require('./article--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={552} sources={{ light: require('./article--css-customization-light.png').default, dark: require('./article--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -406,11 +406,15 @@ export function CollapsibleSidebar() {
 
 ## Sub-components
 
+<APITable>
+
 | Name                 | What it is for                                                                                                       |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `Article.Header`     | Content of the header row, beside the burger and the logo                                                            |
 | `Article.MainButton` | The primary action above the body; rendered only while `withMainButton` is set, and moved below the panel on a phone |
 | `Article.Body`       | The scrolling body. Its single element child, when a component, is cloned with a `hasCustomSlot` prop                |
+
+</APITable>
 
 They are static properties of `Article`, not separate exports, and they accept nothing but
 `children`.
@@ -421,6 +425,8 @@ prop becomes the tooltip; `isEndOfBlock` closes a group with a bottom margin of 
 below 1024px). It has no README of its own; its variables are listed below.
 
 ## CSS variables
+
+<APITable>
 
 | Variable                            | Default            | Effect                                                                                                                                                        |
 | ----------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -435,7 +441,11 @@ below 1024px). It has no README of its own; its variables are listed below.
 | `--article-sidebar-width`           | `243px`            | Width in a tablet-width window (600–1024px) while `showText` is set. The profile block and the collapse handle keep 243px                                     |
 | `--article-sidebar-collapsed-width` | `60px`             | Width in a tablet-width window while `showText` is off. The profile block and the collapse handle keep 60px                                                   |
 
+</APITable>
+
 `ArticleItem` reads its own set:
+
+<APITable>
 
 | Variable                         | Default     | Effect                                                                                         |
 | -------------------------------- | ----------- | ---------------------------------------------------------------------------------------------- |
@@ -450,6 +460,8 @@ below 1024px). It has no README of its own; its variables are listed below.
 | `--article-item-icon`            | theme-based | Icon fill                                                                                      |
 | `--article-item-icon-active`     | theme-based | Icon fill of the active row                                                                    |
 | `--sidebar-item-gap`             | `0`         | Space below every row, set on any ancestor; an `isEndOfBlock` row keeps its own margin instead |
+
+</APITable>
 
 ## Accessibility
 
@@ -466,9 +478,13 @@ below 1024px). It has no README of its own; its variables are listed below.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid` |
 | --------- | ------------- |
 | The panel | `article`     |
+
+</APITable>
 
 It is not settable. The panel also carries `data-show-text`, `data-open` and
 `data-with-main-button`, and its element id is `article-container`.

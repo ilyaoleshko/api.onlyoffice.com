@@ -2,6 +2,8 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Constants.mdx"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Constants, enums and types
 
 Three small modules carry the values and the vocabulary the rest of the library is written
@@ -31,6 +33,8 @@ const items = data?.items ?? EMPTY_ARRAY;
 
 ### File formats and validation
 
+<APITable>
+
 | Constant                    | Value                                                                   |
 | --------------------------- | ------------------------------------------------------------------------- |
 | `TEMPLATE_GALLERY_FORMATS`  | `.docx`, `.xlsx`, `.pptx`, `.pdf`                                        |
@@ -40,6 +44,8 @@ const items = data?.items ?? EMPTY_ARRAY;
 | `FOLDER_FORM_VALIDATION`    | The regex of characters a folder name may not contain                     |
 | `MAX_VISIBLE_EXTENSIONS`    | `5` — how many extensions a format list shows before collapsing           |
 
+</APITable>
+
 ### Uploads
 
 `DEFAULT_CHUNK_UPLOAD_SIZE` (5 MB), `DEFAULT_MAX_UPLOAD_THREAD_COUNT` (3) and
@@ -47,6 +53,8 @@ const items = data?.items ?? EMPTY_ARRAY;
 from its own settings where it has them.
 
 ### Everything else
+
+<APITable>
 
 | Constant                          | What it is                                                                     |
 | --------------------------------- | -------------------------------------------------------------------------------- |
@@ -56,6 +64,8 @@ from its own settings where it has them.
 | `LANGUAGE`                        | `asc_language` — the name of the portal's language cookie                        |
 | `LIVE_CHAT_LOCAL_STORAGE_KEY`     | Deprecated — the live chat no longer stores its open/closed state; nothing reads it |
 | `ASIDE_PADDING_AFTER_LAST_ITEM`   | `12px` — bottom padding an aside leaves under its last row                       |
+
+</APITable>
 
 ### Brand and constant lookups
 
@@ -90,6 +100,8 @@ literal key `ProductName`. A realm-global slot survives that.
 
 `enums/` re-exports 38 enumerations. The ones you will reach for most:
 
+<APITable>
+
 | Enum                                              | Covers                                                           |
 | ------------------------------------------------- | ------------------------------------------------------------------ |
 | `DeviceType`                                       | `mobile`, `tablet`, `desktop` — the value the layout branches on  |
@@ -102,6 +114,8 @@ literal key `ProductName`. A realm-global slot survives that.
 | `ButtonKeys`, `Events`, `EventType`, `AnalyticsEvents` | Keyboard keys, DOM custom events and analytics event names   |
 | `ServerType`, `ToolsPermission`, `ChatReasoningEffort`, `VectorizationStatus` | AI agent and MCP server concepts           |
 | `ErrorKeys`, `ParseErrorTypes`                     | Error identifiers, including the email parser's                   |
+
+</APITable>
 
 Six of these — `SdkDateToAutoCleanUp`, `SdkSortedByType`,
 `SdkFilesSettingsDtoDefaultSharingAccessRightsEnum` and the `EmployeeFullDto`,

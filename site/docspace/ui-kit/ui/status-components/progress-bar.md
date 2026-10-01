@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 A labelled bar for an operation whose progress you can measure, with a status or error line under
 it. It is three stacked lines — label, bar, status — and it is always as wide as its container.
 
-<ThemedImage alt="ProgressBar" width={790} sources={{ light: require('./progress-bar--primary-light.png').default, dark: require('./progress-bar--primary-dark.png').default }} />
+<ThemedImage alt="ProgressBar" width={1014} sources={{ light: require('./progress-bar--primary-light.png').default, dark: require('./progress-bar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -45,43 +45,43 @@ element with no background at all — **an invisible bar**, not a default-colour
 
 Use it for an operation whose progress you can measure: the label names the operation and the fill shows how far it has got (`percent`, `label`). Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./progress-bar--default-light.png').default, dark: require('./progress-bar--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./progress-bar--default-light.png').default, dark: require('./progress-bar--default-dark.png').default }} />
 
 ### With Status
 
 Add a status line when the reader needs more than the fill tells them — how many items are done, what is being processed now (`status`).
 
-<ThemedImage alt="With Status" width={790} sources={{ light: require('./progress-bar--with-status-light.png').default, dark: require('./progress-bar--with-status-dark.png').default }} />
+<ThemedImage alt="With Status" width={1014} sources={{ light: require('./progress-bar--with-status-light.png').default, dark: require('./progress-bar--with-status-dark.png').default }} />
 
 ### With Error
 
 When the operation fails, the message takes the place of the status line in the error colour, and the bar stays where it stopped (`error`).
 
-<ThemedImage alt="With Error" width={790} sources={{ light: require('./progress-bar--with-error-light.png').default, dark: require('./progress-bar--with-error-dark.png').default }} />
+<ThemedImage alt="With Error" width={1014} sources={{ light: require('./progress-bar--with-error-light.png').default, dark: require('./progress-bar--with-error-dark.png').default }} />
 
 ### Infinite Progress
 
 Use it when the operation cannot report how far it has got: a short strip slides across the track until the bar is removed (`isInfiniteProgress`).
 
-<ThemedImage alt="Infinite Progress" width={790} sources={{ light: require('./progress-bar--infinite-progress-light.png').default, dark: require('./progress-bar--infinite-progress-dark.png').default }} />
+<ThemedImage alt="Infinite Progress" width={1014} sources={{ light: require('./progress-bar--infinite-progress-light.png').default, dark: require('./progress-bar--infinite-progress-dark.png').default }} />
 
 ### Complete
 
 The finished state: the track is filled completely and the status line confirms the result (`percent={100}`).
 
-<ThemedImage alt="Complete" width={790} sources={{ light: require('./progress-bar--complete-light.png').default, dark: require('./progress-bar--complete-dark.png').default }} />
+<ThemedImage alt="Complete" width={1014} sources={{ light: require('./progress-bar--complete-light.png').default, dark: require('./progress-bar--complete-dark.png').default }} />
 
 ### Preparation Portal
 
 Use `PreparationPortalProgress` for a full-page wait where the number itself matters: a taller bar with the percentage printed in its middle and a centred caption below (`percent`, `text`). The percentage turns from dark to light once the fill passes 50%; move `percent` in the Controls panel below to see it.
 
-<ThemedImage alt="Preparation Portal" width={790} sources={{ light: require('./progress-bar--preparation-portal-light.png').default, dark: require('./progress-bar--preparation-portal-dark.png').default }} />
+<ThemedImage alt="Preparation Portal" width={1014} sources={{ light: require('./progress-bar--preparation-portal-light.png').default, dark: require('./progress-bar--preparation-portal-dark.png').default }} />
 
 ### Right To Left
 
 The bar under a right-to-left interface: the label and status line align to the right, the fill grows from the right edge, and the infinite strip in the second bar slides from right to left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
 
-<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./progress-bar--right-to-left-light.png').default, dark: require('./progress-bar--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./progress-bar--right-to-left-light.png').default, dark: require('./progress-bar--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
@@ -89,7 +89,7 @@ The variables are listed under CSS variables on this page; the example sets ever
 
 The first bar shows the track, fill, size, radius, margin and status colour; the second sets `error` to show `--progress-bar-error-text`, since an error takes the place of the status line.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./progress-bar--css-customization-light.png').default, dark: require('./progress-bar--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./progress-bar--css-customization-light.png').default, dark: require('./progress-bar--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -254,6 +254,8 @@ A second, unrelated bar: 24px tall with the percentage written inside it, used o
 
 ## CSS variables
 
+<APITable name="CSS-variables">
+
 | Variable                       | Default                         | Effect                                                                  |
 | ------------------------------ | ------------------------------- | ----------------------------------------------------------------------- |
 | `--progress-bar-track`         | theme grey                      | Background of the track                                                 |
@@ -263,6 +265,8 @@ A second, unrelated bar: 24px tall with the percentage written inside it, used o
 | `--progress-bar-size`          | `4px`                           | Height of the bar                                                       |
 | `--progress-bar-radius`        | `3px`                           | Corner radius of bar and fill                                           |
 | `--progress-bar-bottom-margin` | `8px`                           | Space between the bar and the text                                      |
+
+</APITable>
 
 `--progress-bar-error-text` shows only while `error` is set, since the error line takes the place
 of the status line. `PreparationPortalProgress` reads none of these.
@@ -283,12 +287,16 @@ of the status line. `PreparationPortalProgress` reads none of these.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element                      | `data-testid`                 |
 | ---------------------------- | ----------------------------- |
 | The bar                      | `progress-bar`                |
 | The filled portion           | `progress-bar-percent`        |
 | The sliding strip (infinite) | `progress-bar-animation`      |
 | `PreparationPortalProgress`  | `preparation-portal-progress` |
+
+</APITable>
 
 Only the last is settable, through that component's `data-testid` prop. The bar also carries
 `data-progress`, and `data-status` or `data-error` when either is set.

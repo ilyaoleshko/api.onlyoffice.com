@@ -2,6 +2,8 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Utils.mdx"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Utils
 
 `utils/` holds the non-visual half of the library: 32 modules of date maths, device
@@ -35,6 +37,8 @@ into the other.
 [luxon](https://moment.github.io/luxon/). It replaces moment.js across the kit and keeps
 the portal's timezone handling in one place.
 
+<APITable>
+
 | Group          | Functions                                                                                                                         |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | **Parsing**    | `parseISO`, `parseToDateTime`, `parseWithFormat`, `createDateTime`, `fromMillis`, `fromSeconds`, `fromUnixTimestamp`, `now`, `today`, `utc` |
@@ -44,6 +48,8 @@ the portal's timezone handling in one place.
 | **Duration**   | `createDuration`, `humanizeDuration`, `convertDuration`, `fromNow`, `toRelative`                                                   |
 | **Timezone**   | `toTimezone`, `toAppTimezone`, `getAppTimezone`, `getBrowserTimezone`, `getTimezoneOffset`, `isValidTimezone`, `setDefaultTimezone` |
 | **Calendar**   | `getWeekdays`, `getWeekdayName`, `getMonths`, `getMonthsShort`, `getFirstDayOfWeek`, `setDefaultLocale`                            |
+
+</APITable>
 
 ```tsx
 import {
@@ -71,6 +77,8 @@ startup, not per render.
 
 ## Device, viewport and DOM
 
+<APITable>
+
 | Module                  | Exports                                                                                                            | What it is for                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
 | `utils/device`          | `isMobile`, `isTablet`, `isDesktop`, `isMobileDevice`, `isTouchDevice`, `checkIsSSR`, `mobile`, `tablet`, `desktop`, `mobileMore`, `size`, `INFO_PANEL_WIDTH`, `MAX_INFINITE_LOADER_SHIFT`, `transitionalScreenSize`, `isReliableAndroidViewport` | Breakpoints and device detection, SSR-safe                              |
@@ -78,6 +86,8 @@ startup, not per render.
 | `utils/context`         | `Context`, `Provider`, `Consumer`                                                                                  | Section width and height, published to the component tree               |
 | `utils/edge-scrolling`  | `onEdgeScrolling`, `clearEdgeScrollingTimer`                                                                       | Auto-scrolls `.section-scroll` during drag-and-drop                     |
 | `utils/use-click-outside` | `useClickOutside`                                                                                                 | Closes dropdowns, modals and popovers on an outside click               |
+
+</APITable>
 
 `mobile`, `tablet`, `desktop` and `mobileMore` are media-query **strings**, so they work
 both in `window.matchMedia` and in a SCSS-free inline style guard:
@@ -95,6 +105,8 @@ hooks subscribe to the media query and re-render, the functions read it once.
 
 ## URLs, files and icons
 
+<APITable>
+
 | Module                          | Exports                                                     | What it is for                                                        |
 | ------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- |
 | `utils/combineUrl`              | `combineUrl`                                                | Joins a base URL and path segments, normalizing the slashes between them |
@@ -104,6 +116,8 @@ hooks subscribe to the media query and re-render, the functions read it once.
 | `utils/common-icons-style`      | `IconSizeType`, `isIconSizeType`                            | The icon-size union and its type guard                                 |
 | `utils/getFilesFromEvent`       | `getFilesFromEvent` (default)                               | Turns a drag, paste or file-input event into a flat `File[]`, walking directories |
 | `utils/react-dropzone-interop`  | `useDropzone`                                               | `react-dropzone`'s hook, through a shim that survives Node's CJS/ESM interop |
+
+</APITable>
 
 ```tsx
 import { combineUrl } from "@onlyoffice/apps-ui-kit/utils/combineUrl";
@@ -123,6 +137,8 @@ only when you are building a different one.
 
 ## Browser state
 
+<APITable>
+
 | Module                  | Exports                                  | Notes                                                                    |
 | ----------------------- | ---------------------------------------- | ------------------------------------------------------------------------ |
 | `utils/cookie`          | `getCookie`, `setCookie`, `deleteCookie` | `getCookie` special-cases the language cookie during invite-link confirmation: on `/confirm/LinkInvite` a `?culture=` query parameter wins over the stored value |
@@ -130,10 +146,14 @@ only when you are building a different one.
 | `utils/get-oauth-token` | `getOAuthToken`                          | Polls `localStorage` for the `code` an OAuth popup writes back, and resolves when the popup closes |
 | `utils/openingNewTab`   | `openingNewTab`                          | Detects middle-click, Ctrl+Click and Cmd+Click and opens the URL in a new tab instead of navigating |
 
+</APITable>
+
 Every one of these is SSR-safe: with no `document` they return `undefined` rather than
 throwing.
 
 ## Text, i18n and validation
+
+<APITable>
 
 | Module                       | Exports                                                                                 | What it is for                                              |
 | ---------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
@@ -142,6 +162,8 @@ throwing.
 | `utils/parse-locale-constants` | `parseLocaleConstants`                                                                  | Parses JSON with `"Key-<lang>"` locale-suffix overrides       |
 | `utils/encoder`              | `Encoder`                                                                                 | Encoding helpers                                            |
 | `utils/get-text-color`       | `getTextColor`                                                                            | Picks black or white text for a background colour, by perceived brightness |
+
+</APITable>
 
 ```tsx
 import { parseAddress, EmailSettings } from "@onlyoffice/apps-ui-kit/utils/email";
@@ -166,6 +188,8 @@ portal's own rules.
 
 These encode DocSpace concepts rather than generic browser behaviour.
 
+<APITable>
+
 | Module                          | Exports                                                                                                                     |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | `utils/common`                  | `getUserType`, `getUserTypeTranslation`, `getUserAvatarRoleByType`, `getIconPathByFolderType`, `getLifetimePeriodTranslation`, `isManagement`, `RoomsTypes`, `RoomsTypeValues`, `TTranslation` |
@@ -173,7 +197,11 @@ These encode DocSpace concepts rather than generic browser behaviour.
 | `utils/ai`                      | `getAiModelName`, `getServerIcon`                                                                                           |
 | `utils/trim-separator`          | `trimSeparator` — removes redundant and trailing separators from a context-menu array                                       |
 
+</APITable>
+
 ## Small generic helpers
+
+<APITable>
 
 | Export            | Module                  | What it does                                                          |
 | ----------------- | ----------------------- | ---------------------------------------------------------------------- |
@@ -183,6 +211,8 @@ These encode DocSpace concepts rather than generic browser behaviour.
 | `isNextImage`     | `utils/typeGuards`      | Distinguishes a Next.js static image import from a plain URL           |
 | `pipe`, `delay`, `stopWhen` | `utils/pipe`  | Composes an async pipeline; each step receives the previous result      |
 | `getErrorMessage` | `utils/getErrorMessage` | Pulls a readable message out of a string, an `Error` or an API error shape |
+
+</APITable>
 
 ## What is deliberately not in the barrel
 

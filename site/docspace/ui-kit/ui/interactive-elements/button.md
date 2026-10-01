@@ -54,73 +54,73 @@ The secondary button, for any action that is not the main one of a view; click i
 
 Primary buttons are used for main actions. They have a solid background color.
 
-<ThemedImage alt="Primary Buttons" width={790} sources={{ light: require('./button--primary-buttons-light.png').default, dark: require('./button--primary-buttons-dark.png').default }} />
+<ThemedImage alt="Primary Buttons" width={811} sources={{ light: require('./button--primary-buttons-light.png').default, dark: require('./button--primary-buttons-dark.png').default }} />
 
 ### Secondary Buttons
 
 Secondary buttons are used for secondary actions. They sit on the page background with a grey border that changes colour on hover.
 
-<ThemedImage alt="Secondary Buttons" width={790} sources={{ light: require('./button--secondary-buttons-light.png').default, dark: require('./button--secondary-buttons-dark.png').default }} />
+<ThemedImage alt="Secondary Buttons" width={811} sources={{ light: require('./button--secondary-buttons-light.png').default, dark: require('./button--secondary-buttons-dark.png').default }} />
 
 ### With Icon Buttons
 
 Buttons can include icons alongside text. Icons are displayed before the label.
 
-<ThemedImage alt="With Icon Buttons" width={790} sources={{ light: require('./button--with-icon-buttons-light.png').default, dark: require('./button--with-icon-buttons-dark.png').default }} />
+<ThemedImage alt="With Icon Buttons" width={1014} sources={{ light: require('./button--with-icon-buttons-light.png').default, dark: require('./button--with-icon-buttons-dark.png').default }} />
 
 ### Is Loading Buttons
 
 Loading state displays a spinner and disables interaction. Use for async operations.
 
-<ThemedImage alt="Is Loading Buttons" width={790} sources={{ light: require('./button--is-loading-buttons-light.png').default, dark: require('./button--is-loading-buttons-dark.png').default }} />
+<ThemedImage alt="Is Loading Buttons" width={1014} sources={{ light: require('./button--is-loading-buttons-light.png').default, dark: require('./button--is-loading-buttons-dark.png').default }} />
 
 ### Scale Buttons
 
 Scale prop makes buttons expand to 100% of their container width. Useful for mobile layouts.
 
-<ThemedImage alt="Scale Buttons" width={790} sources={{ light: require('./button--scale-buttons-light.png').default, dark: require('./button--scale-buttons-dark.png').default }} />
+<ThemedImage alt="Scale Buttons" width={1014} sources={{ light: require('./button--scale-buttons-light.png').default, dark: require('./button--scale-buttons-dark.png').default }} />
 
 ### Disabled Buttons
 
 Disabled buttons cannot be clicked or focused: the secondary one turns grey, the primary one fades to 60% opacity (`isDisabled`).
 
-<ThemedImage alt="Disabled Buttons" width={790} sources={{ light: require('./button--disabled-buttons-light.png').default, dark: require('./button--disabled-buttons-dark.png').default }} />
+<ThemedImage alt="Disabled Buttons" width={1014} sources={{ light: require('./button--disabled-buttons-light.png').default, dark: require('./button--disabled-buttons-dark.png').default }} />
 
 ### Clicked Buttons
 
 The pressed look drawn while nothing presses the button (`isClicked`), for a button whose action is already under way, such as the one that opened the menu now on screen.
 
-<ThemedImage alt="Clicked Buttons" width={790} sources={{ light: require('./button--clicked-buttons-light.png').default, dark: require('./button--clicked-buttons-dark.png').default }} />
+<ThemedImage alt="Clicked Buttons" width={1014} sources={{ light: require('./button--clicked-buttons-light.png').default, dark: require('./button--clicked-buttons-dark.png').default }} />
 
 ### Hovered Buttons
 
 The hover look drawn while the pointer is elsewhere (`isHovered`), for a button that should light up together with the element it belongs to, such as a hovered row.
 
-<ThemedImage alt="Hovered Buttons" width={790} sources={{ light: require('./button--hovered-buttons-light.png').default, dark: require('./button--hovered-buttons-dark.png').default }} />
+<ThemedImage alt="Hovered Buttons" width={1014} sources={{ light: require('./button--hovered-buttons-light.png').default, dark: require('./button--hovered-buttons-dark.png').default }} />
 
 ### Filled Buttons
 
 A quiet grey button with no border, for toolbar actions that should not compete with the content (`filled`). The first row shows that an icon is repainted in the text colour, whatever colour it was drawn in.
 
-<ThemedImage alt="Filled Buttons" width={790} sources={{ light: require('./button--filled-buttons-light.png').default, dark: require('./button--filled-buttons-dark.png').default }} />
+<ThemedImage alt="Filled Buttons" width={1014} sources={{ light: require('./button--filled-buttons-light.png').default, dark: require('./button--filled-buttons-dark.png').default }} />
 
 ### Filled Stroke Buttons
 
 An outline-style icon on a filled button: in the first row the filled button paints the icon's shapes solid, in the second it keeps the outline (`filled` with `filledStroke`). `filledStroke` changes nothing without `filled`.
 
-<ThemedImage alt="Filled Stroke Buttons" width={792} sources={{ light: require('./button--filled-stroke-buttons-light.png').default, dark: require('./button--filled-stroke-buttons-dark.png').default }} />
+<ThemedImage alt="Filled Stroke Buttons" width={1014} sources={{ light: require('./button--filled-stroke-buttons-light.png').default, dark: require('./button--filled-stroke-buttons-dark.png').default }} />
 
 ### With Tooltip
 
 Buttons can display tooltips on hover. Hover over the buttons to see the tooltip text.
 
-<ThemedImage alt="With Tooltip" width={592} sources={{ light: require('./button--with-tooltip-light.png').default, dark: require('./button--with-tooltip-dark.png').default }} />
+<ThemedImage alt="With Tooltip" width={608} sources={{ light: require('./button--with-tooltip-light.png').default, dark: require('./button--with-tooltip-dark.png').default }} />
 
 ### Accent Buttons
 
 An emphasised action that should stand out without taking the place of the primary one: a light accent tint with accent text, and an icon repainted in the same colour (`accent`).
 
-<ThemedImage alt="Accent Buttons" width={790} sources={{ light: require('./button--accent-buttons-light.png').default, dark: require('./button--accent-buttons-dark.png').default }} />
+<ThemedImage alt="Accent Buttons" width={1014} sources={{ light: require('./button--accent-buttons-light.png').default, dark: require('./button--accent-buttons-dark.png').default }} />
 
 ### Css Customization
 
@@ -221,9 +221,13 @@ The `index` module exports a wrapped component, so these are accepted on top of 
 
 ### Enums
 
+<APITable>
+
 | Enum         | Members                                   |
 | ------------ | ----------------------------------------- |
 | `ButtonSize` | `extraSmall`, `small`, `normal`, `medium` |
+
+</APITable>
 
 ## Recipes
 
@@ -348,6 +352,8 @@ export function DialogFooter({
 Set these on an ancestor to retheme the button. Everything else the stylesheet defines is
 private to it.
 
+<APITable>
+
 | Variable                                        | Default                           | Effect                                                        |
 | ----------------------------------------------- | --------------------------------- | ------------------------------------------------------------- |
 | `--accent-button`                               | theme accent                      | Primary background and border, base hover border, accent text |
@@ -359,9 +365,13 @@ private to it.
 | `--button-root-border-radius`                   | `3px`                             | Corner radius (the `accent` variant uses `6px` regardless)    |
 | `--button-text-weight`                          | `600`                             | Label weight                                                  |
 
+</APITable>
+
 Each state colour also has an override. The secondary variant reads the `--button-root-*` set,
 the primary one the matching `--button-primary-*` set; the `filled` and `accent` variants read
 none of them, because their colours are set on the button itself and a wrapper cannot change them.
+
+<APITable>
 
 | Variable                                                                   | Default | Effect                                                                                                                                  |
 | -------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -373,6 +383,8 @@ none of them, because their colours are set on the button itself and a wrapper c
 | `--button-primary-bg-hover`, `-color-hover`                                | theme   | Primary background and text colour on hover and under `isHovered`                                                                       |
 | `--button-primary-bg-active`, `-color-active`, `-border-active`            | theme   | Primary background and text colour while pressed and under `isClicked`; the border takes a colour, not a shorthand                      |
 | `--button-primary-bg-disabled`, `-color-disabled`, `-border-disabled`      | theme   | The same three while disabled or loading                                                                                                |
+
+</APITable>
 
 **There is no destructive variant.** The stylesheet has nothing red: a delete confirmation is
 an ordinary `primary` button, and making it red means overriding `--accent-button`. Put it on
@@ -400,9 +412,13 @@ item and shrinks to its label.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid` | Override |
 | --------------- | ------------- | -------- |
 | Root `<button>` | `button`      | `testId` |
+
+</APITable>
 
 The root also carries `data-size` with the current `ButtonSize`, which is what the
 component's own size tests assert against.

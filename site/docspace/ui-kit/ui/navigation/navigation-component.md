@@ -13,7 +13,7 @@ The file manager's header: breadcrumb title, back arrow, and the row of buttons 
 current folder. It is built for DocSpace's own document browser and expects that shape of data —
 a folder trail, two context menu getters and a device type you tell it about.
 
-<ThemedImage alt="Navigation" width={790} sources={{ light: require('./navigation-component--primary-light.png').default, dark: require('./navigation-component--primary-dark.png').default }} />
+<ThemedImage alt="Navigation" width={466} sources={{ light: require('./navigation-component--primary-light.png').default, dark: require('./navigation-component--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -51,49 +51,49 @@ breadcrumb drop box may use — without one the drop box falls back to its own c
 
 The header of a nested folder: the back arrow, the parent folder's name, the current folder's name and a notice chip. Click the folder's name to open the drop box with the whole trail; change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./navigation-component--default-light.png').default, dark: require('./navigation-component--default-dark.png').default }} />
+<ThemedImage alt="Default" width={466} sources={{ light: require('./navigation-component--default-light.png').default, dark: require('./navigation-component--default-dark.png').default }} />
 
 ### Root Folder
 
 The header of a root folder: with no parent to go back to, the back arrow, the parent folder's name and the drop-down arrow are gone, and clicking the name opens nothing (`isRootFolder`).
 
-<ThemedImage alt="Root Folder" width={790} sources={{ light: require('./navigation-component--root-folder-light.png').default, dark: require('./navigation-component--root-folder-dark.png').default }} />
+<ThemedImage alt="Root Folder" width={205} sources={{ light: require('./navigation-component--root-folder-light.png').default, dark: require('./navigation-component--root-folder-dark.png').default }} />
 
 ### Trash Folder
 
 A folder that holds deleted items, where the person needs the rule spelled out and has nothing to create: the chip shows the notice (`titles.warningText`), there is no plus button, and the folder button's menu opens shifted to the side (`isTrashFolder`).
 
-<ThemedImage alt="Trash Folder" width={790} sources={{ light: require('./navigation-component--trash-folder-light.png').default, dark: require('./navigation-component--trash-folder-dark.png').default }} />
+<ThemedImage alt="Trash Folder" width={588} sources={{ light: require('./navigation-component--trash-folder-light.png').default, dark: require('./navigation-component--trash-folder-dark.png').default }} />
 
 ### With Info Panel
 
 The info panel toggle at the end of the header, in its pressed look, so the person can tell the panel is open and click to close it (`isInfoPanelVisible`, `toggleInfoPanel`). The toggle appears only without `hideInfoPanel`.
 
-<ThemedImage alt="With Info Panel" width={770} sources={{ light: require('./navigation-component--with-info-panel-light.png').default, dark: require('./navigation-component--with-info-panel-dark.png').default }} />
+<ThemedImage alt="With Info Panel" width={1014} sources={{ light: require('./navigation-component--with-info-panel-light.png').default, dark: require('./navigation-component--with-info-panel-dark.png').default }} />
 
 ### With Navigation Button
 
 A labelled button after the other controls, for the one action a folder needs at hand, such as opening its location (`navigationButtonLabel`, `onNavigationButtonClick`). It is not shown in the root folder.
 
-<ThemedImage alt="With Navigation Button" width={790} sources={{ light: require('./navigation-component--with-navigation-button-light.png').default, dark: require('./navigation-component--with-navigation-button-dark.png').default }} />
+<ThemedImage alt="With Navigation Button" width={588} sources={{ light: require('./navigation-component--with-navigation-button-light.png').default, dark: require('./navigation-component--with-navigation-button-dark.png').default }} />
 
 ### With Action Buttons
 
 The plus button and the folder button, each opening its own menu, so the person can create something here or act on the folder: click either one. `canCreate` alone shows no plus button and the menu getter alone shows no folder button; each needs its flag (`isPlusButtonVisible`, `isContextButtonVisible`).
 
-<ThemedImage alt="With Action Buttons" width={790} sources={{ light: require('./navigation-component--with-action-buttons-light.png').default, dark: require('./navigation-component--with-action-buttons-dark.png').default }} />
+<ThemedImage alt="With Action Buttons" width={532} sources={{ light: require('./navigation-component--with-action-buttons-light.png').default, dark: require('./navigation-component--with-action-buttons-dark.png').default }} />
 
 ### With Ai Chat Button
 
 An **AI chat** button at the end of the header, for a host that has a chat panel to open (`toggleChatPanel`). Its text comes from `titles.aiChat` and gives way to the bare icon when the header runs out of room; turn on `isChatPanelVisible` in the Controls panel below to see its pressed look.
 
-<ThemedImage alt="With Ai Chat Button" width={790} sources={{ light: require('./navigation-component--with-ai-chat-button-light.png').default, dark: require('./navigation-component--with-ai-chat-button-dark.png').default }} />
+<ThemedImage alt="With Ai Chat Button" width={1014} sources={{ light: require('./navigation-component--with-ai-chat-button-light.png').default, dark: require('./navigation-component--with-ai-chat-button-dark.png').default }} />
 
 ### Right To Left
 
 The header in a right-to-left interface: the back arrow sits at the right edge and points right, the parent folder's name comes to the right of the current one and the drop-down arrow follows the name on its left.
 
-<ThemedImage alt="Right To Left" width={214} sources={{ light: require('./navigation-component--right-to-left-light.png').default, dark: require('./navigation-component--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={199} sources={{ light: require('./navigation-component--right-to-left-light.png').default, dark: require('./navigation-component--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
@@ -102,7 +102,7 @@ Every overridable variable set on one wrapper -- the variables are listed under 
 - **First header** — the heading, the second title, both arrows, the separator and the notice chip; click the folder's name to see the drop box variables.
 - **Second header** — the variables its props switch on: the badge next to the folder's name (`badgeLabel`), the pressed info panel toggle (`isInfoPanelVisible`) and the AI chat button (`toggleChatPanel`).
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./navigation-component--css-customization-light.png').default, dark: require('./navigation-component--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./navigation-component--css-customization-light.png').default, dark: require('./navigation-component--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -362,6 +362,8 @@ export function Breadcrumbs() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                       | Default                | Effect                                                                        |
 | ------------------------------ | ---------------------- | ----------------------------------------------------------------------------- |
 | `--navigation-heading-size`    | `18px`                 | Font size of the folder name and of the room title above it                   |
@@ -379,6 +381,8 @@ export function Breadcrumbs() {
 | `--navigation-warning-bg`      | theme substrate colour | Background of the warning chip                                                |
 | `--navigation-warning-text`    | theme muted colour     | Colour of the warning chip's text                                             |
 | `--navigation-warning-radius`  | `6px`                  | Corner radius of the warning chip                                             |
+
+</APITable>
 
 The folder name itself keeps the `Heading`'s own colour; `--navigation-title-color` reaches only
 the room title. Between the phone and desktop breakpoints the heading's size is fixed at `21px`, so
@@ -402,11 +406,15 @@ The rest of the header's colours come from the theme classes and are not exposed
 
 ## Test ids
 
+<APITable>
+
 | Element            | `data-testid`       |
 | ------------------ | ------------------- |
 | The plus button    | `plus-button`       |
 | The extra button   | `navigation_button` |
 | The AI chat button | `ai-chat-button`    |
+
+</APITable>
 
 None of them are settable. The header container carries a row of `data-*` attributes instead —
 `data-is-root-folder`, `data-is-desktop`, `data-is-info-panel-visible` and others — which the

@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Spinner in one of four animations, for work whose duration is unknown. Pick the animation
 explicitly — the component has no default worth having.
 
-<ThemedImage alt="Loader" width={790} sources={{ light: require('./loader--primary-light.png').default, dark: require('./loader--primary-dark.png').default }} />
+<ThemedImage alt="Loader" width={1014} sources={{ light: require('./loader--primary-light.png').default, dark: require('./loader--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,7 +42,7 @@ the track colours; without it the animation falls back to the pale default strok
 
 A line of plain text instead of an animation, for a place where a moving spinner would distract: this is what you get with `type` set to `base` or left out, so pick an animation explicitly when you want one. Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./loader--default-light.png').default, dark: require('./loader--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./loader--default-light.png').default, dark: require('./loader--default-dark.png').default }} />
 
 ### Oval
 
@@ -144,9 +144,13 @@ export function PanelLoader() {
 
 ### Enums
 
+<APITable>
+
 | Enum          | Members                                      |
 | ------------- | -------------------------------------------- |
 | `LoaderTypes` | `base`, `oval`, `dualRing`, `rombs`, `track` |
+
+</APITable>
 
 ## Recipes
 
@@ -221,6 +225,8 @@ export function PanelBody({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                    | Default                                   | Effect                                                                                                               |
 | --------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | `--loader-stroke`           | the `color` prop                          | Stroke of the `oval` and `dualRing` animations; a `color` passed to the dual ring still wins, being set on its rings |
@@ -228,6 +234,8 @@ export function PanelBody({
 | `--loader-track-base`       | theme (main button colour; white in dark) | Colour of the `track`                                                                                                |
 | `--loader-track-primary`    | `#ffffff`                                 | Colour of the `track` with `primary` set                                                                             |
 | `--loader-opacity-disabled` | `0.6`                                     | Opacity of the `track` under `isDisabled`                                                                            |
+
+</APITable>
 
 A `size` prop sets `--loader-size` on the animation itself and so beats a value set on a
 wrapper. `--loader-color` cannot be set from outside at all: the stylesheet defines it on the
@@ -247,6 +255,8 @@ animation, so pass `color` instead.
 
 ## Test ids
 
+<APITable>
+
 | Element              | `data-testid`      |
 | -------------------- | ------------------ |
 | The wrapper          | `loader`           |
@@ -254,6 +264,8 @@ animation, so pass `color` instead.
 | `dualRing` animation | `dual-ring-loader` |
 | `rombs` animation    | `rombs-loader`     |
 | `track` animation    | `track-loader`     |
+
+</APITable>
 
 None of these can be overridden by a prop.
 

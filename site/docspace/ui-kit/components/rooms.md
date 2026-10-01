@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Rooms
 
 The Rooms section: the active rooms the caller can see, with a header, the filter bar and the
@@ -11,7 +13,7 @@ rows. Search, a sort order and two filter groups narrow the list, and a room —
 it — opens in place. There is nothing to create — the filter bar has no main button, and a
 row's context menu only opens it or copies its link, so this screen never writes to a portal.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./rooms--default-light.png').default, dark: require('./rooms--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./rooms--default-light.png').default, dark: require('./rooms--default-dark.png').default }} />
 
 ### Features
 
@@ -35,15 +37,19 @@ nothing inside a room, so every level starts with no filter and an empty search.
 
 Each row has a context menu with the minimum a read-only list needs:
 
+<APITable>
+
 | Item                   | Shown for               | Does                                                                  |
 | ---------------------- | ----------------------- | --------------------------------------------------------------------- |
 | **Open**               | rooms and folders       | lists it in place                                                     |
 | **Open in ONLYOFFICE** | files                   | opens the file in the portal's editor in a new tab; a toast in the demo |
 | **Copy link**          | files, on a real portal | copies the editor link                                                |
 
+</APITable>
+
 ### Choosing a room or folder in a picker
 
-<ThemedImage alt="With Folder Picker" width={790} sources={{ light: require('./rooms--with-folder-picker-light.png').default, dark: require('./rooms--with-folder-picker-dark.png').default }} />
+<ThemedImage alt="With Folder Picker" width={1014} sources={{ light: require('./rooms--with-folder-picker-light.png').default, dark: require('./rooms--with-folder-picker-dark.png').default }} />
 
 With `withFolderPicker`, the header carries **Select folder**, which opens a picker whose root
 holds **Rooms** and nothing else. Inside it are the rooms, then a room's folders — never its
@@ -66,6 +72,8 @@ The header says which source answered: `Demo data`, or the host of the connected
 
 Every filter goes to the portal in the request:
 
+<APITable>
+
 | Control      | Request parameter                                                              |
 | ------------ | ------------------------------------------------------------------------------ |
 | Search       | `filterValue`                                                                  |
@@ -73,6 +81,8 @@ Every filter goes to the portal in the request:
 | Owner: Me    | `subjectId` (the caller's id) with `subjectFilter: SubjectFilter.Owner`        |
 | Sort         | `sortBy` (`"AZ"`, `"DateAndTime"`) and `sortOrder`                             |
 | —            | `searchArea: SearchArea.Active`, always                                        |
+
+</APITable>
 
 `Me` needs the caller's own id, which the story asks for once, with
 `profilesApi.getSelfProfile()`, the first time the filter is applied.

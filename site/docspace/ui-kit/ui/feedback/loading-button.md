@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 16px progress ring with a cross in the middle, for cancelling what it is measuring. It is the
 marker the portal puts next to a row while that row's file is uploading.
 
-<ThemedImage alt="LoadingButton" width={37} sources={{ light: require('./loading-button--primary-light.png').default, dark: require('./loading-button--primary-dark.png').default }} />
+<ThemedImage alt="LoadingButton" width={38} sources={{ light: require('./loading-button--primary-light.png').default, dark: require('./loading-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -48,13 +48,13 @@ The ring as it first appears, before any progress is known: at the default `perc
 
 Five rings labelled with their `percent`, to show how far the arc reaches at each stage: at 0% a half ring spins, the look for an operation whose size is not known yet, and from 25% on the arc grows clockwise until it closes at 100%.
 
-<ThemedImage alt="Progress Stages" width={356} sources={{ light: require('./loading-button--progress-stages-light.png').default, dark: require('./loading-button--progress-stages-dark.png').default }} />
+<ThemedImage alt="Progress Stages" width={352} sources={{ light: require('./loading-button--progress-stages-light.png').default, dark: require('./loading-button--progress-stages-dark.png').default }} />
 
 ### In Conversion
 
 The same rings with no cross in the middle (`inConversion`), for a marker that shows progress and nothing else: at 0% the ring spins, at 50% it is half filled, at 100% it is closed.
 
-<ThemedImage alt="In Conversion" width={193} sources={{ light: require('./loading-button--in-conversion-light.png').default, dark: require('./loading-button--in-conversion-dark.png').default }} />
+<ThemedImage alt="In Conversion" width={191} sources={{ light: require('./loading-button--in-conversion-light.png').default, dark: require('./loading-button--in-conversion-dark.png').default }} />
 
 ### Default Mode
 
@@ -66,7 +66,7 @@ The ring and the cross in the theme's grey instead of the accent colour (`isDefa
 
 Colours set per instance, for a ring that has to match its surroundings rather than the theme: the first three change the ring and the cross (`loaderColor`), the last also tints the disc behind the cross (`backgroundColor`).
 
-<ThemedImage alt="Custom Colors" width={275} sources={{ light: require('./loading-button--custom-colors-light.png').default, dark: require('./loading-button--custom-colors-dark.png').default }} />
+<ThemedImage alt="Custom Colors" width={272} sources={{ light: require('./loading-button--custom-colors-light.png').default, dark: require('./loading-button--custom-colors-dark.png').default }} />
 
 ### Css Customization
 
@@ -209,12 +209,16 @@ export function Exporting({
 
 Set them on any ancestor.
 
+<APITable>
+
 | Variable                      | Default              | Effect                                     |
 | ----------------------------- | -------------------- | ------------------------------------------ |
 | `--loading-button-accent`     | `var(--accent-main)` | Colour of the ring and the cross.          |
 | `--loading-button-idle`       | theme grey           | The same, under `isDefaultMode`.           |
 | `--loading-button-hover-fill` | theme token          | Colour of the cross on hover in that mode. |
 | `--loading-button-custom-bg`  | white / black        | Colour of the disc behind the cross.       |
+
+</APITable>
 
 `loaderColor` and `backgroundColor` are written as inline custom properties, so they win over
 `--loading-button-accent` and `--loading-button-custom-bg` respectively. `loaderColor` does
@@ -233,9 +237,13 @@ nothing under `isDefaultMode`: that mode reads `--loading-button-idle` and
 
 ## Test ids
 
+<APITable>
+
 | Element  | `data-testid`              |
 | -------- | -------------------------- |
 | The ring | `loading-button-container` |
+
+</APITable>
 
 It cannot be overridden by a prop.
 

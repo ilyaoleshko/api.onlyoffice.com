@@ -13,7 +13,7 @@ DocSpace's page body: a sticky header and filter, a scrolling body, and the info
 beside it. It is the other half of the portal's layout, next to [`Article`](./article.md),
 and it is also what supplies the kit's layout context to everything inside it.
 
-<ThemedImage alt="Section" width={795} sources={{ light: require('./section--primary-light.png').default, dark: require('./section--primary-dark.png').default }} />
+<ThemedImage alt="Section" width={1020} sources={{ light: require('./section--primary-light.png').default, dark: require('./section--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -52,67 +52,67 @@ translations and shows empty strings without one.
 
 A whole page: breadcrumbs in the header, a search and filter bar under it and a table in the body, each outlined and labelled so you can see where the section puts its slots. Scroll the table to see the header and the filter stay pinned; change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={795} sources={{ light: require('./section--default-light.png').default, dark: require('./section--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1020} sources={{ light: require('./section--default-light.png').default, dark: require('./section--default-dark.png').default }} />
 
 ### With Info Panel
 
 A details panel beside the listing, for the properties of the selected item without leaving the page. It shows only while both `canDisplay` and `isInfoPanelVisible` are on; switch either off in the Controls panel below to close it.
 
-<ThemedImage alt="With Info Panel" width={800} sources={{ light: require('./section--with-info-panel-light.png').default, dark: require('./section--with-info-panel-dark.png').default }} />
+<ThemedImage alt="With Info Panel" width={1014} sources={{ light: require('./section--with-info-panel-light.png').default, dark: require('./section--with-info-panel-dark.png').default }} />
 
 ### With Chat Panel
 
 A chat docked beside the listing, so a conversation about the files stays open while you work with them. Drag its inner edge to make it wider or narrower (`isChatPanelResizable`); the new width arrives when you release the mouse (`setChatPanelWidth`).
 
-<ThemedImage alt="With Chat Panel" width={794} sources={{ light: require('./section--with-chat-panel-light.png').default, dark: require('./section--with-chat-panel-dark.png').default }} />
+<ThemedImage alt="With Chat Panel" width={1014} sources={{ light: require('./section--with-chat-panel-light.png').default, dark: require('./section--with-chat-panel-dark.png').default }} />
 
 ### With Banner
 
 A notice above the header that stays in view while the table scrolls (`Section.SectionBanner`). Switch `scrollableBanner` on in the Controls panel below to put it at the top of the listing instead, where it scrolls away under the header.
 
-<ThemedImage alt="With Banner" width={794} sources={{ light: require('./section--with-banner-light.png').default, dark: require('./section--with-banner-dark.png').default }} />
+<ThemedImage alt="With Banner" width={1015} sources={{ light: require('./section--with-banner-light.png').default, dark: require('./section--with-banner-dark.png').default }} />
 
 ### With Submenu
 
 Tabs under the header that switch between views of the same page and stay pinned with it while the listing scrolls (`Section.SectionSubmenu`).
 
-<ThemedImage alt="With Submenu" width={794} sources={{ light: require('./section--with-submenu-light.png').default, dark: require('./section--with-submenu-dark.png').default }} />
+<ThemedImage alt="With Submenu" width={1015} sources={{ light: require('./section--with-submenu-light.png').default, dark: require('./section--with-submenu-dark.png').default }} />
 
 ### With Operations Progress
 
 A round progress button in the bottom corner, so a long copy or upload stays visible while the user goes on working (`secondaryActiveOperations`). Hover it to read what is running; an empty list hides it again.
 
-<ThemedImage alt="With Operations Progress" width={794} sources={{ light: require('./section--with-operations-progress-light.png').default, dark: require('./section--with-operations-progress-dark.png').default }} />
+<ThemedImage alt="With Operations Progress" width={1015} sources={{ light: require('./section--with-operations-progress-light.png').default, dark: require('./section--with-operations-progress-dark.png').default }} />
 
 ### With Context Menu
 
 A menu of page-wide actions on a right click anywhere in the body, for what applies to the folder rather than to one file (`getContextModel`). Right click the list to open it.
 
-<ThemedImage alt="With Context Menu" width={790} sources={{ light: require('./section--with-context-menu-light.png').default, dark: require('./section--with-context-menu-dark.png').default }} />
+<ThemedImage alt="With Context Menu" width={1015} sources={{ light: require('./section--with-context-menu-light.png').default, dark: require('./section--with-context-menu-dark.png').default }} />
 
 ### On Tablet
 
 The page in a tablet-width window: the header stays pinned, while the filter bar moves into the listing and scrolls with it, leaving more room for the rows (`currentDeviceType`).
 
-<ThemedImage alt="On Tablet" width={790} sources={{ light: require('./section--on-tablet-light.png').default, dark: require('./section--on-tablet-dark.png').default }} />
+<ThemedImage alt="On Tablet" width={1015} sources={{ light: require('./section--on-tablet-light.png').default, dark: require('./section--on-tablet-dark.png').default }} />
 
 ### On Phone
 
 The page on a phone: the header and the filter bar both move into the listing and the whole page scrolls, so the rows get the full height of the screen (`currentDeviceType`).
 
-<ThemedImage alt="On Phone" width={790} sources={{ light: require('./section--on-phone-light.png').default, dark: require('./section--on-phone-dark.png').default }} />
+<ThemedImage alt="On Phone" width={1011} sources={{ light: require('./section--on-phone-light.png').default, dark: require('./section--on-phone-dark.png').default }} />
 
 ### Right To Left
 
 The page in a right-to-left interface: the info panel opens on the left, its border moves to its right edge, and the table's columns run from the right.
 
-<ThemedImage alt="Right To Left" width={800} sources={{ light: require('./section--right-to-left-light.png').default, dark: require('./section--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./section--right-to-left-light.png').default, dark: require('./section--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 The variables are listed under CSS variables on this page. The example sets every desktop one on a wrapper around one section with both panels open: the blue strip is the pinned header, the pale blue column is the info panel and the yellow one is the chat panel, with its drop frame on. Navigation, Filter and the table have variables of their own, documented in their stories and set on the same wrapper.
 
-<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./section--css-customization-light.png').default, dark: require('./section--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./section--css-customization-light.png').default, dark: require('./section--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -402,6 +402,8 @@ export function FilteredPage() {
 
 ## Sub-components
 
+<APITable>
+
 | Name                      | Where its content is rendered                                                                                  |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `Section.SectionHeader`   | The sticky header; moved inside the scrolling body on a phone                                                  |
@@ -415,10 +417,14 @@ export function FilteredPage() {
 | `Section.InfoPanelBody`   | The info panel's body                                                                                          |
 | `Section.ChatPanel`       | The AI chat panel, rendered only while `isChatPanelAvailable`                                                  |
 
+</APITable>
+
 They are static properties of the exported component, they take nothing but `children`, and they
 render nothing themselves.
 
 ## CSS variables
+
+<APITable>
 
 | Variable                               | Default                 | Effect                                                                                                               |
 | -------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -443,6 +449,8 @@ render nothing themselves.
 | `--chat-panel-drop-overlay-background` | the chat panel's own    | Fill of its "drop to attach" frame, drawn at 85% opacity                                                             |
 | `--chat-panel-drop-border-color`       | accent; white in `dark` | Dashed border of that frame                                                                                          |
 | `--chat-panel-drop-inset-top`          | `69px`                  | Space left above that frame for the chat's own header; a phone always leaves 53px, whatever you set                  |
+
+</APITable>
 
 Every default above is the theme's own value, applied through the `light`/`dark` class on
 `<body>`; the table lists what you get when you override nothing.

@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 {/*
 (c) Copyright Ascensio System SIA 2009-2026
 
@@ -49,7 +51,7 @@ MCPServersSelector is a multi-select panel for choosing available MCP (Model Con
 
 A basic MCPServersSelector with default settings.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./mcpserversselector--default-light.png').default, dark: require('./mcpserversselector--default-dark.png').default }} />
+<ThemedImage alt="Default" width={724} sources={{ light: require('./mcpserversselector--default-light.png').default, dark: require('./mcpserversselector--default-dark.png').default }} />
 
 ```tsx
 import MCPServersSelector from "@onlyoffice/apps-ui-kit/selectors/MCPServers";
@@ -64,4 +66,16 @@ import MCPServersSelector from "@onlyoffice/apps-ui-kit/selectors/MCPServers";
 
 ## Properties
 
-<ThemedImage alt="Controls" width={851} sources={{ light: require('./mcpserversselector--block0-light.png').default, dark: require('./mcpserversselector--block0-dark.png').default }} />
+<APITable>
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `useAside`? | `booleanundefined` | Render the selector inside an Aside panel with a backdrop. Default: `false`. |
+| `onClose`? | `VoidFunctionundefined` | Called to fully close the selector. |
+| `withoutBackground`? | `booleanundefined` | Remove the background overlay in Aside mode. Default: `false`. |
+| `withBlur`? | `booleanundefined` | Apply blur effect to the Aside backdrop. Default: `false`. |
+| `onSubmit` | `(servers: TSelectorItem[]) => void` | Called with the array of selected TSelectorItem servers when the user confirms. |
+| `onBackClick` | `VoidFunction` | Called when the back button or cancel button is clicked — navigate to previous view. |
+| `initedSelectedServers`? | `string[] \| undefined` | Array of server IDs that should be pre-selected when the selector opens. |
+
+</APITable>

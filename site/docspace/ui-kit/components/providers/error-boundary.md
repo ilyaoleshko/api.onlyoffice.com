@@ -14,7 +14,7 @@ React class boundary with the kit's own [`ErrorContainer`](../../ui/layout-compo
 as its default fallback, offered here so an application does not have to write the one class
 component React still requires for this.
 
-<ThemedImage alt="ErrorProvider" width={758} sources={{ light: require('./error-boundary--primary-light.png').default, dark: require('./error-boundary--primary-dark.png').default }} />
+<ThemedImage alt="ErrorProvider" width={982} sources={{ light: require('./error-boundary--primary-light.png').default, dark: require('./error-boundary--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -46,25 +46,25 @@ Needs [`ThemeProvider`](./theme.md) above it if the default fallback is used —
 
 Default usage where children render normally without any errors.
 
-<ThemedImage alt="Default" width={758} sources={{ light: require('./error-boundary--default-light.png').default, dark: require('./error-boundary--default-dark.png').default }} />
+<ThemedImage alt="Default" width={982} sources={{ light: require('./error-boundary--default-light.png').default, dark: require('./error-boundary--default-dark.png').default }} />
 
 ### With Error
 
 When a child component throws, the default ErrorContainer fallback is rendered.
 
-<ThemedImage alt="With Error" width={800} sources={{ light: require('./error-boundary--with-error-light.png').default, dark: require('./error-boundary--with-error-dark.png').default }} />
+<ThemedImage alt="With Error" width={996} sources={{ light: require('./error-boundary--with-error-light.png').default, dark: require('./error-boundary--with-error-dark.png').default }} />
 
 ### With Custom Fallback
 
 A custom ReactNode can be provided as fallback for a fully customized error UI.
 
-<ThemedImage alt="With Custom Fallback" width={758} sources={{ light: require('./error-boundary--with-custom-fallback-light.png').default, dark: require('./error-boundary--with-custom-fallback-dark.png').default }} />
+<ThemedImage alt="With Custom Fallback" width={982} sources={{ light: require('./error-boundary--with-custom-fallback-light.png').default, dark: require('./error-boundary--with-custom-fallback-dark.png').default }} />
 
 ### With Render Function Fallback
 
 A render function receives the caught error, enabling dynamic fallback UI based on the error.
 
-<ThemedImage alt="With Render Function Fallback" width={758} sources={{ light: require('./error-boundary--with-render-function-fallback-light.png').default, dark: require('./error-boundary--with-render-function-fallback-dark.png').default }} />
+<ThemedImage alt="With Render Function Fallback" width={982} sources={{ light: require('./error-boundary--with-render-function-fallback-light.png').default, dark: require('./error-boundary--with-render-function-fallback-dark.png').default }} />
 
 ## Minimal example
 

@@ -13,7 +13,7 @@ Dialog rendered in a portal, as a centred modal or a side panel, assembled from 
 Footer and Container slots. Which of the two it is can be fixed with `displayType` or chosen
 per breakpoint with `displayTypeDetailed`.
 
-<ThemedImage alt="ModalDialog" width={800} sources={{ light: require('./modal-dialog--primary-light.png').default, dark: require('./modal-dialog--primary-dark.png').default }} />
+<ThemedImage alt="ModalDialog" width={1024} sources={{ light: require('./modal-dialog--primary-light.png').default, dark: require('./modal-dialog--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -282,9 +282,13 @@ Declared by [`components/aside/aside-header`](./aside-header.md) and accepted he
 
 ### Enums
 
+<APITable>
+
 | Enum              | Members          |
 | ----------------- | ---------------- |
 | `ModalDialogType` | `modal`, `aside` |
+
+</APITable>
 
 ## Recipes
 
@@ -456,12 +460,16 @@ export function RenameDialog({
 
 ## Sub-components
 
+<APITable>
+
 | Slot                    | Renders                                                        | Notes                                                                          |
 | ----------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | `ModalDialog.Header`    | The dialog title row, with the close and optional back buttons | Optional; without it there is no header element at all                         |
 | `ModalDialog.Body`      | The scrollable content area                                    | `withoutPadding` removes its padding; `withBodyScroll` (aside) makes it scroll |
 | `ModalDialog.Footer`    | The action row                                                 | Put the primary button first, then the secondary one                           |
 | `ModalDialog.Container` | An extra pane beside the body                                  | Aside display type only, and only with `containerVisible`                      |
+
+</APITable>
 
 Three skeletons ship alongside for the loading state of a dialog you build yourself:
 `DialogAsideSkeleton`, `DialogModalSkeleton` and `DialogReassignmentSkeleton`.
@@ -473,6 +481,8 @@ can go on the `style` prop. The rest are read on the dialog's outer element, abo
 `style` and `className` reach, and the dialog renders into `document.body`, so a wrapper around
 it cannot carry them either: set them on `body` or `:root`.
 
+<APITable>
+
 | Variable                      | Default     | Effect                                                                    |
 | ----------------------------- | ----------- | ------------------------------------------------------------------------- |
 | `--modal-dialog-bg`           | theme-based | Background of the dialog                                                  |
@@ -480,7 +490,11 @@ it cannot carry them either: set them on `body` or `:root`.
 | `--modal-dialog-divider`      | theme-based | Line between the body and the footer, with `withFooterBorder`             |
 | `--modal-dialog-aside-border` | theme-based | Border on the edge where the side panel meets the page, with `withBorder` |
 
+</APITable>
+
 Page-level:
+
+<APITable>
 
 | Variable                                 | Default         | Effect                                                                       |
 | ---------------------------------------- | --------------- | ---------------------------------------------------------------------------- |
@@ -503,6 +517,8 @@ Page-level:
 | `--modal-dialog-header-title-transform`  | `none`          | Transform of the title, such as `translateX(-50%)` to centre it              |
 | `--modal-dialog-header-title-text-align` | `start`         | Text alignment of the title                                                  |
 
+</APITable>
+
 ## Accessibility
 
 - `role="dialog"` and `aria-modal="true"` sit on the dialog surface, the `#modal-dialog`
@@ -521,9 +537,13 @@ Page-level:
 
 ## Test ids
 
+<APITable>
+
 | Element             | `data-testid` | Override     |
 | ------------------- | ------------- | ------------ |
 | Outer modal element | `modal`       | `dataTestId` |
+
+</APITable>
 
 The inner sheet also carries the literal element id `modal-dialog`, which the swipe handler
 and `sheetRef` rely on.

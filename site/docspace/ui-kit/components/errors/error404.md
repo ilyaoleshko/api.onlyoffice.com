@@ -43,7 +43,7 @@ Not Found error page (404). Displayed when the requested page does not exist.
 - **Consistent Styling** built on ErrorContainer
 - **Navigation Guidance**
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./error404--default-light.png').default, dark: require('./error404--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./error404--default-light.png').default, dark: require('./error404--default-dark.png').default }} />
 
 ### Usage
 

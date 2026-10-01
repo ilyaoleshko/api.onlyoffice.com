@@ -71,7 +71,7 @@ For a hint that needs more than one line of plain text: hover the link to see a 
 
 For a list where every row needs its own hint: hover each name to see one tooltip show that member's details, looked up from the index the anchor carries (`getContent`).
 
-<ThemedImage alt="Shared By Many Anchors" width={750} sources={{ light: require('./tooltip--shared-by-many-anchors-light.png').default, dark: require('./tooltip--shared-by-many-anchors-dark.png').default }} />
+<ThemedImage alt="Shared By Many Anchors" width={974} sources={{ light: require('./tooltip--shared-by-many-anchors-light.png').default, dark: require('./tooltip--shared-by-many-anchors-dark.png').default }} />
 
 ### Fixed Content
 
@@ -137,7 +137,7 @@ export function StorageHint() {
 ## Props
 
 
-<APITable>
+<APITable name="Props">
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -303,6 +303,8 @@ Set these on an ancestor of the tooltip's wrapper — it is in the portal, so `:
 usual place — or on the wrapper itself through the `style` prop, which is the way to reach one
 tooltip only.
 
+<APITable name="CSS-variables">
+
 | Variable                    | Default                         | Effect                            |
 | --------------------------- | ------------------------------- | --------------------------------- |
 | `--tooltip-bg`              | theme surface                   | Background of the tooltip         |
@@ -313,6 +315,8 @@ tooltip only.
 | `--tooltip-text-size`       | `12px`                          | Font size                         |
 | `--tooltip-layer`           | `999`                           | Stacking order                    |
 | `--tooltip-max-width-value` | `320px`                         | Width cap, in place of `maxWidth` |
+
+</APITable>
 
 The width cap is never wider than the window: it is `min(100vw, …)` of the value.
 `--tooltip-max-width` is not an override: the stylesheet declares it on the wrapper, so one set
@@ -334,11 +338,15 @@ over both.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element                        | `data-testid`                            |
 | ------------------------------ | ---------------------------------------- |
 | The wrapper around a tooltip   | `tooltip`, overridable with `dataTestId` |
 | `RootTooltip`'s system tooltip | `system-tooltip-container`               |
 | `RootTooltip`'s info tooltip   | `info-tooltip-container`                 |
+
+</APITable>
 
 ## Related
 

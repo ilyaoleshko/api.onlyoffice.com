@@ -58,7 +58,7 @@ The two looks a badge can take:
 - **3**, **New**, **99+** — the usual round pill, as wide as its label, for a count or a short word
 - **High** — the emphasised preset (`type="high"`), with squarer corners and more padding, for a marker that should stand out
 
-<ThemedImage alt="Badge Types" width={457} sources={{ light: require('./badge--badge-types-light.png').default, dark: require('./badge--badge-types-dark.png').default }} />
+<ThemedImage alt="Badge Types" width={442} sources={{ light: require('./badge--badge-types-light.png').default, dark: require('./badge--badge-types-dark.png').default }} />
 
 ### Special Badges
 
@@ -68,7 +68,7 @@ Markers with a meaning of their own:
 - **PRO** — a paid-feature marker (`isPaidBadge`): the text stays white and the label is never cut off
 - **Muted** — a grey pill for something inactive (`isMutedBadge`)
 
-<ThemedImage alt="Special Badges" width={290} sources={{ light: require('./badge--special-badges-light.png').default, dark: require('./badge--special-badges-dark.png').default }} />
+<ThemedImage alt="Special Badges" width={316} sources={{ light: require('./badge--special-badges-light.png').default, dark: require('./badge--special-badges-dark.png').default }} />
 
 ### Hover States
 
@@ -78,7 +78,7 @@ Hover and press each badge to compare:
 - **Hovered** — shows the pointer cursor before the pointer arrives (`isHovered`); the colour still changes only under the real pointer
 - **No Hover** — keeps the arrow cursor and its colour, for a badge that is only a marker (`noHover`)
 
-<ThemedImage alt="Hover States" width={339} sources={{ light: require('./badge--hover-states-light.png').default, dark: require('./badge--hover-states-dark.png').default }} />
+<ThemedImage alt="Hover States" width={329} sources={{ light: require('./badge--hover-states-light.png').default, dark: require('./badge--hover-states-dark.png').default }} />
 
 ### Custom Styled
 
@@ -88,7 +88,7 @@ For a place where the theme's pill does not fit:
 - **Bordered** — a transparent pill with a border around it (`border`)
 - **Large** — a wider cap (`maxWidth`) and more padding for a longer label
 
-<ThemedImage alt="Custom Styled" width={351} sources={{ light: require('./badge--custom-styled-light.png').default, dark: require('./badge--custom-styled-dark.png').default }} />
+<ThemedImage alt="Custom Styled" width={342} sources={{ light: require('./badge--custom-styled-light.png').default, dark: require('./badge--custom-styled-dark.png').default }} />
 
 ### Interactive Badge
 
@@ -287,6 +287,8 @@ export function PlanMarker() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                 | Default                        | Effect                                                       |
 | ------------------------ | ------------------------------ | ------------------------------------------------------------ |
 | `--badge-bg`             | the accent colour, else orange | Background of the pill; wins over the `backgroundColor` prop |
@@ -294,6 +296,8 @@ export function PlanMarker() {
 | `--badge-high-padding`   | `3px 10px`                     | Padding of the pill while `type="high"`                      |
 | `--badge-high-font-size` | `13px`                         | Font size of the label while `type="high"`                   |
 | `--accent-main`          | orange, per theme              | The default background, shared with the rest of the kit      |
+
+</APITable>
 
 `isMutedBadge` wins over `--badge-bg`: a muted badge stays grey whatever the variable says.
 
@@ -312,11 +316,15 @@ export function PlanMarker() {
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                       |
 | ------------- | ----------------------------------- |
 | Outer element | `badge`, overridden by `dataTestId` |
 | The pill      | `badge-inner`                       |
 | The label     | `badge-text`                        |
+
+</APITable>
 
 The outer element also carries `data-hidden`, `data-type`, `data-paid`, `data-muted`,
 `data-version-badge`, `data-no-hover` and `data-is-hovered`, which is what to assert on rather

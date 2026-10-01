@@ -226,9 +226,13 @@ export function RoomTagsWithMenu({ tags }: { tags: string[] }) {
 
 The row itself has one; the tags inside follow [`Tag`](./tag.md#css-variables).
 
+<APITable>
+
 | Variable                      | Default | Effect                                           |
 | ----------------------------- | ------- | ------------------------------------------------ |
 | `--tags-overflow-text-margin` | `8px`   | Leading margin of an entry in the overflow menu. |
+
+</APITable>
 
 The overflow menu is portalled to the document body, so this variable reaches it only when it
 is set on `:root` or `body`; a wrapper, or the `style` prop, never does. It is ignored under
@@ -250,12 +254,16 @@ is set on `:root` or `body`; a wrapper, or the `style` prop, never does. It is i
 
 ## Test ids
 
+<APITable>
+
 | Element              | `data-testid`       |
 | -------------------- | ------------------- |
 | The row              | `tags`              |
 | A tag                | `tag_item_<label>`  |
 | The overflow tag     | `tag_item`          |
 | An entry of its menu | `tag_dropdown_item` |
+
+</APITable>
 
 None of them can be overridden by a prop.
 

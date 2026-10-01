@@ -2,6 +2,8 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Hooks.mdx"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Hooks
 
 Eleven hooks, barrelled in `hooks/index.ts` and re-exported from the package root. They are
@@ -18,10 +20,14 @@ import { useIsMobile } from "@onlyoffice/apps-ui-kit";
 
 ## Responsive
 
+<APITable>
+
 | Hook            | Returns   | Notes                                                     |
 | --------------- | --------- | --------------------------------------------------------- |
 | `useIsMobile`   | `boolean` | Subscribes to the `mobile` media query                    |
 | `useIsDesktop`  | `boolean` | Subscribes to the `desktop` media query                   |
+
+</APITable>
 
 Both seed their state synchronously, so the first render is already correct rather than
 flashing the desktop layout. Use these instead of calling `isMobile()` from

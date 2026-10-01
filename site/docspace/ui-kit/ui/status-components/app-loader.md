@@ -5,13 +5,15 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # AppLoader
 
 The blank first screen: a fixed sheet over the whole viewport with the kit's rombs animation on it.
 It takes no props at all — render it while the application boots and stop rendering it when it is
 ready.
 
-<ThemedImage alt="AppLoader" width={800} sources={{ light: require('./app-loader--primary-light.png').default, dark: require('./app-loader--primary-dark.png').default }} />
+<ThemedImage alt="AppLoader" width={1024} sources={{ light: require('./app-loader--primary-light.png').default, dark: require('./app-loader--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -47,13 +49,13 @@ provider it stays light whatever else the page does.
 
 The boot screen as an application shows it before its first layout exists. The sheet is fixed to the viewport, so it covers the whole window wherever it is rendered.
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./app-loader--default-light.png').default, dark: require('./app-loader--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1024} sources={{ light: require('./app-loader--default-light.png').default, dark: require('./app-loader--default-dark.png').default }} />
 
 ### Css Customization
 
 Both variables set on one wrapper -- the variables are listed under CSS variables on this page. The sheet takes a light blue background and drops its stacking order to 100.
 
-<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./app-loader--css-customization-light.png').default, dark: require('./app-loader--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1024} sources={{ light: require('./app-loader--css-customization-light.png').default, dark: require('./app-loader--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -137,10 +139,14 @@ export function BrandedBoot() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable               | Default                                      | Effect                      |
 | ---------------------- | -------------------------------------------- | --------------------------- |
 | `--app-loader-bg`      | `#ffffff`, or `#333333` under the dark theme | Background of the sheet     |
 | `--app-loader-z-index` | `5000`                                       | Stacking order of the sheet |
+
+</APITable>
 
 ## Accessibility
 
@@ -156,9 +162,13 @@ export function BrandedBoot() {
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid` |
 | --------- | ------------- |
 | The sheet | `app-loader`  |
+
+</APITable>
 
 It is not settable.
 

@@ -272,6 +272,8 @@ export function SelectableTemplateTile() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable              | Default                     | Effect                                                               |
 | --------------------- | --------------------------- | -------------------------------------------------------------------- |
 | `--tile-sub-color`    | the theme's sub text        | Colour of the two captions in the lower half and of the owner's name |
@@ -281,6 +283,8 @@ export function SelectableTemplateTile() {
 | `--tile-radius`       | `12px`                      | Corner radius                                                        |
 | `--tile-icon-color`   | the theme's icon colour     | Fill of the three-dot button                                         |
 | `--tile-hotkey-color` | the theme's hotkey colour   | Border colour under `showHotkeyBorder`                               |
+
+</APITable>
 
 All but `--tile-sub-color` are read by [`BaseTile`](./base-tile.md), which this component
 wraps. **Its `--tile-padding` and `--tile-row-gap` do not reach a template tile**: this
@@ -300,9 +304,13 @@ component's stylesheet fixes both at `12px`, and the tile is capped at 128px hig
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid` |
 | ------------- | ------------- |
 | Outer element | `tile`        |
+
+</APITable>
 
 It cannot be changed from here.
 

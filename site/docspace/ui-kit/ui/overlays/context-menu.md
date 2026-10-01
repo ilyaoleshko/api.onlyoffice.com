@@ -90,7 +90,7 @@ Every kind of item the model supports, in one menu. From top to bottom:
 
 The blue square has no handler of its own and nothing calls `show`: with `global` the menu attaches itself to the whole document, so a right-click on the square and one on the empty space around it open the same menu. Use it for a page-level menu that is not tied to one element.
 
-<ThemedImage alt="Attached To Document" width={790} sources={{ light: require('./context-menu--attached-to-document-light.png').default, dark: require('./context-menu--attached-to-document-dark.png').default }} />
+<ThemedImage alt="Attached To Document" width={1014} sources={{ light: require('./context-menu--attached-to-document-light.png').default, dark: require('./context-menu--attached-to-document-dark.png').default }} />
 
 ### Max Height
 
@@ -102,13 +102,13 @@ The model has sixteen items, but the menu is only 240px tall — about six and a
 
 Shown at 320px, where the menu is a bottom sheet with the `header` on top: the title and, in the 32px block that `isRoom` gives it, the title's initials on the header `color` (the block renders only when `icon` is set; `color` then replaces the icon). Tap **Move or copy**: the submenu replaces the list in place and the header turns into a back button. `ignoreChangeView` forces the sheet layout regardless of the menu height.
 
-<ThemedImage alt="Mobile With Header" width={790} sources={{ light: require('./context-menu--mobile-with-header-light.png').default, dark: require('./context-menu--mobile-with-header-dark.png').default }} />
+<ThemedImage alt="Mobile With Header" width={1014} sources={{ light: require('./context-menu--mobile-with-header-light.png').default, dark: require('./context-menu--mobile-with-header-dark.png').default }} />
 
 ### Mobile With Avatar Header
 
 The same bottom sheet with a person as the subject: `header.avatar` renders an avatar instead of the initials block.
 
-<ThemedImage alt="Mobile With Avatar Header" width={790} sources={{ light: require('./context-menu--mobile-with-avatar-header-light.png').default, dark: require('./context-menu--mobile-with-avatar-header-dark.png').default }} />
+<ThemedImage alt="Mobile With Avatar Header" width={1014} sources={{ light: require('./context-menu--mobile-with-avatar-header-light.png').default, dark: require('./context-menu--mobile-with-avatar-header-dark.png').default }} />
 
 ### Anchored To Element
 
@@ -358,6 +358,8 @@ The menu is portalled out of its parent, so a variable set on a wrapper element 
 it: pass them through the menu's own `style` prop (or render it inside the wrapper with
 `appendTo`). Every default not given below comes from the theme.
 
+<APITable name="CSS-variables">
+
 | Variable                                       | Default                          | Effect                                                                                                                    |
 | ---------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | `--context-menu-bg`                            | theme                            | Menu background                                                                                                           |
@@ -382,6 +384,8 @@ it: pass them through the menu's own `style` prop (or render it inside the wrapp
 | `--context-menu-header-inner-padding`          | `6px 16px`                       | Mobile sheet header padding                                                                                               |
 | `--context-menu-header-text-size`              | `15px`                           | Mobile sheet header font size                                                                                             |
 
+</APITable>
+
 Otherwise the menu's width is the widest item, and its height is capped by `maxHeight` for the
 list and `maxHeightLowerSubmenu` for a second-level submenu.
 
@@ -400,10 +404,14 @@ list and `maxHeightLowerSubmenu` for a second-level submenu.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element  | `data-testid`                                 |
 | -------- | --------------------------------------------- |
 | The menu | `context-menu`, overridable with `dataTestId` |
 | An item  | the item's own `dataTestId`                   |
+
+</APITable>
 
 ## Related
 

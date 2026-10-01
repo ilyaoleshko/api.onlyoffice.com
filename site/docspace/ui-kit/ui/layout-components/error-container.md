@@ -13,7 +13,7 @@ Full-screen error page: an animated landscape, a heading, an explanation and one
 It is what the portal shows in place of a page it could not give you — a 404, an expired link,
 a browser it does not support.
 
-<ThemedImage alt="ErrorContainer" width={800} sources={{ light: require('./error-container--primary-light.png').default, dark: require('./error-container--primary-dark.png').default }} />
+<ThemedImage alt="ErrorContainer" width={996} sources={{ light: require('./error-container--primary-light.png').default, dark: require('./error-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -50,43 +50,43 @@ provider the page renders correctly in light and never switches.
 
 The plain error page: the heading says what happened (`headerText`), the line under it says what to do (`bodyText`), and the muted third line carries a detail such as an error code (`customizedBodyText`). Change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./error-container--default-light.png').default, dark: require('./error-container--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./error-container--default-light.png').default, dark: require('./error-container--default-dark.png').default }} />
 
 ### With Primary Button
 
 **Retry** — a filled button under the message, for the one action that gets the user out of the error (`buttonText` with `onClickButton`). Without the handler the button is not rendered at all.
 
-<ThemedImage alt="With Primary Button" width={800} sources={{ light: require('./error-container--with-primary-button-light.png').default, dark: require('./error-container--with-primary-button-dark.png').default }} />
+<ThemedImage alt="With Primary Button" width={996} sources={{ light: require('./error-container--with-primary-button-light.png').default, dark: require('./error-container--with-primary-button-dark.png').default }} />
 
 ### In Editor Mode
 
 The same page laid over its host instead of pushing it down (`isEditor`), for a screen such as a document editor that mounts the error on top of a layout of its own.
 
-<ThemedImage alt="In Editor Mode" width={800} sources={{ light: require('./error-container--in-editor-mode-light.png').default, dark: require('./error-container--in-editor-mode-dark.png').default }} />
+<ThemedImage alt="In Editor Mode" width={1014} sources={{ light: require('./error-container--in-editor-mode-light.png').default, dark: require('./error-container--in-editor-mode-dark.png').default }} />
 
 ### With Children
 
 **Please check the following** — a checklist and an error code under the message (`children`), for guidance that does not fit into one line of text.
 
-<ThemedImage alt="With Children" width={800} sources={{ light: require('./error-container--with-children-light.png').default, dark: require('./error-container--with-children-dark.png').default }} />
+<ThemedImage alt="With Children" width={996} sources={{ light: require('./error-container--with-children-light.png').default, dark: require('./error-container--with-children-dark.png').default }} />
 
 ### With Secondary Button
 
 **Go back** — the same button, outlined (`isPrimaryButton` off), for a page where leaving is the way out rather than an action the user is expected to take.
 
-<ThemedImage alt="With Secondary Button" width={800} sources={{ light: require('./error-container--with-secondary-button-light.png').default, dark: require('./error-container--with-secondary-button-dark.png').default }} />
+<ThemedImage alt="With Secondary Button" width={996} sources={{ light: require('./error-container--with-secondary-button-light.png').default, dark: require('./error-container--with-secondary-button-dark.png').default }} />
 
 ### Without Logo
 
 The page starts with the illustration, with no logo above it (`hideLogo`), for a host that already shows its own brand or has no portal to take the logo from.
 
-<ThemedImage alt="Without Logo" width={800} sources={{ light: require('./error-container--without-logo-light.png').default, dark: require('./error-container--without-logo-dark.png').default }} />
+<ThemedImage alt="Without Logo" width={996} sources={{ light: require('./error-container--without-logo-light.png').default, dark: require('./error-container--without-logo-dark.png').default }} />
 
 ### Css Customization
 
 Both overridable variables set on one wrapper -- the variables are listed under CSS variables on this page. The example tints the page background and the `customizedBodyText` line.
 
-<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./error-container--css-customization-light.png').default, dark: require('./error-container--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={996} sources={{ light: require('./error-container--css-customization-light.png').default, dark: require('./error-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -211,10 +211,14 @@ export function ExpiredLinkPage() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                 | Default               | Effect                         |
 | ------------------------ | --------------------- | ------------------------------ |
 | `--error-container-bg`   | white; black in dark  | Background of the page         |
 | `--error-container-text` | grey; lighter in dark | Colour of `customizedBodyText` |
+
+</APITable>
 
 The heading, `bodyText` and the button take their colours from `Heading`, `Text` and `Button`;
 override those components' own variables to change them.
@@ -236,9 +240,13 @@ override those components' own variables to change them.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                  |
 | ------------- | ------------------------------ |
 | Outer element | `ErrorContainer`, not settable |
+
+</APITable>
 
 The heading, the lines and the button carry the ids of `Heading`, `Text` and `Button`; the
 illustration's pieces carry only their element ids.

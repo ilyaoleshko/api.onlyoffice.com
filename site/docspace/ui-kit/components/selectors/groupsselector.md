@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 {/*
 (c) Copyright Ascensio System SIA 2009-2026
 
@@ -49,7 +51,7 @@ GroupsSelector is a searchable, paginated selector panel for choosing a user gro
 
 A basic GroupsSelector with default settings.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./groupsselector--default-light.png').default, dark: require('./groupsselector--default-dark.png').default }} />
+<ThemedImage alt="Default" width={724} sources={{ light: require('./groupsselector--default-light.png').default, dark: require('./groupsselector--default-dark.png').default }} />
 
 ```tsx
 import GroupsSelector from "@onlyoffice/apps-ui-kit/selectors/Groups";
@@ -66,4 +68,18 @@ import GroupsSelector from "@onlyoffice/apps-ui-kit/selectors/Groups";
 
 ## Properties
 
-<ThemedImage alt="Controls" width={851} sources={{ light: require('./groupsselector--block0-light.png').default, dark: require('./groupsselector--block0-dark.png').default }} />
+<APITable>
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `withHeader`? | `trueundefined` | Show the header bar with a label and close button. Default: `false`. |
+| `headerProps`? | `HeaderPropsundefined` | The header's own props. Required once withHeader is set. |
+| `useAside`? | `booleanundefined` | Render the selector inside an Aside panel with a backdrop. Default: `false`. |
+| `onClose`? | `VoidFunctionundefined` | Called when the selector panel is dismissed. |
+| `withoutBackground`? | `booleanundefined` | Remove the background overlay when rendered in Aside mode. Default: `false`. |
+| `withBlur`? | `booleanundefined` | Apply a blur effect to the Aside backdrop. Default: `false`. |
+| `id`? | `stringundefined` | HTML id attribute for the root element. |
+| `className`? | `stringundefined` | Additional CSS class name for the root element. |
+| `onSubmit` | `(selectedItems: TSelectorItem[], access?: TAccessRight \| null \| undefined, fileName?: string \| undefined, isFooterCheckboxChecked?: boolean \| undefined) => void \| Promise<...>` | Called with the selected TSelectorItem array when the user confirms their choice. |
+
+</APITable>

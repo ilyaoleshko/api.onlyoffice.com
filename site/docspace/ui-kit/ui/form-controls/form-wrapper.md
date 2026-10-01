@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 White card of a fixed width that the portal's sign-in and wizard forms sit on. It is a shadowed,
 rounded box 320px wide that drops all of its decoration on a phone.
 
-<ThemedImage alt="FormWrapper" width={496} sources={{ light: require('./form-wrapper--primary-light.png').default, dark: require('./form-wrapper--primary-dark.png').default }} />
+<ThemedImage alt="FormWrapper" width={400} sources={{ light: require('./form-wrapper--primary-light.png').default, dark: require('./form-wrapper--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -44,25 +44,25 @@ shadow are chosen by the `light` and `dark` classes the provider sets.
 
 The card on its own around a heading and a line of text, to judge its width, padding, corners and shadow before a form goes in. Change the class, id or inline styles live in the Controls panel below.
 
-<ThemedImage alt="Default" width={496} sources={{ light: require('./form-wrapper--default-light.png').default, dark: require('./form-wrapper--default-dark.png').default }} />
+<ThemedImage alt="Default" width={400} sources={{ light: require('./form-wrapper--default-light.png').default, dark: require('./form-wrapper--default-dark.png').default }} />
 
 ### With Login Form
 
 A sign-in form as the card is meant to hold it: an email field, a password field and a primary button. Each field row is given a width of 100% and each control `scale`, so they span the card instead of shrinking to their content.
 
-<ThemedImage alt="With Login Form" width={496} sources={{ light: require('./form-wrapper--with-login-form-light.png').default, dark: require('./form-wrapper--with-login-form-dark.png').default }} />
+<ThemedImage alt="With Login Form" width={400} sources={{ light: require('./form-wrapper--with-login-form-light.png').default, dark: require('./form-wrapper--with-login-form-dark.png').default }} />
 
 ### With Registration Form
 
 A longer form with four fields, to show that the card keeps its fixed width and only grows taller as fields are added.
 
-<ThemedImage alt="With Registration Form" width={496} sources={{ light: require('./form-wrapper--with-registration-form-light.png').default, dark: require('./form-wrapper--with-registration-form-dark.png').default }} />
+<ThemedImage alt="With Registration Form" width={400} sources={{ light: require('./form-wrapper--with-registration-form-light.png').default, dark: require('./form-wrapper--with-registration-form-dark.png').default }} />
 
 ### Css Customization
 
 Every overridable variable set on a wrapper around one card -- the variables are listed under CSS variables on this page. Set the minimum and the maximum width together: either one alone is clamped by the other.
 
-<ThemedImage alt="Css Customization" width={512} sources={{ light: require('./form-wrapper--css-customization-light.png').default, dark: require('./form-wrapper--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={496} sources={{ light: require('./form-wrapper--css-customization-light.png').default, dark: require('./form-wrapper--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -178,6 +178,8 @@ export function WideForm({ children }: { children: React.ReactNode }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                   | Default            | Effect                            |
 | -------------------------- | ------------------ | --------------------------------- |
 | `--form-wrapper-bg`        | white / black      | Background of the card            |
@@ -186,6 +188,8 @@ export function WideForm({ children }: { children: React.ReactNode }) {
 | `--form-wrapper-padding`   | `32px`             | Padding inside the card           |
 | `--form-wrapper-max-width` | `320px`            | Largest width; 416px on a tablet  |
 | `--form-wrapper-min-width` | `320px`            | Smallest width; 416px on a tablet |
+
+</APITable>
 
 Under the mobile breakpoint the card sets its own padding, radius, shadow and background, so none
 of those four variables has an effect on a phone — the background and the shadow with
@@ -202,9 +206,13 @@ maximum together, since either one alone is clamped by the other.
 
 ## Test ids
 
+<APITable>
+
 | Element  | `data-testid`  |
 | -------- | -------------- |
 | The card | `form-wrapper` |
+
+</APITable>
 
 It cannot be overridden by a prop.
 

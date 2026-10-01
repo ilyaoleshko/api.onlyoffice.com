@@ -13,7 +13,7 @@ Previous and next buttons with a page selector between them and a page-size sele
 It is a fully controlled strip: it holds no page number of its own and moves nothing — you give
 it the options and the current values, and it tells you what was clicked.
 
-<ThemedImage alt="Paging" width={790} sources={{ light: require('./paging--primary-light.png').default, dark: require('./paging--primary-dark.png').default }} />
+<ThemedImage alt="Paging" width={1014} sources={{ light: require('./paging--primary-light.png').default, dark: require('./paging--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -48,43 +48,43 @@ they render unstyled.
 
 The full strip under a list of 200 pages: step with Previous and Next, jump from the page selector, or change the page size, and watch the calls in the Actions panel. The story holds the current page and size itself, as your code must; change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./paging--default-light.png').default, dark: require('./paging--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./paging--default-light.png').default, dark: require('./paging--default-dark.png').default }} />
 
 ### Disabled Previous
 
 On the first page there is nowhere to go back to, so the Previous button is greyed out and ignores clicks (`disablePrevious`); the component does not work this out, you set it.
 
-<ThemedImage alt="Disabled Previous" width={790} sources={{ light: require('./paging--disabled-previous-light.png').default, dark: require('./paging--disabled-previous-dark.png').default }} />
+<ThemedImage alt="Disabled Previous" width={1014} sources={{ light: require('./paging--disabled-previous-light.png').default, dark: require('./paging--disabled-previous-dark.png').default }} />
 
 ### Disabled Next
 
 On the last page the Next button is greyed out and ignores clicks (`disableNext`), while the page selector stays open for jumping back.
 
-<ThemedImage alt="Disabled Next" width={790} sources={{ light: require('./paging--disabled-next-light.png').default, dark: require('./paging--disabled-next-dark.png').default }} />
+<ThemedImage alt="Disabled Next" width={1014} sources={{ light: require('./paging--disabled-next-light.png').default, dark: require('./paging--disabled-next-dark.png').default }} />
 
 ### Without Count Selector
 
 For a list whose page size is fixed, the page-size selector at the end is left out (`showCountItem={false}`), leaving the two buttons and the page selector.
 
-<ThemedImage alt="Without Count Selector" width={336} sources={{ light: require('./paging--without-count-selector-light.png').default, dark: require('./paging--without-count-selector-dark.png').default }} />
+<ThemedImage alt="Without Count Selector" width={326} sources={{ light: require('./paging--without-count-selector-light.png').default, dark: require('./paging--without-count-selector-dark.png').default }} />
 
 ### Single Page
 
 When the whole list fits on one page, both buttons are greyed out and the page selector is disabled with them (`disablePrevious` and `disableNext` together), while the page size can still be changed.
 
-<ThemedImage alt="Single Page" width={790} sources={{ light: require('./paging--single-page-light.png').default, dark: require('./paging--single-page-dark.png').default }} />
+<ThemedImage alt="Single Page" width={1014} sources={{ light: require('./paging--single-page-light.png').default, dark: require('./paging--single-page-dark.png').default }} />
 
 ### Buttons Only
 
 For a list whose length is not known, only the Previous and Next buttons remain once neither list of options is passed (`pageItems` and `countItems` left out).
 
-<ThemedImage alt="Buttons Only" width={228} sources={{ light: require('./paging--buttons-only-light.png').default, dark: require('./paging--buttons-only-dark.png').default }} />
+<ThemedImage alt="Buttons Only" width={221} sources={{ light: require('./paging--buttons-only-light.png').default, dark: require('./paging--buttons-only-dark.png').default }} />
 
 ### Css Customization
 
 Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The example raises the width cap of both buttons so their larger labels are not cut off, widens the page-size selector, and shows taller controls in a window narrower than 1024px.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./paging--css-customization-light.png').default, dark: require('./paging--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./paging--css-customization-light.png').default, dark: require('./paging--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -278,6 +278,8 @@ export function FetchingPaging({
 
 Set them on a wrapper or through the `style` prop.
 
+<APITable>
+
 | Variable                  | Default    | Effect                                                                                                                                                |
 | ------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--paging-gap`            | `8px`      | Gap between the button group and the page-size selector; below 600px the column gap is a fixed 20px instead                                           |
@@ -288,6 +290,8 @@ Set them on a wrapper or through the `style` prop.
 | `--paging-next-width`     | `86px`     | Maximum width of the next button; a longer label is cut off. Below 1024px the cap is this plus 3px                                                    |
 | `--paging-nav-height`     | `40px`     | Height of the two buttons below 1024px; it also sizes the page-size selector's wrapper there, but the button inside both selectors stays a fixed 40px |
 | `--paging-count-width`    | `125px`    | Width of the page-size selector from 600px up; narrower windows stretch it to full width                                                              |
+
+</APITable>
 
 ## Accessibility
 
@@ -303,6 +307,8 @@ Set them on a wrapper or through the `style` prop.
 
 ## Test ids
 
+<APITable>
+
 | Element            | `data-testid`                        |
 | ------------------ | ------------------------------------ |
 | Outer element      | `paging`, overridden by `dataTestId` |
@@ -310,6 +316,8 @@ Set them on a wrapper or through the `style` prop.
 | Next button        | `paging_next_button`                 |
 | Page selector      | `paging_page_items_combobox`         |
 | Page-size selector | `paging_count_items_combobox`        |
+
+</APITable>
 
 Only the outer one is settable.
 

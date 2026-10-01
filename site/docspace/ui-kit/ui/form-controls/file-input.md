@@ -53,25 +53,25 @@ The field as a form shows it before anything is chosen; change any prop live in 
 
 Pick the size that matches the other fields of the form: each one also sets the field's width and the size of its icon box (`size`).
 
-<ThemedImage alt="Sizes" width={711} sources={{ light: require('./file-input--sizes-light.png').default, dark: require('./file-input--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1019} sources={{ light: require('./file-input--sizes-light.png').default, dark: require('./file-input--sizes-dark.png').default }} />
 
 ### States
 
 Use these to tell the user about the chosen file: **Error state** and **Warning state** recolour the border (`hasError`, `hasWarning`), **Disabled** greys the field and ignores clicks (`isDisabled`), and **Loading** shows a spinner in place of the icon (`isLoading`).
 
-<ThemedImage alt="States" width={584} sources={{ light: require('./file-input--states-light.png').default, dark: require('./file-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={865} sources={{ light: require('./file-input--states-light.png').default, dark: require('./file-input--states-dark.png').default }} />
 
 ### With Accept Filter
 
 Limit the field to the types the host can handle: the picker offers only these extensions, and a dropped file of another type is refused with an error toast (`accept`).
 
-<ThemedImage alt="With Accept Filter" width={584} sources={{ light: require('./file-input--with-accept-filter-light.png').default, dark: require('./file-input--with-accept-filter-dark.png').default }} />
+<ThemedImage alt="With Accept Filter" width={527} sources={{ light: require('./file-input--with-accept-filter-light.png').default, dark: require('./file-input--with-accept-filter-dark.png').default }} />
 
 ### Scaled Input
 
 Use it when the field should line up with a full-width form column: it stretches to the width of its container (`scale`).
 
-<ThemedImage alt="Scaled Input" width={790} sources={{ light: require('./file-input--scaled-input-light.png').default, dark: require('./file-input--scaled-input-dark.png').default }} />
+<ThemedImage alt="Scaled Input" width={1014} sources={{ light: require('./file-input--scaled-input-light.png').default, dark: require('./file-input--scaled-input-dark.png').default }} />
 
 ### With Button
 
@@ -83,7 +83,7 @@ Use a labelled button when an icon alone would not tell the user what the field 
 
 Use the document icon when the field takes a single document rather than any file: **Folder icon** is the default, **Document icon** the alternative (`isDocumentIcon`).
 
-<ThemedImage alt="Document Icon" width={584} sources={{ light: require('./file-input--document-icon-light.png').default, dark: require('./file-input--document-icon-dark.png').default }} />
+<ThemedImage alt="Document Icon" width={527} sources={{ light: require('./file-input--document-icon-light.png').default, dark: require('./file-input--document-icon-dark.png').default }} />
 
 ### With Path
 
@@ -164,9 +164,13 @@ export function AttachmentField() {
 
 ### Enums
 
+<APITable>
+
 | Enum        | Members                   |
 | ----------- | ------------------------- |
 | `InputSize` | `base`, `middle`, `large` |
+
+</APITable>
 
 ## Recipes
 
@@ -290,6 +294,8 @@ export function StorageField({ openPicker }: { openPicker: () => void }) {
 Each is read with a fallback to a theme value, so set any of them on an ancestor. The field is
 the inner [`TextInput`](./text-input.md); the icon box is the bordered square at its end.
 
+<APITable>
+
 | Variable                         | Default     | Effect                                                              |
 | -------------------------------- | ----------- | ------------------------------------------------------------------- |
 | `--file-input-border`            | theme value | Border colour of the field and the icon box at rest                 |
@@ -300,6 +306,8 @@ the inner [`TextInput`](./text-input.md); the icon box is the bordered square at
 | `--file-input-error-border`      | theme value | Border colour of the field and the icon box under `hasError`        |
 | `--file-input-placeholder-color` | theme value | Placeholder colour of the field under `isDisabled` or `isLoading`   |
 | `--file-input-radius`            | `3px`       | Radius of the icon box's outer corners                              |
+
+</APITable>
 
 The field's background, text colour and radius are `TextInput`'s own `--text-input-bg`,
 `--text-input-color` and `--text-input-radius`, which reach it from the same ancestor. The
@@ -319,11 +327,15 @@ a wrapper's value never reaches it.
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`                   |
 | ---------------- | ------------------------------- |
 | The wrapper      | `file-input`, or `data-test-id` |
 | The hidden input | `upload-click-input`            |
 | The icon         | `icon-button`                   |
+
+</APITable>
 
 ## Related
 

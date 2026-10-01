@@ -65,7 +65,7 @@ Five tiles, more than the banner holds. The tiles keep their width and the strip
 
 At the start only the forward arrow is shown; scroll and the back arrow appears, and at the far end the forward one goes. The arrows float over the strip, so nothing moves when they appear. With a mouse they fade in while the banner is hovered or focused; on a touch screen they stay visible.
 
-<ThemedImage alt="Carousel" width={795} sources={{ light: require('./quick-actions--carousel-light.png').default, dark: require('./quick-actions--carousel-dark.png').default }} />
+<ThemedImage alt="Carousel" width={968} sources={{ light: require('./quick-actions--carousel-light.png').default, dark: require('./quick-actions--carousel-dark.png').default }} />
 
 ### Dismissible
 
@@ -73,13 +73,13 @@ The close control in the top corner (`onClose`); hover the banner, then hover th
 
 The control is only rendered when `onClose` is given: a consumer with nowhere to persist the choice would otherwise offer a button that undoes itself on the next load. Hiding the banner is the host's decision to store and to reverse — the component only reports the click.
 
-<ThemedImage alt="Dismissible" width={795} sources={{ light: require('./quick-actions--dismissible-light.png').default, dark: require('./quick-actions--dismissible-dark.png').default }} />
+<ThemedImage alt="Dismissible" width={968} sources={{ light: require('./quick-actions--dismissible-light.png').default, dark: require('./quick-actions--dismissible-dark.png').default }} />
 
 ### Link Tiles
 
 Tiles that go somewhere instead of doing something: each is a real link (`href`), so it can be opened in a new tab from the context menu and shows its address in the status bar. **Open the guide** opens a new tab (`target="_blank"`) and gets `rel="noopener noreferrer"` without asking.
 
-<ThemedImage alt="Link Tiles" width={440} sources={{ light: require('./quick-actions--link-tiles-light.png').default, dark: require('./quick-actions--link-tiles-dark.png').default }} />
+<ThemedImage alt="Link Tiles" width={480} sources={{ light: require('./quick-actions--link-tiles-light.png').default, dark: require('./quick-actions--link-tiles-dark.png').default }} />
 
 ### Disabled State
 
@@ -97,7 +97,7 @@ Skeleton tiles of the real tiles' size, one per item, while the set of actions i
 
 The strip in a right-to-left layout: the first tile sits at the right edge, the strip scrolls toward the left, and the fade and the forward arrow move to the left edge with the arrow pointing left. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
 
-<ThemedImage alt="Right To Left" width={795} sources={{ light: require('./quick-actions--right-to-left-light.png').default, dark: require('./quick-actions--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={968} sources={{ light: require('./quick-actions--right-to-left-light.png').default, dark: require('./quick-actions--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
@@ -153,7 +153,7 @@ export function StartHere({ onCreate }: { onCreate: (kind: string) => void }) {
 ## Props
 
 
-<APITable>
+<APITable name="Props">
 
 | Property | Type | Description |
 | --- | --- | --- |
@@ -170,6 +170,8 @@ export function StartHere({ onCreate }: { onCreate: (kind: string) => void }) {
 
 `items` takes `QuickActionItem`:
 
+<APITable name="Props">
+
 | Field            | Type                                         | Effect                                                                          |
 | ---------------- | -------------------------------------------- | ------------------------------------------------------------------------------- |
 | `id`             | `string`                                     | React key of the tile, and what the strip watches to know the section changed.  |
@@ -181,6 +183,8 @@ export function StartHere({ onCreate }: { onCreate: (kind: string) => void }) {
 | `disabled`       | `boolean`                                    | Half opacity, `pointer-events: none`, and the tile stays a `<button disabled>`. |
 | `tooltipContent` | `ReactNode`                                  | Tooltip under the tile. Without it the tile has none.                           |
 | `dataTestId`     | `string`                                     | `data-testid` of the tile.                                                      |
+
+</APITable>
 
 The folder also re-exports the portal's tile artwork as React components — `BlankPdfIcon`,
 `CreateAgentIcon`, `CreateDocumentIcon`, `CreateFormIcon`, `CreateFromTemplateIcon`,
@@ -330,6 +334,8 @@ export function StartHereMixed({ canCreateRoom }: { canCreateRoom: boolean }) {
 
 Set them on any ancestor.
 
+<APITable name="CSS-variables">
+
 | Variable                         | Default           | Effect                                                                                                |
 | -------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------- |
 | `--quick-actions-tile-bg`        | theme grey        | Background of a tile.                                                                                 |
@@ -338,6 +344,8 @@ Set them on any ancestor.
 | `--quick-actions-tile-max-width` | `184px`           | Cap on one tile's width. `none` lets the tiles grow to fill the banner.                               |
 | `--quick-actions-row-max-width`  | `100%`            | Cap on the row of tiles, which is centred in the banner; not a cap on the banner.                     |
 | `--quick-actions-edge-inset`     | `0px`             | Space between the banner's edge and the first tile at rest. Scrolled tiles still run out to the edge. |
+
+</APITable>
 
 The tile variables do not reach the icon: the bundled illustrations carry their own colours.
 
@@ -364,6 +372,8 @@ but the edge fades stay at the banner's edge, so the strip is cut off hard where
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element          | `data-testid`                       |
 | ---------------- | ----------------------------------- |
 | The banner       | `dataTestId`, none by default       |
@@ -372,6 +382,8 @@ but the edge fades stay at the banner's edge, so the strip is cut off hard where
 | The next arrow   | `quick-actions-next`                |
 | The cross        | `quick-actions-close`               |
 | One tile         | its own `dataTestId`, if it has one |
+
+</APITable>
 
 The loading form renders the banner's id and nothing else.
 

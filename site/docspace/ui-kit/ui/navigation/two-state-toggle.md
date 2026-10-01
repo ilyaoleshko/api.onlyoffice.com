@@ -172,11 +172,15 @@ export function TranslatedSwitch({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                      | Default | Effect                                                      |
 | ----------------------------- | ------- | ----------------------------------------------------------- |
 | `--color-scheme-main-accent`  | theme   | Pill background, the label on the thumb, and the focus ring |
 | `--button-root-border-radius` | `6px`   | Corner radius of the pill; the thumb's is 2px smaller       |
 | `--text-color`                | theme   | Colour of the title                                         |
+
+</APITable>
 
 The thumb and the label beside it are white and read no variable.
 

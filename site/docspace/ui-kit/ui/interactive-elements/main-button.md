@@ -269,6 +269,8 @@ export function InviteMenu({ onInvite }: { onInvite: (role: string) => void }) {
 
 Set them on any ancestor. Each has a theme value behind it; these are the overrides.
 
+<APITable>
+
 | Variable                         | Default                | Effect                     |
 | -------------------------------- | ---------------------- | -------------------------- |
 | `--main-button-bg`               | accent, else `#4781D1` | Background of the button.  |
@@ -279,6 +281,8 @@ Set them on any ancestor. Each has a theme value behind it; these are the overri
 | `--main-button-text-size`        | `16px`                 | Font size of the label.    |
 | `--main-button-text-weight`      | `700`                  | Font weight of the label.  |
 | `--main-button-text-line-height` | `22px`                 | Line height of the label.  |
+
+</APITable>
 
 The background falls back to the kit's blue when the theme carries no colour scheme, so unlike
 [`FloatingButton`](./floating-button.md) this one is never invisible.
@@ -298,10 +302,14 @@ The background falls back to the kit's blue when the theme carries no colour sch
 
 ## Test ids
 
+<APITable>
+
 | Element              | `data-testid` |
 | -------------------- | ------------- |
 | The wrapper          | `main-button` |
 | The button inside it | none          |
+
+</APITable>
 
 The menu carries `context-menu`, from [`ContextMenu`](../overlays/context-menu.md). None of them
 can be overridden by a prop; the button itself is reached through `id`.

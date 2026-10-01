@@ -300,6 +300,8 @@ export function TileWithMenu() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable              | Default                     | Effect                                                                           |
 | --------------------- | --------------------------- | -------------------------------------------------------------------------------- |
 | `--tile-bg`           | the theme's tile background | Background of the tile                                                           |
@@ -310,6 +312,8 @@ export function TileWithMenu() {
 | `--tile-row-gap`      | `16px`                      | Gap between the upper and lower halves                                           |
 | `--tile-icon-color`   | the theme's icon colour     | Fill of the three-dot button                                                     |
 | `--tile-hotkey-color` | the theme's hotkey colour   | Colour of the keyboard outline                                                   |
+
+</APITable>
 
 ## Accessibility
 
@@ -328,9 +332,13 @@ export function TileWithMenu() {
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                      |
 | ------------- | ---------------------------------- |
 | Outer element | `tile`, overridden by `dataTestId` |
+
+</APITable>
 
 Everything inside carries the ids of `Checkbox`, `ContextMenuButton` and `ContextMenu`.
 

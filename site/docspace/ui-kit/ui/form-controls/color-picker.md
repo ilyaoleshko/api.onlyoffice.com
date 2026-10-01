@@ -51,7 +51,7 @@ The full picker a settings form shows: drag either pointer or type a hex code, t
 
 The compact shape for a drop-down: a "Custom" title and a closing cross above the square and the strip, with no hex field and no buttons (`isPickerOnly`). The caller reads the color from `handleChange` and hides the picker from `onClose`.
 
-<ThemedImage alt="Picker Only" width={790} sources={{ light: require('./color-picker--picker-only-light.png').default, dark: require('./color-picker--picker-only-dark.png').default }} />
+<ThemedImage alt="Picker Only" width={1014} sources={{ light: require('./color-picker--picker-only-light.png').default, dark: require('./color-picker--picker-only-dark.png').default }} />
 
 ### Custom Labels
 
@@ -63,7 +63,7 @@ The component translates none of its texts, so a caller passes its own for the b
 
 Drag a pointer or type a hex code and watch the line under the picker follow: the caller keeps its own copy of the color from every change (`handleChange`), which is how it previews a color before it is applied. The picker keeps its own state, so the caller cannot move the pointers by changing `appliedColor` afterwards.
 
-<ThemedImage alt="Live Color Readout" width={790} sources={{ light: require('./color-picker--live-color-readout-light.png').default, dark: require('./color-picker--live-color-readout-dark.png').default }} />
+<ThemedImage alt="Live Color Readout" width={1014} sources={{ light: require('./color-picker--live-color-readout-light.png').default, dark: require('./color-picker--live-color-readout-dark.png').default }} />
 
 ### Preset Color
 
@@ -204,6 +204,8 @@ export function SwatchButton() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                       | Default             | Effect                                                                                     |
 | ------------------------------ | ------------------- | ------------------------------------------------------------------------------------------ |
 | `--color-picker-width`         | `195px`             | Width of the picker; ignored at 600px and below, where it takes the window width less 32px |
@@ -215,6 +217,8 @@ export function SwatchButton() {
 | `--color-picker-input-height`  | `32px`              | Height of the hex field                                                                    |
 | `--color-picker-input-padding` | `6px 8px`           | Padding of the hex field                                                                   |
 | `--color-picker-input-radius`  | `3px`               | Corner radius of the hex field                                                             |
+
+</APITable>
 
 The three hex-field colours are the light theme's; under a `.dark` ancestor the defaults turn
 dark, and a variable you set still wins in both.
@@ -238,6 +242,8 @@ set styles cancel, and `--button-root-border-radius` rounds both.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid`                               |
 | --------------- | ------------------------------------------- |
 | The wrapper     | `color-picker`                              |
@@ -246,6 +252,8 @@ set styles cancel, and `--button-root-border-radius` rounds both.
 | The picker area | `color-picker-content`                      |
 | The hex field   | `color-picker-hex-input`                    |
 | The buttons     | `color-picker-apply`, `color-picker-cancel` |
+
+</APITable>
 
 None of them can be overridden by a prop.
 

@@ -2,7 +2,7 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Access.mdx"
 ---
 
-import ThemedImage from '@theme/ThemedImage';
+import APITable from '@site/src/components/APITable/APITable';
 
 # Types and roles
 
@@ -26,6 +26,8 @@ header to see its enum value.
 
 ### Portal user types
 
+<APITable name="Portal-user-types">
+
 | In the UI  | `EmployeeType`           | Flag on the user  |
 | ---------- | ------------------------ | ----------------- |
 | Owner      | `EmployeeType.Owner`     | `isOwner`         |
@@ -34,12 +36,16 @@ header to see its enum value.
 | User       | `EmployeeType.User`      | `isCollaborator`  |
 | Guest      | `EmployeeType.Guest`     | `isVisitor`       |
 
+</APITable>
+
 Several flags can be true on one person: an owner is also an admin. To turn them into one
 type, use `getUserType(user)` rather than reading a single flag. It checks them in the order
 above and stops at the first match. It also counts someone with any `listAdminModules` as a
 Full admin. `getUserTypeTranslation(type, t)` gives the UI name.
 
 ### Room roles
+
+<APITable name="Room-roles">
 
 | In the UI       | `ShareAccessRights`             |
 | --------------- | ------------------------------- |
@@ -52,6 +58,8 @@ Full admin. `getUserTypeTranslation(type, t)` gives the UI name.
 | Commentator     | `ShareAccessRights.Comment`     |
 | Viewer          | `ShareAccessRights.ReadOnly`    |
 
+</APITable>
+
 **Room owner** and **Room manager** are open only to Owners, Full admins and Room admins.
 Every other role is open to every type, Guests included. Nobody can change their own role.
 
@@ -61,21 +69,65 @@ Every other role is open to every type, Guests included. Nobody can change their
 
 A Guest has no My documents at all, so there is nothing to create or upload there.
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block0-light.png').default, dark: require('./types-and-roles--block0-dark.png').default }} />
+<APITable name="My-documents">
+
+| Action | Owner | Full admin | Room admin | User | Guest |
+| --- | --- | --- | --- | --- | --- |
+| Open the section | ✓ | ✓ | ✓ | ✓ | — |
+| Create, upload, move, copy, rename, download, delete | ✓ | ✓ | ✓ | ✓ | — |
+
+</APITable>
 
 ### Rooms
 
 Nobody, not even the Owner, can edit someone else's room, invite people into it, change roles
 in it, remove its members, or see the links of someone else's public room.
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block1-light.png').default, dark: require('./types-and-roles--block1-dark.png').default }} />
+<APITable name="Rooms">
+
+| Action | Owner | Full admin | Room admin | User | Guest |
+| --- | --- | --- | --- | --- | --- |
+| See all rooms | ✓ | ✓ | — | — | — |
+| See rooms I own | ✓ | ✓ | ✓ | — | — |
+| Create rooms | ✓ | ✓ | ✓ | — | — |
+| See rooms I was invited to | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Pin rooms | ✓ | ✓ | ✓ | ✓ | ✓ |
+| View members, history, room info | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Edit own rooms | ✓ | ✓ | ✓ | — | — |
+| Invite external users to a room | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Invite portal users and groups to a room | ✓ | ✓ | ✓ | ✓ | — |
+| Set a member's role when inviting | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Change member and group roles | ✓ | ✓ | ✓ | — | — |
+| Remove members and groups | ✓ | ✓ | ✓ | — | — |
+| Archive own rooms | ✓ | ✓ | ✓ | — | — |
+| Duplicate own room | ✓ | ✓ | ✓ | — | — |
+| Duplicate someone else's room | ✓ | ✓ | — | — | — |
+| Change the owner of someone else's room | ✓ | ✓ | — | — | — |
+| Archive someone else's room | ✓ | ✓ | — | — | — |
+
+</APITable>
 
 ### Archive
 
 The Archive is read-only for everyone: no creating, editing, inviting, role changes, removals
 or pinning. What is left:
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block2-light.png').default, dark: require('./types-and-roles--block2-dark.png').default }} />
+<APITable name="Archive">
+
+| Action | Owner | Full admin | Room admin | User | Guest |
+| --- | --- | --- | --- | --- | --- |
+| See all archived rooms | ✓ | ✓ | — | — | — |
+| See archived rooms I own | ✓ | ✓ | ✓ | — | — |
+| See archived rooms I was invited to | ✓ | ✓ | ✓ | ✓ | ✓ |
+| View members, history, room info | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Duplicate own room into Rooms | ✓ | ✓ | ✓ | — | — |
+| Duplicate someone else's room into Rooms | ✓ | ✓ | — | — | — |
+| Restore own room | ✓ | ✓ | ✓ | — | — |
+| Restore any room | ✓ | ✓ | — | — | — |
+| Delete own room | ✓ | ✓ | ✓ | — | — |
+| Delete any room | ✓ | ✓ | — | — | — |
+
+</APITable>
 
 ### Accounts
 
@@ -83,27 +135,98 @@ Users and Guests never reach this section, so they have no column. A Room admin 
 and promote people up to User and no further: nobody grants a rank they do not hold. Guests
 are never added to groups, whoever asks.
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block3-light.png').default, dark: require('./types-and-roles--block3-dark.png').default }} />
+<APITable name="Accounts">
+
+| Action | Owner | Full admin | Room admin |
+| --- | --- | --- | --- |
+| Invite a Full admin | ✓ | — | — |
+| Invite a Room admin | ✓ | ✓ | — |
+| Invite a User | ✓ | ✓ | ✓ |
+| Promote to Full admin | ✓ | — | — |
+| Promote to Room admin | ✓ | ✓ | — |
+| Promote a Guest to User | ✓ | ✓ | ✓ |
+| Demote a Full admin (to Room admin or User) | ✓ | — | — |
+| Demote a Room admin to User | ✓ | ✓ | — |
+| Demote a User to Guest | ✓ | ✓ | — |
+| Block or delete a Full admin | ✓ | — | — |
+| Block or delete a Room admin, User or Guest | ✓ | ✓ | — |
+| Reassign a deleted person's data | ✓ | ✓ | — |
+| Create and edit groups, change their membership | ✓ | ✓ | — |
+| See the group list and its contents | ✓ | ✓ | ✓ |
+| See guests invited by other people | ✓ | ✓ | — |
+| See own guests | ✓ | ✓ | ✓ |
+
+</APITable>
 
 ### Portal settings
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block4-light.png').default, dark: require('./types-and-roles--block4-dark.png').default }} />
+<APITable name="Portal-settings">
+
+| Action | Owner | Full admin | Room admin | User | Guest |
+| --- | --- | --- | --- | --- | --- |
+| Open portal settings | ✓ | ✓ | — | — | — |
+| Delete the portal | ✓ | — | — | — | — |
+
+</APITable>
 
 ### Sharing files
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block5-light.png').default, dark: require('./types-and-roles--block5-dark.png').default }} />
+<APITable name="Sharing-files">
+
+| Action | Owner | Full admin | Room admin | User | Guest |
+| --- | --- | --- | --- | --- | --- |
+| Share files with portal users | ✓ | ✓ | ✓ | ✓ | — |
+| Share files with guests | ✓ | ✓ | ✓ | — | — |
+| Share with guests the sharer cannot see | ✓ | ✓ | — | — | — |
+| See the user and group list while sharing | ✓ | ✓ | ✓ | — | — |
+| Quick share for forms | ✓ | ✓ | ✓ | ✓ | — |
+
+</APITable>
 
 ## What each room role can do
 
 ### The room
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block6-light.png').default, dark: require('./types-and-roles--block6-dark.png').default }} />
+<APITable name="The-room">
+
+| Action | Room owner | Room manager | Content creator | Editor | Form filler | Reviewer | Commentator | Viewer |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Edit the room | ✓ | ✓ | — | — | — | — | — | — |
+| Invite users, set their role on invite | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Change member roles | ✓ | ✓ | — | — | — | — | — | — |
+| Create, edit and delete room links | ✓ | ✓ | — | — | — | — | — | — |
+| Moderate people asking to join | ✓ | ✓ | — | — | — | — | — | — |
+| Remove members | ✓ | ✓ | — | — | — | — | — | — |
+| View members, history, room info | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Archive the room | ✓ | — | — | — | — | — | — | — |
+| Delete the room | ✓ | — | — | — | — | — | — | — |
+
+</APITable>
 
 ### Files and folders in a room
 
 Third-party storage has no version history in the portal, whatever the role.
 
-<ThemedImage alt="AccessMatrix" width={851} sources={{ light: require('./types-and-roles--block7-light.png').default, dark: require('./types-and-roles--block7-dark.png').default }} />
+<APITable name="Files-and-folders-in-a-room">
+
+| Action | Room owner | Room manager | Content creator | Editor | Form filler | Reviewer | Commentator | Viewer |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Create, upload | ✓ | ✓ | ✓ | — | — | — | — | — |
+| Edit files | ✓ | ✓ | ✓ | ✓ | — | — | — | — |
+| Fill form fields | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — |
+| Review | ✓ | ✓ | ✓ | ✓ | — | ✓ | — | — |
+| Comment | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
+| Lock files against co-authors | ✓ | ✓ | ✓ | — | — | — | — | — |
+| View version history | ✓ | ✓ | ✓ | ✓ | — | — | — | — |
+| Manage version history | ✓ | ✓ | ✓ | — | — | — | — | — |
+| Create, edit and delete file links | ✓ | ✓ | — | — | — | — | — | — |
+| View content and comments, copy, print, download | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Save docxf as oform | ✓ | ✓ | ✓ | — | — | — | — | — |
+| Delete, move and copy own files | ✓ | ✓ | ✓ | — | — | — | — | — |
+| Delete, move, copy, rename other people's files | ✓ | ✓ | — | — | — | — | — | — |
+| Copy files in from My documents | ✓ | ✓ | ✓ | — | — | — | — | — |
+
+</APITable>
 
 ### Archived rooms
 

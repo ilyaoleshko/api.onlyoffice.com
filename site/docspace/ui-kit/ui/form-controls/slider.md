@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Range input with the kit's own track and handle. It is a styled `<input type="range">` and
 nothing more — no ticks, no value bubble, no label.
 
-<ThemedImage alt="Slider" width={790} sources={{ light: require('./slider--primary-light.png').default, dark: require('./slider--primary-dark.png').default }} />
+<ThemedImage alt="Slider" width={1014} sources={{ light: require('./slider--primary-light.png').default, dark: require('./slider--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -44,25 +44,25 @@ colours.
 
 A 0–100 slider with the track filled up to the handle (`withPouring`), the usual choice for a setting such as volume or zoom; drag the handle or change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./slider--default-light.png').default, dark: require('./slider--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./slider--default-light.png').default, dark: require('./slider--default-dark.png').default }} />
 
 ### Disabled State
 
 For a setting that cannot be changed right now: the handle and the filled part of the track turn paler, the unfilled track stays as it is, and the handle no longer moves by mouse or keyboard (`isDisabled`).
 
-<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./slider--disabled-state-light.png').default, dark: require('./slider--disabled-state-dark.png').default }} />
+<ThemedImage alt="Disabled State" width={1014} sources={{ light: require('./slider--disabled-state-light.png').default, dark: require('./slider--disabled-state-dark.png').default }} />
 
 ### With Custom Steps
 
 Slider with a custom step size of 5, allowing values of 0, 5, and 10 only.
 
-<ThemedImage alt="With Custom Steps" width={790} sources={{ light: require('./slider--with-custom-steps-light.png').default, dark: require('./slider--with-custom-steps-dark.png').default }} />
+<ThemedImage alt="With Custom Steps" width={1014} sources={{ light: require('./slider--with-custom-steps-light.png').default, dark: require('./slider--with-custom-steps-dark.png').default }} />
 
 ### Without Pouring
 
 Slider without the pouring (filled track) effect. The track remains a single color.
 
-<ThemedImage alt="Without Pouring" width={790} sources={{ light: require('./slider--without-pouring-light.png').default, dark: require('./slider--without-pouring-dark.png').default }} />
+<ThemedImage alt="Without Pouring" width={1014} sources={{ light: require('./slider--without-pouring-light.png').default, dark: require('./slider--without-pouring-dark.png').default }} />
 
 ### With Custom Size
 
@@ -187,6 +187,8 @@ export function LockedQuality({ quality }: { quality: number }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                    | Default | Effect                                                          |
 | --------------------------- | ------- | --------------------------------------------------------------- |
 | `--slider-size`             | `8px`   | Height of the track                                             |
@@ -195,6 +197,8 @@ export function LockedQuality({ quality }: { quality: number }) {
 | `--slider-handle-color`     | theme   | Fill of the handle, and the colour the focus ring is mixed from |
 | `--slider-background-color` | theme   | Background of the unfilled track                                |
 | `--slider-pouring-image`    | theme   | Fill of the poured part, used only with `withPouring`           |
+
+</APITable>
 
 `--slider-pouring-image` is a `background-image`, so it takes a `linear-gradient(...)` or another
 `<image>`, not a plain colour; and it is used only while the slider is enabled. A disabled slider
@@ -223,9 +227,13 @@ these.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`             |
 | --------- | ------------------------- |
 | The input | `slider`, or `dataTestId` |
+
+</APITable>
 
 ## Related
 

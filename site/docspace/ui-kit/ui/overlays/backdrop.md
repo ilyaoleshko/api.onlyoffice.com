@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Full-screen layer behind an overlay, transparent by default, that catches the click meant to
 close it. It dims the page only when you ask, or on a phone.
 
-<ThemedImage alt="Backdrop" width={800} sources={{ light: require('./backdrop--primary-light.png').default, dark: require('./backdrop--primary-dark.png').default }} />
+<ThemedImage alt="Backdrop" width={1024} sources={{ light: require('./backdrop--primary-light.png').default, dark: require('./backdrop--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -77,7 +77,7 @@ When the covered content has to sit above other high layers of the page, raise t
 
 The dimming colour overridden on a wrapper -- the variables are listed under CSS variables on this page. The stacking order is the `zIndex` prop.
 
-<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./backdrop--css-customization-light.png').default, dark: require('./backdrop--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1024} sources={{ light: require('./backdrop--css-customization-light.png').default, dark: require('./backdrop--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -187,9 +187,13 @@ export function MembersPanel() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable        | Default                                                 | Effect                                                                                                |
 | --------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `--backdrop-bg` | `rgba(6, 22, 38, 0.2)`; `rgba(27, 27, 27, 0.6)` in dark | Colour of the dimming, shown only when the layer dims: `withBackground`, `isAside` or a narrow screen |
+
+</APITable>
 
 The stacking order is the `zIndex` prop, not a variable. The stylesheet does read
 `--backdrop-z-index`, but the component always writes `zIndex` (203 by default) inline, which
@@ -206,9 +210,13 @@ wins, so setting the variable has no effect; a `zIndex` in `style` overrides the
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid` |
 | --------- | ------------- |
 | The layer | `backdrop`    |
+
+</APITable>
 
 It cannot be overridden by a prop.
 

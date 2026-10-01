@@ -3,6 +3,8 @@ description: "The file list of the DocSpace portal, in three parts: the containe
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/rows/README.md"
 ---
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Rows
 
 The file list of the DocSpace portal, in three parts: the container, the row and the row's
@@ -128,6 +130,8 @@ export function SelectableList({ names }: { names: string[] }) {
 
 ## Sub-components
 
+<APITable>
+
 | Export                                      | What it is                                               |
 | ------------------------------------------- | -------------------------------------------------------- |
 | [`RowContainer`](./row-container.md) | The scrolling, virtualised list the rows go in           |
@@ -135,6 +139,8 @@ export function SelectableList({ names }: { names: string[] }) {
 | [`RowContent`](./row-content.md)     | The row's text, laid out by the position of its children |
 | `RowSkeleton`, `RowsSkeleton`               | Placeholders in the shape of a row and of a list of them |
 | `IndexIconButtons`                          | The up and down arrows of the row's index-editing mode   |
+
+</APITable>
 
 `RowsSkeleton` draws `count` placeholder rows, 25 when it is not given, while the real rows
 load. Each row is a 32px square for the start element, a bar for the title and a 16px square
@@ -164,11 +170,15 @@ the shapes still.
 
 ## Test ids
 
+<APITable>
+
 | Element         | `data-testid`                        |
 | --------------- | ------------------------------------ |
 | The container   | `row-container`                      |
 | A row           | `row`, overridable with `dataTestId` |
 | A row's content | `row-content`                        |
+
+</APITable>
 
 ## Related
 

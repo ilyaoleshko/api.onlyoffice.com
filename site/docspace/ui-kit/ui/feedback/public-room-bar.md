@@ -13,7 +13,7 @@ Grey note above a screen's content: an icon, a bold line and a paragraph, with a
 cross. In the portal it explains that a room is reachable by link; nothing in it is about rooms,
 so it serves as the kit's standing informational bar.
 
-<ThemedImage alt="PublicRoomBar" width={790} sources={{ light: require('./public-room-bar--primary-light.png').default, dark: require('./public-room-bar--primary-dark.png').default }} />
+<ThemedImage alt="PublicRoomBar" width={1014} sources={{ light: require('./public-room-bar--primary-light.png').default, dark: require('./public-room-bar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -51,43 +51,43 @@ on a dark page.
 
 The bar as most screens use it: the default icon, a header and a body line, with no close cross. Change any prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./public-room-bar--default-light.png').default, dark: require('./public-room-bar--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./public-room-bar--default-light.png').default, dark: require('./public-room-bar--default-dark.png').default }} />
 
 ### With Custom Icon
 
 Replace the default glyph when another icon says more about the state the bar explains — here a planet, passed as an SVG URL (`iconName`).
 
-<ThemedImage alt="With Custom Icon" width={790} sources={{ light: require('./public-room-bar--with-custom-icon-light.png').default, dark: require('./public-room-bar--with-custom-icon-dark.png').default }} />
+<ThemedImage alt="With Custom Icon" width={1014} sources={{ light: require('./public-room-bar--with-custom-icon-light.png').default, dark: require('./public-room-bar--with-custom-icon-dark.png').default }} />
 
 ### Without Close Button
 
 Persistent bar without a close button. Cannot be dismissed by the user.
 
-<ThemedImage alt="Without Close Button" width={790} sources={{ light: require('./public-room-bar--without-close-button-light.png').default, dark: require('./public-room-bar--without-close-button-dark.png').default }} />
+<ThemedImage alt="Without Close Button" width={1014} sources={{ light: require('./public-room-bar--without-close-button-light.png').default, dark: require('./public-room-bar--without-close-button-dark.png').default }} />
 
 ### With Custom Components
 
 Pass nodes instead of strings when a line needs markup of its own — a coloured header and an italic body here, each wrapped in a div instead of a paragraph (`headerText`, `bodyText`). The bar also sits without its top margin (`barIsVisible`).
 
-<ThemedImage alt="With Custom Components" width={790} sources={{ light: require('./public-room-bar--with-custom-components-light.png').default, dark: require('./public-room-bar--with-custom-components-dark.png').default }} />
+<ThemedImage alt="With Custom Components" width={1014} sources={{ light: require('./public-room-bar--with-custom-components-light.png').default, dark: require('./public-room-bar--with-custom-components-dark.png').default }} />
 
 ### With Close Button
 
 Let the reader dismiss a note they have read: a close cross appears on the right (`onClose`). Clicking it only reports the click in the Actions panel; the bar stays until the host stops rendering it.
 
-<ThemedImage alt="With Close Button" width={790} sources={{ light: require('./public-room-bar--with-close-button-light.png').default, dark: require('./public-room-bar--with-close-button-dark.png').default }} />
+<ThemedImage alt="With Close Button" width={1014} sources={{ light: require('./public-room-bar--with-close-button-light.png').default, dark: require('./public-room-bar--with-close-button-dark.png').default }} />
 
 ### Without Header
 
 For a note that needs no title: the icon and the bold header are gone and only the smaller body line is left (`hideHeader`).
 
-<ThemedImage alt="Without Header" width={790} sources={{ light: require('./public-room-bar--without-header-light.png').default, dark: require('./public-room-bar--without-header-dark.png').default }} />
+<ThemedImage alt="Without Header" width={1014} sources={{ light: require('./public-room-bar--without-header-light.png').default, dark: require('./public-room-bar--without-header-dark.png').default }} />
 
 ### Css Customization
 
 The colour, spacing and corner variables set on one wrapper -- the variables are listed under CSS variables on this page.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./public-room-bar--css-customization-light.png').default, dark: require('./public-room-bar--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./public-room-bar--css-customization-light.png').default, dark: require('./public-room-bar--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -224,6 +224,8 @@ export function QuotaNote() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                          | Default                       | Effect                            |
 | --------------------------------- | ----------------------------- | --------------------------------- |
 | `--public-room-bar-bg`            | light grey; dark grey in dark | Background of the bar             |
@@ -239,6 +241,8 @@ export function QuotaNote() {
 | `--public-room-bar-top-margin`    | `20px`                        | Top margin, unless `barIsVisible` |
 | `--public-room-bar-header-gap`    | `8px`                         | Gap between icon and header       |
 | `--public-room-bar-header-weight` | `600`                         | Weight of the header row          |
+
+</APITable>
 
 `--public-room-bar-close-icon` is read, but by a `path` rule that `IconButton`'s own fill rule
 outranks, and `IconButton` also sets `--icon-button-color` on itself. The close cross therefore
@@ -259,10 +263,14 @@ keeps the icon button's grey whatever a wrapper or `style` sets.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                                     |
 | ------------- | ------------------------------------------------- |
 | Outer element | `public_room_bar`, overridden by `dataTestId`     |
 | Close cross   | `icon-button`, from `IconButton` and not settable |
+
+</APITable>
 
 The two text elements carry `Text`'s own `text` id.
 

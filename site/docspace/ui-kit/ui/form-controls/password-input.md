@@ -58,7 +58,7 @@ A sign-in form only needs the field and the eye button: the simple view drops th
 
 Three fields a form may need side by side: **Normal**, ready for input; **Disabled**, greyed out with typing blocked and no tooltip (`isDisabled`); **With error**, drawn with a red border to flag a value the form rejected (`hasError`).
 
-<ThemedImage alt="States" width={580} sources={{ light: require('./password-input--states-light.png').default, dark: require('./password-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={887} sources={{ light: require('./password-input--states-light.png').default, dark: require('./password-input--states-dark.png').default }} />
 
 ### Custom Validation
 
@@ -70,7 +70,7 @@ A policy that asks for less: type into the field and the tooltip lists only a mi
 
 Pick the height that matches the other fields of the form: base, middle and large (`size`).
 
-<ThemedImage alt="Sizes" width={735} sources={{ light: require('./password-input--sizes-light.png').default, dark: require('./password-input--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1017} sources={{ light: require('./password-input--sizes-light.png').default, dark: require('./password-input--sizes-dark.png').default }} />
 
 ### With Password Generator
 
@@ -214,10 +214,14 @@ Plus 298 more props inherited from `React.AriaAttributes`, `React.DOMAttributes`
 
 ### Enums
 
+<APITable>
+
 | Enum        | Members                                                |
 | ----------- | ------------------------------------------------------ |
 | `InputSize` | `base`, `middle`, `large`                              |
 | `InputType` | `text`, `password`, `email`, `tel`, `search`, `number` |
+
+</APITable>
 
 ## Recipes
 
@@ -383,9 +387,13 @@ The field's colours come from the shared input styles, so they follow
 [`Tooltip`](../overlays/tooltip.md). The rules in the tooltip are coloured green or red from the
 kit's status colours, which are not overridable.
 
+<APITable>
+
 | Variable                         | Default | Effect                                           |
 | -------------------------------- | ------- | ------------------------------------------------ |
 | `--password-input-tooltip-width` | `294px` | Width of the rules tooltip on tablet and desktop |
+
+</APITable>
 
 The rules tooltip is rendered in a portal at the end of `<body>`, so a value set on a wrapper
 around the field never reaches it: set `--password-input-tooltip-width` on `:root` or `body`. On
@@ -408,12 +416,16 @@ mobile the width is a fixed `320px` and the variable is not read.
 
 ## Test ids
 
+<APITable>
+
 | Element            | `data-testid`                                            |
 | ------------------ | -------------------------------------------------------- |
 | The wrapper        | `password-input`, or `testId`                            |
 | The tooltip anchor | `tooltipContent`                                         |
 | The eye            | `password_input_eye_icon`, `password_input_eye_off_icon` |
 | The generate link  | `generate_password_link`                                 |
+
+</APITable>
 
 ## Related
 

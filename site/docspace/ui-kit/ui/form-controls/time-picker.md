@@ -54,7 +54,7 @@ The border turns red to flag a time the form rejected (`hasError`); the fields s
 
 Hours stop at 12 (`isTwelveHourFormat`); nothing on screen tells AM from PM, only the `meridiem` behind each box decides what `onChange` receives: the first reports 10:30, the second, showing 02:30, reports 14:30.
 
-<ThemedImage alt="Twelve Hour Format" width={273} sources={{ light: require('./time-picker--twelve-hour-format-light.png').default, dark: require('./time-picker--twelve-hour-format-dark.png').default }} />
+<ThemedImage alt="Twelve Hour Format" width={278} sources={{ light: require('./time-picker--twelve-hour-format-light.png').default, dark: require('./time-picker--twelve-hour-format-dark.png').default }} />
 
 ### Focus On Render
 
@@ -216,6 +216,8 @@ export function TwelveHourTime({ day }: { day: DateTime }) {
 Set these on any ancestor; the group reads them through a fallback to the theme token or to a
 fixed size.
 
+<APITable>
+
 | Variable                    | Default                | Effect                                                        |
 | --------------------------- | ---------------------- | ------------------------------------------------------------- |
 | `--time-input-border`       | `--input-border-color` | Border colour at rest                                         |
@@ -226,6 +228,8 @@ fixed size.
 | `--time-input-height`       | `32px`                 | Height of the group                                           |
 | `--time-input-radius`       | `3px`                  | Border radius                                                 |
 | `--time-input-padding`      | `0px 6px`              | Padding inside the group, as a `padding` shorthand            |
+
+</APITable>
 
 The two fields inside are [`TextInput`](./text-input.md)s drawn without a border, so its
 own variables reach them too: `--text-input-color` sets the digits' colour, and
@@ -246,11 +250,15 @@ same value as `--time-input-bg` for the fields to blend in.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`              |
 | ------------- | -------------------------- |
 | The group     | `time-picker`, or `testId` |
 | Hours field   | `hours-input`              |
 | Minutes field | `minutes-input`            |
+
+</APITable>
 
 The two fields carry theirs as `data-test-id`, with a hyphen, not `data-testid`; only the group uses the usual attribute.
 

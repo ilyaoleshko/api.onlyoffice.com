@@ -5,12 +5,14 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # TopLoaderService
 
 The thin bar at the top of the page, driven by three static calls rather than by React. It renders
 nothing: it finds an element you put in the document by id and writes a width onto it every 50ms.
 
-<ThemedImage alt="TopLoader" width={183} sources={{ light: require('./top-loading-indicator--primary-light.png').default, dark: require('./top-loading-indicator--primary-dark.png').default }} />
+<ThemedImage alt="TopLoader" width={223} sources={{ light: require('./top-loading-indicator--primary-light.png').default, dark: require('./top-loading-indicator--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -50,7 +52,7 @@ Press **Start Loading** and a thin bar grows along the top of the viewport and s
 `TopLoaderService` defines no CSS custom properties -- the element's own style does all of it, as the recipe "The element, and its style" on this page describes.
 This story renders a static demo bar under a different id, purely for visual reference -- it is not driven by `TopLoaderService`.
 
-<ThemedImage alt="Css Customization" width={775} sources={{ light: require('./top-loading-indicator--css-customization-light.png').default, dark: require('./top-loading-indicator--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={999} sources={{ light: require('./top-loading-indicator--css-customization-light.png').default, dark: require('./top-loading-indicator--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -196,9 +198,13 @@ export function TopLoaderElement() {
 
 ## Test ids
 
+<APITable>
+
 | Element | Attribute                   |
 | ------- | --------------------------- |
 | The bar | `data-test-id="top-loader"` |
+
+</APITable>
 
 It is written on the first `start()`, and note the spelling: `data-test-id` with two hyphens, not
 the `data-testid` every component in this kit uses.

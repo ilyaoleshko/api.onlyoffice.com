@@ -43,7 +43,7 @@ Invalid link error page. Displayed when a shared or invitation link is expired o
 - **Consistent Styling**
 - **Link Validation Feedback**
 
-<ThemedImage alt="Default" width={800} sources={{ light: require('./errorinvalidlink--default-light.png').default, dark: require('./errorinvalidlink--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./errorinvalidlink--default-light.png').default, dark: require('./errorinvalidlink--default-dark.png').default }} />
 
 ### Usage
 

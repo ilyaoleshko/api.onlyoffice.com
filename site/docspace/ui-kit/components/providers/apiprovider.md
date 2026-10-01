@@ -44,7 +44,7 @@ Provides API client context to all child components using the ONLYOFFICE Apps AP
 - **Memoized Initialization** — API clients are memoized based on URL and API key changes
 - **Socket Connection** — Connects the portal WebSocket on mount unless `initSocket` is `false`
 
-<ThemedImage alt="Default" width={758} sources={{ light: require('./apiprovider--default-light.png').default, dark: require('./apiprovider--default-dark.png').default }} />
+<ThemedImage alt="Default" width={982} sources={{ light: require('./apiprovider--default-light.png').default, dark: require('./apiprovider--default-dark.png').default }} />
 
 ## Usage
 

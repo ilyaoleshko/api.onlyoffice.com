@@ -13,7 +13,7 @@ Grid that sorts the tiles it is given into rooms, templates, folders and files a
 them a heading. It does not lay out a list of cards — it reads each child's `item` and decides
 which of four groups it belongs to.
 
-<ThemedImage alt="TileContainer" width={792} sources={{ light: require('./tile-container--primary-light.png').default, dark: require('./tile-container--primary-dark.png').default }} />
+<ThemedImage alt="TileContainer" width={761} sources={{ light: require('./tile-container--primary-light.png').default, dark: require('./tile-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -48,19 +48,19 @@ colour from the custom properties the provider's `.light` and `.dark` classes de
 
 Three documents under the files heading, in as many columns as the window has room for; resize the window to see the columns change, and change any other prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={792} sources={{ light: require('./tile-container--default-light.png').default, dark: require('./tile-container--default-dark.png').default }} />
+<ThemedImage alt="Default" width={761} sources={{ light: require('./tile-container--default-light.png').default, dark: require('./tile-container--default-dark.png').default }} />
 
 ### Folders And Files
 
 A listing that holds both kinds, passed in with the files first: the grid still puts the folders on top, each group under its own heading (`headingFolders`, `headingFiles`), because it sorts by each tile's `item`, not by the order of the children.
 
-<ThemedImage alt="Folders And Files" width={528} sources={{ light: require('./tile-container--folders-and-files-light.png').default, dark: require('./tile-container--folders-and-files-dark.png').default }} />
+<ThemedImage alt="Folders And Files" width={508} sources={{ light: require('./tile-container--folders-and-files-light.png').default, dark: require('./tile-container--folders-and-files-dark.png').default }} />
 
 ### Css Customization
 
 The variables are listed under CSS variables on this page. One grid of three files sets the gap and four of the tiles' variables; hover a tile for `--tile-hover-bg`. The container's own variable is the gap; the others are the tiles' and are set here once for the whole grid.
 
-<ThemedImage alt="Css Customization" width={793} sources={{ light: require('./tile-container--css-customization-light.png').default, dark: require('./tile-container--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={757} sources={{ light: require('./tile-container--css-customization-light.png').default, dark: require('./tile-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -222,9 +222,13 @@ export function TightListing() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable               | Default | Effect                                             |
 | ---------------------- | ------- | -------------------------------------------------- |
 | `--tile-container-gap` | `16px`  | Gap between tiles, across and down, in every group |
+
+</APITable>
 
 The tiles' own variables — `--tile-bg`, `--tile-border-style`, `--tile-radius`, `--tile-hover-bg`
 and the rest listed on each tile's page — are read by the tiles, not by the container, but they

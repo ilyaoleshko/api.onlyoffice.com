@@ -13,7 +13,7 @@ Settings-page entry: a linked title, a line of explanation, an arrow, and an opt
 badge. It is one row of a settings index — the list that sends the reader on to General,
 Security, Backup and the rest.
 
-<ThemedImage alt="CategoryItem" width={790} sources={{ light: require('./category-item--primary-light.png').default, dark: require('./category-item--primary-dark.png').default }} />
+<ThemedImage alt="CategoryItem" width={1014} sources={{ light: require('./category-item--primary-light.png').default, dark: require('./category-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -46,19 +46,19 @@ rather than failing, so on a dark page without a provider the badge keeps its li
 
 An entry as it sits in an index of destinations: the title link, the explanation under it and the arrow. Change any prop live in the Controls panel below.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./category-item--default-light.png').default, dark: require('./category-item--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./category-item--default-light.png').default, dark: require('./category-item--default-dark.png').default }} />
 
 ### With Paid Badge
 
 Marks a destination that needs a paid plan: the badge beside the title carries its own text (`withPaidBadge`, `badgeLabel`). The badge is not shown on a page whose path contains `management`.
 
-<ThemedImage alt="With Paid Badge" width={790} sources={{ light: require('./category-item--with-paid-badge-light.png').default, dark: require('./category-item--with-paid-badge-dark.png').default }} />
+<ThemedImage alt="With Paid Badge" width={1014} sources={{ light: require('./category-item--with-paid-badge-light.png').default, dark: require('./category-item--with-paid-badge-dark.png').default }} />
 
 ### Disabled State
 
 For a destination the reader cannot open right now: the title is no longer a working link (`isDisabled`). Nothing else marks it in the light theme, where the disabled subtitle colour matches the normal one; in the dark theme the subtitle dims. Say in the subtitle why the entry is unavailable.
 
-<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./category-item--disabled-state-light.png').default, dark: require('./category-item--disabled-state-dark.png').default }} />
+<ThemedImage alt="Disabled State" width={1014} sources={{ light: require('./category-item--disabled-state-light.png').default, dark: require('./category-item--disabled-state-dark.png').default }} />
 
 ### All Variants
 
@@ -74,13 +74,13 @@ The three looks side by side, as they appear together in one index:
 
 The same entry under a right-to-left interface: the title and subtitle align to the right, the badge follows the title leftwards and the arrow sits at the left end, mirrored to point left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
 
-<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./category-item--right-to-left-light.png').default, dark: require('./category-item--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1014} sources={{ light: require('./category-item--right-to-left-light.png').default, dark: require('./category-item--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 The variables set on one wrapper -- they are listed under CSS variables on this page. **Files** shows the title, subtitle and arrow colours and the margin below it; **Security** is disabled (`isDisabled`) to show `--category-item-disabled-color` on its subtitle.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./category-item--css-customization-light.png').default, dark: require('./category-item--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./category-item--css-customization-light.png').default, dark: require('./category-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -250,6 +250,8 @@ export function SettingsList() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default                             | Effect                               |
 | ----------------------------------- | ----------------------------------- | ------------------------------------ |
 | `--category-item-title-color`       | none — the title inherits           | Colour of the title link             |
@@ -257,6 +259,8 @@ export function SettingsList() {
 | `--category-item-arrow-color`       | black; white in dark                | Fill of the trailing arrow           |
 | `--category-item-disabled-color`    | the subtitle's grey; dimmer in dark | Colour of the subtitle when disabled |
 | `--category-item-margin`            | `20px`                              | Bottom margin of the whole row       |
+
+</APITable>
 
 ## Accessibility
 
@@ -274,11 +278,15 @@ export function SettingsList() {
 
 ## Test ids
 
+<APITable>
+
 | Element    | `data-testid`                                                      |
 | ---------- | ------------------------------------------------------------------ |
 | Wrapper    | the value of `dataTestId`; the attribute is absent without it      |
 | Title link | `<dataTestId>_category_link`, or `link` when `dataTestId` is unset |
 | Subtitle   | `text`, from the `Text` it renders into                            |
+
+</APITable>
 
 The paid badge carries `Badge`'s own ids (`badge`, `badge-inner`, `badge-text`).
 

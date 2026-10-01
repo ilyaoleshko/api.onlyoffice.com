@@ -63,13 +63,13 @@ The building blocks of a menu, top to bottom: **Header Item** — a section titl
 
 A menu entry that switches an option on and off in place, without opening a dialog: **Toggle Off** and **Toggle On** show both positions (`withToggle`, `checked`); a change of the switch calls `onClick`.
 
-<ThemedImage alt="With Toggle" width={779} sources={{ light: require('./drop-down-item--with-toggle-light.png').default, dark: require('./drop-down-item--with-toggle-dark.png').default }} />
+<ThemedImage alt="With Toggle" width={1007} sources={{ light: require('./drop-down-item--with-toggle-light.png').default, dark: require('./drop-down-item--with-toggle-dark.png').default }} />
 
 ### With Badges
 
 Badges tell the reader before clicking that an entry is new or needs a paid plan: **New Feature** carries a beta badge (`isBeta`, `betaLabel`), **Premium Feature** a paid one (`isPaidBadge`, `paidLabel`).
 
-<ThemedImage alt="With Badges" width={233} sources={{ light: require('./drop-down-item--with-badges-light.png').default, dark: require('./drop-down-item--with-badges-dark.png').default }} />
+<ThemedImage alt="With Badges" width={241} sources={{ light: require('./drop-down-item--with-badges-light.png').default, dark: require('./drop-down-item--with-badges-dark.png').default }} />
 
 ### Submenu
 
@@ -81,13 +81,13 @@ An arrow at the end of the row tells the reader the entry leads to more options:
 
 Any element can sit at the end of the row, such as the keyboard shortcut of a command: **Save** and **Copy** show theirs on the right (`additionalElement`).
 
-<ThemedImage alt="With Additional Element" width={234} sources={{ light: require('./drop-down-item--with-additional-element-light.png').default, dark: require('./drop-down-item--with-additional-element-dark.png').default }} />
+<ThemedImage alt="With Additional Element" width={242} sources={{ light: require('./drop-down-item--with-additional-element-light.png').default, dark: require('./drop-down-item--with-additional-element-dark.png').default }} />
 
 ### Header With Arrow
 
 A nested menu level needs a way back: **Header with Back** shows an arrow before the title (`isHeader`, `withHeaderArrow`); click it to see `headerArrowAction` in the Actions panel.
 
-<ThemedImage alt="Header With Arrow" width={167} sources={{ light: require('./drop-down-item--header-with-arrow-light.png').default, dark: require('./drop-down-item--header-with-arrow-dark.png').default }} />
+<ThemedImage alt="Header With Arrow" width={171} sources={{ light: require('./drop-down-item--header-with-arrow-light.png').default, dark: require('./drop-down-item--header-with-arrow-dark.png').default }} />
 
 ### With Text Overflow
 
@@ -99,19 +99,19 @@ A label longer than the menu is cut off with an ellipsis instead of wrapping or 
 
 An entry can carry a second target at its end: **Help center** shows an external-link icon (`withExternalLink`, `externalLinkPath`); click the icon to see `onExternalLinkClick` in the Actions panel while `onClick` stays silent, and open the link from that callback yourself.
 
-<ThemedImage alt="With External Link" width={234} sources={{ light: require('./drop-down-item--with-external-link-light.png').default, dark: require('./drop-down-item--with-external-link-dark.png').default }} />
+<ThemedImage alt="With External Link" width={242} sources={{ light: require('./drop-down-item--with-external-link-light.png').default, dark: require('./drop-down-item--with-external-link-dark.png').default }} />
 
 ### Right To Left
 
 The same rows under a right-to-left interface: the icons move to the right of the labels, and the submenu arrow and the switch move to the left end, the arrow mirrored to point left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
 
-<ThemedImage alt="Right To Left" width={779} sources={{ light: require('./drop-down-item--right-to-left-light.png').default, dark: require('./drop-down-item--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={1007} sources={{ light: require('./drop-down-item--right-to-left-light.png').default, dark: require('./drop-down-item--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
 Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. **Header** shows the header height, font size and the line under it, **Custom Item** and **Another Item** the text and icon colors, row height, font and padding — hover them for the hover background — the separator its color, and **Disabled Item** the disabled text color (`showDisabledItems` keeps it in the list).
 
-<ThemedImage alt="Css Customization" width={158} sources={{ light: require('./drop-down-item--css-customization-light.png').default, dark: require('./drop-down-item--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={166} sources={{ light: require('./drop-down-item--css-customization-light.png').default, dark: require('./drop-down-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -297,6 +297,8 @@ export function SharingLevel({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default    | Effect                                                                  |
 | ----------------------------------- | ---------- | ----------------------------------------------------------------------- |
 | `--drop-down-item-height`           | `32px`     | Line height of the row                                                  |
@@ -310,6 +312,8 @@ export function SharingLevel({
 | `--drop-down-item-divider`          | theme line | Colour of a separator and of the line under a header                    |
 | `--drop-down-item-header-height`    | `48px`     | Height of a header row                                                  |
 | `--drop-down-item-header-font-size` | `15px`     | Size of a header's text                                                 |
+
+</APITable>
 
 On a tablet-width viewport the row ignores `--drop-down-item-height` and `--drop-down-item-padding`:
 its line height is `36px` and its padding `0 16px` regardless.
@@ -333,9 +337,13 @@ its line height is `36px` and its padding `0 16px` regardless.
 
 ## Test ids
 
+<APITable>
+
 | Element  | `data-testid`                               |
 | -------- | ------------------------------------------- |
 | The item | `drop-down-item`, overridable with `testId` |
+
+</APITable>
 
 ## Related
 

@@ -261,6 +261,8 @@ export function ProviderTag({ iconUrl }: { iconUrl: string }) {
 
 Set them on any ancestor.
 
+<APITable name="CSS-variables">
+
 | Variable              | Default     | Effect                                |
 | --------------------- | ----------- | ------------------------------------- |
 | `--tag-bg`            | theme token | Background of the tag.                |
@@ -272,6 +274,8 @@ Set them on any ancestor.
 | `--tag-text-color`    | theme token | Label colour.                         |
 | `--tag-size`          | `13px`      | Label font size.                      |
 | `--tag-lh`            | `20px`      | Label line height.                    |
+
+</APITable>
 
 `--tag-bg` is the resting background only: a new tag, and any clickable tag on hover or press,
 takes its theme colour instead. Likewise `--tag-border-style` gives way to the dashed theme
@@ -296,9 +300,13 @@ itself, so a wrapper cannot override them.
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element | `data-testid`               |
 | ------- | --------------------------- |
 | The tag | `tag_item`, or `dataTestId` |
+
+</APITable>
 
 [`Tags`](./tags.md) overrides it per tag with `tag_item_<label>`.
 

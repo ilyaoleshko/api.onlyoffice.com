@@ -56,7 +56,7 @@ Shows the two ways to take options out of play:
 - **Left** — the whole group greyed out and unclickable at once (`isDisabled`), for a setting that does not apply right now
 - **Right** — only "Disabled Option" is greyed out (`disabled` on the option), while the other three stay selectable
 
-<ThemedImage alt="Disabled States" width={766} sources={{ light: require('./radio-button-group--disabled-states-light.png').default, dark: require('./radio-button-group--disabled-states-dark.png').default }} />
+<ThemedImage alt="Disabled States" width={673} sources={{ light: require('./radio-button-group--disabled-states-light.png').default, dark: require('./radio-button-group--disabled-states-dark.png').default }} />
 
 ### With Text Label
 
@@ -241,10 +241,14 @@ export function AccessPicker() {
 
 ## CSS variables
 
+<APITable name="CSS-variables">
+
 | Variable                              | Default | Effect                               |
 | ------------------------------------- | ------- | ------------------------------------ |
 | `--radio-button-group-subtext-top`    | `16px`  | Space above a `type: "text"` caption |
 | `--radio-button-group-subtext-bottom` | `8px`   | Space below it                       |
+
+</APITable>
 
 `--radio-button-group-width` is written by the `width` prop. The buttons' own variables are
 listed on [`RadioButton`](./radio-button.md).
@@ -262,11 +266,15 @@ listed on [`RadioButton`](./radio-button.md).
 
 ## Test ids
 
+<APITable name="Test-ids">
+
 | Element       | `data-testid`                                           |
 | ------------- | ------------------------------------------------------- |
 | The group     | `radio-button-group`, or `dataTestId`                   |
 | A caption row | `radio-button-group_text`, or the option's `dataTestId` |
 | An option     | the option's `dataTestId`, else its `id`                |
+
+</APITable>
 
 ## Related
 

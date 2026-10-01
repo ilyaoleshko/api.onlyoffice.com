@@ -283,6 +283,8 @@ export function LimitedAccess() {
 Set these on an ancestor to retheme the rows and the icon-only button. Everything else the
 stylesheet defines is private to it.
 
+<APITable>
+
 | Variable                                 | Default    | Effect                                                             |
 | ---------------------------------------- | ---------- | ------------------------------------------------------------------ |
 | `--access-right-select-text`             | theme text | Icon and arrow colour in the button, with `type: "onlyIcon"` only  |
@@ -292,6 +294,8 @@ stylesheet defines is private to it.
 | `--access-right-select-description-size` | `13px`     | Font size of a row's second line                                   |
 | `--access-right-select-gap`              | `8px`      | Gap between a row's icon and its text                              |
 | `--access-right-select-item-padding`     | `7px 0`    | Padding of a row                                                   |
+
+</APITable>
 
 The button is a [`ComboBox`](./combobox.md) and the list a
 [`DropDown`](../overlays/drop-down.md), and they take those components' variables —
@@ -318,10 +322,14 @@ variables, so the row and panel variables set on a wrapper only apply with
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`                            |
 | ---------------- | ---------------------------------------- |
 | An option        | `access_right_option_<key>`, lower-cased |
 | The combo button | `dataTestId`, passed to `ComboBox`       |
+
+</APITable>
 
 ## Related
 

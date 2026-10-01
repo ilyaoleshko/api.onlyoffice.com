@@ -318,6 +318,8 @@ export function RoomTileWithFooter() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable              | Default                                         | Effect                                                                                    |
 | --------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `--tile-bg`           | the theme's tile background                     | Background of the tile, and of the box behind the logo                                    |
@@ -329,6 +331,8 @@ export function RoomTileWithFooter() {
 | `--tile-padding`      | `16px 0`                                        | Padding of the tile                                                                       |
 | `--tile-row-gap`      | `16px`                                          | Gap between the name row and the tag row                                                  |
 | `--tile-hotkey-color` | the theme's hotkey colour                       | Border colour under `showHotkeyBorder`                                                    |
+
+</APITable>
 
 All but `--tile-tag-hover-bg` and the logo box are read by [`BaseTile`](./base-tile.md),
 which this component wraps; its section has the details. Hovering the tile also underlines the
@@ -347,9 +351,13 @@ name when the content is a link, and that underline has no variable.
 
 ## Test ids
 
+<APITable>
+
 | Element       | `data-testid`                      |
 | ------------- | ---------------------------------- |
 | Outer element | `tile`, overridden by `dataTestId` |
+
+</APITable>
 
 The tags, the checkbox and the menu carry their own components' ids.
 

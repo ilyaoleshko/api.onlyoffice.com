@@ -191,11 +191,15 @@ export function SubtleDim() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                           | Default                    | Effect                                     |
 | ---------------------------------- | -------------------------- | ------------------------------------------ |
 | `--loader-wrapper-loading-opacity` | `0.5`                      | Opacity while `isLoading`                  |
 | `--loader-wrapper-idle-opacity`    | `1`                        | Opacity when idle                          |
 | `--loader-wrapper-transition`      | `opacity 0.3s ease-in-out` | The whole `transition` shorthand, replaced |
+
+</APITable>
 
 They are read from inline styles, so they must be declared on this element or on one of its
 ancestors; a rule matching a class of your own will not reach them.
@@ -215,9 +219,13 @@ instance; a wrapper that mounts already loading starts at the dimmed opacity wit
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                      |
 | ----------- | ---------------------------------- |
 | The wrapper | `loader-wrapper`, or your `testId` |
+
+</APITable>
 
 ## Related
 

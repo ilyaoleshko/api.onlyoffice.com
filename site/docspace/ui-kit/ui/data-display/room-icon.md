@@ -323,6 +323,8 @@ export function PublicRoomIcon({ name }: { name: string }) {
 
 All are read with a fallback, so setting any of them on an ancestor works.
 
+<APITable>
+
 | Variable                        | Default                       | Effect                                            |
 | ------------------------------- | ----------------------------- | ------------------------------------------------- |
 | `--room-icon-bg`                | white, black in dark          | Fill of the badge glyph and of the plus button    |
@@ -331,6 +333,8 @@ All are read with a fallback, so setting any of them on an ancestor works.
 | `--room-icon-edit-bg`           | light grey, dark grey in dark | Background of the pencil button                   |
 | `--room-icon-dashed-border`     | `2px dashed` grey             | Border of the empty state                         |
 | `--room-icon-empty-radius`      | `10px`                        | Corner radius of the empty state                  |
+
+</APITable>
 
 `--room-icon-bg` fills the badge glyph only when `badgeIconColor` is unset; a badge that keeps
 its own colours ignores it. `--room-icon-button-icon-color` paints the template outline only
@@ -352,6 +356,8 @@ and cannot be overridden from a stylesheet.
 
 ## Test ids
 
+<APITable>
+
 | Element                   | `data-testid`                           |
 | ------------------------- | --------------------------------------- |
 | Outer element             | `room-icon`, overridden by `dataTestId` |
@@ -362,6 +368,8 @@ and cannot be overridden from a stylesheet.
 | Hover overlay             | `hover-container`, `hover-image`        |
 | Badge wrapper             | `badge-container`                       |
 | Hidden file input         | `customFileInput`                       |
+
+</APITable>
 
 The outer element also carries `data-is-archive`, `data-has-editing`, `data-is-template` and
 `data-is-empty`.

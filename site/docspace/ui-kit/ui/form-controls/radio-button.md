@@ -51,19 +51,19 @@ A single labelled button, the starting point for any single-choice option; click
 
 The two looks a button can take side by side, so the filled-in choice is easy to tell from the rest: an empty circle and a circle with a dot (`isChecked`).
 
-<ThemedImage alt="Checked States" width={355} sources={{ light: require('./radio-button--checked-states-light.png').default, dark: require('./radio-button--checked-states-dark.png').default }} />
+<ThemedImage alt="Checked States" width={345} sources={{ light: require('./radio-button--checked-states-light.png').default, dark: require('./radio-button--checked-states-dark.png').default }} />
 
 ### Disabled States
 
 A disabled button, empty or filled in, shows an option the user can see but not change: the circle and the label turn grey and clicks are ignored (`isDisabled`).
 
-<ThemedImage alt="Disabled States" width={409} sources={{ light: require('./radio-button--disabled-states-light.png').default, dark: require('./radio-button--disabled-states-dark.png').default }} />
+<ThemedImage alt="Disabled States" width={399} sources={{ light: require('./radio-button--disabled-states-light.png').default, dark: require('./radio-button--disabled-states-dark.png').default }} />
 
 ### Custom Styling
 
 Larger or smaller label text for a button placed in a heading or a dense list: **Custom styled** at 16px semibold, **Small text** at 11px light (`fontSize`, `fontWeight`).
 
-<ThemedImage alt="Custom Styling" width={351} sources={{ light: require('./radio-button--custom-styling-light.png').default, dark: require('./radio-button--custom-styling-dark.png').default }} />
+<ThemedImage alt="Custom Styling" width={341} sources={{ light: require('./radio-button--custom-styling-light.png').default, dark: require('./radio-button--custom-styling-dark.png').default }} />
 
 ### With Spacing
 
@@ -217,6 +217,8 @@ export function ControlledChoice() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                            | Default    | Effect                                |
 | ----------------------------------- | ---------- | ------------------------------------- |
 | `--radio-button-gap`                | `8px`      | Space between the circle and the text |
@@ -225,6 +227,8 @@ export function ControlledChoice() {
 | `--radio-button-dot-color`          | theme text | The filled dot when checked           |
 | `--radio-button-circle-color`       | theme grey | The circle's outline                  |
 | `--radio-button-circle-hover-color` | theme grey | That outline on hover                 |
+
+</APITable>
 
 A disabled button ignores all of them except `--radio-button-gap`: it draws its own grey fill,
 outline, dot and text, and its outline does not change on hover.
@@ -246,9 +250,13 @@ outline, dot and text, and its outline does not change on hover.
 
 ## Test ids
 
+<APITable>
+
 | Element   | `data-testid`               |
 | --------- | --------------------------- |
 | The label | `radio-button`, or `testId` |
+
+</APITable>
 
 ## Related
 

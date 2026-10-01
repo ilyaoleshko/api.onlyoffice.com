@@ -239,6 +239,8 @@ export function FixedRole({ role }: { role: string }) {
 
 Set them on any ancestor.
 
+<APITable>
+
 | Variable                              | Default     | Effect                             |
 | ------------------------------------- | ----------- | ---------------------------------- |
 | `--link-with-dropdown-color`          | theme token | Text colour.                       |
@@ -248,6 +250,8 @@ Set them on any ancestor.
 | `--link-with-dropdown-disabled-color` | theme token | Text colour while disabled.        |
 | `--link-with-dropdown-padding`        | `4px 8px`   | Padding around the link.           |
 | `--link-with-dropdown-radius`         | `3px`       | Corner radius.                     |
+
+</APITable>
 
 `--link-with-dropdown-color` also paints the chevron that `withExpander` draws, and the chevron
 keeps it on hover and while the menu is open, when the text switches to
@@ -273,10 +277,14 @@ The component sets **`data-test-id="link-dropdown"`**, with dashes — not `data
 Testing Library's `getByTestId` does not find it. Query it as
 `[data-test-id="link-dropdown"]`, or pass an `id`.
 
+<APITable>
+
 | Element      | Attribute                                 |
 | ------------ | ----------------------------------------- |
 | The link     | `data-test-id="link-dropdown"`            |
 | A menu entry | `data-testid="link_with_drop_down_<key>"` |
+
+</APITable>
 
 ## Related
 

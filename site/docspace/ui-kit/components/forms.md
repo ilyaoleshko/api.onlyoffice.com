@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Forms
 
 The Forms section: the form-filling rooms the caller can see, with a header, the filter bar and
@@ -11,7 +13,7 @@ the rows. Search, a sort order and an owner filter narrow the list, and a form r
 place. There is nothing to create — the filter bar has no main button, and a row's context menu
 only opens it or copies its link, so this screen never writes to a portal.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./forms--default-light.png').default, dark: require('./forms--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./forms--default-light.png').default, dark: require('./forms--default-dark.png').default }} />
 
 ### Features
 
@@ -38,7 +40,7 @@ for a file on a real portal.
 
 ### Choosing a form room or folder in a picker
 
-<ThemedImage alt="With Folder Picker" width={790} sources={{ light: require('./forms--with-folder-picker-light.png').default, dark: require('./forms--with-folder-picker-dark.png').default }} />
+<ThemedImage alt="With Folder Picker" width={1014} sources={{ light: require('./forms--with-folder-picker-light.png').default, dark: require('./forms--with-folder-picker-dark.png').default }} />
 
 With `withFolderPicker`, the header carries **Select folder**, which opens a picker whose root
 holds **Forms** and nothing else. Inside it are the form rooms, then a room's **Complete** and
@@ -62,12 +64,16 @@ The header says which source answered: `Demo data`, or the host of the connected
 The list is the same call as [Rooms](./rooms.md) with a different search
 area:
 
+<APITable>
+
 | Control      | Request parameter                                                        |
 | ------------ | ------------------------------------------------------------------------ |
 | Search       | `filterValue`                                                            |
 | Owner: Me    | `subjectId` (the caller's id) with `subjectFilter: SubjectFilter.Owner`  |
 | Sort         | `sortBy` (`"AZ"`, `"DateAndTime"`) and `sortOrder`                       |
 | —            | `searchArea=Forms`, always                                               |
+
+</APITable>
 
 ### `searchArea=Forms` is not in the SDK yet
 

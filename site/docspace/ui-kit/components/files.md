@@ -4,6 +4,8 @@ custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/maste
 
 import ThemedImage from '@theme/ThemedImage';
 
+import APITable from '@site/src/components/APITable/APITable';
+
 # Files
 
 The Files section as the portal draws it: a header, the filter bar and the rows of the caller's
@@ -11,7 +13,7 @@ personal folder. Search, a sort order and a type filter narrow the list, and a f
 place. There is nothing to create — the filter bar has no main button, and a row's context menu
 only opens it or copies its link, so this screen never writes to a portal.
 
-<ThemedImage alt="Default" width={790} sources={{ light: require('./files--default-light.png').default, dark: require('./files--default-dark.png').default }} />
+<ThemedImage alt="Default" width={1014} sources={{ light: require('./files--default-light.png').default, dark: require('./files--default-dark.png').default }} />
 
 ### Features
 
@@ -30,18 +32,22 @@ the list it was set on.
 
 Each row has a context menu with the minimum a read-only list needs:
 
+<APITable>
+
 | Item                   | Shown for               | Does                                                                  |
 | ---------------------- | ----------------------- | --------------------------------------------------------------------- |
 | **Open**               | folders                 | lists the folder in place                                             |
 | **Open in ONLYOFFICE** | files                   | opens the file in the portal's editor in a new tab; a toast in the demo |
 | **Copy link**          | files, on a real portal | copies the editor link                                                |
 
+</APITable>
+
 Inside a folder the list is `foldersApi.getFolderByFolderId({ folderId, ... })`, with the same
 search, sort and type parameters; its `pathParts` become the breadcrumb.
 
 ### Choosing a folder in a picker
 
-<ThemedImage alt="With Folder Picker" width={790} sources={{ light: require('./files--with-folder-picker-light.png').default, dark: require('./files--with-folder-picker-dark.png').default }} />
+<ThemedImage alt="With Folder Picker" width={1014} sources={{ light: require('./files--with-folder-picker-light.png').default, dark: require('./files--with-folder-picker-dark.png').default }} />
 
 With `withFolderPicker`, the header carries **Select folder**, which opens a picker over the
 same source the list reads. Its root holds **Files** and nothing else — no Rooms, no Forms. Go
@@ -67,11 +73,15 @@ The header says which source answered: `Demo data`, or the host of the connected
 
 Every filter is sent to the portal rather than applied to a page it already returned:
 
+<APITable>
+
 | Control         | Request parameter                                       |
 | --------------- | ------------------------------------------------------- |
 | Search          | `filterValue`                                           |
 | Type            | `filterType` — `FoldersOnly`, `DocumentsOnly`, `SpreadsheetsOnly`, `PresentationsOnly`, `Pdf` |
 | Sort            | `sortBy` (`"AZ"`, `"DateAndTime"`) and `sortOrder`      |
+
+</APITable>
 
 The first 100 entries are shown; when there are more, the count above the rows says
 `First 100 of N`.

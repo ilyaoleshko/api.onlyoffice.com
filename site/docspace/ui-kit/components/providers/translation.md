@@ -3,8 +3,6 @@ description: "Installs the i18next instance the eleven components with labels of
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/providers/translation/README.md"
 ---
 
-import ThemedImage from '@theme/ThemedImage';
-
 import APITable from '@site/src/components/APITable/APITable';
 
 # TranslationProvider
@@ -13,8 +11,6 @@ Installs the i18next instance the eleven components with labels of their own rea
 the kit takes its text as props and needs nothing here; these eleven do not, and without this
 provider their labels are **empty strings** — not missing-key placeholders, not the key itself.
 A button renders at full size with nothing written on it.
-
-<ThemedImage alt="TranslationProvider" width={758} sources={{ light: require('./translation--primary-light.png').default, dark: require('./translation--primary-dark.png').default }} />
 
 The eleven are `article`, `color-picker`, `drop-down-item`, `file-input`, `filter`,
 `operations-progress-button`, `room-type`, `selector`, `table`, `tiles` and `toast`. `Dropzone`
@@ -48,13 +44,9 @@ Needs no provider of its own.
 
 Shows translated strings read via the `useTranslation()` hook.
 
-<ThemedImage alt="Default" width={758} sources={{ light: require('./translation--default-light.png').default, dark: require('./translation--default-dark.png').default }} />
-
 ### Without Translations
 
 When no translations are provided, the provider renders children directly without i18n.
-
-<ThemedImage alt="Without Translations" width={758} sources={{ light: require('./translation--without-translations-light.png').default, dark: require('./translation--without-translations-dark.png').default }} />
 
 ## Minimal example
 

@@ -55,7 +55,7 @@ The two positions side by side, so the track colours can be compared; each switc
 - **Checked** — accent-coloured track, knob at the end (`isChecked`)
 - The third switch has no `label` and takes only the width of the track
 
-<ThemedImage alt="Checked States" width={575} sources={{ light: require('./toggle-button--checked-states-light.png').default, dark: require('./toggle-button--checked-states-dark.png').default }} />
+<ThemedImage alt="Checked States" width={556} sources={{ light: require('./toggle-button--checked-states-light.png').default, dark: require('./toggle-button--checked-states-dark.png').default }} />
 
 ### Disabled States
 
@@ -64,7 +64,7 @@ A setting that cannot be changed right now, shown in both positions so the reade
 - **Disabled off** — faded grey track, greyed label
 - **Disabled on** — faded accent track, greyed label; neither responds to a click
 
-<ThemedImage alt="Disabled States" width={387} sources={{ light: require('./toggle-button--disabled-states-light.png').default, dark: require('./toggle-button--disabled-states-dark.png').default }} />
+<ThemedImage alt="Disabled States" width={377} sources={{ light: require('./toggle-button--disabled-states-light.png').default, dark: require('./toggle-button--disabled-states-dark.png').default }} />
 
 ### Loading State
 
@@ -73,19 +73,19 @@ A setting whose change is still being saved: the knob pulses until the work is d
 - **Loading unchecked** — the knob pulses at the start of the grey track
 - **Loading checked** — the knob pulses at the end of the accent track
 
-<ThemedImage alt="Loading State" width={416} sources={{ light: require('./toggle-button--loading-state-light.png').default, dark: require('./toggle-button--loading-state-dark.png').default }} />
+<ThemedImage alt="Loading State" width={406} sources={{ light: require('./toggle-button--loading-state-light.png').default, dark: require('./toggle-button--loading-state-dark.png').default }} />
 
 ### Without Animation
 
 For a list of many switches or a reduced-motion setting: click either switch and the knob jumps to the other end instead of sliding there (`noAnimation`).
 
-<ThemedImage alt="Without Animation" width={416} sources={{ light: require('./toggle-button--without-animation-light.png').default, dark: require('./toggle-button--without-animation-dark.png').default }} />
+<ThemedImage alt="Without Animation" width={407} sources={{ light: require('./toggle-button--without-animation-light.png').default, dark: require('./toggle-button--without-animation-dark.png').default }} />
 
 ### Right To Left
 
 The same switches in a right-to-left interface: the label moves to the left of the switch, and the track is mirrored, so the knob of the off switch sits at the right end and the knob of the on switch at the left. The wrapper carries `dir="rtl"` for the label's side; the mirrored track comes from the theme's `interfaceDirection` (the Direction toolbar).
 
-<ThemedImage alt="Right To Left" width={336} sources={{ light: require('./toggle-button--right-to-left-light.png').default, dark: require('./toggle-button--right-to-left-dark.png').default }} />
+<ThemedImage alt="Right To Left" width={326} sources={{ light: require('./toggle-button--right-to-left-light.png').default, dark: require('./toggle-button--right-to-left-dark.png').default }} />
 
 ### Css Customization
 
@@ -95,7 +95,7 @@ Every overridable variable set on one wrapper -- the variables are listed under 
 - **On** is there for `--toggle-button-checked-color`
 - Both labels sit 16px from their switch (`--toggle-button-spacing`)
 
-<ThemedImage alt="Css Customization" width={341} sources={{ light: require('./toggle-button--css-customization-light.png').default, dark: require('./toggle-button--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={331} sources={{ light: require('./toggle-button--css-customization-light.png').default, dark: require('./toggle-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -248,12 +248,16 @@ Set these on an ancestor. Everything else the stylesheet defines is private to i
 the `--toggle-button-fill-*` names an older version of this README listed, which the stylesheet
 assigns to itself and does not read from the outside.
 
+<APITable>
+
 | Variable                          | Default                      | Effect                                              |
 | --------------------------------- | ---------------------------- | --------------------------------------------------- |
 | `--toggle-button-checked-color`   | `--color-scheme-main-accent` | Track colour when the switch is on, disabled or not |
 | `--toggle-button-off-color`       | `#d0d5da`                    | Track colour when it is off                         |
 | `--toggle-button-off-hover-color` | `#a3a9ae`                    | Track colour when off and hovered                   |
 | `--toggle-button-spacing`         | `8px`                        | Gap between the switch and the label                |
+
+</APITable>
 
 The two off colours apply in the light theme only: the dark theme sets its own track colours on
 the control itself, so an ancestor's `--toggle-button-off-color` and
@@ -275,6 +279,8 @@ the control itself, so an ancestor's `--toggle-button-off-color` and
 
 ## Test ids
 
+<APITable>
+
 | Element               | `data-testid`                                  |
 | --------------------- | ---------------------------------------------- |
 | Outer element         | `toggle-button`, overridable with `dataTestId` |
@@ -282,6 +288,8 @@ the control itself, so an ancestor's `--toggle-button-off-color` and
 | The checkbox input    | `toggle-button-input`                          |
 | The switch SVG        | `toggle-button-icon`                           |
 | The label text        | `toggle-button-label`                          |
+
+</APITable>
 
 ## Related
 

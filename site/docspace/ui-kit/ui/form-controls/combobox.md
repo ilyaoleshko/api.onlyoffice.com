@@ -60,7 +60,7 @@ The fixed widths side by side, to pick the one that fits the longest label a for
 
 Options with an icon each, so an action is recognised before its label is read; pick one and its icon moves into the button next to the label (`icon` on each option).
 
-<ThemedImage alt="With Icons" width={750} sources={{ light: require('./combobox--with-icons-light.png').default, dark: require('./combobox--with-icons-dark.png').default }} />
+<ThemedImage alt="With Icons" width={974} sources={{ light: require('./combobox--with-icons-light.png').default, dark: require('./combobox--with-icons-dark.png').default }} />
 
 ### With Option Descriptions
 
@@ -102,7 +102,7 @@ The combo box under a right-to-left interface: the icon and the label start at t
 
 The border colours, the radius and the padding set on one wrapper -- the variables are listed under CSS variables on this page. Hover the button to see the hover colour and click it to see the open one.
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./combobox--css-customization-light.png').default, dark: require('./combobox--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./combobox--css-customization-light.png').default, dark: require('./combobox--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -219,9 +219,13 @@ export function RolePicker() {
 
 ### Enums
 
+<APITable>
+
 | Enum                  | Members             |
 | --------------------- | ------------------- |
 | `ComboBoxDisplayType` | `default`, `toggle` |
+
+</APITable>
 
 ## Recipes
 
@@ -357,6 +361,8 @@ described above and calls `onClick`; everything else — opening, choosing, clos
 
 ## CSS variables
 
+<APITable>
+
 | Variable                        | Default                                 | Effect                                                             |
 | ------------------------------- | --------------------------------------- | ------------------------------------------------------------------ |
 | `--combobox-border-color`       | theme grey                              | Border colour of the button                                        |
@@ -368,6 +374,8 @@ described above and calls `onClick`; everything else — opening, choosing, clos
 | `--combobox-middle-width`       | `300px`                                 | Width of the wrapper at `ComboBoxSize.middle`                      |
 | `--combobox-big-width`          | `350px`                                 | Width of the wrapper at `ComboBoxSize.big`                         |
 | `--combobox-huge-width`         | `500px`                                 | Width of the wrapper at `ComboBoxSize.huge`                        |
+
+</APITable>
 
 The four widths only apply with `scaled` off, and they size the wrapper, not the button: the
 button keeps its own fixed 173, 300, 350 or 500px, so a larger value widens only the empty area
@@ -396,11 +404,15 @@ The list is a [`DropDown`](../overlays/drop-down.md) and takes that component's 
 
 ## Test ids
 
+<APITable>
+
 | Element     | `data-testid`                                               |
 | ----------- | ----------------------------------------------------------- |
 | The control | `combobox`, overridable with `dataTestId`                   |
 | The list    | set by `dropDownTestId`, otherwise `dropdown`               |
 | An option   | the option's `dataTestId`, otherwise `drop_down_item_<key>` |
+
+</APITable>
 
 The button inside carries `data-test-id="combo-button"` — with hyphens, unlike everything else
 in the kit — and so do its icon, badge and arrow.

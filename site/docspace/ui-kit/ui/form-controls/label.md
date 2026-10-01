@@ -49,13 +49,13 @@ The plain caption for a field, in semibold text; rest the pointer on it to read 
 
 For fields a form cannot be sent without: each caption ends with a red asterisk (`isRequired`). The asterisk is hidden from screen readers, so the input needs `required` as well.
 
-<ThemedImage alt="Required Labels" width={790} sources={{ light: require('./label--required-labels-light.png').default, dark: require('./label--required-labels-dark.png').default }} />
+<ThemedImage alt="Required Labels" width={1014} sources={{ light: require('./label--required-labels-light.png').default, dark: require('./label--required-labels-dark.png').default }} />
 
 ### Error State
 
 For a field that failed validation: the caption turns red (`error`), with or without the asterisk. The error message is not part of the label; render it next to the field.
 
-<ThemedImage alt="Error State" width={790} sources={{ light: require('./label--error-state-light.png').default, dark: require('./label--error-state-dark.png').default }} />
+<ThemedImage alt="Error State" width={1014} sources={{ light: require('./label--error-state-light.png').default, dark: require('./label--error-state-dark.png').default }} />
 
 ### Truncated Label
 
@@ -88,7 +88,7 @@ Both colours and the font size set on one wrapper -- the variables are listed un
 - **Display name** shows the asterisk colour (`--label-required-color`) and the font size.
 - **Email address** adds `error` to show the text colour in the error state (`--label-error-color`).
 
-<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./label--css-customization-light.png').default, dark: require('./label--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={1014} sources={{ light: require('./label--css-customization-light.png').default, dark: require('./label--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -230,11 +230,15 @@ export function EmailField({
 
 ## CSS variables
 
+<APITable>
+
 | Variable                 | Default                   | Effect                                                   |
 | ------------------------ | ------------------------- | -------------------------------------------------------- |
 | `--label-error-color`    | kit error red (`#F24724`) | Colour of the text when `error`                          |
 | `--label-required-color` | kit error red (`#F24724`) | Colour of the required asterisk                          |
 | `--text-size`            | `13px`                    | Font size; read by [`Text`](../data-display/text.md), not here |
+
+</APITable>
 
 Both colours fall back to the light theme's error red in either theme; set them yourself for a
 dark one.
@@ -253,10 +257,14 @@ dark one.
 
 ## Test ids
 
+<APITable>
+
 | Element      | `data-testid`   |
 | ------------ | --------------- |
 | The label    | `label`         |
 | The asterisk | `required-mark` |
+
+</APITable>
 
 Neither can be overridden by a prop.
 

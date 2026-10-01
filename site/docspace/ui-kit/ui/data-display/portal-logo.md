@@ -169,6 +169,8 @@ export function SmallerLogo() {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                           | Default           | Effect                                     |
 | ---------------------------------- | ----------------- | ------------------------------------------ |
 | `--portal-logo-desktop-img-width`  | `386px`           | Width of the image on desktop              |
@@ -176,6 +178,8 @@ export function SmallerLogo() {
 | `--portal-logo-mobile-img-height`  | `24px`            | Height of the small logo in the mobile bar |
 | `--portal-logo-mobile-height`      | `48px`            | Height of that fixed mobile bar            |
 | `--portal-logo-mobile-bg`          | the header's grey | Background of that bar                     |
+
+</APITable>
 
 The three mobile variables apply only to the fixed bar, so only with `isResizable` at 600px and
 narrower. The two desktop ones hang on the `not-mobile` class, which follows the user-agent check

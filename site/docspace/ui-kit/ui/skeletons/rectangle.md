@@ -73,7 +73,7 @@ The band takes two and a half seconds to cross instead of two, a calmer pace for
 
 Six placeholders filling a three-column grid, each 100% of its cell's width, as a card grid shows while its items load.
 
-<ThemedImage alt="Grid" width={789} sources={{ light: require('./rectangle--grid-light.png').default, dark: require('./rectangle--grid-dark.png').default }} />
+<ThemedImage alt="Grid" width={1014} sources={{ light: require('./rectangle--grid-light.png').default, dark: require('./rectangle--grid-dark.png').default }} />
 
 ### Css Customization
 
@@ -205,9 +205,13 @@ export function StillPlaceholder() {
 
 ## Test ids
 
+<APITable>
+
 | Element | `data-testid`        |
 | ------- | -------------------- |
 | The SVG | `rectangle-skeleton` |
+
+</APITable>
 
 It cannot be overridden by a prop, so several skeletons on a page share it — query them with
 `getAllByTestId`.

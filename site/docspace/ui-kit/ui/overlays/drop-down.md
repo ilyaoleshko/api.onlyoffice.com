@@ -304,6 +304,8 @@ export function TimezoneMenu({ zones }: { zones: string[] }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                   | Default                    | Effect                          |
 | -------------------------- | -------------------------- | ------------------------------- |
 | `--dropdown-bg`            | theme surface              | Background of the menu          |
@@ -313,6 +315,8 @@ export function TimezoneMenu({ zones }: { zones: string[] }) {
 | `--dropdown-inner-padding` | `8px 0`                    | Padding around the items        |
 | `--dropdown-text-size`     | `13px`                     | Font size of the items          |
 | `--dropdown-text-weight`   | `600`                      | Font weight of the items        |
+
+</APITable>
 
 `--dropdown-text-size` and `--dropdown-text-weight` are set on the menu, and a `DropDownItem`
 sets its own font size and weight, so they reach only children that do not.
@@ -338,9 +342,13 @@ component from the matching props.
 
 ## Test ids
 
+<APITable>
+
 | Element  | `data-testid`                             |
 | -------- | ----------------------------------------- |
 | The menu | `dropdown`, overridable with `dataTestId` |
+
+</APITable>
 
 ## Related
 

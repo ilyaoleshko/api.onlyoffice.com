@@ -56,13 +56,13 @@ The button in the corner of the screen with both groups of items. Tap it to open
 
 A badge on the closed button draws attention to something waiting for the user (`alert`). Click the badge to see `onAlertClick` in the Actions panel, which is called only while `withAlertClick` is set; the badge is hidden while the menu is open.
 
-<ThemedImage alt="With Alert" width={64} sources={{ light: require('./main-button-mobile--with-alert-light.png').default, dark: require('./main-button-mobile--with-alert-dark.png').default }} />
+<ThemedImage alt="With Alert" width={106} sources={{ light: require('./main-button-mobile--with-alert-light.png').default, dark: require('./main-button-mobile--with-alert-dark.png').default }} />
 
 ### With Submenu
 
 Groups related actions under one item without opening a second menu. **New form** opens its nested items in place under it, already expanded (`items`, `openByDefault`); **New folder** carries a second line under its label (`description`).
 
-<ThemedImage alt="With Submenu" width={440} sources={{ light: require('./main-button-mobile--with-submenu-light.png').default, dark: require('./main-button-mobile--with-submenu-dark.png').default }} />
+<ThemedImage alt="With Submenu" width={416} sources={{ light: require('./main-button-mobile--with-submenu-light.png').default, dark: require('./main-button-mobile--with-submenu-dark.png').default }} />
 
 ### Without Menu
 
@@ -74,7 +74,7 @@ For a screen with only one thing to create, the button runs that action directly
 
 The variables are listed under CSS variables on this page. One instance, with the alert badge on so the badge variables show. Open the menu to see the item padding and the lower group's background.
 
-<ThemedImage alt="Css Customization" width={64} sources={{ light: require('./main-button-mobile--css-customization-light.png').default, dark: require('./main-button-mobile--css-customization-dark.png').default }} />
+<ThemedImage alt="Css Customization" width={106} sources={{ light: require('./main-button-mobile--css-customization-light.png').default, dark: require('./main-button-mobile--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -308,6 +308,8 @@ export function CreateSheetWithAlert({
 Set them on any ancestor. They are what the theme defines; the sheet's geometry is in the same
 set, which is why overriding it is the workaround for the dark-theme note above.
 
+<APITable>
+
 | Variable                                               | Default         | Effect                                                                                  |
 | ------------------------------------------------------ | --------------- | --------------------------------------------------------------------------------------- |
 | `--main-button-mobile-button-color`                    | accent blue     | Colour of the round button.                                                             |
@@ -323,6 +325,8 @@ set, which is why overriding it is the workaround for the dark-theme note above.
 | `--main-button-mobile-button-wrapper-background`       | theme grey      | Background of the lower group under `withoutButton`.                                    |
 | `--main-button-mobile-badge-size`                      | `12px`          | Size of the alert badge.                                                                |
 | `--main-button-mobile-badge-offset`                    | `10px`          | Inset of the badge from the button's top trailing corner.                               |
+
+</APITable>
 
 ## Accessibility
 
@@ -340,11 +344,15 @@ set, which is why overriding it is the workaround for the dark-theme note above.
 
 ## Test ids
 
+<APITable>
+
 | Element          | `data-testid`        |
 | ---------------- | -------------------- |
 | The wrapper      | `main-button-mobile` |
 | The sheet        | `dropdown`           |
 | The round button | `floating-button`    |
+
+</APITable>
 
 None of them can be overridden by a prop; the sheet's id is the one
 [`DropDown`](../overlays/drop-down.md) uses for every instance, so a page with more than one is

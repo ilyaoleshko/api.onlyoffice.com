@@ -50,19 +50,19 @@ A search field as it first appears above a list: type to see the magnifier turn 
 
 Match the search field to the inputs around it: **Base size** and **Middle size** share the 13px text, **Large size** is taller with 16px text (`size`).
 
-<ThemedImage alt="Sizes" width={790} sources={{ light: require('./search-input--sizes-light.png').default, dark: require('./search-input--sizes-dark.png').default }} />
+<ThemedImage alt="Sizes" width={1014} sources={{ light: require('./search-input--sizes-light.png').default, dark: require('./search-input--sizes-dark.png').default }} />
 
 ### States
 
 The looks a search field takes on a page. **Normal** holds text, so it shows the cross that clears it. **Disabled** is greyed, cannot be typed into and shows neither magnifier nor cross (`isDisabled`). **Scaled** fills the width of its container (`scale`); in this grid every field already fills its cell, so the difference shows in a wider container. **Empty with placeholder** shows the magnifier and the placeholder text.
 
-<ThemedImage alt="States" width={790} sources={{ light: require('./search-input--states-light.png').default, dark: require('./search-input--states-dark.png').default }} />
+<ThemedImage alt="States" width={1014} sources={{ light: require('./search-input--states-light.png').default, dark: require('./search-input--states-dark.png').default }} />
 
 ### Auto Refresh Mode
 
 Decide how the parent hears about the search term. Type into **Type to auto-refresh (1s)**: the line under it catches up a second after you stop (`autoRefresh`, `refreshTimeout`). Type into **No auto-refresh**: the line under it never changes, because with `autoRefresh` off the component does not call `onChange` at all.
 
-<ThemedImage alt="Auto Refresh Mode" width={790} sources={{ light: require('./search-input--auto-refresh-mode-light.png').default, dark: require('./search-input--auto-refresh-mode-dark.png').default }} />
+<ThemedImage alt="Auto Refresh Mode" width={676} sources={{ light: require('./search-input--auto-refresh-mode-light.png').default, dark: require('./search-input--auto-refresh-mode-dark.png').default }} />
 
 ### With Button
 
@@ -80,13 +80,13 @@ Offer several things to create from one button: click **New** to open its menu o
 
 Keep a way out of a search the parent still applies after the field was emptied: **Cross on an empty field** shows the cross with no text in it (`showClearButton`), **Magnifier on an empty field** is the usual look. With text in the field both show the cross.
 
-<ThemedImage alt="Persistent Clear Button" width={790} sources={{ light: require('./search-input--persistent-clear-button-light.png').default, dark: require('./search-input--persistent-clear-button-dark.png').default }} />
+<ThemedImage alt="Persistent Clear Button" width={676} sources={{ light: require('./search-input--persistent-clear-button-light.png').default, dark: require('./search-input--persistent-clear-button-dark.png').default }} />
 
 ### Content Before Text
 
 Show what the search is limited to without a separate label: the folder icon sits inside the field, before the text (`children`).
 
-<ThemedImage alt="Content Before Text" width={395} sources={{ light: require('./search-input--content-before-text-light.png').default, dark: require('./search-input--content-before-text-dark.png').default }} />
+<ThemedImage alt="Content Before Text" width={338} sources={{ light: require('./search-input--content-before-text-light.png').default, dark: require('./search-input--content-before-text-dark.png').default }} />
 
 ### Disabled Main Button
 
@@ -262,6 +262,8 @@ export function InstantSearch({ onSearch }: { onSearch: (t: string) => void }) {
 
 ## CSS variables
 
+<APITable>
+
 | Variable                          | Default | Effect                                                                                            |
 | --------------------------------- | ------- | ------------------------------------------------------------------------------------------------- |
 | `--search-input-max-height`       | `32px`  | Height of the field                                                                               |
@@ -269,6 +271,8 @@ export function InstantSearch({ onSearch }: { onSearch: (t: string) => void }) {
 | `--search-input-gap`              | `8px`   | Space between the main button and the field                                                       |
 | `--search-input-icon-fill`        | theme   | Colour of the icon while the field is empty (the magnifier, or the cross under `showClearButton`) |
 | `--search-input-icon-filled-fill` | theme   | Colour of the cross once the field holds text                                                     |
+
+</APITable>
 
 The field itself is a [`TextInput`](./text-input.md) inside an `InputBlock`, so its
 colours and radius come from that component's variables, set on a wrapper around the search
@@ -287,10 +291,14 @@ radius). The gap only shows with the main button.
 
 ## Test ids
 
+<APITable>
+
 | Element                     | `data-testid`                                                        |
 | --------------------------- | -------------------------------------------------------------------- |
 | Outer element               | `search-input`, overridable with `dataTestId`                        |
 | The main button, when shown | `main-button`, with the wrapper's own id from `mainButtonDataTestId` |
+
+</APITable>
 
 ## Related
 

@@ -43,7 +43,7 @@ Forbidden error page (403). Displayed when the user lacks permission to access a
 - **Consistent Styling**
 - **Permission Feedback**
 
-<ThemedImage alt="Default" width={799} sources={{ light: require('./error403--default-light.png').default, dark: require('./error403--default-dark.png').default }} />
+<ThemedImage alt="Default" width={996} sources={{ light: require('./error403--default-light.png').default, dark: require('./error403--default-dark.png').default }} />
 
 ### Usage
 
