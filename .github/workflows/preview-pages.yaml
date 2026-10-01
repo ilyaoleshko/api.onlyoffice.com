@@ -1,8 +1,8 @@
 # A preview of the site on GitHub Pages, from a fork: a push to the
 # ui-kit-preview branch (or a manual run) builds the English site and serves
-# it at https://<owner>.github.io/<repo>/. The Pages site is created on the
-# first run; nothing has to be switched on by hand. noIndex stays on because
-# site_mode is not production.
+# it at https://<owner>.github.io/<repo>/. Once, in the fork: Settings ->
+# Pages -> Source: "GitHub Actions" (the workflow's own token may not create
+# the Pages site). noIndex stays on because site_mode is not production.
 name: Preview on GitHub Pages
 run-name: "Preview ${{ github.ref_name }} on GitHub Pages"
 
@@ -38,8 +38,6 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Build the site
         env:
