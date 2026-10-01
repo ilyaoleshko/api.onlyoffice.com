@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Dashed link that opens a menu under itself. It is the inline "change this" affordance of the
 portal — a value written as text that turns out to be a choice.
 
-<ThemedImage alt="LinkWithDropdown" width={88} sources={{ light: require('./link-with-dropdown-light.png').default, dark: require('./link-with-dropdown-dark.png').default }} />
+<ThemedImage alt="LinkWithDropdown" width={88} sources={{ light: require('./link-with-dropdown--primary-light.png').default, dark: require('./link-with-dropdown--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,63 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`; the link and the menu take
 their colours from it.
+
+
+## Stories
+
+### Default
+
+The link with a three-item menu; click it to open the menu, pick an entry to see its `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={88} sources={{ light: require('./link-with-dropdown--default-light.png').default, dark: require('./link-with-dropdown--default-dark.png').default }} />
+
+### With Expander
+
+Link with an expander arrow icon that indicates the presence of a dropdown menu.
+
+<ThemedImage alt="With Expander" width={141} sources={{ light: require('./link-with-dropdown--with-expander-light.png').default, dark: require('./link-with-dropdown--with-expander-dark.png').default }} />
+
+### Custom Styling
+
+Link with custom font size, weight, and color for styled appearance.
+
+<ThemedImage alt="Custom Styling" width={169} sources={{ light: require('./link-with-dropdown--custom-styling-light.png').default, dark: require('./link-with-dropdown--custom-styling-dark.png').default }} />
+
+### Disabled
+
+Use it while the options do not apply yet: clicking no longer opens the menu and the cursor stays an arrow (`isDisabled`). In the light theme the text keeps the default grey, so the state is not visible until the link is clicked.
+
+<ThemedImage alt="Disabled" width={96} sources={{ light: require('./link-with-dropdown--disabled-light.png').default, dark: require('./link-with-dropdown--disabled-dark.png').default }} />
+
+### Semi Transparent
+
+Link with reduced opacity for a subtle, secondary appearance.
+
+<ThemedImage alt="Semi Transparent" width={149} sources={{ light: require('./link-with-dropdown--semi-transparent-light.png').default, dark: require('./link-with-dropdown--semi-transparent-dark.png').default }} />
+
+### With Custom Width
+
+Link with a manually set dropdown width for controlling the menu size.
+
+<ThemedImage alt="With Custom Width" width={130} sources={{ light: require('./link-with-dropdown--with-custom-width-light.png').default, dark: require('./link-with-dropdown--with-custom-width-dark.png').default }} />
+
+### Text Overflow
+
+Use it where a label can be longer than its place: the text stops at 200px with an ellipsis and the chevron stays beside it (`isTextOverflow`).
+
+<ThemedImage alt="Text Overflow" width={226} sources={{ light: require('./link-with-dropdown--text-overflow-light.png').default, dark: require('./link-with-dropdown--text-overflow-dark.png').default }} />
+
+### Open Menu
+
+The menu shown on first render (`isOpen`): the link keeps its highlighted background and the chevron points up while the menu is open. Clicking outside or picking an entry closes it.
+
+<ThemedImage alt="Open Menu" width={123} sources={{ light: require('./link-with-dropdown--open-menu-light.png').default, dark: require('./link-with-dropdown--open-menu-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. The first link shows the text, background, radius and padding variables; hover it or open its menu to see the hover pair. The second, with `isDisabled`, is there for `--link-with-dropdown-disabled-color`.
+
+<ThemedImage alt="Css Customization" width={310} sources={{ light: require('./link-with-dropdown--css-customization-light.png').default, dark: require('./link-with-dropdown--css-customization-dark.png').default }} />
 
 ## Minimal example
 

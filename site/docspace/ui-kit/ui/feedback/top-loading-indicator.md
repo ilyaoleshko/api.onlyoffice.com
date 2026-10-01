@@ -10,7 +10,7 @@ import ThemedImage from '@theme/ThemedImage';
 The thin bar at the top of the page, driven by three static calls rather than by React. It renders
 nothing: it finds an element you put in the document by id and writes a width onto it every 50ms.
 
-<ThemedImage alt="TopLoader" width={184} sources={{ light: require('./top-loading-indicator-light.png').default, dark: require('./top-loading-indicator-dark.png').default }} />
+<ThemedImage alt="TopLoader" width={183} sources={{ light: require('./top-loading-indicator--primary-light.png').default, dark: require('./top-loading-indicator--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,22 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 It needs no provider, and no React at all — the calls work from a router hook, an interceptor or
 plain script.
+
+
+## Stories
+
+### Default
+
+Press **Start Loading** and a thin bar grows along the top of the viewport and stops at 90%; **End Loading** runs it to the full width and clears it, **Cancel** clears it at once (`start`, `end`, `cancel`). Use it to see how long a wait looks before the work finishes.
+
+<ThemedImage alt="Default" width={284} sources={{ light: require('./top-loading-indicator--default-light.png').default, dark: require('./top-loading-indicator--default-dark.png').default }} />
+
+### Css Customization
+
+`TopLoaderService` defines no CSS custom properties -- the element's own style does all of it, as the recipe "The element, and its style" on this page describes.
+This story renders a static demo bar under a different id, purely for visual reference -- it is not driven by `TopLoaderService`.
+
+<ThemedImage alt="Css Customization" width={775} sources={{ light: require('./top-loading-indicator--css-customization-light.png').default, dark: require('./top-loading-indicator--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -2,7 +2,11 @@
 custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/Welcome.mdx"
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+
 # Welcome
+
+<ThemedImage alt="WelcomePage" width={851} sources={{ light: require('./welcome--block0-light.png').default, dark: require('./welcome--block0-dark.png').default }} />
 
 ## Installation
 

@@ -13,7 +13,7 @@ Settings-page entry: a linked title, a line of explanation, an arrow, and an opt
 badge. It is one row of a settings index — the list that sends the reader on to General,
 Security, Backup and the rest.
 
-<ThemedImage alt="CategoryItem" width={790} sources={{ light: require('./category-item-light.png').default, dark: require('./category-item-dark.png').default }} />
+<ThemedImage alt="CategoryItem" width={790} sources={{ light: require('./category-item--primary-light.png').default, dark: require('./category-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,49 @@ Needs `ThemeProvider` above it in the tree. The description and arrow colours ar
 under the `.light` and `.dark` classes the provider puts on `<body>`, and the paid badge picks
 its gold in JavaScript from the same provider's context — which falls back to the light theme
 rather than failing, so on a dark page without a provider the badge keeps its light colour.
+
+
+## Stories
+
+### Default
+
+An entry as it sits in an index of destinations: the title link, the explanation under it and the arrow. Change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./category-item--default-light.png').default, dark: require('./category-item--default-dark.png').default }} />
+
+### With Paid Badge
+
+Marks a destination that needs a paid plan: the badge beside the title carries its own text (`withPaidBadge`, `badgeLabel`). The badge is not shown on a page whose path contains `management`.
+
+<ThemedImage alt="With Paid Badge" width={790} sources={{ light: require('./category-item--with-paid-badge-light.png').default, dark: require('./category-item--with-paid-badge-dark.png').default }} />
+
+### Disabled State
+
+For a destination the reader cannot open right now: the title is no longer a working link (`isDisabled`). Nothing else marks it in the light theme, where the disabled subtitle colour matches the normal one; in the dark theme the subtitle dims. Say in the subtitle why the entry is unavailable.
+
+<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./category-item--disabled-state-light.png').default, dark: require('./category-item--disabled-state-dark.png').default }} />
+
+### All Variants
+
+The three looks side by side, as they appear together in one index:
+
+- **General Settings** — a plain entry
+- **Security** — the same entry with the paid badge (`withPaidBadge`)
+- **Backup** — an unavailable entry whose title is no longer a link (`isDisabled`)
+
+<ThemedImage alt="All Variants" width={616} sources={{ light: require('./category-item--all-variants-light.png').default, dark: require('./category-item--all-variants-dark.png').default }} />
+
+### Right To Left
+
+The same entry under a right-to-left interface: the title and subtitle align to the right, the badge follows the title leftwards and the arrow sits at the left end, mirrored to point left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./category-item--right-to-left-light.png').default, dark: require('./category-item--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables set on one wrapper -- they are listed under CSS variables on this page. **Files** shows the title, subtitle and arrow colours and the margin below it; **Security** is disabled (`isDisabled`) to show `--category-item-disabled-color` on its subtitle.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./category-item--css-customization-light.png').default, dark: require('./category-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 

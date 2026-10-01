@@ -13,7 +13,7 @@ Dashed upload area with a picture, a prompt and a format list, which turns into 
 upload runs. Clicking anywhere in the area, the prompt included, opens the file dialog; dropping
 files on the area does the same thing without it.
 
-<ThemedImage alt="Dropzone" width={790} sources={{ light: require('./dropzone-light.png').default, dark: require('./dropzone-dark.png').default }} />
+<ThemedImage alt="Dropzone" width={790} sources={{ light: require('./dropzone--primary-light.png').default, dark: require('./dropzone--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,81 @@ subpath: the barrel does not build without four optional peers, see
 
 Needs `ThemeProvider` above it in the tree: the border, the background and the accent on the
 prompt all come from custom properties the provider's `.light` and `.dark` classes declare.
+
+
+## Stories
+
+### Default
+
+The everyday setup: click the area to pick files or drop them onto it, and the accepted files appear in the Actions panel (`onDrop`). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./dropzone--default-light.png').default, dark: require('./dropzone--default-dark.png').default }} />
+
+### Loading
+
+Use while the picked files are being prepared or sent: a spinner replaces the text lines and the drop target, so nothing more can be clicked or dropped (`isLoading`).
+
+<ThemedImage alt="Loading" width={790} sources={{ light: require('./dropzone--loading-light.png').default, dark: require('./dropzone--loading-dark.png').default }} />
+
+### Disabled
+
+Use when uploading is not allowed right now: the area looks the same as the default, but clicks, keys and drops do nothing (`isDisabled`).
+
+<ThemedImage alt="Disabled" width={790} sources={{ light: require('./dropzone--disabled-light.png').default, dark: require('./dropzone--disabled-dark.png').default }} />
+
+### Single File Upload
+
+Use when the next step takes one file: a drop of two or more is refused whole and reported as rejected files instead of uploaded (`maxFiles`).
+
+<ThemedImage alt="Single File Upload" width={790} sources={{ light: require('./dropzone--single-file-upload-light.png').default, dark: require('./dropzone--single-file-upload-dark.png').default }} />
+
+### Image Upload
+
+Use when only some types make sense: the file dialog offers only these types, and a dropped file of any other type is refused and reported as rejected (`accept`).
+
+<ThemedImage alt="Image Upload" width={790} sources={{ light: require('./dropzone--image-upload-light.png').default, dark: require('./dropzone--image-upload-dark.png').default }} />
+
+### Folder Upload
+
+Use to upload a directory tree: a click anywhere opens a folder dialog, each file arrives with its path inside the folder, and the format line is not shown (`isFolderUpload`).
+
+<ThemedImage alt="Folder Upload" width={790} sources={{ light: require('./dropzone--folder-upload-light.png').default, dark: require('./dropzone--folder-upload-dark.png').default }} />
+
+### Single Folder Upload
+
+Use when one folder is expected: a drop holding two or more root folders is refused whole, and `onSingleUploadError` is called instead of `onDrop` (`isMultipleUpload` off in folder mode).
+
+<ThemedImage alt="Single Folder Upload" width={790} sources={{ light: require('./dropzone--single-folder-upload-light.png').default, dark: require('./dropzone--single-folder-upload-dark.png').default }} />
+
+### Single File Only
+
+Use when one file is expected and you explain a larger drop yourself: two or more files are refused whole, and `onSingleUploadError` is called instead of `onDrop` (`isMultipleUpload`).
+
+<ThemedImage alt="Single File Only" width={790} sources={{ light: require('./dropzone--single-file-only-light.png').default, dark: require('./dropzone--single-file-only-dark.png').default }} />
+
+### Upload Progress
+
+Use when the upload can report how far it has got: a progress bar with the percentage replaces the spinner and fills to the given share (`uploadPercent`).
+
+<ThemedImage alt="Upload Progress" width={790} sources={{ light: require('./dropzone--upload-progress-light.png').default, dark: require('./dropzone--upload-progress-dark.png').default }} />
+
+### With Formats List
+
+Use when the accepted formats do not fit on one line: the short line carries a `+4` pill for the rest (`formatsPlusBadgeValue`); click it to open the full list in a drop-down, and click outside to close it (`fullExstsText`).
+
+<ThemedImage alt="With Formats List" width={790} sources={{ light: require('./dropzone--with-formats-list-light.png').default, dark: require('./dropzone--with-formats-list-dark.png').default }} />
+
+### With Icon
+
+Use to make the area recognisable at a glance: the picture sits above the two lines at 50 by 50 pixels, given as an SVG component or an image URL (`icon`).
+
+<ThemedImage alt="With Icon" width={790} sources={{ light: require('./dropzone--with-icon-light.png').default, dark: require('./dropzone--with-icon-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one instance -- the variables are listed under CSS variables on this page. Hover the format line, press it, and click it to open the full list for the hover, pressed and open variables; drag a file over the page, then over the area, for the two drag backgrounds.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./dropzone--css-customization-light.png').default, dark: require('./dropzone--css-customization-dark.png').default }} />
 
 ## Minimal example
 

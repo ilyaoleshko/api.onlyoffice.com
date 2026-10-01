@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Saturation square with a hue strip for choosing a colour, with or without a hex field and
 buttons. It is the vendored `react-colorful` picker wrapped in the kit's own chrome.
 
-<ThemedImage alt="ColorPicker" width={211} sources={{ light: require('./color-picker-light.png').default, dark: require('./color-picker-dark.png').default }} />
+<ThemedImage alt="ColorPicker" width={211} sources={{ light: require('./color-picker--primary-light.png').default, dark: require('./color-picker--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,51 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and `TranslationProvider`
 from `@onlyoffice/apps-ui-kit/providers/translation` for the "Custom" title in `isPickerOnly`
 mode. The button and field labels are props, and are **not** translated for you.
+
+
+## Stories
+
+### Default
+
+The full picker a settings form shows: drag either pointer or type a hex code, then apply or cancel. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={211} sources={{ light: require('./color-picker--default-light.png').default, dark: require('./color-picker--default-dark.png').default }} />
+
+### Picker Only
+
+The compact shape for a drop-down: a "Custom" title and a closing cross above the square and the strip, with no hex field and no buttons (`isPickerOnly`). The caller reads the color from `handleChange` and hides the picker from `onClose`.
+
+<ThemedImage alt="Picker Only" width={790} sources={{ light: require('./color-picker--picker-only-light.png').default, dark: require('./color-picker--picker-only-dark.png').default }} />
+
+### Custom Labels
+
+The component translates none of its texts, so a caller passes its own for the buttons and the hex caption (`applyButtonLabel`, `cancelButtonLabel`, `hexCodeLabel`).
+
+<ThemedImage alt="Custom Labels" width={211} sources={{ light: require('./color-picker--custom-labels-light.png').default, dark: require('./color-picker--custom-labels-dark.png').default }} />
+
+### Live Color Readout
+
+Drag a pointer or type a hex code and watch the line under the picker follow: the caller keeps its own copy of the color from every change (`handleChange`), which is how it previews a color before it is applied. The picker keeps its own state, so the caller cannot move the pointers by changing `appliedColor` afterwards.
+
+<ThemedImage alt="Live Color Readout" width={790} sources={{ light: require('./color-picker--live-color-readout-light.png').default, dark: require('./color-picker--live-color-readout-dark.png').default }} />
+
+### Preset Color
+
+A picker that opens on a color the user saved earlier starts from it: here red (`appliedColor="#FF0000"`), with the hex field showing the same code.
+
+<ThemedImage alt="Preset Color" width={218} sources={{ light: require('./color-picker--preset-color-light.png').default, dark: require('./color-picker--preset-color-dark.png').default }} />
+
+### Right To Left
+
+The picker in a right-to-left layout with Arabic texts: the picker moves to the right edge, the hex caption and code align right and the apply button sits to the right of cancel, while the square and the strip keep their left-to-right gradients. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={211} sources={{ light: require('./color-picker--right-to-left-light.png').default, dark: require('./color-picker--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The button variables reach the apply and cancel pair through the same wrapper; hover either button to see its hover background.
+
+<ThemedImage alt="Css Customization" width={256} sources={{ light: require('./color-picker--css-customization-light.png').default, dark: require('./color-picker--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Floating hint attached to one or more anchors, rendered in a portal and positioned to stay in
 the viewport. The tooltip and its anchors are separate elements, tied together by an id.
 
-<ThemedImage alt="Tooltip" width={117} sources={{ light: require('./tooltip-light.png').default, dark: require('./tooltip-dark.png').default }} />
+<ThemedImage alt="Tooltip" width={117} sources={{ light: require('./tooltip--primary-light.png').default, dark: require('./tooltip--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,81 @@ the background and text colours.
 
 `RootTooltip`, `TooltipContainer` and `withTooltip` come from the same folder and are described
 under [Sub-components](#sub-components).
+
+
+## Stories
+
+### Default
+
+The basic setup: the anchor names the tooltip with `data-tooltip-id` and carries its text in `data-tooltip-content`. Hover the link to see the tooltip follow the pointer (`float`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={75} sources={{ light: require('./tooltip--default-light.png').default, dark: require('./tooltip--default-dark.png').default }} />
+
+### Custom Styling
+
+For a tooltip that has to stand out from the theme: hover the link to see slight transparency (`opacity`), a narrower width limit (`maxWidth`) and the arrow pointing at the link (`noArrow={false}`).
+
+<ThemedImage alt="Custom Styling" width={155} sources={{ light: require('./tooltip--custom-styling-light.png').default, dark: require('./tooltip--custom-styling-dark.png').default }} />
+
+### Click To Show
+
+For touch screens and hints the user asks for: click the link to open the tooltip on its right and click again to close it; hovering does nothing (`openOnClick`).
+
+<ThemedImage alt="Click To Show" width={66} sources={{ light: require('./tooltip--click-to-show-light.png').default, dark: require('./tooltip--click-to-show-dark.png').default }} />
+
+### Rich Content
+
+For a hint that needs more than one line of plain text: hover the link to see a bold title taken from the anchor's text, with an address and a title below it (`getContent`).
+
+<ThemedImage alt="Rich Content" width={149} sources={{ light: require('./tooltip--rich-content-light.png').default, dark: require('./tooltip--rich-content-dark.png').default }} />
+
+### Shared By Many Anchors
+
+For a list where every row needs its own hint: hover each name to see one tooltip show that member's details, looked up from the index the anchor carries (`getContent`).
+
+<ThemedImage alt="Shared By Many Anchors" width={750} sources={{ light: require('./tooltip--shared-by-many-anchors-light.png').default, dark: require('./tooltip--shared-by-many-anchors-dark.png').default }} />
+
+### Fixed Content
+
+For content written once in the markup rather than on each anchor: hover the link, which has no `data-tooltip-content`, to see the tooltip's own children.
+
+<ThemedImage alt="Fixed Content" width={75} sources={{ light: require('./tooltip--fixed-content-light.png').default, dark: require('./tooltip--fixed-content-dark.png').default }} />
+
+### Anchored By Selector
+
+For anchors that cannot carry a `data-tooltip-id`: hover either link to see the tooltip below it; both are found by their class (`anchorSelect`). The selector is matched across the whole page.
+
+<ThemedImage alt="Anchored By Selector" width={106} sources={{ light: require('./tooltip--anchored-by-selector-light.png').default, dark: require('./tooltip--anchored-by-selector-dark.png').default }} />
+
+### Clickable Content
+
+For a tooltip with a link inside: hover the anchor, then move the pointer into the tooltip; it stays open, so the link can be clicked (`clickable`).
+
+<ThemedImage alt="Clickable Content" width={75} sources={{ light: require('./tooltip--clickable-content-light.png').default, dark: require('./tooltip--clickable-content-dark.png').default }} />
+
+### Delayed Appearance
+
+For anchors the pointer often crosses on its way elsewhere: rest the pointer on the link for a second before the tooltip appears; passing over it shows nothing (`delayShow`).
+
+<ThemedImage alt="Delayed Appearance" width={144} sources={{ light: require('./tooltip--delayed-appearance-light.png').default, dark: require('./tooltip--delayed-appearance-dark.png').default }} />
+
+### Controlled Open
+
+For a tooltip the host decides to show, such as after a failed action: click the button to open the tooltip and again to close it; hovering no longer does either (`isOpen`).
+
+<ThemedImage alt="Controlled Open" width={152} sources={{ light: require('./tooltip--controlled-open-light.png').default, dark: require('./tooltip--controlled-open-dark.png').default }} />
+
+### Opened From Code
+
+For a tooltip shown at a moment only the code knows: click **Open** to see the tooltip below it and **Close** to hide it; hovering either button shows nothing (`imperativeModeOnly` with `ref`).
+
+<ThemedImage alt="Opened From Code" width={211} sources={{ light: require('./tooltip--opened-from-code-light.png').default, dark: require('./tooltip--opened-from-code-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one tooltip -- the variables are listed under CSS variables on this page. The tooltip renders in a portal outside the story's markup, so the variables go on its own `style` prop, which lands on the wrapper around it. Hover the link to see all of them at once; the stacking order has no visible effect here.
+
+<ThemedImage alt="Css Customization" width={183} sources={{ light: require('./tooltip--css-customization-light.png').default, dark: require('./tooltip--css-customization-dark.png').default }} />
 
 ## Minimal example
 

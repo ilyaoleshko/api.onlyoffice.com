@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Rounded pill that fills in when it is selected. It is a single item, not a tab bar: laying
 several out and deciding which is active is yours to do.
 
-<ThemedImage alt="TabItem" width={790} sources={{ light: require('./tab-item-light.png').default, dark: require('./tab-item-dark.png').default }} />
+<ThemedImage alt="TabItem" width={790} sources={{ light: require('./tab-item--primary-light.png').default, dark: require('./tab-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,51 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`; the selected fill is the
 accent colour it supplies.
+
+
+## Stories
+
+### Default
+
+An unselected pill: click it to see it fill in, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./tab-item--default-light.png').default, dark: require('./tab-item--default-dark.png').default }} />
+
+### Active State
+
+The filled look of a selected pill, for a filter that is already applied when the screen opens (`isActive`).
+
+<ThemedImage alt="Active State" width={790} sources={{ light: require('./tab-item--active-state-light.png').default, dark: require('./tab-item--active-state-dark.png').default }} />
+
+### Disabled State
+
+A dimmed pill that ignores clicks, for an option that does not apply right now (`isDisabled`).
+
+<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./tab-item--disabled-state-light.png').default, dark: require('./tab-item--disabled-state-dark.png').default }} />
+
+### With React Node Label
+
+Tab with a React node as label, allowing custom content like icons alongside text. The label renders inside a `<p>`, so the node has to be phrasing content -- a `<span>`, not a `<div>`.
+
+<ThemedImage alt="With React Node Label" width={790} sources={{ light: require('./tab-item--with-react-node-label-light.png').default, dark: require('./tab-item--with-react-node-label-dark.png').default }} />
+
+### Tab Group
+
+Interactive tab group demonstrating single-selection behavior. Clicking a tab selects it and deselects others.
+
+<ThemedImage alt="Tab Group" width={335} sources={{ light: require('./tab-item--tab-group-light.png').default, dark: require('./tab-item--tab-group-dark.png').default }} />
+
+### Multi Select
+
+Three pills that toggle independently, for a filter where several values can apply at once: a click on a selected pill deselects it (`withMultiSelect`).
+
+<ThemedImage alt="Multi Select" width={308} sources={{ light: require('./tab-item--multi-select-light.png').default, dark: require('./tab-item--multi-select-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. **Documents** is selected, for the two active variables; **Images** is unselected, for the border; **Videos** is disabled, for the opacity. Radius and padding show on all three.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./tab-item--css-customization-light.png').default, dark: require('./tab-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 

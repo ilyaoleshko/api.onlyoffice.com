@@ -13,7 +13,7 @@ Panel whose header is a button that expands and collapses the body under it. One
 section: a title, an optional line under it, a chevron on the trailing edge, and the body that
 appears when the header is pressed. It keeps its own open state unless you take it over.
 
-<ThemedImage alt="CollapsibleCard" width={790} sources={{ light: require('./collapsible-card-light.png').default, dark: require('./collapsible-card-dark.png').default }} />
+<ThemedImage alt="CollapsibleCard" width={790} sources={{ light: require('./collapsible-card--primary-light.png').default, dark: require('./collapsible-card--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,6 +42,33 @@ Needs `ThemeProvider` above it in the tree. The background and all three text co
 declared only under the `light` and `dark` classes the provider puts on `<body>`, so without one
 the card has **no background at all** and the title, the description and the chevron take
 whatever colour they inherit.
+
+
+## Stories
+
+### Collapsed
+
+The card as it first appears: only the title and the description, with the body hidden until the header is clicked. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Collapsed" width={790} sources={{ light: require('./collapsible-card--collapsed-light.png').default, dark: require('./collapsible-card--collapsed-dark.png').default }} />
+
+### Expanded
+
+Content the reader needs right away can be shown from the start: the card opens with its body visible and the chevron pointing up, and still closes on a click (`defaultOpen`).
+
+<ThemedImage alt="Expanded" width={790} sources={{ light: require('./collapsible-card--expanded-light.png').default, dark: require('./collapsible-card--expanded-dark.png').default }} />
+
+### Title Only
+
+A short header needs no second line: without a description the header shrinks to the title beside the chevron (`description` unset).
+
+<ThemedImage alt="Title Only" width={790} sources={{ light: require('./collapsible-card--title-only-light.png').default, dark: require('./collapsible-card--title-only-dark.png').default }} />
+
+### Controlled State
+
+When something else on the page decides whether the card is open, the parent holds the state: the button above and the card's own header both open and close it, and the header only asks the parent to change it (`isOpen`, `onToggle`).
+
+<ThemedImage alt="Controlled State" width={790} sources={{ light: require('./collapsible-card--controlled-state-light.png').default, dark: require('./collapsible-card--controlled-state-dark.png').default }} />
 
 ## Minimal example
 

@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Centred empty state with an icon, a title, a description and a list of things the user can do
 next. It places itself, so it goes straight into the region it fills.
 
-<ThemedImage alt="EmptyView" width={318} sources={{ light: require('./empty-view-light.png').default, dark: require('./empty-view-dark.png').default }} />
+<ThemedImage alt="EmptyView" width={318} sources={{ light: require('./empty-view--primary-light.png').default, dark: require('./empty-view--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,75 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the title, description and item colours.
+
+
+## Stories
+
+### Default
+
+The common case: an illustration, a title and a description, with one link that takes the user somewhere they can act. Change the texts live in the Controls panel below.
+
+<ThemedImage alt="Default" width={318} sources={{ light: require('./empty-view--default-light.png').default, dark: require('./empty-view--default-dark.png').default }} />
+
+### No Options
+
+For an empty state the user cannot act on, such as a search with no results: only the illustration, the title and the description (`options={null}`).
+
+<ThemedImage alt="No Options" width={282} sources={{ light: require('./empty-view--no-options-light.png').default, dark: require('./empty-view--no-options-dark.png').default }} />
+
+### With Multiple Options
+
+When several next steps are equally likely, offer each as a link; they stack under the description in the order given.
+
+<ThemedImage alt="With Multiple Options" width={330} sources={{ light: require('./empty-view--with-multiple-options-light.png').default, dark: require('./empty-view--with-multiple-options-dark.png').default }} />
+
+### Suggestion Cards
+
+Cards give each next step a title and a line of explanation, for when a link alone would not say enough:
+
+- **Create a folder** — a plain card; clicking it runs its `onClick`
+- **Upload files** — click it to open a menu of choices instead (`model`)
+- A third card, **Browse templates**, is `disabled` and therefore not rendered at all
+
+<ThemedImage alt="Suggestion Cards" width={464} sources={{ light: require('./empty-view--suggestion-cards-light.png').default, dark: require('./empty-view--suggestion-cards-dark.png').default }} />
+
+### With Buttons
+
+Buttons suit a step that starts work right here rather than going somewhere; they line up in a row and wrap when there is no room:
+
+- **Create document** — primary, which is what a button option is unless told otherwise
+- **Import** — secondary (`primary: false`)
+- **Sync** — secondary, with a loader while its work runs (`isLoading`)
+
+<ThemedImage alt="With Buttons" width={386} sources={{ light: require('./empty-view--with-buttons-light.png').default, dark: require('./empty-view--with-buttons-dark.png').default }} />
+
+### Text Actions With Separator
+
+Text actions are the lightest option, for two alternatives joined by a word:
+
+- **Upload a file** — an accented icon-and-text action (`type: "action"`)
+- **or** — a separator line of text between the two (`type: "separator"`)
+- **Create a document** — the same action in grey, for the less likely choice (`className: "secondary"`)
+
+<ThemedImage alt="Text Actions With Separator" width={216} sources={{ light: require('./empty-view--text-actions-with-separator-light.png').default, dark: require('./empty-view--text-actions-with-separator-dark.png').default }} />
+
+### With Extra Content
+
+When the empty state needs something the option types do not cover — a hint, a form, a picture — it goes between the description and the options (`extraContent`).
+
+<ThemedImage alt="With Extra Content" width={275} sources={{ light: require('./empty-view--with-extra-content-light.png').default, dark: require('./empty-view--with-extra-content-dark.png').default }} />
+
+### Right To Left
+
+The same empty state under a right-to-left interface: in the suggestion card the icon moves to the right edge, the text aligns right, and the arrow moves to the left edge and points left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={464} sources={{ light: require('./empty-view--right-to-left-light.png').default, dark: require('./empty-view--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The instance holds two links, a separator and a suggestion card. Hover a link and the card to see the hover backgrounds.
+
+<ThemedImage alt="Css Customization" width={376} sources={{ light: require('./empty-view--css-customization-light.png').default, dark: require('./empty-view--css-customization-dark.png').default }} />
 
 ## Minimal example
 

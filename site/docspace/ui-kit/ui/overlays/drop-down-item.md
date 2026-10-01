@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 One row of a dropdown menu: a label, an optional icon and badges, or a separator. It is what
 [`DropDown`](./drop-down.md) expects its children to be.
 
-<ThemedImage alt="DropDownItem" width={94} sources={{ light: require('./drop-down-item-light.png').default, dark: require('./drop-down-item-dark.png').default }} />
+<ThemedImage alt="DropDownItem" width={94} sources={{ light: require('./drop-down-item--primary-light.png').default, dark: require('./drop-down-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,81 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the text, hover and
 icon colours, and `TranslationProvider` from `@onlyoffice/apps-ui-kit/providers/translation` for
 the default text of the paid badge — pass `paidLabel` if you would rather not depend on it.
+
+
+## Stories
+
+### Default
+
+A plain item with a label, the row a menu is made of; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={94} sources={{ light: require('./drop-down-item--default-light.png').default, dark: require('./drop-down-item--default-dark.png').default }} />
+
+### With Description
+
+Each item reads as two lines: the label, and under it an always-visible explanation of what choosing it means (`description`). Use it where picking an item has consequences the label alone cannot convey.
+
+<ThemedImage alt="With Description" width={242} sources={{ light: require('./drop-down-item--with-description-light.png').default, dark: require('./drop-down-item--with-description-dark.png').default }} />
+
+### Item Types
+
+The building blocks of a menu, top to bottom: **Header Item** — a section title with a line under it (`isHeader`); **Regular Item** and **With Icon** — plain rows, with and without an icon (`icon`); a separator line (`isSeparator`); **Selected Item** — the current choice, highlighted (`isActive`) and announced as selected (`isSelected`); **Disabled Item** — greyed out and not clickable (`disabled`).
+
+<ThemedImage alt="Item Types" width={266} sources={{ light: require('./drop-down-item--item-types-light.png').default, dark: require('./drop-down-item--item-types-dark.png').default }} />
+
+### With Toggle
+
+A menu entry that switches an option on and off in place, without opening a dialog: **Toggle Off** and **Toggle On** show both positions (`withToggle`, `checked`); a change of the switch calls `onClick`.
+
+<ThemedImage alt="With Toggle" width={779} sources={{ light: require('./drop-down-item--with-toggle-light.png').default, dark: require('./drop-down-item--with-toggle-dark.png').default }} />
+
+### With Badges
+
+Badges tell the reader before clicking that an entry is new or needs a paid plan: **New Feature** carries a beta badge (`isBeta`, `betaLabel`), **Premium Feature** a paid one (`isPaidBadge`, `paidLabel`).
+
+<ThemedImage alt="With Badges" width={233} sources={{ light: require('./drop-down-item--with-badges-light.png').default, dark: require('./drop-down-item--with-badges-dark.png').default }} />
+
+### Submenu
+
+An arrow at the end of the row tells the reader the entry leads to more options: **Open Submenu** shows it pointing sideways (`isSubMenu`), **Active Submenu** — the entry whose submenu is open — highlighted with the arrow turned down (`isActive`).
+
+<ThemedImage alt="Submenu" width={266} sources={{ light: require('./drop-down-item--submenu-light.png').default, dark: require('./drop-down-item--submenu-dark.png').default }} />
+
+### With Additional Element
+
+Any element can sit at the end of the row, such as the keyboard shortcut of a command: **Save** and **Copy** show theirs on the right (`additionalElement`).
+
+<ThemedImage alt="With Additional Element" width={234} sources={{ light: require('./drop-down-item--with-additional-element-light.png').default, dark: require('./drop-down-item--with-additional-element-dark.png').default }} />
+
+### Header With Arrow
+
+A nested menu level needs a way back: **Header with Back** shows an arrow before the title (`isHeader`, `withHeaderArrow`); click it to see `headerArrowAction` in the Actions panel.
+
+<ThemedImage alt="Header With Arrow" width={167} sources={{ light: require('./drop-down-item--header-with-arrow-light.png').default, dark: require('./drop-down-item--header-with-arrow-dark.png').default }} />
+
+### With Text Overflow
+
+A label longer than the menu is cut off with an ellipsis instead of wrapping or widening the menu (`textOverflow`).
+
+<ThemedImage alt="With Text Overflow" width={646} sources={{ light: require('./drop-down-item--with-text-overflow-light.png').default, dark: require('./drop-down-item--with-text-overflow-dark.png').default }} />
+
+### With External Link
+
+An entry can carry a second target at its end: **Help center** shows an external-link icon (`withExternalLink`, `externalLinkPath`); click the icon to see `onExternalLinkClick` in the Actions panel while `onClick` stays silent, and open the link from that callback yourself.
+
+<ThemedImage alt="With External Link" width={234} sources={{ light: require('./drop-down-item--with-external-link-light.png').default, dark: require('./drop-down-item--with-external-link-dark.png').default }} />
+
+### Right To Left
+
+The same rows under a right-to-left interface: the icons move to the right of the labels, and the submenu arrow and the switch move to the left end, the arrow mirrored to point left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={779} sources={{ light: require('./drop-down-item--right-to-left-light.png').default, dark: require('./drop-down-item--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. **Header** shows the header height, font size and the line under it, **Custom Item** and **Another Item** the text and icon colors, row height, font and padding — hover them for the hover background — the separator its color, and **Disabled Item** the disabled text color (`showDisabledItems` keeps it in the list).
+
+<ThemedImage alt="Css Customization" width={158} sources={{ light: require('./drop-down-item--css-customization-light.png').default, dark: require('./drop-down-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 

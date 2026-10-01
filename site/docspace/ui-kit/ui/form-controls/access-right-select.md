@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Drop-down for choosing an access level, with an icon, a description and a paid badge on each
 row. It is a [`ComboBox`](./combobox.md) whose options are laid out as access rows.
 
-<ThemedImage alt="AccessRightSelect" width={148} sources={{ light: require('./access-right-select-light.png').default, dark: require('./access-right-select-dark.png').default }} />
+<ThemedImage alt="AccessRightSelect" width={148} sources={{ light: require('./access-right-select--primary-light.png').default, dark: require('./access-right-select--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,53 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and `TranslationProvider`
 from `@onlyoffice/apps-ui-kit/providers/translation` because a refused choice is reported
 through a toast. Mount [`Toast`](../feedback/toast.md) once in your app, or that message is lost.
+
+
+## Stories
+
+### Default
+
+The drop-down as it is placed next to a person or a link: open it to see each level's icon, description and paid badge, and pick one to see the button follow (`onSelect`, logged in the Actions panel). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={148} sources={{ light: require('./access-right-select--default-light.png').default, dark: require('./access-right-select--default-dark.png').default }} />
+
+### Display Types
+
+How much of the chosen level the button shows, from the most room to the least:
+
+- **Editor** — the label alone, the usual form (no `type`)
+- **Editor, Can edit and share files** — the label with the description underneath, for a form where the choice needs explaining (`type="descriptive"`)
+- **The folder icon** — the icon alone, for a row with no room for text; the list still shows every label (`type="onlyIcon"`)
+
+<ThemedImage alt="Display Types" width={412} sources={{ light: require('./access-right-select--display-types-light.png').default, dark: require('./access-right-select--display-types-dark.png').default }} />
+
+### Restricted Choices
+
+For a level the viewer may see but not grant. Open the list and pick **Full access**: a toast explains why, and the button keeps **Viewer**; **Commenter** and **Viewer** can still be picked (`isSelectionDisabled`, `availableAccess`, `selectionErrorText`). The toast needs `Toast` mounted once in the app.
+
+<ThemedImage alt="Restricted Choices" width={124} sources={{ light: require('./access-right-select--restricted-choices-light.png').default, dark: require('./access-right-select--restricted-choices-dark.png').default }} />
+
+### Disabled State
+
+For an access level that cannot be changed right now, such as while the person is being removed: the button is greyed out and clicking it does not open the list (`isDisabled`).
+
+<ThemedImage alt="Disabled State" width={148} sources={{ light: require('./access-right-select--disabled-state-light.png').default, dark: require('./access-right-select--disabled-state-dark.png').default }} />
+
+### Loading State
+
+For the moment a new level is being saved: a spinner takes the place of the label and icon, and the list cannot be opened until the save finishes (`isLoading`).
+
+<ThemedImage alt="Loading State" width={148} sources={{ light: require('./access-right-select--loading-state-light.png').default, dark: require('./access-right-select--loading-state-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. Open any of the instances to see the row and panel variables; they render the list in place (`isDefaultMode={false}`), because a portalled list is out of reach of a wrapper's variables. The three instances share one wrapper:
+
+- **Full access** — the usual button, for the button radius and everything in the list
+- **The first icon** — `type="onlyIcon"`, for `--access-right-select-text`
+- **The second icon** — `type="onlyIcon"` and `isDisabled`, for `--access-right-select-disabled-icon`
+
+<ThemedImage alt="Css Customization" width={286} sources={{ light: require('./access-right-select--css-customization-light.png').default, dark: require('./access-right-select--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -13,7 +13,7 @@ Controlled single-line text field in three fixed widths, with optional masking, 
 warning states. It is always controlled: `type` and `value` are required, and the value you
 pass is the value it shows.
 
-<ThemedImage alt="TextInput" width={189} sources={{ light: require('./text-input-light.png').default, dark: require('./text-input-dark.png').default }} />
+<ThemedImage alt="TextInput" width={189} sources={{ light: require('./text-input--primary-light.png').default, dark: require('./text-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,69 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree;
 its background, border and error colours all come from theme custom properties.
+
+
+## Stories
+
+### Default
+
+An empty field with a placeholder, the shape most forms start from (`placeholder`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./text-input--default-light.png').default, dark: require('./text-input--default-dark.png').default }} />
+
+### Sizes
+
+Pick the width by the room the form gives the field: 173px for a short value, 300px for most text, 550px for a long one (`size`); the middle size is also semibold, the large one uses a 16px font.
+
+<ThemedImage alt="Sizes" width={566} sources={{ light: require('./text-input--sizes-light.png').default, dark: require('./text-input--sizes-dark.png').default }} />
+
+### Types
+
+Match `type` to the value so the browser supplies the right keyboard and value rules: password hides the characters, number rejects letters, email and tel bring up their own touch keyboards.
+
+<ThemedImage alt="Types" width={715} sources={{ light: require('./text-input--types-light.png').default, dark: require('./text-input--types-dark.png').default }} />
+
+### States
+
+Every state the field can be in, side by side: a red border on `hasError`, an orange one on `hasWarning`, a grey box that ignores input on `isDisabled`, a field that blocks typing without changing its look on `isReadOnly`, and the bare text of `withBorder={false}` for inline use.
+
+<ThemedImage alt="States" width={715} sources={{ light: require('./text-input--states-light.png').default, dark: require('./text-input--states-dark.png').default }} />
+
+### With Mask
+
+Use a mask when the value has one fixed shape, such as a date or a phone number: the field inserts the separators as the user types and refuses characters that do not fit (`mask`). The date and phone fields show the whole pattern up front with underscores for the missing digits (`guide`); only the date field keeps the other digits in place when one is deleted (`keepCharPositions`). The third field passes a function instead of an array, so the pattern is chosen from the value as it is typed: a plain digit starts a four-digit extension, a leading `+` switches to the full number; without `guide` the mask grows with the value.
+
+<ThemedImage alt="With Mask" width={715} sources={{ light: require('./text-input--with-mask-light.png').default, dark: require('./text-input--with-mask-dark.png').default }} />
+
+### Scaled Inputs
+
+Let the field fill its column instead of its size's fixed width, for form grids and side panels (`scale`); font size and padding still follow `size`.
+
+<ThemedImage alt="Scaled Inputs" width={790} sources={{ light: require('./text-input--scaled-inputs-light.png').default, dark: require('./text-input--scaled-inputs-dark.png').default }} />
+
+### Bold Text
+
+Emphasize a value with `isBold` (600) or pass any `fontWeight`; the middle size is already 600, so `isBold` changes nothing there.
+
+<ThemedImage alt="Bold Text" width={715} sources={{ light: require('./text-input--bold-text-light.png').default, dark: require('./text-input--bold-text-dark.png').default }} />
+
+### Auto Focused
+
+Put the caret in the field the moment it appears, for a dialog or a panel whose first action is typing (`isAutoFocussed`); the field is focused when the story loads, so start typing without clicking.
+
+<ThemedImage alt="Auto Focused" width={189} sources={{ light: require('./text-input--auto-focused-light.png').default, dark: require('./text-input--auto-focused-dark.png').default }} />
+
+### Right To Left
+
+The same fields under a right-to-left interface: the placeholder sits at the right edge and the caret of an empty field starts on the right; text typed in a right-to-left script runs right to left, Latin text still runs left to right (`dir="auto"`); the tel field keeps its placeholder left-to-right, so a phone number reads the same as in a left-to-right interface. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={189} sources={{ light: require('./text-input--right-to-left-light.png').default, dark: require('./text-input--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The first field sets the shared `--text-input-*` tokens on a wrapper -- the variables are listed under CSS variables on this page; hover and focus it to see the two border variables. The second carries `--text-input-placeholder-color` in its own `style`, the only place it works. The third is disabled: the theme takes over its text and border, and only the radius, the font size and `--text-input-disabled-bg` still apply.
+
+<ThemedImage alt="Css Customization" width={189} sources={{ light: require('./text-input--css-customization-light.png').default, dark: require('./text-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 

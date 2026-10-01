@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Hex field with a swatch that opens a colour picker. It is the form-field form of
 [`ColorPicker`](./color-picker.md), with the drop-down already wired up.
 
-<ThemedImage alt="ColorInput" width={189} sources={{ light: require('./color-input-light.png').default, dark: require('./color-input-dark.png').default }} />
+<ThemedImage alt="ColorInput" width={189} sources={{ light: require('./color-input--primary-light.png').default, dark: require('./color-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,39 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and `TranslationProvider`
 from `@onlyoffice/apps-ui-kit/providers/translation` for the picker's "Custom" title.
+
+
+## Stories
+
+### Default
+
+The field on its own, starting on the kit's blue. Type a hex code or click the swatch to pick one, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./color-input--default-light.png').default, dark: require('./color-input--default-dark.png').default }} />
+
+### Sizes
+
+Pick the size that matches the other fields in the same form: **base**, **middle** and **large** differ in width, and **large** also in text size and padding, while all three keep the same height (`size`).
+
+<ThemedImage alt="Sizes" width={795} sources={{ light: require('./color-input--sizes-light.png').default, dark: require('./color-input--sizes-dark.png').default }} />
+
+### States
+
+Show whether the entered color is accepted: the first field is in its normal state, the second has a red border (`hasError`), the third an orange one (`hasWarning`), and the fourth is greyed out and its swatch no longer opens the picker (`isDisabled`).
+
+<ThemedImage alt="States" width={707} sources={{ light: require('./color-input--states-light.png').default, dark: require('./color-input--states-dark.png').default }} />
+
+### Scaled Input
+
+Use it where the field shares a column with full-width inputs: the field stretches across its container and the swatch stays at its end (`scale`).
+
+<ThemedImage alt="Scaled Input" width={790} sources={{ light: require('./color-input--scaled-input-light.png').default, dark: require('./color-input--scaled-input-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable but `--dropdown-bg` set on one field -- the variables are listed under CSS variables on this page. Hover and focus it to see the border colors, and click its swatch to open the popup.
+
+<ThemedImage alt="Css Customization" width={189} sources={{ light: require('./color-input--css-customization-light.png').default, dark: require('./color-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 

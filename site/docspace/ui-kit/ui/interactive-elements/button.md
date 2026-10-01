@@ -13,7 +13,7 @@ Labelled action button with an optional icon, a loading state and a tooltip, in 
 secondary variant. It renders a real `<button>`, so form submission and keyboard activation
 work natively.
 
-<ThemedImage alt="Button" width={117} sources={{ light: require('./button-light.png').default, dark: require('./button-dark.png').default }} />
+<ThemedImage alt="Button" width={117} sources={{ light: require('./button--primary-light.png').default, dark: require('./button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -40,6 +40,98 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in
 Without it the button still renders, but always in the light palette and without the
 portal's accent colour, because the dark rules are scoped under a global `.dark` class the
 provider sets.
+
+
+## Stories
+
+### Default
+
+The secondary button, for any action that is not the main one of a view; click it to see `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={117} sources={{ light: require('./button--default-light.png').default, dark: require('./button--default-dark.png').default }} />
+
+### Primary Buttons
+
+Primary buttons are used for main actions. They have a solid background color.
+
+<ThemedImage alt="Primary Buttons" width={790} sources={{ light: require('./button--primary-buttons-light.png').default, dark: require('./button--primary-buttons-dark.png').default }} />
+
+### Secondary Buttons
+
+Secondary buttons are used for secondary actions. They sit on the page background with a grey border that changes colour on hover.
+
+<ThemedImage alt="Secondary Buttons" width={790} sources={{ light: require('./button--secondary-buttons-light.png').default, dark: require('./button--secondary-buttons-dark.png').default }} />
+
+### With Icon Buttons
+
+Buttons can include icons alongside text. Icons are displayed before the label.
+
+<ThemedImage alt="With Icon Buttons" width={790} sources={{ light: require('./button--with-icon-buttons-light.png').default, dark: require('./button--with-icon-buttons-dark.png').default }} />
+
+### Is Loading Buttons
+
+Loading state displays a spinner and disables interaction. Use for async operations.
+
+<ThemedImage alt="Is Loading Buttons" width={790} sources={{ light: require('./button--is-loading-buttons-light.png').default, dark: require('./button--is-loading-buttons-dark.png').default }} />
+
+### Scale Buttons
+
+Scale prop makes buttons expand to 100% of their container width. Useful for mobile layouts.
+
+<ThemedImage alt="Scale Buttons" width={790} sources={{ light: require('./button--scale-buttons-light.png').default, dark: require('./button--scale-buttons-dark.png').default }} />
+
+### Disabled Buttons
+
+Disabled buttons cannot be clicked or focused: the secondary one turns grey, the primary one fades to 60% opacity (`isDisabled`).
+
+<ThemedImage alt="Disabled Buttons" width={790} sources={{ light: require('./button--disabled-buttons-light.png').default, dark: require('./button--disabled-buttons-dark.png').default }} />
+
+### Clicked Buttons
+
+The pressed look drawn while nothing presses the button (`isClicked`), for a button whose action is already under way, such as the one that opened the menu now on screen.
+
+<ThemedImage alt="Clicked Buttons" width={790} sources={{ light: require('./button--clicked-buttons-light.png').default, dark: require('./button--clicked-buttons-dark.png').default }} />
+
+### Hovered Buttons
+
+The hover look drawn while the pointer is elsewhere (`isHovered`), for a button that should light up together with the element it belongs to, such as a hovered row.
+
+<ThemedImage alt="Hovered Buttons" width={790} sources={{ light: require('./button--hovered-buttons-light.png').default, dark: require('./button--hovered-buttons-dark.png').default }} />
+
+### Filled Buttons
+
+A quiet grey button with no border, for toolbar actions that should not compete with the content (`filled`). The first row shows that an icon is repainted in the text colour, whatever colour it was drawn in.
+
+<ThemedImage alt="Filled Buttons" width={790} sources={{ light: require('./button--filled-buttons-light.png').default, dark: require('./button--filled-buttons-dark.png').default }} />
+
+### Filled Stroke Buttons
+
+An outline-style icon on a filled button: in the first row the filled button paints the icon's shapes solid, in the second it keeps the outline (`filled` with `filledStroke`). `filledStroke` changes nothing without `filled`.
+
+<ThemedImage alt="Filled Stroke Buttons" width={792} sources={{ light: require('./button--filled-stroke-buttons-light.png').default, dark: require('./button--filled-stroke-buttons-dark.png').default }} />
+
+### With Tooltip
+
+Buttons can display tooltips on hover. Hover over the buttons to see the tooltip text.
+
+<ThemedImage alt="With Tooltip" width={592} sources={{ light: require('./button--with-tooltip-light.png').default, dark: require('./button--with-tooltip-dark.png').default }} />
+
+### Accent Buttons
+
+An emphasised action that should stand out without taking the place of the primary one: a light accent tint with accent text, and an icon repainted in the same colour (`accent`).
+
+<ThemedImage alt="Accent Buttons" width={790} sources={{ light: require('./button--accent-buttons-light.png').default, dark: require('./button--accent-buttons-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. Hover and press the buttons to see the hover and pressed values.
+
+- **Secondary** — the `--button-root-*` colours, the radius, the weight and the `normal` size's height and font size
+- **Primary** — the `--button-primary-*` colours
+- **Disabled** — the `--button-root-*-disabled` values (`isDisabled`)
+- **Disabled primary** — the `--button-primary-*-disabled` values, faded to 60% opacity by the component (`primary` with `isDisabled`)
+
+<ThemedImage alt="Css Customization" width={539} sources={{ light: require('./button--css-customization-light.png').default, dark: require('./button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

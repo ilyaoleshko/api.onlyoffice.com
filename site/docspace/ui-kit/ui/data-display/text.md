@@ -13,7 +13,7 @@ Body text at the kit's size and weight, rendered through whichever element you n
 typography primitive the rest of the kit builds its labels out of: a `<p>` by default, 13px and
 400, with the styling knobs as props instead of a class.
 
-<ThemedImage alt="Text" width={790} sources={{ light: require('./text-light.png').default, dark: require('./text-dark.png').default }} />
+<ThemedImage alt="Text" width={790} sources={{ light: require('./text--primary-light.png').default, dark: require('./text--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -43,6 +43,81 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 No provider is required: the component reads only `--text-size` and `--text-weight`, both with
 built-in fallbacks, so it renders correctly on its own.
+
+
+## Stories
+
+### Default
+
+A paragraph at the kit's body size and regular weight, the starting point for any line of text; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./text--default-light.png').default, dark: require('./text--default-dark.png').default }} />
+
+### Font Sizes
+
+Seven lines from 10px to 24px, to pick a size against the 13px body text (`fontSize`).
+
+<ThemedImage alt="Font Sizes" width={790} sources={{ light: require('./text--font-sizes-light.png').default, dark: require('./text--font-sizes-dark.png').default }} />
+
+### Font Weights
+
+Five lines from light (300) to bold (700), to compare weights at the same size (`fontWeight`); a weight shows only if the font carries it.
+
+<ThemedImage alt="Font Weights" width={790} sources={{ light: require('./text--font-weights-light.png').default, dark: require('./text--font-weights-dark.png').default }} />
+
+### Text Styles
+
+Emphasis without choosing a weight: **Bold text** sets 700 (`isBold`), **Italic text** slants it (`isItalic`), and the last line combines both.
+
+<ThemedImage alt="Text Styles" width={790} sources={{ light: require('./text--text-styles-light.png').default, dark: require('./text--text-styles-dark.png').default }} />
+
+### Text Alignment
+
+The four alignments in one column (`textAlign`); the justified paragraph stretches every line but the last to both edges.
+
+<ThemedImage alt="Text Alignment" width={790} sources={{ light: require('./text--text-alignment-light.png').default, dark: require('./text--text-alignment-dark.png').default }} />
+
+### Inline Text
+
+Three pieces of text on one line, for mixing styles inside a sentence without a wrapper (`isInline`).
+
+<ThemedImage alt="Inline Text" width={355} sources={{ light: require('./text--inline-text-light.png').default, dark: require('./text--inline-text-dark.png').default }} />
+
+### Truncated Text
+
+A sentence longer than its 200px box stays on one line and ends with an ellipsis (`truncate`); without a box of bounded width it would grow instead.
+
+<ThemedImage alt="Truncated Text" width={216} sources={{ light: require('./text--truncated-text-light.png').default, dark: require('./text--truncated-text-dark.png').default }} />
+
+### Heading Elements
+
+Real `h1`-`h6` elements for a document outline, each given its size and weight by hand (`as`, `fontSize`, `fontWeight`); `Heading` carries these sizes already.
+
+<ThemedImage alt="Heading Elements" width={790} sources={{ light: require('./text--heading-elements-light.png').default, dark: require('./text--heading-elements-dark.png').default }} />
+
+### Direction
+
+For text whose language is not known in advance: the first line is set left to right and the second right to left (`dir`); the last two leave the direction to the browser, which reads it from the text itself (`dir="auto"`).
+
+<ThemedImage alt="Direction" width={790} sources={{ light: require('./text--direction-light.png').default, dark: require('./text--direction-dark.png').default }} />
+
+### No Select Text
+
+For captions that should not be copied by accident: drag across both lines, and only the first one is selected (`noSelect`).
+
+<ThemedImage alt="No Select Text" width={790} sources={{ light: require('./text--no-select-text-light.png').default, dark: require('./text--no-select-text-dark.png').default }} />
+
+### With Tooltip
+
+For text that needs a word of explanation without taking space on the page: rest the pointer on the line to read the tooltip (`title`). It opens the kit's shared tooltip, which needs `RootTooltip` mounted, as this story does.
+
+<ThemedImage alt="With Tooltip" width={120} sources={{ light: require('./text--with-tooltip-light.png').default, dark: require('./text--with-tooltip-dark.png').default }} />
+
+### Css Customization
+
+Both variables set on one wrapper -- the variables are listed under CSS variables on this page. The line of text inside comes out larger and semibold.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./text--css-customization-light.png').default, dark: require('./text--css-customization-dark.png').default }} />
 
 ## Minimal example
 

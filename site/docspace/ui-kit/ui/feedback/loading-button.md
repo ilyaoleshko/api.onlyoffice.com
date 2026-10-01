@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 16px progress ring with a cross in the middle, for cancelling what it is measuring. It is the
 marker the portal puts next to a row while that row's file is uploading.
 
-<ThemedImage alt="LoadingButton" width={38} sources={{ light: require('./loading-button-light.png').default, dark: require('./loading-button-dark.png').default }} />
+<ThemedImage alt="LoadingButton" width={37} sources={{ light: require('./loading-button--primary-light.png').default, dark: require('./loading-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,45 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, which supplies the accent
 colour the ring is drawn in.
+
+
+## Stories
+
+### Default
+
+The ring as it first appears, before any progress is known: at the default `percent` of 0 a half ring spins. Change the percentage, drop the cross or pick colours live in the Controls panel below.
+
+<ThemedImage alt="Default" width={38} sources={{ light: require('./loading-button--default-light.png').default, dark: require('./loading-button--default-dark.png').default }} />
+
+### Progress Stages
+
+Five rings labelled with their `percent`, to show how far the arc reaches at each stage: at 0% a half ring spins, the look for an operation whose size is not known yet, and from 25% on the arc grows clockwise until it closes at 100%.
+
+<ThemedImage alt="Progress Stages" width={356} sources={{ light: require('./loading-button--progress-stages-light.png').default, dark: require('./loading-button--progress-stages-dark.png').default }} />
+
+### In Conversion
+
+The same rings with no cross in the middle (`inConversion`), for a marker that shows progress and nothing else: at 0% the ring spins, at 50% it is half filled, at 100% it is closed.
+
+<ThemedImage alt="In Conversion" width={193} sources={{ light: require('./loading-button--in-conversion-light.png').default, dark: require('./loading-button--in-conversion-dark.png').default }} />
+
+### Default Mode
+
+The ring and the cross in the theme's grey instead of the accent colour (`isDefaultMode`), for an item that is waiting rather than running. Hover the ring to see the cross change colour.
+
+<ThemedImage alt="Default Mode" width={36} sources={{ light: require('./loading-button--default-mode-light.png').default, dark: require('./loading-button--default-mode-dark.png').default }} />
+
+### Custom Colors
+
+Colours set per instance, for a ring that has to match its surroundings rather than the theme: the first three change the ring and the cross (`loaderColor`), the last also tints the disc behind the cross (`backgroundColor`).
+
+<ThemedImage alt="Custom Colors" width={275} sources={{ light: require('./loading-button--custom-colors-light.png').default, dark: require('./loading-button--custom-colors-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The first ring shows the accent and the disc colours; the second sets `isDefaultMode` to show the idle colour, and hovering it shows the hover colour.
+
+<ThemedImage alt="Css Customization" width={70} sources={{ light: require('./loading-button--css-customization-light.png').default, dark: require('./loading-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

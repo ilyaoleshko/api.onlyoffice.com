@@ -21,6 +21,7 @@ The following components are available:
 | [`FloatingButton`](./floating-button.md) | Round corner badge that shows the progress of a background operation and opens its panel. |
 | [`HelpButton`](./help-button.md) | Info icon that opens an explanation on click, for a label that needs more than a label. |
 | [`IconButton`](./icon-button.md) | Icon that acts as a button, with hover and pressed colours and an optional tooltip. |
+| [`ImageEditor`](./image-editor.md) | Crop window with drag, zoom and a replace control, for turning an uploaded picture into an avatar or a logo. |
 | [`LinkWithDropdown`](./link-with-dropdown.md) | Dashed link that opens a menu under itself. |
 | [`MainButtonMobile`](./main-button-mobile.md) | Floating round button in the corner of the screen that opens a full-width sheet of actions. |
 | [`MainButton`](./main-button.md) | Accent button at the top of a side menu that opens a menu of the things a user can create. |

@@ -13,7 +13,7 @@ Text field with an icon at the end and room for a prefix before it, inside one b
 [`TextInput`](./text-input.md) and [`IconButton`](../interactive-elements/icon-button.md) in a group
 that draws the border for them.
 
-<ThemedImage alt="InputBlock" width={790} sources={{ light: require('./input-block-light.png').default, dark: require('./input-block-dark.png').default }} />
+<ThemedImage alt="InputBlock" width={790} sources={{ light: require('./input-block--primary-light.png').default, dark: require('./input-block--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,59 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the border and
 background colours.
+
+
+## Stories
+
+### Default
+
+A text field with a search icon at its end, inside one border. Type in it, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./input-block--default-light.png').default, dark: require('./input-block--default-dark.png').default }} />
+
+### Sizes
+
+Match the field to the controls around it: **Base size**, **Middle size** and **Large size** differ in text size, padding and the height of the icon box (`size`).
+
+<ThemedImage alt="Sizes" width={790} sources={{ light: require('./input-block--sizes-light.png').default, dark: require('./input-block--sizes-dark.png').default }} />
+
+### States
+
+How the field reads in each state: **Error state** and **Warning state** recolour the border of the whole group (`hasError`, `hasWarning`); **Disabled** greys the field out and drops the icon (`isDisabled`); **Read-only content** keeps the look and the icon and only stops typing (`isReadOnly`).
+
+<ThemedImage alt="States" width={790} sources={{ light: require('./input-block--states-light.png').default, dark: require('./input-block--states-dark.png').default }} />
+
+### Password Type
+
+For a secret that must not be read off the screen, the typed characters are masked (`type={InputType.password}`). For a reveal toggle and strength rules, use `PasswordInput` instead.
+
+<ThemedImage alt="Password Type" width={316} sources={{ light: require('./input-block--password-type-light.png').default, dark: require('./input-block--password-type-dark.png').default }} />
+
+### With Icon Click
+
+An icon that does something, such as clearing the field or opening a picker, needs a click handler (`onIconClick`); without it the icon is drawn greyed out and ignores clicks, as in the other stories. Click the search icon to see the action.
+
+<ThemedImage alt="With Icon Click" width={316} sources={{ light: require('./input-block--with-icon-click-light.png').default, dark: require('./input-block--with-icon-click-dark.png').default }} />
+
+### With Prefix
+
+A fixed part of the value that the user does not type sits in front of the input, inside the same border (`children`). **Amount** has a currency sign and no icon at its end (`noIcon`); **Phone number** has a country code and keeps its icon.
+
+<ThemedImage alt="With Prefix" width={790} sources={{ light: require('./input-block--with-prefix-light.png').default, dark: require('./input-block--with-prefix-dark.png').default }} />
+
+### Right To Left
+
+The same field under a right-to-left interface: the icon moves to the left end, the prefix to the right end, and the placeholder sits at the right edge. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={316} sources={{ light: require('./input-block--right-to-left-light.png').default, dark: require('./input-block--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+**Amount** carries a prefix, for the prefix padding, and shows every other variable except the large icon padding; **Large size** is there for `--input-block-icon-padding-lg`, which only the large size reads. Hover and focus a field to see the hover and focus border colours.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./input-block--css-customization-light.png').default, dark: require('./input-block--css-customization-dark.png').default }} />
 
 ## Minimal example
 

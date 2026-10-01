@@ -13,7 +13,7 @@ Small coloured pill for a count or a short marker, announced as a live status re
 unread counter next to a room, the "Paid" marker on a plan and the version number on a file —
 one short string on the accent colour, sized by its content.
 
-<ThemedImage alt="Badge" width={38} sources={{ light: require('./badge-light.png').default, dark: require('./badge-dark.png').default }} />
+<ThemedImage alt="Badge" width={38} sources={{ light: require('./badge--primary-light.png').default, dark: require('./badge--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,66 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` above it in the tree for the dark theme: the dark background and the
 muted grey are declared under the `dark` class the provider puts on `<body>`. Without a provider
 the badge still renders, in its light colours.
+
+
+## Stories
+
+### Default
+
+The badge as it usually appears: a count on the accent colour. Change any prop live in the Controls panel below, and set the label to 0 to see the badge disappear.
+
+<ThemedImage alt="Default" width={38} sources={{ light: require('./badge--default-light.png').default, dark: require('./badge--default-dark.png').default }} />
+
+### Badge Types
+
+The two looks a badge can take:
+
+- **3**, **New**, **99+** — the usual round pill, as wide as its label, for a count or a short word
+- **High** — the emphasised preset (`type="high"`), with squarer corners and more padding, for a marker that should stand out
+
+<ThemedImage alt="Badge Types" width={457} sources={{ light: require('./badge--badge-types-light.png').default, dark: require('./badge--badge-types-dark.png').default }} />
+
+### Special Badges
+
+Markers with a meaning of their own:
+
+- **v1.2.3** — a version number (`isVersionBadge`); on tablet-width screens and narrower it fills the width of its container
+- **PRO** — a paid-feature marker (`isPaidBadge`): the text stays white and the label is never cut off
+- **Muted** — a grey pill for something inactive (`isMutedBadge`)
+
+<ThemedImage alt="Special Badges" width={290} sources={{ light: require('./badge--special-badges-light.png').default, dark: require('./badge--special-badges-dark.png').default }} />
+
+### Hover States
+
+Hover and press each badge to compare:
+
+- **Default** — the pill lightens on hover and darkens while pressed
+- **Hovered** — shows the pointer cursor before the pointer arrives (`isHovered`); the colour still changes only under the real pointer
+- **No Hover** — keeps the arrow cursor and its colour, for a badge that is only a marker (`noHover`)
+
+<ThemedImage alt="Hover States" width={339} sources={{ light: require('./badge--hover-states-light.png').default, dark: require('./badge--hover-states-dark.png').default }} />
+
+### Custom Styled
+
+For a place where the theme's pill does not fit:
+
+- **Custom** — its own background, text colour, text size and weight, corners and padding
+- **Bordered** — a transparent pill with a border around it (`border`)
+- **Large** — a wider cap (`maxWidth`) and more padding for a longer label
+
+<ThemedImage alt="Custom Styled" width={351} sources={{ light: require('./badge--custom-styled-light.png').default, dark: require('./badge--custom-styled-dark.png').default }} />
+
+### Interactive Badge
+
+A badge that opens something when clicked: click it and watch the Actions panel (`onClick`). It takes no keyboard focus, so offer the same action somewhere a keyboard user can reach it.
+
+<ThemedImage alt="Interactive Badge" width={74} sources={{ light: require('./badge--interactive-badge-light.png').default, dark: require('./badge--interactive-badge-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. The example is one `high` badge, because two of the three variables apply only to that type.
+
+<ThemedImage alt="Css Customization" width={94} sources={{ light: require('./badge--css-customization-light.png').default, dark: require('./badge--css-customization-dark.png').default }} />
 
 ## Minimal example
 

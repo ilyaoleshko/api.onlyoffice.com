@@ -13,7 +13,7 @@ Tile for a room template: the name on top, and an owner and storage pair along t
 [`BaseTile`](./base-tile.md) with a two-column caption in its lower half, where the room
 tile puts its tags.
 
-<ThemedImage alt="TemplateTile" width={316} sources={{ light: require('./template-tile-light.png').default, dark: require('./template-tile-dark.png').default }} />
+<ThemedImage alt="TemplateTile" width={316} sources={{ light: require('./template-tile--primary-light.png').default, dark: require('./template-tile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,67 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 Needs `ThemeProvider` for its colours and `TranslationProvider` for the two captions and the
 three-dot button's tooltip, which it asks the kit's own translation hook for; without it the lower
 half is two empty lines.
+
+
+## Stories
+
+### Default
+
+A template with its owner and the storage it uses: the icon, the name with a create-room button, the menu, and the two lines below. Hover the icon and tick the checkbox to select it, click the owner to see `openUser` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./template-tile--default-light.png').default, dark: require('./template-tile--default-dark.png').default }} />
+
+### Checked
+
+A selected template, as it looks among others the reader has picked: the checkbox stays ticked in place of the icon and the tile is tinted (`checked`).
+
+<ThemedImage alt="Checked" width={316} sources={{ light: require('./template-tile--checked-light.png').default, dark: require('./template-tile--checked-dark.png').default }} />
+
+### With Space Quota
+
+A template with a storage limit the reader may change: the storage line shows the space used and a drop-down with the limit, both drawn by the host's quota component (`showStorageInfo`, `SpaceQuotaComponent`, `security.EditRoom`).
+
+<ThemedImage alt="With Space Quota" width={316} sources={{ light: require('./template-tile--with-space-quota-light.png').default, dark: require('./template-tile--with-space-quota-dark.png').default }} />
+
+### With Read Only Quota
+
+The same template for a reader who may not edit it: the tile tells the quota component the figure is read-only, so it shows the used space and the limit as plain text (`security.EditRoom: false`).
+
+<ThemedImage alt="With Read Only Quota" width={316} sources={{ light: require('./template-tile--with-read-only-quota-light.png').default, dark: require('./template-tile--with-read-only-quota-dark.png').default }} />
+
+### Blocking Operation
+
+A template an operation is running over, which must not be picked or opened until it ends: hover it, click it or right-click it and nothing happens (`isBlockingOperation`). It looks the same as an idle template, so show the operation somewhere else.
+
+<ThemedImage alt="Blocking Operation" width={316} sources={{ light: require('./template-tile--blocking-operation-light.png').default, dark: require('./template-tile--blocking-operation-dark.png').default }} />
+
+### In Progress
+
+A template that is busy, being saved or copied: a small loader stands where the icon and the checkbox were (`inProgress`).
+
+<ThemedImage alt="In Progress" width={316} sources={{ light: require('./template-tile--in-progress-light.png').default, dark: require('./template-tile--in-progress-dark.png').default }} />
+
+### With Hotkey Border
+
+The tile the keyboard is on while the reader moves through the grid with the arrow keys: its border turns the accent colour (`showHotkeyBorder`). The tile does not handle the keys itself.
+
+<ThemedImage alt="With Hotkey Border" width={316} sources={{ light: require('./template-tile--with-hotkey-border-light.png').default, dark: require('./template-tile--with-hotkey-border-dark.png').default }} />
+
+### Renaming State
+
+A template whose name is being edited: the icon and the checkbox go, so the name can become a text field, and hovering no longer tints the tile (`isEdit`).
+
+<ThemedImage alt="Renaming State" width={316} sources={{ light: require('./template-tile--renaming-state-light.png').default, dark: require('./template-tile--renaming-state-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page.
+
+Two instances:
+- **Sample Template** — for every variable but the hotkey colour; hover it for `--tile-hover-bg`.
+- **Team Template** — `showHotkeyBorder`, for `--tile-hotkey-color`.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./template-tile--css-customization-light.png').default, dark: require('./template-tile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

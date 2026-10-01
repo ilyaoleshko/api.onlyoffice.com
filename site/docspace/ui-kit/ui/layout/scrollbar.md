@@ -13,7 +13,7 @@ Scrolling region with the kit's own thin tracks, which fade out when nothing is 
 is what [`Aside`](../overlays/aside.md) and [`DropDown`](../overlays/drop-down.md) put their
 content in.
 
-<ThemedImage alt="Scrollbar" width={311} sources={{ light: require('./scrollbar-light.png').default, dark: require('./scrollbar-dark.png').default }} />
+<ThemedImage alt="Scrollbar" width={311} sources={{ light: require('./scrollbar--primary-light.png').default, dark: require('./scrollbar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,63 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the thumb's colours,
 which differ between the light and the dark theme.
+
+
+## Stories
+
+### Default
+
+Tall content in a fixed-size box, with auto-hide turned off so the vertical track stays on screen (`autoHide={false}`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={311} sources={{ light: require('./scrollbar--default-light.png').default, dark: require('./scrollbar--default-dark.png').default }} />
+
+### With Auto Hide
+
+The default behaviour, for content where a permanent track would distract: the track stays hidden until you scroll or move the pointer over the content, then fades out three seconds later (`autoHide`).
+
+<ThemedImage alt="With Auto Hide" width={299} sources={{ light: require('./scrollbar--with-auto-hide-light.png').default, dark: require('./scrollbar--with-auto-hide-dark.png').default }} />
+
+### With Fixed Size
+
+The thumb stays at its wider 8px thickness on desktop instead of widening only while the pointer is over the track, so it is easier to find and grab (`fixedSize`).
+
+<ThemedImage alt="With Fixed Size" width={311} sources={{ light: require('./scrollbar--with-fixed-size-light.png').default, dark: require('./scrollbar--with-fixed-size-dark.png').default }} />
+
+### With Horizontal Scroll
+
+Content that overflows sideways gets a horizontal track along the bottom edge, drawn the same way as the vertical one.
+
+<ThemedImage alt="With Horizontal Scroll" width={791} sources={{ light: require('./scrollbar--with-horizontal-scroll-light.png').default, dark: require('./scrollbar--with-horizontal-scroll-dark.png').default }} />
+
+### With Both Scrollbars
+
+Content taller and wider than the box shows both tracks, each shortened by 16px so they do not overlap in the corner.
+
+<ThemedImage alt="With Both Scrollbars" width={516} sources={{ light: require('./scrollbar--with-both-scrollbars-light.png').default, dark: require('./scrollbar--with-both-scrollbars-dark.png').default }} />
+
+### With Padding After Last Item
+
+Scrollbar with additional padding after the last item, providing extra space at the bottom of scrollable content.
+
+<ThemedImage alt="With Padding After Last Item" width={311} sources={{ light: require('./scrollbar--with-padding-after-last-item-light.png').default, dark: require('./scrollbar--with-padding-after-last-item-dark.png').default }} />
+
+### With Padding Inline End
+
+Scrollbar with inline-end padding, adding space on the right (or left in RTL) side of the scroll body.
+
+<ThemedImage alt="With Padding Inline End" width={311} sources={{ light: require('./scrollbar--with-padding-inline-end-light.png').default, dark: require('./scrollbar--with-padding-inline-end-dark.png').default }} />
+
+### Right To Left
+
+The same box under a right-to-left interface: the vertical track moves to the left edge, the text aligns to the right and the content's inline-end padding moves to the left with the track. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the text itself.
+
+<ThemedImage alt="Right To Left" width={311} sources={{ light: require('./scrollbar--right-to-left-light.png').default, dark: require('./scrollbar--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. The example sets the thumb colours (hover and drag the thumb to see the other two), a 6px thumb, a 2px track padding and 32px of space before the track.
+
+<ThemedImage alt="Css Customization" width={313} sources={{ light: require('./scrollbar--css-customization-light.png').default, dark: require('./scrollbar--css-customization-dark.png').default }} />
 
 ## Minimal example
 

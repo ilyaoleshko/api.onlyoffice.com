@@ -13,7 +13,7 @@ Resolves the light, dark or system theme and writes it onto the document for eve
 read. Almost nothing in this kit has a colour of its own: a component reads custom properties
 that this provider's output defines, so a tree without it renders with those properties unset.
 
-<ThemedImage alt="ThemeProvider" width={790} sources={{ light: require('./theme-light.png').default, dark: require('./theme-dark.png').default }} />
+<ThemedImage alt="ThemeProvider" width={790} sources={{ light: require('./theme--primary-light.png').default, dark: require('./theme--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,27 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs no provider of its own. Pair it with
 [`TranslationProvider`](./translation.md), which the components that carry labels of
 their own read.
+
+
+## Stories
+
+### Light Theme
+
+Light (Base) theme — the default.
+
+<ThemedImage alt="Light Theme" width={790} sources={{ light: require('./theme--light-theme-light.png').default, dark: require('./theme--light-theme-dark.png').default }} />
+
+### Dark Theme
+
+Dark theme variant.
+
+<ThemedImage alt="Dark Theme" width={790} sources={{ light: require('./theme--dark-theme-light.png').default, dark: require('./theme--dark-theme-dark.png').default }} />
+
+### System Theme
+
+System theme follows the OS preference via `prefers-color-scheme`.
+
+<ThemedImage alt="System Theme" width={790} sources={{ light: require('./theme--system-theme-light.png').default, dark: require('./theme--system-theme-dark.png').default }} />
 
 ## Minimal example
 

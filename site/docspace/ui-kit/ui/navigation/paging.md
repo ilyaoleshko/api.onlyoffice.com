@@ -13,7 +13,7 @@ Previous and next buttons with a page selector between them and a page-size sele
 It is a fully controlled strip: it holds no page number of its own and moves nothing — you give
 it the options and the current values, and it tells you what was clicked.
 
-<ThemedImage alt="Paging" width={790} sources={{ light: require('./paging-light.png').default, dark: require('./paging-dark.png').default }} />
+<ThemedImage alt="Paging" width={790} sources={{ light: require('./paging--primary-light.png').default, dark: require('./paging--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -40,6 +40,51 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` above it in the tree: the buttons and both drop-downs take their colours
 from the custom properties the provider's `.light` and `.dark` classes declare, and without it
 they render unstyled.
+
+
+## Stories
+
+### Default
+
+The full strip under a list of 200 pages: step with Previous and Next, jump from the page selector, or change the page size, and watch the calls in the Actions panel. The story holds the current page and size itself, as your code must; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./paging--default-light.png').default, dark: require('./paging--default-dark.png').default }} />
+
+### Disabled Previous
+
+On the first page there is nowhere to go back to, so the Previous button is greyed out and ignores clicks (`disablePrevious`); the component does not work this out, you set it.
+
+<ThemedImage alt="Disabled Previous" width={790} sources={{ light: require('./paging--disabled-previous-light.png').default, dark: require('./paging--disabled-previous-dark.png').default }} />
+
+### Disabled Next
+
+On the last page the Next button is greyed out and ignores clicks (`disableNext`), while the page selector stays open for jumping back.
+
+<ThemedImage alt="Disabled Next" width={790} sources={{ light: require('./paging--disabled-next-light.png').default, dark: require('./paging--disabled-next-dark.png').default }} />
+
+### Without Count Selector
+
+For a list whose page size is fixed, the page-size selector at the end is left out (`showCountItem={false}`), leaving the two buttons and the page selector.
+
+<ThemedImage alt="Without Count Selector" width={336} sources={{ light: require('./paging--without-count-selector-light.png').default, dark: require('./paging--without-count-selector-dark.png').default }} />
+
+### Single Page
+
+When the whole list fits on one page, both buttons are greyed out and the page selector is disabled with them (`disablePrevious` and `disableNext` together), while the page size can still be changed.
+
+<ThemedImage alt="Single Page" width={790} sources={{ light: require('./paging--single-page-light.png').default, dark: require('./paging--single-page-dark.png').default }} />
+
+### Buttons Only
+
+For a list whose length is not known, only the Previous and Next buttons remain once neither list of options is passed (`pageItems` and `countItems` left out).
+
+<ThemedImage alt="Buttons Only" width={228} sources={{ light: require('./paging--buttons-only-light.png').default, dark: require('./paging--buttons-only-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The example raises the width cap of both buttons so their larger labels are not cut off, widens the page-size selector, and shows taller controls in a window narrower than 1024px.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./paging--css-customization-light.png').default, dark: require('./paging--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -13,7 +13,7 @@ Tile for a document: a thumbnail with badges over it, and a name row with a chec
 It is the card form of one file in the DocSpace listing, and the only tile in the family with a
 preview image.
 
-<ThemedImage alt="FileTile" width={316} sources={{ light: require('./file-tile-light.png').default, dark: require('./file-tile-dark.png').default }} />
+<ThemedImage alt="FileTile" width={316} sources={{ light: require('./file-tile--primary-light.png').default, dark: require('./file-tile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,57 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 
 Needs `ThemeProvider` for its colours and `TranslationProvider` for the three-dot button's
 tooltip, which it asks the kit's own translation hook for under the key `TitleShowActions`.
+
+
+## Stories
+
+### Default
+
+A document with no preview yet: a placeholder picture, a badge and a quick action over it, and the name row with the menu. Click the tile to select it, Ctrl- or Shift-click it to see the other callbacks in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./file-tile--default-light.png').default, dark: require('./file-tile--default-dark.png').default }} />
+
+### Checked
+
+A selected file, as it looks among others the reader has picked: the checkbox stays ticked in place of the icon and the whole tile is tinted (`checked`).
+
+<ThemedImage alt="Checked" width={316} sources={{ light: require('./file-tile--checked-light.png').default, dark: require('./file-tile--checked-dark.png').default }} />
+
+### In Progress
+
+A file that is busy, being uploaded or converted: a small loader stands where the icon and the checkbox were (`inProgress`).
+
+<ThemedImage alt="In Progress" width={316} sources={{ light: require('./file-tile--in-progress-light.png').default, dark: require('./file-tile--in-progress-dark.png').default }} />
+
+### With Thumbnail
+
+A document with a preview: the image fills the upper part, cropped from the top, and the badges sit over it (`thumbnail`). If the image fails to load, the placeholder from `temporaryIcon` takes its place.
+
+<ThemedImage alt="With Thumbnail" width={316} sources={{ light: require('./file-tile--with-thumbnail-light.png').default, dark: require('./file-tile--with-thumbnail-dark.png').default }} />
+
+### With Hotkey Border
+
+The tile the keyboard is on while the reader moves through the grid with the arrow keys: its border turns the accent colour (`showHotkeyBorder`). The tile does not handle the keys itself.
+
+<ThemedImage alt="With Hotkey Border" width={316} sources={{ light: require('./file-tile--with-hotkey-border-light.png').default, dark: require('./file-tile--with-hotkey-border-dark.png').default }} />
+
+### Renaming State
+
+A file whose name is being edited: the icon and the checkbox go, so the name row can hold a text field (`isEdit`).
+
+<ThemedImage alt="Renaming State" width={316} sources={{ light: require('./file-tile--renaming-state-light.png').default, dark: require('./file-tile--renaming-state-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page.
+
+Two instances:
+- **Document.docx** — a preview, a badge and a quick action, for every variable except `--file-tile-border-style`, `--tile-icon-display`, `--tile-hotkey-color` and `--highlightColor`; hover it for the hover variables.
+- **Report.docx** — `showHotkeyBorder`, for `--tile-hotkey-color`, in a wrapper of its own that sets `--file-tile-border-style` to a thicker border and `--tile-icon-display` to `none`.
+
+`--highlightColor` is not set here: the highlight plays once, on mount, and is gone before a reader looks.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./file-tile--css-customization-light.png').default, dark: require('./file-tile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

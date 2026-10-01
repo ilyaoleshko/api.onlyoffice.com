@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 A full-width bar with a danger glyph that fades one message out before fading the next one in. It
 belongs at the top of a form or a page, above the thing the message is about.
 
-<ThemedImage alt="StatusMessage" width={790} sources={{ light: require('./status-message-light.png').default, dark: require('./status-message-dark.png').default }} />
+<ThemedImage alt="StatusMessage" width={790} sources={{ light: require('./status-message--primary-light.png').default, dark: require('./status-message--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,39 @@ and reaches the root barrel `@onlyoffice/apps-ui-kit` through it.
 
 No provider is required: the light colours are declared on the bar itself, and the dark ones come
 from the `dark` class the kit's theme provider puts on `<body>`.
+
+
+## Stories
+
+### Default
+
+The error bar as a form shows it after a failed action. Type a new text in the Controls panel below to watch the old one fade out first; the warning switch there takes effect with the next text change (`isWarning`).
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./status-message--default-light.png').default, dark: require('./status-message--default-dark.png').default }} />
+
+### Warning Message
+
+For a problem that does not block the user: the same bar in the warning colours (`isWarning`).
+
+<ThemedImage alt="Warning Message" width={790} sources={{ light: require('./status-message--warning-message-light.png').default, dark: require('./status-message--warning-message-dark.png').default }} />
+
+### Toggle Visibility
+
+Use this to see how the bar leaves and returns: **Hide Message** fades it out and removes it, **Show Message** brings it back (`message` set to an empty string and back).
+
+<ThemedImage alt="Toggle Visibility" width={790} sources={{ light: require('./status-message--toggle-visibility-light.png').default, dark: require('./status-message--toggle-visibility-dark.png').default }} />
+
+### Message Swap
+
+Use this to see what a user sees when one message replaces another: **Message A** and **Message B** fade the current text out before the new one fades in, **Clear** hides the bar.
+
+<ThemedImage alt="Message Swap" width={790} sources={{ light: require('./status-message--message-swap-light.png').default, dark: require('./status-message--message-swap-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The first bar shows the shared variables; the second, with `isWarning`, is there for the three warning variables, and the gap between the two is the bottom margin. The max width caps both bars below the 400px wrapper.
+
+<ThemedImage alt="Css Customization" width={376} sources={{ light: require('./status-message--css-customization-light.png').default, dark: require('./status-message--css-customization-dark.png').default }} />
 
 ## Minimal example
 

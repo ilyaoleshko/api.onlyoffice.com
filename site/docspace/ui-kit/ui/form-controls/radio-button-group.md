@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 A set of radio buttons built from an array, with the selected value handled for you. It renders
 one [`RadioButton`](./radio-button.md) per option and keeps them in step.
 
-<ThemedImage alt="RadioButtonGroup" width={275} sources={{ light: require('./radio-button-group-light.png').default, dark: require('./radio-button-group-dark.png').default }} />
+<ThemedImage alt="RadioButtonGroup" width={275} sources={{ light: require('./radio-button-group--primary-light.png').default, dark: require('./radio-button-group--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -33,6 +33,48 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 `RadioButtonGroupProps` is not exported — type a wrapper's props yourself.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the buttons' colours.
+
+
+## Stories
+
+### Default
+
+The group as most forms use it: a row of options with one chosen. Click another option to move the choice and watch the Actions panel for the value `onClick` receives; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={275} sources={{ light: require('./radio-button-group--default-light.png').default, dark: require('./radio-button-group--default-dark.png').default }} />
+
+### Vertical Layout
+
+The options stacked in a column only as wide as its longest label (`orientation`). Suits longer lists and labels too long to sit side by side; without `spacing` the buttons sit directly under one another.
+
+<ThemedImage alt="Vertical Layout" width={92} sources={{ light: require('./radio-button-group--vertical-layout-light.png').default, dark: require('./radio-button-group--vertical-layout-dark.png').default }} />
+
+### Disabled States
+
+Shows the two ways to take options out of play:
+
+- **Left** — the whole group greyed out and unclickable at once (`isDisabled`), for a setting that does not apply right now
+- **Right** — only "Disabled Option" is greyed out (`disabled` on the option), while the other three stay selectable
+
+<ThemedImage alt="Disabled States" width={766} sources={{ light: require('./radio-button-group--disabled-states-light.png').default, dark: require('./radio-button-group--disabled-states-dark.png').default }} />
+
+### With Text Label
+
+"Please select an option:" is a caption placed inside the group, not a button (an option with `type: "text"`). Use it for a heading or an instruction above the options, or between two runs of them.
+
+<ThemedImage alt="With Text Label" width={158} sources={{ light: require('./radio-button-group--with-text-label-light.png').default, dark: require('./radio-button-group--with-text-label-dark.png').default }} />
+
+### Custom Styling
+
+Larger, bolder labels (`fontSize`, `fontWeight`), 20px between the buttons (`spacing`) and a group 300px wide (`width`), to match the group to the text and layout around it.
+
+<ThemedImage alt="Custom Styling" width={316} sources={{ light: require('./radio-button-group--custom-styling-light.png').default, dark: require('./radio-button-group--custom-styling-dark.png').default }} />
+
+### Css Customization
+
+Both caption spacings set on a wrapper around a vertical group that opens with the caption "Choose an option:" -- the variables are listed under CSS variables on this page.
+
+<ThemedImage alt="Css Customization" width={126} sources={{ light: require('./radio-button-group--css-customization-light.png').default, dark: require('./radio-button-group--css-customization-dark.png').default }} />
 
 ## Minimal example
 

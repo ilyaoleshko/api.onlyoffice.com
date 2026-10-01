@@ -11,7 +11,7 @@ The blank first screen: a fixed sheet over the whole viewport with the kit's rom
 It takes no props at all — render it while the application boots and stop rendering it when it is
 ready.
 
-<ThemedImage alt="AppLoader" width={800} sources={{ light: require('./app-loader-light.png').default, dark: require('./app-loader-dark.png').default }} />
+<ThemedImage alt="AppLoader" width={800} sources={{ light: require('./app-loader--primary-light.png').default, dark: require('./app-loader--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,21 @@ subpath: the barrel does not build without four optional peers, see
 No provider is required — the sheet is white and the animation dark by default. The dark theme's
 dark grey sheet comes from the `dark` class the kit's theme provider puts on `<body>`, so without a
 provider it stays light whatever else the page does.
+
+
+## Stories
+
+### Default
+
+The boot screen as an application shows it before its first layout exists. The sheet is fixed to the viewport, so it covers the whole window wherever it is rendered.
+
+<ThemedImage alt="Default" width={800} sources={{ light: require('./app-loader--default-light.png').default, dark: require('./app-loader--default-dark.png').default }} />
+
+### Css Customization
+
+Both variables set on one wrapper -- the variables are listed under CSS variables on this page. The sheet takes a light blue background and drops its stacking order to 100.
+
+<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./app-loader--css-customization-light.png').default, dark: require('./app-loader--css-customization-dark.png').default }} />
 
 ## Minimal example
 

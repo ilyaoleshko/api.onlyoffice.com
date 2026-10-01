@@ -13,7 +13,7 @@ Panel for picking one or many things out of a list too long to render at once. I
 portal's people picker, room picker and "save as" browser, and it brings its own search,
 breadcrumbs, pagination and footer.
 
-<ThemedImage alt="Selector" width={496} sources={{ light: require('./selector-light.png').default, dark: require('./selector-dark.png').default }} />
+<ThemedImage alt="Selector" width={496} sources={{ light: require('./selector--primary-light.png').default, dark: require('./selector--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,120 @@ The folder also exports the three skeletons its own props ask for — `RowLoader
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and `TranslationProvider`
 from `@onlyoffice/apps-ui-kit/providers/translation` for the strings Selector prints on its own:
 the user-type labels beside each person, and the empty screen's "Back" and "Clear filter" links.
+
+
+## Stories
+
+### Default
+
+A long list that loads 100 rows at a time as you scroll, with one row picked at a time. The first row opens a "New folder" entry and the second is the inline name field for it (`isCreateNewItem`, `isInputItem`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={496} sources={{ light: require('./selector--default-light.png').default, dark: require('./selector--default-dark.png').default }} />
+
+### Content Loading
+
+Content refresh state: while new data is loading (search, tab change or folder navigation), the current list stays on screen dimmed and non-interactive instead of being replaced with a skeleton.
+
+<ThemedImage alt="Content Loading" width={496} sources={{ light: require('./selector--content-loading-light.png').default, dark: require('./selector--content-loading-dark.png').default }} />
+
+### Bread Crumbs
+
+Use a folder trail when the list is one level of a folder tree. With more than three folders, the ones between the first and the last two collapse into a menu behind the dots; click an earlier folder and `onSelectBreadCrumb` reports it, so you can load that folder and pass new `items` and `breadCrumbs`.
+
+<ThemedImage alt="Bread Crumbs" width={496} sources={{ light: require('./selector--bread-crumbs-light.png').default, dark: require('./selector--bread-crumbs-dark.png').default }} />
+
+### New Name
+
+Use a name field in the footer for a "save as" or copy flow, where the reader picks the destination folder and names the file in one step. The checkbox under the field is a second choice handed to `onSubmit` with the name (`withFooterCheckbox`); clear the field and the Add button goes dead.
+
+<ThemedImage alt="New Name" width={496} sources={{ light: require('./selector--new-name-light.png').default, dark: require('./selector--new-name-dark.png').default }} />
+
+### With Header
+
+Give the panel a header when it stands on its own, in a dialog or a side panel. The title comes with a closing cross and, here, a back arrow for a step-by-step flow (`headerProps.withoutBackButton: false`); the footer gets a second button that calls `onCancel`, as Escape does.
+
+<ThemedImage alt="With Header" width={496} sources={{ light: require('./selector--with-header-light.png').default, dark: require('./selector--with-header-dark.png').default }} />
+
+### With Search
+
+Add a search box when the reader knows the name they are looking for. Type part of a label to narrow the list; type something no label contains, such as `zzz`, to see the search empty screen (`searchEmptyScreenHeader`), and clear the box with its cross to get the whole list back. The filtering is the story's own: Selector hands over the query in `onSearch` and shows what `items` you give back.
+
+<ThemedImage alt="With Search" width={496} sources={{ light: require('./selector--with-search-light.png').default, dark: require('./selector--with-search-dark.png').default }} />
+
+### Multi Select
+
+Use multi-select when the reader adds several items in one go, such as people to a share. Every row gets a checkbox, the footer appears with the first tick and its Add button shows how many are ticked, and the "All items" row above the list ticks or unticks every loaded row (`withSelectAll`). Two rows start out ticked (`selectedItems`).
+
+<ThemedImage alt="Multi Select" width={496} sources={{ light: require('./selector--multi-select-light.png').default, dark: require('./selector--multi-select-dark.png').default }} />
+
+### Selection Limit
+
+Cap the selection when the target can take only so many items. Two rows are ticked and the limit is two, so every other row is greyed out and ignores clicks (`maxSelectedItems`); untick one and the rest come back. Selector shows no message of its own, so say what the limit is somewhere near the panel.
+
+<ThemedImage alt="Selection Limit" width={496} sources={{ light: require('./selector--selection-limit-light.png').default, dark: require('./selector--selection-limit-dark.png').default }} />
+
+### Disabled Items
+
+Keep an item in the list but out of reach when the reader should see it and know why it cannot be picked. The greyed rows ignore clicks and show a reason in place of their checkbox (`isDisabled`, `disabledText` on the item).
+
+<ThemedImage alt="Disabled Items" width={496} sources={{ light: require('./selector--disabled-items-light.png').default, dark: require('./selector--disabled-items-dark.png').default }} />
+
+### With Access Rights
+
+Add an access drop-down to the footer when the items being added need a permission as well. Open it beside the Add button to pick one; the choice is handed to `onSubmit` with the ticked items. Switch `accessRightsMode` to `detailed` in the Controls panel below to open the menu as wide as the footer instead.
+
+<ThemedImage alt="With Access Rights" width={496} sources={{ light: require('./selector--with-access-rights-light.png').default, dark: require('./selector--with-access-rights-dark.png').default }} />
+
+### Empty Folder
+
+What the reader sees in a folder with nothing in it: the picture, heading and paragraph you pass (`emptyScreenImage`, `emptyScreenHeader`, `emptyScreenDescription`). The "New folder" link is the list's `isCreateNewItem` row turned into a link, and "Back" goes to the previous folder of the trail; `hideBackButton` removes it.
+
+<ThemedImage alt="Empty Folder" width={496} sources={{ light: require('./selector--empty-folder-light.png').default, dark: require('./selector--empty-folder-dark.png').default }} />
+
+### Loading State
+
+Show skeletons while the first page is on its way, so the panel keeps its shape instead of flashing an empty screen. The trail, the search box and the list each have a skeleton of their own, and each is switched on separately (`isBreadCrumbsLoading`, `isSearchLoading`, `isLoading`); the folder exports all three loaders.
+
+<ThemedImage alt="Loading State" width={496} sources={{ light: require('./selector--loading-state-light.png').default, dark: require('./selector--loading-state-dark.png').default }} />
+
+### With Tabs
+
+Split the list into tabs when the items come from separate sources. Tick a row, switch to the other tab and tick another: the Add button counts both, because Selector keeps a selection per tab (`withTabs`, `tabsData`, `activeTabId`). Switching tabs is yours to do from each tab's `onClick`.
+
+<ThemedImage alt="With Tabs" width={496} sources={{ light: require('./selector--with-tabs-light.png').default, dark: require('./selector--with-tabs-dark.png').default }} />
+
+### With Info
+
+Two ways to say something about the list before the reader picks from it:
+
+- **Only items you can edit are listed here.** — a tinted note with an info icon, for a condition that explains what the list holds (`withInfo`, `infoText`, `withInfoBadge`)
+- **Recent items** — a bold line right above the rows, for a short heading (`descriptionText`)
+
+<ThemedImage alt="With Info" width={496} sources={{ light: require('./selector--with-info-light.png').default, dark: require('./selector--with-info-dark.png').default }} />
+
+### With Info Bar
+
+Put a dismissable bar above the list for a notice the reader can read once and close. The cross appears because the bar has an `onClose`; hiding the bar when it is clicked is up to you (`withInfoBar`, `infoBarData`).
+
+<ThemedImage alt="With Info Bar" width={496} sources={{ light: require('./selector--with-info-bar-light.png').default, dark: require('./selector--with-info-bar-dark.png').default }} />
+
+### In Side Panel
+
+Open Selector as a side panel over the page when picking is a step on its own. The panel slides in from the edge of the window over a dimmed backdrop, and a click on the backdrop calls `onClose` (`useAside`); without it, Selector is a plain box that fills its parent.
+
+<ThemedImage alt="In Side Panel" width={800} sources={{ light: require('./selector--in-side-panel-light.png').default, dark: require('./selector--in-side-panel-dark.png').default }} />
+
+### Right To Left
+
+The panel in a right-to-left layout: the folder trail starts at the right edge with its arrows pointing left, and the row labels and the footer button line up from the right.
+
+<ThemedImage alt="Right To Left" width={496} sources={{ light: require('./selector--right-to-left-light.png').default, dark: require('./selector--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. Hover a row to see the hover background and hover the tick beside the name field to see its hover colour. The two empty-screen variables are set too but show only when the list is empty.
+
+<ThemedImage alt="Css Customization" width={496} sources={{ light: require('./selector--css-customization-light.png').default, dark: require('./selector--css-customization-dark.png').default }} />
 
 ## Minimal example
 

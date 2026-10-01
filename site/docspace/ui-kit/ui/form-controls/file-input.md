@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Read-only field with a folder icon that opens the file dialog and accepts a drop. The whole
 field is the drop target, and the names of the chosen files are written into it.
 
-<ThemedImage alt="FileInput" width={189} sources={{ light: require('./file-input-light.png').default, dark: require('./file-input-dark.png').default }} />
+<ThemedImage alt="FileInput" width={189} sources={{ light: require('./file-input--primary-light.png').default, dark: require('./file-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,68 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and `Trans
 from `@onlyoffice/apps-ui-kit/providers/translation` for the message it raises when a file is
 rejected. That message is a toast, so mount [`Toast`](../feedback/toast.md) once in your app or it
 goes nowhere.
+
+
+## Stories
+
+### Default
+
+The field as a form shows it before anything is chosen; change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./file-input--default-light.png').default, dark: require('./file-input--default-dark.png').default }} />
+
+### Sizes
+
+Pick the size that matches the other fields of the form: each one also sets the field's width and the size of its icon box (`size`).
+
+<ThemedImage alt="Sizes" width={711} sources={{ light: require('./file-input--sizes-light.png').default, dark: require('./file-input--sizes-dark.png').default }} />
+
+### States
+
+Use these to tell the user about the chosen file: **Error state** and **Warning state** recolour the border (`hasError`, `hasWarning`), **Disabled** greys the field and ignores clicks (`isDisabled`), and **Loading** shows a spinner in place of the icon (`isLoading`).
+
+<ThemedImage alt="States" width={584} sources={{ light: require('./file-input--states-light.png').default, dark: require('./file-input--states-dark.png').default }} />
+
+### With Accept Filter
+
+Limit the field to the types the host can handle: the picker offers only these extensions, and a dropped file of another type is refused with an error toast (`accept`).
+
+<ThemedImage alt="With Accept Filter" width={584} sources={{ light: require('./file-input--with-accept-filter-light.png').default, dark: require('./file-input--with-accept-filter-dark.png').default }} />
+
+### Scaled Input
+
+Use it when the field should line up with a full-width form column: it stretches to the width of its container (`scale`).
+
+<ThemedImage alt="Scaled Input" width={790} sources={{ light: require('./file-input--scaled-input-light.png').default, dark: require('./file-input--scaled-input-dark.png').default }} />
+
+### With Button
+
+Use a labelled button when an icon alone would not tell the user what the field does: the button takes the place of the icon and grows with the field's size (`buttonLabel`). The field is given the full width of its container here (`scale`), because at a fixed size the button is laid out past the field's own width.
+
+<ThemedImage alt="With Button" width={416} sources={{ light: require('./file-input--with-button-light.png').default, dark: require('./file-input--with-button-dark.png').default }} />
+
+### Document Icon
+
+Use the document icon when the field takes a single document rather than any file: **Folder icon** is the default, **Document icon** the alternative (`isDocumentIcon`).
+
+<ThemedImage alt="Document Icon" width={584} sources={{ light: require('./file-input--document-icon-light.png').default, dark: require('./file-input--document-icon-dark.png').default }} />
+
+### With Path
+
+Use this when the file comes from somewhere other than the device, such as a folder picker of the host's own: the field shows the path it is given (`fromStorage`, `path`), and a click on it or its icon calls the host instead of opening the file picker (`onClick`) — click it and watch the Actions panel.
+
+<ThemedImage alt="With Path" width={316} sources={{ light: require('./file-input--with-path-light.png').default, dark: require('./file-input--with-path-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+- **Choose file** — the border, background, text and radius variables; hover it for `--file-input-hover-border` and press it for `--file-input-focus-border`
+- **Warning state** — `--file-input-warning-border` (`hasWarning`)
+- **Error state** — `--file-input-error-border` (`hasError`)
+- **Disabled** — `--file-input-disabled-border` and `--file-input-placeholder-color` (`isDisabled`)
+
+<ThemedImage alt="Css Customization" width={336} sources={{ light: require('./file-input--css-customization-light.png').default, dark: require('./file-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 

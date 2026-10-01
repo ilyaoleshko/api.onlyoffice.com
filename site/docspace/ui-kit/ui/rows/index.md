@@ -182,6 +182,7 @@ The following components are available:
 
 | Component | Description |
 | --- | --- |
-| [`RowContainer`](./row-container.md) | Scrolling list the rows go in, virtualised and paged in as the user reaches the end. |
-| [`RowContent`](./row-content.md) | The text of a row, laid out by the position of its children rather than by named slots. |
-| [`Row`](./row.md) | One row of the file list: an optional checkbox, a start element, the content and a context menu. |
+| [RowContainer](./row-container.md) | Scrolling list the rows go in, virtualised and paged in as the user reaches the end. |
+| [RowContent](./row-content.md) | The text of a row, laid out by the position of its children rather than by named slots. |
+| [Row](./row.md) | One row of the file list: an optional checkbox, a start element, the content and a context menu. |
+| [RowsSkeleton](./rowsskeleton.md) | Placeholder in the shape of a list of rows, shown while the rows themselves are loading. The Rows page describes it in full. |

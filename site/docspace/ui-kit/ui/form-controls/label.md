@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Caption for a form field, with an optional required asterisk and an error colour. It is a
 `<label>` element rendered through [`Text`](../data-display/text.md) at weight 600.
 
-<ThemedImage alt="Label" width={82} sources={{ light: require('./label-light.png').default, dark: require('./label-dark.png').default }} />
+<ThemedImage alt="Label" width={82} sources={{ light: require('./label--primary-light.png').default, dark: require('./label--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,60 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 `LabelProps` is not exported — type a wrapper's props yourself.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the text colour.
+
+
+## Stories
+
+### Default
+
+The plain caption for a field, in semibold text; rest the pointer on it to read the tooltip (`title`), and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={82} sources={{ light: require('./label--default-light.png').default, dark: require('./label--default-dark.png').default }} />
+
+### Required Labels
+
+For fields a form cannot be sent without: each caption ends with a red asterisk (`isRequired`). The asterisk is hidden from screen readers, so the input needs `required` as well.
+
+<ThemedImage alt="Required Labels" width={790} sources={{ light: require('./label--required-labels-light.png').default, dark: require('./label--required-labels-dark.png').default }} />
+
+### Error State
+
+For a field that failed validation: the caption turns red (`error`), with or without the asterisk. The error message is not part of the label; render it next to the field.
+
+<ThemedImage alt="Error State" width={790} sources={{ light: require('./label--error-state-light.png').default, dark: require('./label--error-state-dark.png').default }} />
+
+### Truncated Label
+
+For a caption longer than the space it gets: in a 150px box the text stays on one line and ends with an ellipsis (`truncate`, with `display: block` so the label takes the box's width). Rest the pointer on it to read the full text in the tooltip (`title`), which needs `RootTooltip` mounted, as this story does.
+
+<ThemedImage alt="Truncated Label" width={184} sources={{ light: require('./label--truncated-label-light.png').default, dark: require('./label--truncated-label-dark.png').default }} />
+
+### Inline Label
+
+For a caption beside its field rather than above it: the label sits on the same line as the input (`isInline`).
+
+<ThemedImage alt="Inline Label" width={247} sources={{ light: require('./label--inline-label-light.png').default, dark: require('./label--inline-label-dark.png').default }} />
+
+### With Children
+
+For a note that belongs to the caption, such as "(optional)": content passed as children follows the text inside the same label (`children`).
+
+<ThemedImage alt="With Children" width={181} sources={{ light: require('./label--with-children-light.png').default, dark: require('./label--with-children-dark.png').default }} />
+
+### Form Example
+
+How the states read together in a form: a required field, a required field in error and an optional one, each label tied to its input by `htmlFor`, so clicking a caption focuses its field.
+
+<ThemedImage alt="Form Example" width={190} sources={{ light: require('./label--form-example-light.png').default, dark: require('./label--form-example-dark.png').default }} />
+
+### Css Customization
+
+Both colours and the font size set on one wrapper -- the variables are listed under CSS variables on this page.
+
+- **Display name** shows the asterisk colour (`--label-required-color`) and the font size.
+- **Email address** adds `error` to show the text colour in the error state (`--label-error-color`).
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./label--css-customization-light.png').default, dark: require('./label--css-customization-dark.png').default }} />
 
 ## Minimal example
 

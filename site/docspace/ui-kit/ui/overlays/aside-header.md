@@ -13,7 +13,7 @@ Title bar of a side panel or a dialog, with a back arrow, extra icons and the cl
 [`Aside`](./aside.md) and [`ModalDialog`](./modal-dialog.md) render one and accept
 its props, so this page is where those props are explained.
 
-<ThemedImage alt="AsideHeader" width={468} sources={{ light: require('./aside-header-light.png').default, dark: require('./aside-header-dark.png').default }} />
+<ThemedImage alt="AsideHeader" width={468} sources={{ light: require('./aside-header--primary-light.png').default, dark: require('./aside-header--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,72 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the title colour and the border colour.
+
+
+## Stories
+
+### Default
+
+A title and the close cross, the header every side panel starts with; clicks on the cross are logged in the Actions panel. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={468} sources={{ light: require('./aside-header--default-light.png').default, dark: require('./aside-header--default-dark.png').default }} />
+
+### With Back Button
+
+A back arrow before the title, for a panel that opens a second level and needs a way back to the first; the arrow calls its own handler, logged in the Actions panel (`isBackButton`).
+
+<ThemedImage alt="With Back Button" width={468} sources={{ light: require('./aside-header--with-back-button-light.png').default, dark: require('./aside-header--with-back-button-dark.png').default }} />
+
+### With Icons
+
+Two icon buttons between the title and the close cross, for actions on what the panel shows without a toolbar of their own; each icon has its own click handler (`headerIcons`).
+
+<ThemedImage alt="With Icons" width={468} sources={{ light: require('./aside-header--with-icons-light.png').default, dark: require('./aside-header--with-icons-dark.png').default }} />
+
+### Loading
+
+A skeleton bar in place of the whole header while the panel waits for its data. The close cross goes too, so a panel that may load for long needs another way out (`isLoading`).
+
+<ThemedImage alt="Loading" width={468} sources={{ light: require('./aside-header--loading-light.png').default, dark: require('./aside-header--loading-dark.png').default }} />
+
+### Without Border
+
+The header with no line under it, for a panel whose first block already draws its own separator (`withoutBorder`).
+
+<ThemedImage alt="Without Border" width={468} sources={{ light: require('./aside-header--without-border-light.png').default, dark: require('./aside-header--without-border-dark.png').default }} />
+
+### Custom Height
+
+A 70px header instead of 53px, for a title bar that has to line up with a taller bar next to the panel (`headerHeight`).
+
+<ThemedImage alt="Custom Height" width={468} sources={{ light: require('./aside-header--custom-height-light.png').default, dark: require('./aside-header--custom-height-dark.png').default }} />
+
+### Back And Close
+
+The back arrow and the close cross around a title too long for the panel: the title is cut off with an ellipsis rather than pushing the close cross out of the header.
+
+<ThemedImage alt="Back And Close" width={468} sources={{ light: require('./aside-header--back-and-close-light.png').default, dark: require('./aside-header--back-and-close-dark.png').default }} />
+
+### With Custom Control
+
+A button between the title and the close cross, for an action that needs a label rather than an icon (`headerComponent`).
+
+<ThemedImage alt="With Custom Control" width={468} sources={{ light: require('./aside-header--with-custom-control-light.png').default, dark: require('./aside-header--with-custom-control-dark.png').default }} />
+
+### Right To Left
+
+The same header under a right-to-left interface: the back arrow moves to the right edge and points right, the title follows it, and the close cross sits on the left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={468} sources={{ light: require('./aside-header--right-to-left-light.png').default, dark: require('./aside-header--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Two headers restyled through CSS variables -- the variables are listed under CSS variables on this page.
+
+- **Customized Header** — the wrapper's color, border, font size, height and gap; the back arrow is on to show the gap before the title.
+- **Centered Title** — the title taken out of the row and centered, with the line removed. These variables are set through the header's own `style`, because in the wrapper they would also move the first header's title away from its back arrow.
+
+<ThemedImage alt="Css Customization" width={466} sources={{ light: require('./aside-header--css-customization-light.png').default, dark: require('./aside-header--css-customization-dark.png').default }} />
 
 ## Minimal example
 

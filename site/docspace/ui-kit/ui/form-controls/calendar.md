@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Month grid for picking a day, with month and year views behind it. It is always visible — it
 has no trigger, no popup and no visibility prop.
 
-<ThemedImage alt="Calendar" width={378} sources={{ light: require('./calendar-light.png').default, dark: require('./calendar-dark.png').default }} />
+<ThemedImage alt="Calendar" width={378} sources={{ light: require('./calendar--primary-light.png').default, dark: require('./calendar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,39 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the gri
 
 Dates are Luxon `DateTime` objects, not JavaScript `Date`s. `selectedDate` must be a `DateTime`;
 `minDate`, `maxDate` and `initialDate` take either.
+
+
+## Stories
+
+### Default
+
+The calendar as it opens: today is filled with the accent colour. Click a day to select it and watch the Actions panel, click the title to switch to months and then years, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={378} sources={{ light: require('./calendar--default-light.png').default, dark: require('./calendar--default-dark.png').default }} />
+
+### With Date Constraints
+
+Calendar with min and max date constraints. Only dates within the current year are selectable.
+
+<ThemedImage alt="With Date Constraints" width={378} sources={{ light: require('./calendar--with-date-constraints-light.png').default, dark: require('./calendar--with-date-constraints-dark.png').default }} />
+
+### Locale Examples
+
+Calendar rendered in different locales. Shows how month names, weekday headers, and date formatting adapt to each locale.
+
+<ThemedImage alt="Locale Examples" width={790} sources={{ light: require('./calendar--locale-examples-light.png').default, dark: require('./calendar--locale-examples-dark.png').default }} />
+
+### Right To Left
+
+The calendar in a right-to-left layout with Arabic names: the weeks run from right to left, the title moves to the right edge and the arrows to the left, while the chevron after the title stays on its right, before the text. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={378} sources={{ light: require('./calendar--right-to-left-light.png').default, dark: require('./calendar--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The calendar opens with a selected day other than today, so the today and selected-day variables both show, and with `minDate` at the start of this month, so the days of the previous month and the left arrow show their disabled colours. Hover a day and an arrow to see the hover variables.
+
+<ThemedImage alt="Css Customization" width={356} sources={{ light: require('./calendar--css-customization-light.png').default, dark: require('./calendar--css-customization-dark.png').default }} />
 
 ## Minimal example
 

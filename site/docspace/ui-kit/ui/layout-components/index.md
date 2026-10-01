@@ -12,6 +12,7 @@ The following components are available:
 
 | Component | Description |
 | --- | --- |
-| [`EmptyScreenContainer`](./empty-screen-container.md) | Centred empty state: an illustration, a heading, up to two lines of explanation and a column of actions. |
-| [`EmptyView`](./empty-view.md) | Centred empty state with an icon, a title, a description and a list of things the user can do next. |
-| [`ErrorContainer`](./error-container.md) | Full-screen error page: an animated landscape, a heading, an explanation and one action button. |
+| [ArticleItem](./articleitem.md) | One catalog entry of the Article panel's body: an icon, a label and an optional badge. The Article page describes it in full. |
+| [EmptyScreenContainer](./empty-screen-container.md) | Centred empty state: an illustration, a heading, up to two lines of explanation and a column of actions. |
+| [EmptyView](./empty-view.md) | Centred empty state with an icon, a title, a description and a list of things the user can do next. |
+| [ErrorContainer](./error-container.md) | Full-screen error page: an animated landscape, a heading, an explanation and one action button. |

@@ -13,7 +13,7 @@ Fixed 32px glyph saying which kind of room this is, with an optional selection c
 six room types, or the archive or template variant of it — chosen entirely from flags, with no
 per-room artwork involved.
 
-<ThemedImage alt="RoomLogo" width={48} sources={{ light: require('./room-logo-light.png').default, dark: require('./room-logo-dark.png').default }} />
+<ThemedImage alt="RoomLogo" width={48} sources={{ light: require('./room-logo--primary-light.png').default, dark: require('./room-logo--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -22,7 +22,7 @@ per-room artwork involved.
 - Not for a particular room's own logo or its initials — that is
   [`RoomIcon`](./room-icon.md), which takes a `logo`, a colour and a title.
 - Not for a whole row offering a room type with its name and description — that is
-  [`RoomType`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/room-type/README.md), which is built on this component.
+  [`RoomType`](./room-type.md), which is built on this component.
 - Not as a way to render a checkbox: the checkbox here is hidden by the stylesheet. Use
   [`Checkbox`](../form-controls/checkbox.md) directly.
 
@@ -40,6 +40,57 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 No provider is required: the glyphs are flat SVGs with their own colours and the box reads only
 its two custom properties, both with fallbacks.
+
+
+## Stories
+
+### Default
+
+The glyph of one room type at its standard size; pick another type or turn on a flag in the Controls panel below to see which glyph wins.
+
+<ThemedImage alt="Default" width={48} sources={{ light: require('./room-logo--default-light.png').default, dark: require('./room-logo--default-dark.png').default }} />
+
+### All Room Types
+
+Every room type side by side, labelled by type, to pick the glyph a list or a header needs for each kind of room.
+
+<ThemedImage alt="All Room Types" width={81} sources={{ light: require('./room-logo--all-room-types-light.png').default, dark: require('./room-logo--all-room-types-dark.png').default }} />
+
+### Archive State
+
+An archived room keeps one glyph whatever its type (`isArchive`), so a reader tells archived rooms apart from active ones at a glance.
+
+<ThemedImage alt="Archive State" width={48} sources={{ light: require('./room-logo--archive-state-light.png').default, dark: require('./room-logo--archive-state-dark.png').default }} />
+
+### Template Room Types
+
+A template made from a room shows the template variant of that room's glyph (`isTemplateRoom`), so it still says which kind of room it creates. **AI** has no variant and keeps its plain glyph.
+
+<ThemedImage alt="Template Room Types" width={81} sources={{ light: require('./room-logo--template-room-types-light.png').default, dark: require('./room-logo--template-room-types-dark.png').default }} />
+
+### Template State
+
+One template glyph for every type (`isTemplate`), for a place that lists templates without telling their room types apart; the `type` set here is ignored.
+
+<ThemedImage alt="Template State" width={48} sources={{ light: require('./room-logo--template-state-light.png').default, dark: require('./room-logo--template-state-dark.png').default }} />
+
+### With Checkbox
+
+A row in selection mode swaps the glyph for a checkbox in the same box (`withCheckbox`). The component renders the checkbox hidden, so the story adds the rule that swaps them, as a host must; tick it, or set the mixed state in the Controls panel below.
+
+<ThemedImage alt="With Checkbox" width={41} sources={{ light: require('./room-logo--with-checkbox-light.png').default, dark: require('./room-logo--with-checkbox-dark.png').default }} />
+
+### Checkbox Checked
+
+A selected row keeps its checkbox ticked (`isChecked`), with the same host rule revealing it as in the story above.
+
+<ThemedImage alt="Checkbox Checked" width={41} sources={{ light: require('./room-logo--checkbox-checked-light.png').default, dark: require('./room-logo--checkbox-checked-dark.png').default }} />
+
+### Css Customization
+
+Both variables set on one wrapper -- the variables are listed under CSS variables on this page. The example draws a 40px box with a round glyph.
+
+<ThemedImage alt="Css Customization" width={48} sources={{ light: require('./room-logo--css-customization-light.png').default, dark: require('./room-logo--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -202,5 +253,5 @@ The icon wrapper and the checkbox carry the class names `room-logo_icon-containe
 ## Related
 
 - [`RoomIcon`](./room-icon.md) — a specific room's own logo, colour and initials.
-- [`RoomType`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/room-type/README.md) — this glyph inside a full row with the type's name and description.
+- [`RoomType`](./room-type.md) — this glyph inside a full row with the type's name and description.
 - [`Checkbox`](../form-controls/checkbox.md) — the checkbox on its own, visible by default.

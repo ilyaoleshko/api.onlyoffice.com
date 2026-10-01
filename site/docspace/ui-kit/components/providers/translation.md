@@ -14,7 +14,7 @@ the kit takes its text as props and needs nothing here; these eleven do not, and
 provider their labels are **empty strings** — not missing-key placeholders, not the key itself.
 A button renders at full size with nothing written on it.
 
-<ThemedImage alt="TranslationProvider" width={758} sources={{ light: require('./translation-light.png').default, dark: require('./translation-dark.png').default }} />
+<ThemedImage alt="TranslationProvider" width={758} sources={{ light: require('./translation--primary-light.png').default, dark: require('./translation--primary-dark.png').default }} />
 
 The eleven are `article`, `color-picker`, `drop-down-item`, `file-input`, `filter`,
 `operations-progress-button`, `room-type`, `selector`, `table`, `tiles` and `toast`. `Dropzone`
@@ -40,6 +40,21 @@ import { TranslationProvider } from "@onlyoffice/apps-ui-kit/providers/translati
 Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs no provider of its own.
+
+
+## Stories
+
+### Default
+
+Shows translated strings read via the `useTranslation()` hook.
+
+<ThemedImage alt="Default" width={758} sources={{ light: require('./translation--default-light.png').default, dark: require('./translation--default-dark.png').default }} />
+
+### Without Translations
+
+When no translations are provided, the provider renders children directly without i18n.
+
+<ThemedImage alt="Without Translations" width={758} sources={{ light: require('./translation--without-translations-light.png').default, dark: require('./translation--without-translations-dark.png').default }} />
 
 ## Minimal example
 

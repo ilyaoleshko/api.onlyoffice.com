@@ -13,7 +13,7 @@ Centred empty state: an illustration, a heading, up to two lines of explanation 
 actions. It is the older of the kit's two empty states and the one that takes an image URL of
 your own.
 
-<ThemedImage alt="EmptyScreenContainer" width={496} sources={{ light: require('./empty-screen-container-light.png').default, dark: require('./empty-screen-container-dark.png').default }} />
+<ThemedImage alt="EmptyScreenContainer" width={496} sources={{ light: require('./empty-screen-container--primary-light.png').default, dark: require('./empty-screen-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,39 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` above it in the tree. The header, description and link colours are
 declared only under the `.light` and `.dark` classes the provider puts on `<body>`; without it
 those declarations are invalid and every line inherits the surrounding text colour.
+
+
+## Stories
+
+### Default
+
+The full layout, for a list a filter has emptied: a header, a subheading and a description explain why nothing is shown, and a reset action under them offers the way back.
+
+<ThemedImage alt="Default" width={496} sources={{ light: require('./empty-screen-container--default-light.png').default, dark: require('./empty-screen-container--default-dark.png').default }} />
+
+### Minimal Content
+
+The least a screen needs, for a place where there is nothing to explain: the image, one header line and a single way out.
+
+<ThemedImage alt="Minimal Content" width={216} sources={{ light: require('./empty-screen-container--minimal-content-light.png').default, dark: require('./empty-screen-container--minimal-content-dark.png').default }} />
+
+### Custom Styles
+
+For artwork of another shape: the image is resized past its fixed 200×140 box (`imageStyle`) and the actions sit further down (`buttonStyle`). On windows between 601px and 1023px wide the image falls back to its fixed size.
+
+<ThemedImage alt="Custom Styles" width={334} sources={{ light: require('./empty-screen-container--custom-styles-light.png').default, dark: require('./empty-screen-container--custom-styles-dark.png').default }} />
+
+### Without Filter
+
+For a screen with no filter bar above it, such as a first-run view: the content starts 91px from the top instead of 52px (`withoutFilter`), so it sits as low as it would under a filter bar.
+
+<ThemedImage alt="Without Filter" width={435} sources={{ light: require('./empty-screen-container--without-filter-light.png').default, dark: require('./empty-screen-container--without-filter-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The reset action shows the link colour on both its icon and its text, the line under it the plain-text colour; the width applies only on a window wider than 1424px.
+
+<ThemedImage alt="Css Customization" width={216} sources={{ light: require('./empty-screen-container--css-customization-light.png').default, dark: require('./empty-screen-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 

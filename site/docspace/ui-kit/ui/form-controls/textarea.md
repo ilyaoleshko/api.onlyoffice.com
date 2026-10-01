@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Multi-line text field that grows with its content, with optional line numbers, a copy button
 and a JSON mode. It is controlled: the value you pass is what it shows.
 
-<ThemedImage alt="Textarea" width={790} sources={{ light: require('./textarea-light.png').default, dark: require('./textarea-dark.png').default }} />
+<ThemedImage alt="Textarea" width={790} sources={{ light: require('./textarea--primary-light.png').default, dark: require('./textarea--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -33,6 +33,75 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree, for
 the surface, border and scrollbar colours.
+
+
+## Stories
+
+### Default
+
+An empty field with a placeholder and a fixed height, the shape most forms start from (`placeholder`, `heightTextArea`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./textarea--default-light.png').default, dark: require('./textarea--default-dark.png').default }} />
+
+### States
+
+Four copies of the same field, one per state a form puts it in:
+
+- **Normal textarea** — the plain field
+- **Error state** — the red border a form shows after failed validation (`hasError`)
+- **Disabled textarea** — greyed out and unfocusable (`isDisabled`)
+- **Read-only textarea** — looks like the plain one but rejects typing (`isReadOnly`)
+
+<ThemedImage alt="States" width={790} sources={{ light: require('./textarea--states-light.png').default, dark: require('./textarea--states-dark.png').default }} />
+
+### With Copy
+
+The copy button in the corner puts the whole text on the clipboard and confirms it with a toast (`enableCopy`, `copyInfoText`); clicking the frame or the button also selects all the text. The toast renders only where a `Toast` container is mounted, so the story mounts one.
+
+<ThemedImage alt="With Copy" width={416} sources={{ light: require('./textarea--with-copy-light.png').default, dark: require('./textarea--with-copy-dark.png').default }} />
+
+### With Numeration
+
+Line numbers beside the text for values read as code or configuration, so a reader can point to a line (`hasNumeration`).
+
+<ThemedImage alt="With Numeration" width={416} sources={{ light: require('./textarea--with-numeration-light.png').default, dark: require('./textarea--with-numeration-dark.png').default }} />
+
+### JSON Field
+
+Two JSON fields, for values a reader edits as configuration:
+
+- **Left** — a valid object, pretty-printed with line numbers (`isJSONField`, `hasNumeration`)
+- **Right** — a truncated object, which keeps the red border until the text parses as JSON
+
+<ThemedImage alt="JSON Field" width={790} sources={{ light: require('./textarea--json-field-light.png').default, dark: require('./textarea--json-field-dark.png').default }} />
+
+### Custom Heights
+
+Three heights of the same field, to pick the one that fits the surrounding form (`heightTextArea`):
+
+- **Small textarea** — 80px
+- **Medium textarea** — 150px
+- **Large textarea** — 250px
+
+<ThemedImage alt="Custom Heights" width={790} sources={{ light: require('./textarea--custom-heights-light.png').default, dark: require('./textarea--custom-heights-dark.png').default }} />
+
+### Grows With Content
+
+The frame is as tall as its text: add a line and it grows, delete one and it shrinks, never below the default height (`isFullHeight`).
+
+<ThemedImage alt="Grows With Content" width={416} sources={{ light: require('./textarea--grows-with-content-light.png').default, dark: require('./textarea--grows-with-content-dark.png').default }} />
+
+### Right To Left
+
+The same field under a right-to-left interface, mirroring the left-to-right layout: the line numbers move to the right edge, the copy button to the left one, and the text starts from the right. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={416} sources={{ light: require('./textarea--right-to-left-light.png').default, dark: require('./textarea--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Nine of the variables set on one wrapper -- every one is listed under CSS variables on this page. The first field shows the shared `--text-input-*` tokens, the padding and the custom height; hover and focus it to see the two border variables. The second adds `hasNumeration`, the only state in which `--textarea-numeration-text-color` has anything to color.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./textarea--css-customization-light.png').default, dark: require('./textarea--css-customization-dark.png').default }} />
 
 ## Minimal example
 

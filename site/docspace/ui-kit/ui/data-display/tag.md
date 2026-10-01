@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Small outlined label for one keyword, clickable and optionally removable. It is the room tag
 of the portal, and the piece [`Tags`](./tags.md) lays out in a row.
 
-<ThemedImage alt="Tag" width={66} sources={{ light: require('./tag-light.png').default, dark: require('./tag-dark.png').default }} />
+<ThemedImage alt="Tag" width={66} sources={{ light: require('./tag--primary-light.png').default, dark: require('./tag--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,65 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`; without it the tag has no
 border and no colours.
+
+
+## Stories
+
+### Default
+
+A plain tag with a label, the starting point for every other state; change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={66} sources={{ light: require('./tag--default-light.png').default, dark: require('./tag--default-dark.png').default }} />
+
+### States
+
+The four looks a tag can take, side by side, to pick the one that matches an item's status:
+
+- **Default** — a bordered tag on the plain background
+- **New Tag** — a filled tag with a delete cross after the label (`isNewTag` with `onDelete`)
+- **Disabled** — a dashed border; the tag ignores hover and clicks (`isDisabled`)
+- **Deleted** — a greyed-out border; clicks no longer reach `onClick` (`isDeleted`)
+
+<ThemedImage alt="States" width={336} sources={{ light: require('./tag--states-light.png').default, dark: require('./tag--states-dark.png').default }} />
+
+### New Tags
+
+Tags the user has just added and can still take back: click a cross to remove its tag, and the Actions panel shows the identifier `onDelete` receives.
+
+<ThemedImage alt="New Tags" width={284} sources={{ light: require('./tag--new-tags-light.png').default, dark: require('./tag--new-tags-dark.png').default }} />
+
+### Clickable Tags
+
+Tags that act as filters: hover one to see it highlight, click it, and the Actions panel shows the `{ label }` object `onClick` receives instead of the DOM event.
+
+<ThemedImage alt="Clickable Tags" width={272} sources={{ light: require('./tag--clickable-tags-light.png').default, dark: require('./tag--clickable-tags-dark.png').default }} />
+
+### Max Width Variants
+
+Tags with different max-width values. Long text is truncated with ellipsis when it exceeds the max width.
+
+<ThemedImage alt="Max Width Variants" width={421} sources={{ light: require('./tag--max-width-variants-light.png').default, dark: require('./tag--max-width-variants-dark.png').default }} />
+
+### Icon Only
+
+A compact tag that is only a glyph marks where an item comes from without taking the width of a label; the hidden label still names the tag for screen readers (`withLabel={false}`):
+
+- **First tag** — the glyph loaded from an SVG file (`icon` as a URL)
+- **Second tag** — the same glyph passed as a React component (`icon` as a component)
+
+<ThemedImage alt="Icon Only" width={112} sources={{ light: require('./tag--icon-only-light.png').default, dark: require('./tag--icon-only-dark.png').default }} />
+
+### With Label Suffix
+
+A count after the label, in a quieter colour, tells the reader how many items the tag covers without a second element (`labelSuffix`, `labelSuffixColor`).
+
+<ThemedImage alt="With Label Suffix" width={105} sources={{ light: require('./tag--with-label-suffix-light.png').default, dark: require('./tag--with-label-suffix-dark.png').default }} />
+
+### Css Customization
+
+Six variables set on one wrapper -- the variables are listed under CSS variables on this page. Both tags take every variable from the wrapper; the second is there to show the space `--tag-spacing-end` leaves after **Custom Tag**.
+
+<ThemedImage alt="Css Customization" width={232} sources={{ light: require('./tag--css-customization-light.png').default, dark: require('./tag--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -14,7 +14,7 @@ lower half. [`RoomTile`](./room-tile.md) and
 [`TemplateTile`](./template-tile.md) are this component with their halves filled in; the
 file and folder tiles are not, and repeat the same logic separately.
 
-<ThemedImage alt="BaseTile" width={316} sources={{ light: require('./base-tile-light.png').default, dark: require('./base-tile-dark.png').default }} />
+<ThemedImage alt="BaseTile" width={316} sources={{ light: require('./base-tile--primary-light.png').default, dark: require('./base-tile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -44,6 +44,69 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 Needs `ThemeProvider` for its colours and `TranslationProvider` for the three-dot button's
 tooltip, which it asks the kit's own translation hook for under the key
 `TitleShowFolderActions`; without it that tooltip is empty.
+
+
+## Stories
+
+### Default
+
+A document as a tile: its icon, its name, and a checkbox that takes the icon's place on hover. Tick it, right-click the tile for its menu, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./base-tile--default-light.png').default, dark: require('./base-tile--default-dark.png').default }} />
+
+### Checked
+
+A selected tile, as it looks among others the reader has picked: the checkbox stays ticked in place of the icon and the background stays tinted (`checked`).
+
+<ThemedImage alt="Checked" width={316} sources={{ light: require('./base-tile--checked-light.png').default, dark: require('./base-tile--checked-dark.png').default }} />
+
+### Active
+
+The tile whose menu is open or that an action is running on keeps the hover background after the pointer leaves, so the reader can tell which one it is (`isActive`).
+
+<ThemedImage alt="Active" width={316} sources={{ light: require('./base-tile--active-light.png').default, dark: require('./base-tile--active-dark.png').default }} />
+
+### In Progress
+
+A tile whose item is busy, being copied or converted: a small loader stands where the icon and the checkbox were (`inProgress`).
+
+<ThemedImage alt="In Progress" width={316} sources={{ light: require('./base-tile--in-progress-light.png').default, dark: require('./base-tile--in-progress-dark.png').default }} />
+
+### With Hotkey Border
+
+The tile the keyboard is on while the reader moves through the grid with the arrow keys: an accent border marks it (`showHotkeyBorder`). The tile does not handle the keys itself.
+
+<ThemedImage alt="With Hotkey Border" width={316} sources={{ light: require('./base-tile--with-hotkey-border-light.png').default, dark: require('./base-tile--with-hotkey-border-dark.png').default }} />
+
+### With Bottom Content
+
+A tile with a second row under the title, for tags or a line of details (`bottomContent`).
+
+<ThemedImage alt="With Bottom Content" width={316} sources={{ light: require('./base-tile--with-bottom-content-light.png').default, dark: require('./base-tile--with-bottom-content-dark.png').default }} />
+
+### With Menu Button
+
+A tile whose actions are reachable without a right-click: the three-dot button opens the same menu. It is drawn only when the item carries a `contextOptions` key of its own, whatever the `contextOptions` prop holds.
+
+<ThemedImage alt="With Menu Button" width={316} sources={{ light: require('./base-tile--with-menu-button-light.png').default, dark: require('./base-tile--with-menu-button-dark.png').default }} />
+
+### Renaming State
+
+A tile whose name is being edited: the icon and the checkbox go, so the title row can hold a text field across the tile, and hovering no longer tints it (`isEdit`).
+
+<ThemedImage alt="Renaming State" width={316} sources={{ light: require('./base-tile--renaming-state-light.png').default, dark: require('./base-tile--renaming-state-dark.png').default }} />
+
+### Blocking Operation
+
+A tile an operation is running over, which must not be picked or opened until it ends: hover it, click it or right-click it and nothing happens (`isBlockingOperation`). It looks the same as an idle tile, so show the operation somewhere else.
+
+<ThemedImage alt="Blocking Operation" width={316} sources={{ light: require('./base-tile--blocking-operation-light.png').default, dark: require('./base-tile--blocking-operation-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The first tile shows every variable but the hotkey colour; hover it for the hover background. The second is there for `--tile-hotkey-color`, which only a tile with `showHotkeyBorder` draws.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./base-tile--css-customization-light.png').default, dark: require('./base-tile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

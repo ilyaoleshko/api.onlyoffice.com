@@ -14,7 +14,7 @@ is the thing at the left of a room row and at the top of a room tile: a logo ima
 cover glyph, or two letters cut from the room's name, with an optional corner badge and an
 optional pencil that opens the logo menu.
 
-<ThemedImage alt="RoomIcon" width={112} sources={{ light: require('./room-icon-light.png').default, dark: require('./room-icon-dark.png').default }} />
+<ThemedImage alt="RoomIcon" width={112} sources={{ light: require('./room-icon--primary-light.png').default, dark: require('./room-icon--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,6 +42,100 @@ Needs `ThemeProvider` above it in the tree, and unusually it reads the theme in 
 well as in CSS: the colour of the initials is computed from `isBase`. Without a provider the
 context falls back to the light theme, so the tile keeps light-theme initials on a dark page —
 this is not something a stylesheet override can correct.
+
+
+## Stories
+
+### Default
+
+A room with no logo is shown by its initials on its colour. Change the name, the colour or the size live in the Controls panel below.
+
+<ThemedImage alt="Default" width={112} sources={{ light: require('./room-icon--default-light.png').default, dark: require('./room-icon--default-dark.png').default }} />
+
+### Sizes
+
+The same tile at 32px, 48px and 96px (`size`). Any px value works; the initials stay 14px at every size, so a large tile needs its own text style for them.
+
+<ThemedImage alt="Sizes" width={224} sources={{ light: require('./room-icon--sizes-light.png').default, dark: require('./room-icon--sizes-dark.png').default }} />
+
+### Colors
+
+Each room gets its own colour (`color`, six hex digits without `#`), and the initials turn white or black to stay readable on it.
+
+<ThemedImage alt="Colors" width={320} sources={{ light: require('./room-icon--colors-light.png').default, dark: require('./room-icon--colors-dark.png').default }} />
+
+### With Editing
+
+Lets the reader change the logo: click the pencil in the corner, or anywhere on the tile, to open the logo menu (`withEditing`, `model`); picking an entry shows up in the Actions panel.
+
+<ThemedImage alt="With Editing" width={118} sources={{ light: require('./room-icon--with-editing-light.png').default, dark: require('./room-icon--with-editing-dark.png').default }} />
+
+### Empty State
+
+For a room that has no logo yet: a dashed frame with a camera glyph, and a plus button in the bottom-right corner that opens the logo menu (`isEmptyIcon`, `model`). The button takes its background from the host's accent colour, which Storybook does not define, so here only a click on that corner finds it.
+
+<ThemedImage alt="Empty State" width={112} sources={{ light: require('./room-icon--empty-state-light.png').default, dark: require('./room-icon--empty-state-dark.png').default }} />
+
+### Archive
+
+An archived room is greyed out whatever its colour: this tile is given the same blue as the others (`isArchive`).
+
+<ThemedImage alt="Archive" width={112} sources={{ light: require('./room-icon--archive-light.png').default, dark: require('./room-icon--archive-dark.png').default }} />
+
+### With Badge
+
+Marks something about the room with a glyph in the bottom corner (`badgeUrl`); clicking it calls `onBadgeClick`, shown in the Actions panel.
+
+<ThemedImage alt="With Badge" width={119} sources={{ light: require('./room-icon--with-badge-light.png').default, dark: require('./room-icon--with-badge-dark.png').default }} />
+
+### With Tooltip
+
+Explains the badge in words: hover it to read the text (`tooltipContent`), which the badge finds through `tooltipId`.
+
+<ThemedImage alt="With Tooltip" width={119} sources={{ light: require('./room-icon--with-tooltip-light.png').default, dark: require('./room-icon--with-tooltip-dark.png').default }} />
+
+### Template
+
+Tells a template apart from a room: an outline in the tile colour instead of a filled square, with the initials inside (`isTemplate`).
+
+<ThemedImage alt="Template" width={112} sources={{ light: require('./room-icon--template-light.png').default, dark: require('./room-icon--template-dark.png').default }} />
+
+### With Hover
+
+Hints that the tile can be clicked: hover it, and the initials slide away while a second image fades in (`hoverSrc`); a click opens the logo menu (`model`).
+
+<ThemedImage alt="With Hover" width={112} sources={{ light: require('./room-icon--with-hover-light.png').default, dark: require('./room-icon--with-hover-dark.png').default }} />
+
+### Long Title
+
+However long the name, the tile shows two letters: the first of its first word and the first of its last (`title`).
+
+<ThemedImage alt="Long Title" width={64} sources={{ light: require('./room-icon--long-title-light.png').default, dark: require('./room-icon--long-title-dark.png').default }} />
+
+### With Logo
+
+A room with a logo of its own shows it instead of the initials (`logo`):
+
+- **Image** — a URL, drawn as it is
+- **Cover** — an object with a `cover` SVG, inlined and painted in the initials' colour on the tile
+- **Broken URL** — the image fails to load, so the tile falls back to the initials
+
+<ThemedImage alt="With Logo" width={176} sources={{ light: require('./room-icon--with-logo-light.png').default, dark: require('./room-icon--with-logo-dark.png').default }} />
+
+### Right To Left
+
+The tile under a right-to-left interface: the pencil button and the badge move to the bottom-left corner. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={136} sources={{ light: require('./room-icon--right-to-left-light.png').default, dark: require('./room-icon--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. It covers two instances:
+
+- **Design review** — an editable tile, for `--room-icon-bg-opacity` on the tile and `--room-icon-edit-bg` on the pencil
+- **Empty frame** — for `--room-icon-bg` on the plus glyph, `--room-icon-button-icon-color` on the camera, and the frame's `--room-icon-dashed-border` and `--room-icon-empty-radius`
+
+<ThemedImage alt="Css Customization" width={232} sources={{ light: require('./room-icon--css-customization-light.png').default, dark: require('./room-icon--css-customization-dark.png').default }} />
 
 ## Minimal example
 

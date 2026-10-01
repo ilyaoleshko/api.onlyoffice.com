@@ -13,7 +13,7 @@ Floating round button in the corner of the screen that opens a full-width sheet 
 is the phone form of the portal's "create" button: a plus that becomes a minus while its sheet
 is open.
 
-<ThemedImage alt="MainButtonMobile" width={64} sources={{ light: require('./main-button-mobile-light.png').default, dark: require('./main-button-mobile-dark.png').default }} />
+<ThemedImage alt="MainButtonMobile" width={64} sources={{ light: require('./main-button-mobile--primary-light.png').default, dark: require('./main-button-mobile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,6 +42,39 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`. Everything
 component draws — the button's colour, the sheet's background and, under the light theme, the
 sheet's whole placement — comes from custom properties defined on the theme's `.light` /
 `.dark` class. See the dark-theme note under "Behaviour the types don't state".
+
+
+## Stories
+
+### Default
+
+The button in the corner of the screen with both groups of items. Tap it to open the menu, tap outside or pick an item to close it, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={64} sources={{ light: require('./main-button-mobile--default-light.png').default, dark: require('./main-button-mobile--default-dark.png').default }} />
+
+### With Alert
+
+A badge on the closed button draws attention to something waiting for the user (`alert`). Click the badge to see `onAlertClick` in the Actions panel, which is called only while `withAlertClick` is set; the badge is hidden while the menu is open.
+
+<ThemedImage alt="With Alert" width={64} sources={{ light: require('./main-button-mobile--with-alert-light.png').default, dark: require('./main-button-mobile--with-alert-dark.png').default }} />
+
+### With Submenu
+
+Groups related actions under one item without opening a second menu. **New form** opens its nested items in place under it, already expanded (`items`, `openByDefault`); **New folder** carries a second line under its label (`description`).
+
+<ThemedImage alt="With Submenu" width={440} sources={{ light: require('./main-button-mobile--with-submenu-light.png').default, dark: require('./main-button-mobile--with-submenu-dark.png').default }} />
+
+### Without Menu
+
+For a screen with only one thing to create, the button runs that action directly (`withMenu`). Click it to see `onClick` in the Actions panel; no menu opens.
+
+<ThemedImage alt="Without Menu" width={64} sources={{ light: require('./main-button-mobile--without-menu-light.png').default, dark: require('./main-button-mobile--without-menu-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. One instance, with the alert badge on so the badge variables show. Open the menu to see the item padding and the lower group's background.
+
+<ThemedImage alt="Css Customization" width={64} sources={{ light: require('./main-button-mobile--css-customization-light.png').default, dark: require('./main-button-mobile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

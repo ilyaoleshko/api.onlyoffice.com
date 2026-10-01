@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Menu anchored to a control, rendered in a portal and positioned against the element you point
 it at. Its visibility prop is `open`, and the anchor is `forwardedRef`.
 
-<ThemedImage alt="DropDown" width={185} sources={{ light: require('./drop-down-light.png').default, dark: require('./drop-down-dark.png').default }} />
+<ThemedImage alt="DropDown" width={185} sources={{ light: require('./drop-down--primary-light.png').default, dark: require('./drop-down--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,63 @@ its file path.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the background, the border and the shadow.
+
+
+## Stories
+
+### Default
+
+The everyday case: a short menu opened from a button and closed by the next click anywhere else. Press **Open Dropdown**, then change any other prop live in the Controls panel below and open it again.
+
+<ThemedImage alt="Default" width={185} sources={{ light: require('./drop-down--default-light.png').default, dark: require('./drop-down--default-dark.png').default }} />
+
+### With Headers And Separators
+
+Dropdowns can include headers and separators to organize items into logical groups.
+
+<ThemedImage alt="With Headers And Separators" width={150} sources={{ light: require('./drop-down--with-headers-and-separators-light.png').default, dark: require('./drop-down--with-headers-and-separators-dark.png').default }} />
+
+### With Disabled Items
+
+Use `showDisabledItems` to display disabled items. By default, disabled items are hidden.
+
+<ThemedImage alt="With Disabled Items" width={166} sources={{ light: require('./drop-down--with-disabled-items-light.png').default, dark: require('./drop-down--with-disabled-items-dark.png').default }} />
+
+### Scrollable List
+
+For a list longer than the screen can hold: the menu stays 200px tall and scrolls (`maxHeight`). Open it and press the Down and Up arrows to move the highlight, then Enter to pick the highlighted option.
+
+<ThemedImage alt="Scrollable List" width={134} sources={{ light: require('./drop-down--scrollable-list-light.png').default, dark: require('./drop-down--scrollable-list-dark.png').default }} />
+
+### Direction Variants
+
+To open the menu where there is room for it: each button opens its menu to the side and edge its label names (`directionX`, `directionY`). A menu that would run past the side of the window opens towards the other side instead.
+
+<ThemedImage alt="Direction Variants" width={402} sources={{ light: require('./drop-down--direction-variants-light.png').default, dark: require('./drop-down--direction-variants-dark.png').default }} />
+
+### Custom Width
+
+Use `manualWidth` to set a custom width for the dropdown.
+
+<ThemedImage alt="Custom Width" width={182} sources={{ light: require('./drop-down--custom-width-light.png').default, dark: require('./drop-down--custom-width-dark.png').default }} />
+
+### With Separators
+
+To group a short menu without titles: thin lines split the editing commands into three groups (`isSeparator` on a `DropDownItem`).
+
+<ThemedImage alt="With Separators" width={142} sources={{ light: require('./drop-down--with-separators-light.png').default, dark: require('./drop-down--with-separators-dark.png').default }} />
+
+### Right To Left
+
+The menu in a right-to-left interface, open from the start: the button sits at the right, the menu lines up with the button's right edge and extends towards the left, and the labels are aligned to the right. The menu renders into the right-to-left container (`appendTo`), because on its own it goes to the end of the page body, outside any `dir` wrapper.
+
+<ThemedImage alt="Right To Left" width={216} sources={{ light: require('./drop-down--right-to-left-light.png').default, dark: require('./drop-down--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. Press **Dropdown trigger** to open the menu. It renders inline here (`isDefaultMode={false}`), inside the wrapper that sets the variables; in the default portal mode the menu is on the page body, outside any wrapper, so set them through the DropDown's own `style` prop instead.
+
+<ThemedImage alt="Css Customization" width={193} sources={{ light: require('./drop-down--css-customization-light.png').default, dark: require('./drop-down--css-customization-dark.png').default }} />
 
 ## Minimal example
 

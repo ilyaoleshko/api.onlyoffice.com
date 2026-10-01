@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Round picture of a person or a group, falling back to initials, with an optional role badge and
 an edit menu. `size` and `role` are both required, and `role` is how you say "no badge".
 
-<ThemedImage alt="Avatar" width={140} sources={{ light: require('./avatar-light.png').default, dark: require('./avatar-dark.png').default }} />
+<ThemedImage alt="Avatar" width={140} sources={{ light: require('./avatar--primary-light.png').default, dark: require('./avatar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -40,6 +40,87 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree: the
 backgrounds, the initials' colour and the badge colours come from the theme, and the built-in
 illustration is chosen by whether the theme is the light one.
+
+
+## Stories
+
+### Default
+
+An avatar with nothing to show yet: with no picture and no name it falls back to a camera icon on the neutral background. Change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={140} sources={{ light: require('./avatar--default-light.png').default, dark: require('./avatar--default-dark.png').default }} />
+
+### With Image
+
+A picture with the admin badge at its bottom corner; hover the badge to read its tooltip (`withTooltip`, `tooltipContent`).
+
+<ThemedImage alt="With Image" width={140} sources={{ light: require('./avatar--with-image-light.png').default, dark: require('./avatar--with-image-dark.png').default }} />
+
+### With Initials
+
+Avatar showing initials generated from the user name. Uses first letter of first two words (JD).
+
+<ThemedImage alt="With Initials" width={140} sources={{ light: require('./avatar--with-initials-light.png').default, dark: require('./avatar--with-initials-dark.png').default }} />
+
+### With Icon
+
+Avatar displaying an SVG icon instead of an image or initials.
+
+<ThemedImage alt="With Icon" width={140} sources={{ light: require('./avatar--with-icon-light.png').default, dark: require('./avatar--with-icon-dark.png').default }} />
+
+### All Sizes
+
+All seven sizes side by side: max (124px), big (80px), medium (48px), base (40px), small (36px), min (32px) and extraSmall (24px); the initials and the admin badge shrink with the avatar.
+
+<ThemedImage alt="All Sizes" width={531} sources={{ light: require('./avatar--all-sizes-light.png').default, dark: require('./avatar--all-sizes-dark.png').default }} />
+
+### All Roles
+
+Every `role` value on the same avatar: only Owner and Admin draw a badge at the bottom corner, User, Guest, Manager, Collaborator and None draw none.
+
+<ThemedImage alt="All Roles" width={672} sources={{ light: require('./avatar--all-roles-light.png').default, dark: require('./avatar--all-roles-dark.png').default }} />
+
+### Group Avatar
+
+Group avatar with uppercase initials and specialized background color. Role icons are typically hidden for groups.
+
+<ThemedImage alt="Group Avatar" width={140} sources={{ light: require('./avatar--group-avatar-light.png').default, dark: require('./avatar--group-avatar-dark.png').default }} />
+
+### Editing Mode
+
+A person with no picture yet: the plus button at the corner, or a click anywhere on the avatar, opens the file dialog straight away through the first `model` action, and the chosen file reaches `onChangeFile`. The button is drawn only at `size` `max`.
+
+<ThemedImage alt="Editing Mode" width={140} sources={{ light: require('./avatar--editing-mode-light.png').default, dark: require('./avatar--editing-mode-dark.png').default }} />
+
+### Editing With Avatar
+
+A person who already has a picture: the pencil at the corner, or a click on the avatar, opens a menu of the `model` actions — **Upload picture** opens the file dialog, **Delete picture** runs its own handler.
+
+<ThemedImage alt="Editing With Avatar" width={140} sources={{ light: require('./avatar--editing-with-avatar-light.png').default, dark: require('./avatar--editing-with-avatar-dark.png').default }} />
+
+### With Custom Role Icon
+
+Avatar with a custom role icon element instead of the default role badges.
+
+<ThemedImage alt="With Custom Role Icon" width={140} sources={{ light: require('./avatar--with-custom-role-icon-light.png').default, dark: require('./avatar--with-custom-role-icon-dark.png').default }} />
+
+### Default Source
+
+Avatar showing the default placeholder image when no source or userName is provided.
+
+<ThemedImage alt="Default Source" width={140} sources={{ light: require('./avatar--default-source-light.png').default, dark: require('./avatar--default-source-dark.png').default }} />
+
+### Right To Left
+
+The same avatars under a right-to-left interface: the admin badge and the pencil move from the bottom-right corner to the bottom-left one, and the badge tooltip opens to the left of it. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={236} sources={{ light: require('./avatar--right-to-left-light.png').default, dark: require('./avatar--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Four variables set on one wrapper -- the variables are listed under CSS variables on this page. The first avatar, with initials, shows the radius, the initials background and the weight; the second, with neither picture nor name, is there for `--avatar-bg`.
+
+<ThemedImage alt="Css Customization" width={192} sources={{ light: require('./avatar--css-customization-light.png').default, dark: require('./avatar--css-customization-dark.png').default }} />
 
 ## Minimal example
 

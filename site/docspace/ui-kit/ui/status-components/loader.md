@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Spinner in one of four animations, for work whose duration is unknown. Pick the animation
 explicitly — the component has no default worth having.
 
-<ThemedImage alt="Loader" width={790} sources={{ light: require('./loader-light.png').default, dark: require('./loader-dark.png').default }} />
+<ThemedImage alt="Loader" width={790} sources={{ light: require('./loader--primary-light.png').default, dark: require('./loader--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,77 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the track colours; without it the animation falls back to the pale default stroke.
+
+
+## Stories
+
+### Default
+
+A line of plain text instead of an animation, for a place where a moving spinner would distract: this is what you get with `type` set to `base` or left out, so pick an animation explicitly when you want one. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./loader--default-light.png').default, dark: require('./loader--default-dark.png').default }} />
+
+### Oval
+
+Oval spinner animation, commonly used for inline loading states.
+
+<ThemedImage alt="Oval" width={56} sources={{ light: require('./loader--oval-light.png').default, dark: require('./loader--oval-dark.png').default }} />
+
+### Dual Ring
+
+Dual ring animation with two concentric spinning rings.
+
+<ThemedImage alt="Dual Ring" width={56} sources={{ light: require('./loader--dual-ring-light.png').default, dark: require('./loader--dual-ring-dark.png').default }} />
+
+### Rombs
+
+Rombs (diamond) animation, used as the main application loader.
+
+<ThemedImage alt="Rombs" width={141} sources={{ light: require('./loader--rombs-light.png').default, dark: require('./loader--rombs-dark.png').default }} />
+
+### Track
+
+Track animation for compact loading indicators.
+
+<ThemedImage alt="Track" width={46} sources={{ light: require('./loader--track-light.png').default, dark: require('./loader--track-dark.png').default }} />
+
+### All Types
+
+Side-by-side comparison of the text fallback (Base) and the four animations (Oval, DualRing, Rombs and Track), to choose the one that fits the space it waits in.
+
+<ThemedImage alt="All Types" width={670} sources={{ light: require('./loader--all-types-light.png').default, dark: require('./loader--all-types-dark.png').default }} />
+
+### Custom Colors
+
+DualRing loaders with different custom colors applied via the color prop.
+
+<ThemedImage alt="Custom Colors" width={296} sources={{ light: require('./loader--custom-colors-light.png').default, dark: require('./loader--custom-colors-dark.png').default }} />
+
+### Different Sizes
+
+Oval loaders at three different sizes to demonstrate scalability.
+
+<ThemedImage alt="Different Sizes" width={339} sources={{ light: require('./loader--different-sizes-light.png').default, dark: require('./loader--different-sizes-dark.png').default }} />
+
+### On Primary Button
+
+A white track on the accent background of a primary button, where the default accent-coloured track would disappear (`primary`).
+
+<ThemedImage alt="On Primary Button" width={84} sources={{ light: require('./loader--on-primary-button-light.png').default, dark: require('./loader--on-primary-button-dark.png').default }} />
+
+### Disabled State
+
+The track dimmed beside a normal one, for a loader inside a control that is currently unavailable (`isDisabled`, read by the track only).
+
+<ThemedImage alt="Disabled State" width={202} sources={{ light: require('./loader--disabled-state-light.png').default, dark: require('./loader--disabled-state-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+The example shows, from left to right: an oval for `--loader-stroke` and `--loader-size`, which every instance picks up; a track for `--loader-track-base`; a track with `primary` for `--loader-track-primary`; and a track with `isDisabled` for `--loader-opacity-disabled`.
+
+<ThemedImage alt="Css Customization" width={336} sources={{ light: require('./loader--css-customization-light.png').default, dark: require('./loader--css-customization-dark.png').default }} />
 
 ## Minimal example
 

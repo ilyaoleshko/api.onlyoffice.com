@@ -13,14 +13,14 @@ Rubber-band selection: a dragged rectangle that reports which items it covers, f
 renders one fixed, invisible box and does all its work through document listeners and class names
 you give it.
 
-<ThemedImage alt="SelectionArea" width={756} sources={{ light: require('./selection-area-light.png').default, dark: require('./selection-area-dark.png').default }} />
+<ThemedImage alt="SelectionArea" width={756} sources={{ light: require('./selection-area--primary-light.png').default, dark: require('./selection-area--primary-dark.png').default }} />
 
 ## Use this when / not when
 
 - Use over a listing whose items you can label with classes and a `value` attribute, when
   dragging across them should select them.
 - **It does nothing without an element whose id is the literal `sectionScroll`.** Every mouse-down
-  outside one is ignored. [`Section`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/section/README.md) renders that element as its body
+  outside one is ignored. [`Section`](./section.md) renders that element as its body
   scroller, so inside one this is already satisfied; anywhere else, give the scrolling element that
   id yourself or the component is inert.
 - Not for selecting one item — that is the checkbox on
@@ -42,6 +42,33 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` above it in the tree for the rectangle's border colour, and for the writing
 direction — in a right-to-left interface the tile column index is mirrored, which it learns from
 the provider's direction context.
+
+
+## Stories
+
+### Default
+
+A grid of tiles, the layout the rectangle's column and row arithmetic is built for. Click and drag across the items to select them; a covered tile turns blue. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={756} sources={{ light: require('./selection-area--default-light.png').default, dark: require('./selection-area--default-dark.png').default }} />
+
+### Row View
+
+A list of equal-height rows, where only the rectangle's vertical extent decides what is covered: drag down from any row and every row it crosses turns blue, however far to the side the pointer goes (`viewAs`). Each row keeps its `value` on a child, found by `itemClass`.
+
+<ThemedImage alt="Row View" width={759} sources={{ light: require('./selection-area--row-view-light.png').default, dark: require('./selection-area--row-view-dark.png').default }} />
+
+### Right To Left
+
+The tile grid in a right-to-left layout: the first tile sits in the top right corner, and a drag across the right-hand column selects the first tile of each row. The wrapper carries `dir="rtl"` for the grid; the component mirrors its column order from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={666} sources={{ light: require('./selection-area--right-to-left-light.png').default, dark: require('./selection-area--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+All three variables set on one wrapper -- the variables are listed under CSS variables on this page. Drag across the tiles to see the fill and the border.
+
+<ThemedImage alt="Css Customization" width={756} sources={{ light: require('./selection-area--css-customization-light.png').default, dark: require('./selection-area--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -202,7 +229,7 @@ export function ControlledSelection({ ids }: { ids: string[] }) {
 ## Behaviour the types don't state
 
 - **The literal id `sectionScroll` is a hard requirement.** A mouse-down whose target is not inside
-  an element with that id is ignored outright. [`Section`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/section/README.md) puts it on its body
+  an element with that id is ignored outright. [`Section`](./section.md) puts it on its body
   scroller, but only while `withBodyScroll` is set and the layout is not the phone one — so a
   section that does not scroll its own body leaves this component inert as well.
 - **Six more literal class names cancel a selection before it starts**: `not-selectable`,

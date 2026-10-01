@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Button showing the current choice, with a list of options under it. The choice itself stays in
 your state: the component reports a click and nothing more.
 
-<ThemedImage alt="ComboBox" width={189} sources={{ light: require('./combobox-light.png').default, dark: require('./combobox-dark.png').default }} />
+<ThemedImage alt="ComboBox" width={189} sources={{ light: require('./combobox--primary-light.png').default, dark: require('./combobox--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -40,6 +40,69 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the button and list
 colours, and `TranslationProvider` from `@onlyoffice/apps-ui-kit/providers/translation` because
 the options are rendered as `DropDownItem`s, which read a translated label for their paid badge.
+
+
+## Stories
+
+### Default
+
+A fixed-width combo box with a placeholder in the button, as a form shows it before anything is chosen. Pick an option to see it replace the placeholder, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./combobox--default-light.png').default, dark: require('./combobox--default-dark.png').default }} />
+
+### Different Sizes
+
+The fixed widths side by side, to pick the one that fits the longest label a form expects: `base` 173px, `middle` 300px, `big` 350px, `huge` 500px, and `content`, as wide as the label (`size`, with `scaled` off).
+
+<ThemedImage alt="Different Sizes" width={516} sources={{ light: require('./combobox--different-sizes-light.png').default, dark: require('./combobox--different-sizes-dark.png').default }} />
+
+### With Icons
+
+Options with an icon each, so an action is recognised before its label is read; pick one and its icon moves into the button next to the label (`icon` on each option).
+
+<ThemedImage alt="With Icons" width={750} sources={{ light: require('./combobox--with-icons-light.png').default, dark: require('./combobox--with-icons-dark.png').default }} />
+
+### With Option Descriptions
+
+Options whose label alone does not explain the choice: open the list and each row shows the label with a line of explanation under it (`description` on each option). The selected row is highlighted and stays clickable (`displaySelectedOption`).
+
+<ThemedImage alt="With Option Descriptions" width={74} sources={{ light: require('./combobox--with-option-descriptions-light.png').default, dark: require('./combobox--with-option-descriptions-dark.png').default }} />
+
+### Disabled
+
+A choice that cannot be changed right now, kept on screen so the reader still sees the value: the button is greyed out and a click does not open the list (`isDisabled`).
+
+<ThemedImage alt="Disabled" width={189} sources={{ light: require('./combobox--disabled-light.png').default, dark: require('./combobox--disabled-dark.png').default }} />
+
+### With Selected Option
+
+A form that opens with a value already chosen. Open the list: the chosen option is greyed out and cannot be picked again, because `displaySelectedOption` is off; turn it on to keep it clickable and highlighted instead.
+
+<ThemedImage alt="With Selected Option" width={189} sources={{ light: require('./combobox--with-selected-option-light.png').default, dark: require('./combobox--with-selected-option-dark.png').default }} />
+
+### Custom Styling
+
+Colour-coded values, such as priorities, where the colour says more than the word: the button draws the chosen option as a badge in its own text and background colours (`type="badge"`, with `color` and `backgroundColor` on each option). Pick another priority to see the badge change; the rows of the list stay plain.
+
+<ThemedImage alt="Custom Styling" width={167} sources={{ light: require('./combobox--custom-styling-light.png').default, dark: require('./combobox--custom-styling-dark.png').default }} />
+
+### Loading State
+
+A value that is still being fetched or saved: the label and the arrow give way to a spinner and a click does not open the list until loading ends (`isLoading`).
+
+<ThemedImage alt="Loading State" width={189} sources={{ light: require('./combobox--loading-state-light.png').default, dark: require('./combobox--loading-state-dark.png').default }} />
+
+### Right To Left
+
+The combo box under a right-to-left interface: the icon and the label start at the right edge, the icon is mirrored, and the arrow sits at the left end. Open the list to see its rows aligned to the right as well. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={189} sources={{ light: require('./combobox--right-to-left-light.png').default, dark: require('./combobox--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The border colours, the radius and the padding set on one wrapper -- the variables are listed under CSS variables on this page. Hover the button to see the hover colour and click it to see the open one.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./combobox--css-customization-light.png').default, dark: require('./combobox--css-customization-dark.png').default }} />
 
 ## Minimal example
 

@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Search field with a magnifier, an optional clear button and a debounced change callback. It is
 the control above a list that the list filters itself by.
 
-<ThemedImage alt="SearchInput" width={316} sources={{ light: require('./search-input-light.png').default, dark: require('./search-input-dark.png').default }} />
+<ThemedImage alt="SearchInput" width={316} sources={{ light: require('./search-input--primary-light.png').default, dark: require('./search-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -20,7 +20,7 @@ the control above a list that the list filters itself by.
 - Not as an ordinary text field — [`TextInput`](./text-input.md) reports every
   keystroke through the change event, which this one does not.
 - Not for the portal's own filter bar with its sort and view controls, which is
-  [`Filter`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/filter/README.md) and only works inside DocSpace.
+  [`Filter`](../navigation/filter.md) and only works inside DocSpace.
 
 ## Import
 
@@ -36,6 +36,77 @@ the field's border, icon and background colours.
 
 Note that `SearchInputProps` is **not** exported — the folder's index re-exports only the
 component. Type a wrapper's props yourself, or import the type from its file path.
+
+
+## Stories
+
+### Default
+
+A search field as it first appears above a list: type to see the magnifier turn into a cross, pause for a second to see `onChange` in the Actions panel, click the cross to see `onClearSearch`; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./search-input--default-light.png').default, dark: require('./search-input--default-dark.png').default }} />
+
+### Sizes
+
+Match the search field to the inputs around it: **Base size** and **Middle size** share the 13px text, **Large size** is taller with 16px text (`size`).
+
+<ThemedImage alt="Sizes" width={790} sources={{ light: require('./search-input--sizes-light.png').default, dark: require('./search-input--sizes-dark.png').default }} />
+
+### States
+
+The looks a search field takes on a page. **Normal** holds text, so it shows the cross that clears it. **Disabled** is greyed, cannot be typed into and shows neither magnifier nor cross (`isDisabled`). **Scaled** fills the width of its container (`scale`); in this grid every field already fills its cell, so the difference shows in a wider container. **Empty with placeholder** shows the magnifier and the placeholder text.
+
+<ThemedImage alt="States" width={790} sources={{ light: require('./search-input--states-light.png').default, dark: require('./search-input--states-dark.png').default }} />
+
+### Auto Refresh Mode
+
+Decide how the parent hears about the search term. Type into **Type to auto-refresh (1s)**: the line under it catches up a second after you stop (`autoRefresh`, `refreshTimeout`). Type into **No auto-refresh**: the line under it never changes, because with `autoRefresh` off the component does not call `onChange` at all.
+
+<ThemedImage alt="Auto Refresh Mode" width={790} sources={{ light: require('./search-input--auto-refresh-mode-light.png').default, dark: require('./search-input--auto-refresh-mode-dark.png').default }} />
+
+### With Button
+
+Put the create action next to the search it belongs with: the **Create** button with its plus icon sits to the left of the field (`showMainButton`, `mainButtonProps`), and the field takes the rest of the row.
+
+<ThemedImage alt="With Button" width={516} sources={{ light: require('./search-input--with-button-light.png').default, dark: require('./search-input--with-button-dark.png').default }} />
+
+### With Button And Menu
+
+Offer several things to create from one button: click **New** to open its menu of items, one of them with a submenu (`model` in `mainButtonProps`).
+
+<ThemedImage alt="With Button And Menu" width={516} sources={{ light: require('./search-input--with-button-and-menu-light.png').default, dark: require('./search-input--with-button-and-menu-dark.png').default }} />
+
+### Persistent Clear Button
+
+Keep a way out of a search the parent still applies after the field was emptied: **Cross on an empty field** shows the cross with no text in it (`showClearButton`), **Magnifier on an empty field** is the usual look. With text in the field both show the cross.
+
+<ThemedImage alt="Persistent Clear Button" width={790} sources={{ light: require('./search-input--persistent-clear-button-light.png').default, dark: require('./search-input--persistent-clear-button-dark.png').default }} />
+
+### Content Before Text
+
+Show what the search is limited to without a separate label: the folder icon sits inside the field, before the text (`children`).
+
+<ThemedImage alt="Content Before Text" width={395} sources={{ light: require('./search-input--content-before-text-light.png').default, dark: require('./search-input--content-before-text-dark.png').default }} />
+
+### Disabled Main Button
+
+Keep the create action in place while it is unavailable: the **Create** button is dimmed (`isDisabled` in `mainButtonProps`), the search field next to it still works.
+
+<ThemedImage alt="Disabled Main Button" width={516} sources={{ light: require('./search-input--disabled-main-button-light.png').default, dark: require('./search-input--disabled-main-button-dark.png').default }} />
+
+### Right To Left
+
+The same field under a right-to-left interface: the **Create** button moves to the right edge, the cross moves to the left end of the field and the text starts at the right. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={516} sources={{ light: require('./search-input--right-to-left-light.png').default, dark: require('./search-input--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+**Custom styled search** is empty and shows the magnifier color; **With value** holds text and shows the cross color; **With button** carries the main button, for the gap. Hover a field and click into it to see the two other border colors.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./search-input--css-customization-light.png').default, dark: require('./search-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -225,4 +296,4 @@ radius). The gap only shows with the main button.
 
 - [`TextInput`](./text-input.md) — an ordinary text field, with the change event.
 - [`InputBlock`](./input-block.md) — a field with an icon or a button inside it.
-- [`Filter`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/filter/README.md) — the portal's search, sort and view bar.
+- [`Filter`](../navigation/filter.md) — the portal's search, sort and view bar.

@@ -14,7 +14,7 @@ two are deliberately separate: `level` picks the `h1`–`h6` tag that a screen r
 page outline from, `size` is how large the title looks, and a `h3` can be the biggest thing on
 the page.
 
-<ThemedImage alt="Heading" width={790} sources={{ light: require('./heading-light.png').default, dark: require('./heading-dark.png').default }} />
+<ThemedImage alt="Heading" width={790} sources={{ light: require('./heading--primary-light.png').default, dark: require('./heading--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -46,6 +46,51 @@ Needs `ThemeProvider` above it in the tree. Without one the heading always draws
 theme's black — the white it uses on a dark background comes from the `dark` class the provider
 puts on `<body>` — and its font family falls back to whatever the page inherits, because the
 provider is what sets `--font-family`.
+
+
+## Stories
+
+### Default
+
+A large `h1`, the title of a page or panel; change the level, size, type or any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./heading--default-light.png').default, dark: require('./heading--default-dark.png').default }} />
+
+### Levels
+
+Six headings, `h1` through `h6`, all at the same medium size: the level decides the element a screen reader builds the page outline from, not how large the text looks (`level`).
+
+<ThemedImage alt="Levels" width={790} sources={{ light: require('./heading--levels-light.png').default, dark: require('./heading--levels-dark.png').default }} />
+
+### Sizes
+
+Five `h1` headings from 15px to 27px: pick the size for the visual weight the layout needs, whatever level the heading has (`size`).
+
+<ThemedImage alt="Sizes" width={790} sources={{ light: require('./heading--sizes-light.png').default, dark: require('./heading--sizes-dark.png').default }} />
+
+### Types
+
+**Default Type** has no `type` and follows `size`; **Header Type** is 28px at weight 600, **Menu Type** 23px bold and **Content Type** 18px bold, all three on a 50px line height, for titles that must line up with a 50px row (`type`).
+
+<ThemedImage alt="Types" width={790} sources={{ light: require('./heading--types-light.png').default, dark: require('./heading--types-dark.png').default }} />
+
+### Truncated Heading
+
+A long title in a 250px column stays on one line and ends with an ellipsis, for headers that must not wrap; without a bounded parent the heading grows instead (`truncate`).
+
+<ThemedImage alt="Truncated Heading" width={266} sources={{ light: require('./heading--truncated-heading-light.png').default, dark: require('./heading--truncated-heading-dark.png').default }} />
+
+### Custom Styled
+
+One-off looks without a stylesheet: **Blue Heading** sets the colour through the `color` prop, **Italic Heading** and **Underlined Heading** pass other CSS through `style`.
+
+<ThemedImage alt="Custom Styled" width={790} sources={{ light: require('./heading--custom-styled-light.png').default, dark: require('./heading--custom-styled-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. **Custom Heading** (`type="content"`) shows the colour, `--heading-size-content` and `--heading-lh`; **Plain Heading** has no `type` and is there for `--heading-weight`; **Menu Heading** and **Header Heading** show `--heading-size-menu` and `--heading-size-header`.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./heading--css-customization-light.png').default, dark: require('./heading--css-customization-dark.png').default }} />
 
 ## Minimal example
 

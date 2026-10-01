@@ -13,7 +13,7 @@ Grey panel with an optional header row, for a block of related information. Thre
 title, something pushed to the right of it, and the body — on a tinted rounded background, with
 no behaviour of its own.
 
-<ThemedImage alt="Card" width={790} sources={{ light: require('./card-light.png').default, dark: require('./card-dark.png').default }} />
+<ThemedImage alt="Card" width={790} sources={{ light: require('./card--primary-light.png').default, dark: require('./card--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -43,6 +43,51 @@ Needs `ThemeProvider` above it in the tree. The background and both text colours
 only under the `light` and `dark` classes the provider puts on `<body>`, so without one the
 card has **no background at all** — the `var()` has nothing to resolve to — and the title and
 body fall back to the inherited colour.
+
+
+## Stories
+
+### Default
+
+The common case: a heading over a short block of text (`title`, `children`). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./card--default-light.png').default, dark: require('./card--default-dark.png').default }} />
+
+### With Extra
+
+A short status belongs next to the heading: "Connected" sits on the trailing edge of the header row, on one line however long the title is (`extra`).
+
+<ThemedImage alt="With Extra" width={790} sources={{ light: require('./card--with-extra-light.png').default, dark: require('./card--with-extra-dark.png').default }} />
+
+### Title Only
+
+A heading alone labels a block that has no details yet; no empty body is left below it (`title` without `children`).
+
+<ThemedImage alt="Title Only" width={790} sources={{ light: require('./card--title-only-light.png').default, dark: require('./card--title-only-dark.png').default }} />
+
+### Body Only
+
+Text alone, for a note that needs no heading: with neither `title` nor `extra` set, the header row is left out and the text starts at the top of the card.
+
+<ThemedImage alt="Body Only" width={790} sources={{ light: require('./card--body-only-light.png').default, dark: require('./card--body-only-dark.png').default }} />
+
+### With Icon In Title
+
+An icon before the heading marks what the card is about; the card lays out nothing inside the title, so the icon and the text are wrapped in a flex span of the consumer's own (`title`).
+
+<ThemedImage alt="With Icon In Title" width={790} sources={{ light: require('./card--with-icon-in-title-light.png').default, dark: require('./card--with-icon-in-title-dark.png').default }} />
+
+### Full Example
+
+Every slot at once, for a block that states something and offers the next step: an icon and a heading (`title`), "Connected" on the trailing edge (`extra`), a paragraph (`children`) and an "Open settings" button below it (`footer`).
+
+<ThemedImage alt="Full Example" width={790} sources={{ light: require('./card--full-example-light.png').default, dark: require('./card--full-example-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on the card itself -- the variables are listed under CSS variables on this page. They are set through the `style` prop, because a value on a wrapper never reaches the card.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./card--css-customization-light.png').default, dark: require('./card--css-customization-dark.png').default }} />
 
 ## Minimal example
 

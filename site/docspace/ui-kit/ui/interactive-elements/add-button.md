@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Square icon button with an optional label beside it, for adding one more of something. It is
 the "add members" affordance of the portal's selectors: a 32px tile with a plus in it.
 
-<ThemedImage alt="AddButton" width={48} sources={{ light: require('./add-button-light.png').default, dark: require('./add-button-dark.png').default }} />
+<ThemedImage alt="AddButton" width={48} sources={{ light: require('./add-button--primary-light.png').default, dark: require('./add-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,65 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`. It reads the colour
 scheme directly, not only the theme class — `isAction` and `size` do nothing without one.
+
+
+## Stories
+
+### Default
+
+The bare square with a plus, for a list that needs one more item and has room for no label. Click it, or press Tab and then Enter, and the Actions panel logs the call (`onClick`, `tabIndex`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={48} sources={{ light: require('./add-button--default-light.png').default, dark: require('./add-button--default-dark.png').default }} />
+
+### With Label
+
+A label says what gets added when a bare plus would leave the reader guessing, and clicking the words adds too. **Add user** is the grey square; **Add group** is the accent tint (`isAction`).
+
+<ThemedImage alt="With Label" width={384} sources={{ light: require('./add-button--with-label-light.png').default, dark: require('./add-button--with-label-dark.png').default }} />
+
+### Disabled States
+
+A disabled button stays in place so the reader sees the action exists but is not available now: the square turns a lighter grey, the icon greys out and the label dims, and clicks and Enter are ignored (`isDisabled`).
+
+<ThemedImage alt="Disabled States" width={438} sources={{ light: require('./add-button--disabled-states-light.png').default, dark: require('./add-button--disabled-states-dark.png').default }} />
+
+### Accent Style
+
+The accent tint marks the add button that matters most on a screen. **Default** is the grey square; **Accent** is tinted with the theme's accent colour (`isAction`).
+
+<ThemedImage alt="Accent Style" width={311} sources={{ light: require('./add-button--accent-style-light.png').default, dark: require('./add-button--accent-style-dark.png').default }} />
+
+### Loading State
+
+While the item is being added, a spinner stands in for the icon so a second click does not add it twice; clicks are ignored until loading ends, and the square keeps its size (`isLoading`).
+
+<ThemedImage alt="Loading State" width={48} sources={{ light: require('./add-button--loading-state-light.png').default, dark: require('./add-button--loading-state-dark.png').default }} />
+
+### Truncated Label
+
+In a narrow column a long label is cut with an ellipsis instead of wrapping under the square; the parent here is 150px wide (`truncate`).
+
+<ThemedImage alt="Truncated Label" width={166} sources={{ light: require('./add-button--truncated-label-light.png').default, dark: require('./add-button--truncated-label-dark.png').default }} />
+
+### Custom Icon Size
+
+A bigger square and icon suit a roomier layout. **Default** is the 32px square with a 12px icon; **Large icon** is a 36px square (`size`) with a 16px icon (`iconSize`).
+
+<ThemedImage alt="Custom Icon Size" width={315} sources={{ light: require('./add-button--custom-icon-size-light.png').default, dark: require('./add-button--custom-icon-size-dark.png').default }} />
+
+### With Custom Icon
+
+When a plus does not say enough about what gets added, the square can carry any icon; here a folder icon at 16px (`iconNode`, `iconSize`). An icon given by URL is fetched at runtime instead (`iconName`).
+
+<ThemedImage alt="With Custom Icon" width={121} sources={{ light: require('./add-button--with-custom-icon-light.png').default, dark: require('./add-button--with-custom-icon-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+**Add item** shows the square, icon and gap variables; hover and press it near its edge to see the hover and active colours. **Disabled** is there for `--add-button-text-disabled`, the only variable that survives the disabled state: the theme draws its square and icon in its own greys.
+
+<ThemedImage alt="Css Customization" width={251} sources={{ light: require('./add-button--css-customization-light.png').default, dark: require('./add-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

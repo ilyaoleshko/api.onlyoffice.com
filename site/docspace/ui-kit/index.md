@@ -13,3 +13,4 @@ The reference is organised into these sections:
 | [Getting started](./getting-started/index.md) | What the kit is, how to install it, and the pieces every application sets up once: the theme and translation providers, the API client, and the hooks, utilities and constants the components share. |
 | [Components](./components/index.md) | The composites built from the UI components for the portal's screens. |
 | [UI](./ui/index.md) | The components themselves, grouped by what they do on a page: controls, overlays, data display, navigation, feedback and layout. |
+| [Samples](./samples/index.md) | Applications built from the kit against a portal: a client cabinet for a law firm, held through a whole track of screens, and a small Files app. |

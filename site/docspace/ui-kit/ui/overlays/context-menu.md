@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Menu opened at the pointer through a ref, with submenus, a mobile sheet form and working
 keyboard navigation. It has no visibility prop: you keep a ref and call `show(event)`.
 
-<ThemedImage alt="ContextMenu" width={288} sources={{ light: require('./context-menu-light.png').default, dark: require('./context-menu-dark.png').default }} />
+<ThemedImage alt="ContextMenu" width={288} sources={{ light: require('./context-menu--primary-light.png').default, dark: require('./context-menu--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,96 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and
 `TranslationProvider` from `@onlyoffice/apps-ui-kit/providers/translation` for the labels the
 menu supplies itself on the mobile sheet.
+
+
+## Stories
+
+### Default
+
+Full-featured context menu with icons, separators, nested submenus and a disabled item. Disabled items are dropped from the list by default; `showDisabledItems` keeps them greyed out. Right-click the colored area to open.
+
+<ThemedImage alt="Default" width={216} sources={{ light: require('./context-menu--default-light.png').default, dark: require('./context-menu--default-dark.png').default }} />
+
+### Simple Menu
+
+A flat list of actions with one separator and no submenus — the shape most row and card menus need, with nothing but `ref` and `model` set. Right-click the colored area to open.
+
+<ThemedImage alt="Simple Menu" width={216} sources={{ light: require('./context-menu--simple-menu-light.png').default, dark: require('./context-menu--simple-menu-dark.png').default }} />
+
+### With Backdrop
+
+Context menu with a backdrop overlay. `withBackdrop` shows the backdrop only while the menu is a bottom sheet (viewports up to 600px), so on a desktop viewport it also needs `ignoreChangeView`, which this story passes. The mobile stories below set both props too, so the sheet and its backdrop appear however short the menu is.
+
+<ThemedImage alt="With Backdrop" width={216} sources={{ light: require('./context-menu--with-backdrop-light.png').default, dark: require('./context-menu--with-backdrop-dark.png').default }} />
+
+### With Item Descriptions
+
+Items carrying `description` are laid out as two lines: the label row and an always-visible description under it. The menu grows to the width of its longest description.
+
+<ThemedImage alt="With Item Descriptions" width={216} sources={{ light: require('./context-menu--with-item-descriptions-light.png').default, dark: require('./context-menu--with-item-descriptions-dark.png').default }} />
+
+### Item Variants
+
+Every kind of item the model supports, in one menu. From top to bottom:
+
+- **Notifications** — a switch inside the item (`withToggle`, `checked`). Clicking it flips the switch and keeps the menu open.
+- **Auto-save** — the same switch, disabled. The label keeps its color and only the switch is greyed (`disabledStylesType: "toggle"`); hover the switch to read why it is off (`getTooltipContent` anchored with `tooltipTarget: "toggle"`).
+- **Share with people** — the icon is a React element (`iconNode`) instead of an image URL.
+- **Ask the MCP server** — the MCP server icon (`withMCPIcon`): the server logo when `icon` is given, the first letter of the label otherwise.
+- **Export to PDF** — a text badge after the label (`badgeLabel`).
+- **Version history** — the same badge in the paid-feature color (`badgeLabel` + `isPaidBadge`).
+- **Help Center** — an external link that opens in a new tab (`url`, `target`); `isOutsideLink` adds the arrow.
+- **Delete** — a disabled item. It stays in the list only because of `showDisabledItems`; hover it to read the reason (`getTooltipContent`).
+
+<ThemedImage alt="Item Variants" width={216} sources={{ light: require('./context-menu--item-variants-light.png').default, dark: require('./context-menu--item-variants-dark.png').default }} />
+
+### Dynamic Model
+
+`getContextModel` replaces a static `model`: the getter runs each time the menu opens, so the first item shows the time of that open and the favorite item reads the state changed by its own click. Leading and trailing separators in the result are trimmed.
+
+<ThemedImage alt="Dynamic Model" width={216} sources={{ light: require('./context-menu--dynamic-model-light.png').default, dark: require('./context-menu--dynamic-model-dark.png').default }} />
+
+### Attached To Document
+
+The blue square has no handler of its own and nothing calls `show`: with `global` the menu attaches itself to the whole document, so a right-click on the square and one on the empty space around it open the same menu. Use it for a page-level menu that is not tied to one element.
+
+<ThemedImage alt="Attached To Document" width={790} sources={{ light: require('./context-menu--attached-to-document-light.png').default, dark: require('./context-menu--attached-to-document-dark.png').default }} />
+
+### Max Height
+
+The model has sixteen items, but the menu is only 240px tall — about six and a half rows — and the rest scrolls inside it (`maxHeight`). Hover **Move to**: its submenu has twelve folders and is limited the same way, to 160px (`maxHeightLowerSubmenu`).
+
+<ThemedImage alt="Max Height" width={216} sources={{ light: require('./context-menu--max-height-light.png').default, dark: require('./context-menu--max-height-dark.png').default }} />
+
+### Mobile With Header
+
+Shown at 320px, where the menu is a bottom sheet with the `header` on top: the title and, in the 32px block that `isRoom` gives it, the title's initials on the header `color` (the block renders only when `icon` is set; `color` then replaces the icon). Tap **Move or copy**: the submenu replaces the list in place and the header turns into a back button. `ignoreChangeView` forces the sheet layout regardless of the menu height.
+
+<ThemedImage alt="Mobile With Header" width={790} sources={{ light: require('./context-menu--mobile-with-header-light.png').default, dark: require('./context-menu--mobile-with-header-dark.png').default }} />
+
+### Mobile With Avatar Header
+
+The same bottom sheet with a person as the subject: `header.avatar` renders an avatar instead of the initials block.
+
+<ThemedImage alt="Mobile With Avatar Header" width={790} sources={{ light: require('./context-menu--mobile-with-avatar-header-light.png').default, dark: require('./context-menu--mobile-with-avatar-header-dark.png').default }} />
+
+### Anchored To Element
+
+Click **Actions**: the menu opens under the button, at its left edge, wherever the pointer was (`containerRef`). Use it for a menu that belongs to a toolbar button or a row's action button rather than to a right-click. `leftOffset` and `rightOffset` move it left from that edge; change them live in the Controls panel below.
+
+<ThemedImage alt="Anchored To Element" width={256} sources={{ light: require('./context-menu--anchored-to-element-light.png').default, dark: require('./context-menu--anchored-to-element-dark.png').default }} />
+
+### Right To Left
+
+The menu in a right-to-left interface: it opens to the left of the pointer, the icons sit on the right of the labels, and the third item's submenu opens to the left with its arrow pointing left. The menu renders into the right-to-left container (`appendTo`), because on its own it goes to the end of the page body, outside any `dir` wrapper.
+
+<ThemedImage alt="Right To Left" width={216} sources={{ light: require('./context-menu--right-to-left-light.png').default, dark: require('./context-menu--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every variable a desktop menu can show, passed through the menu's own `style` prop, since the menu is portalled out of any wrapper -- the variables are listed under CSS variables on this page. Hover **Delete** for the hover background, hover **Rename** for the disabled one, and press Arrow Down for the keyboard highlight. The mobile header rows only apply to the bottom sheet.
+
+<ThemedImage alt="Css Customization" width={216} sources={{ light: require('./context-menu--css-customization-light.png').default, dark: require('./context-menu--css-customization-dark.png').default }} />
 
 ## Minimal example
 

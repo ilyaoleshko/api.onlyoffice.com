@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Small tinted button for a secondary action, optionally rendered as another element. It is the
 "clear filter" of a toolbar: accent text on a quiet background, no border.
 
-<ThemedImage alt="ActionButton" width={102} sources={{ light: require('./action-button-light.png').default, dark: require('./action-button-dark.png').default }} />
+<ThemedImage alt="ActionButton" width={102} sources={{ light: require('./action-button--primary-light.png').default, dark: require('./action-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,33 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the accent text colour
 and the hover background.
+
+
+## Stories
+
+### Default
+
+The plain text button for a secondary action; click it to see `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={102} sources={{ light: require('./action-button--default-light.png').default, dark: require('./action-button--default-dark.png').default }} />
+
+### With Icon
+
+An icon before the label makes the action easier to spot in a busy toolbar; the icon takes the text colour (`icon`).
+
+<ThemedImage alt="With Icon" width={122} sources={{ light: require('./action-button--with-icon-light.png').default, dark: require('./action-button--with-icon-dark.png').default }} />
+
+### As Link
+
+The same look for an action that navigates: the button becomes a link and takes `href` (`as`).
+
+<ThemedImage alt="As Link" width={103} sources={{ light: require('./action-button--as-link-light.png').default, dark: require('./action-button--as-link-dark.png').default }} />
+
+### Disabled State
+
+An action that is not available yet stays in place but fades and ignores clicks (`disabled`); it works only on the default `button`.
+
+<ThemedImage alt="Disabled State" width={122} sources={{ light: require('./action-button--disabled-state-light.png').default, dark: require('./action-button--disabled-state-dark.png').default }} />
 
 ## Minimal example
 

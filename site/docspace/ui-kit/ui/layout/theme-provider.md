@@ -13,7 +13,7 @@ The older theme provider: it writes the theme onto the document and supplies the
 context. Almost every component in the kit reads what this sets — the `light` or `dark` class on
 `<body>`, the writing direction and the accent colours — so something has to do this job.
 
-<ThemedImage alt="ThemeProviderComponent" width={370} sources={{ light: require('./theme-provider-light.png').default, dark: require('./theme-provider-dark.png').default }} />
+<ThemedImage alt="ThemeProviderComponent" width={370} sources={{ light: require('./theme-provider--primary-light.png').default, dark: require('./theme-provider--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -41,6 +41,33 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`. The name is
 `import ThemeProvider from …` does not resolve.
 
 It is itself a provider and needs nothing above it.
+
+
+## Stories
+
+### Default
+
+The light theme in the left-to-right direction: the panel reads back what the component wrote onto the page, and its background and text take the theme's colours. Change the theme object live in the Controls panel below; the toolbar's theme and direction switches write over it until the story reloads.
+
+<ThemedImage alt="Default" width={370} sources={{ light: require('./theme-provider--default-light.png').default, dark: require('./theme-provider--default-dark.png').default }} />
+
+### Dark Theme
+
+Use it to switch the page to the dark theme: the panel turns dark with light text, the body class reads `dark`, and the slider switches to its dark look (`isBase: false`).
+
+<ThemedImage alt="Dark Theme" width={370} sources={{ light: require('./theme-provider--dark-theme-light.png').default, dark: require('./theme-provider--dark-theme-dark.png').default }} />
+
+### With Accent Colors
+
+Use it to give accented components your own colour: the slider's thumb and filled track turn green, and the panel reads the new accent back (`currentColorScheme`).
+
+<ThemedImage alt="With Accent Colors" width={370} sources={{ light: require('./theme-provider--with-accent-colors-light.png').default, dark: require('./theme-provider--with-accent-colors-dark.png').default }} />
+
+### Right To Left
+
+Use it for a right-to-left interface: the panel moves to the right edge, its lines align right, the slider fills from the right, and `data-dir` reads `rtl` (`interfaceDirection: "rtl"`).
+
+<ThemedImage alt="Right To Left" width={370} sources={{ light: require('./theme-provider--right-to-left-light.png').default, dark: require('./theme-provider--right-to-left-dark.png').default }} />
 
 ## Minimal example
 
@@ -198,6 +225,6 @@ The component sets none, on any element. Assert on `document.body.classList` or 
 
 ## Related
 
-- [`PortalLogo`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/portal-logo/README.md) — reads the theme in JavaScript, so it needs this above it.
+- [`PortalLogo`](../data-display/portal-logo.md) — reads the theme in JavaScript, so it needs this above it.
 - [`NavMenu`](../navigation/nav-menu.md) — one of the components whose colours come from the classes this sets.
-- [`Section`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/section/README.md) — the portal layout that normally sits under a theme provider.
+- [`Section`](./section.md) — the portal layout that normally sits under a theme provider.

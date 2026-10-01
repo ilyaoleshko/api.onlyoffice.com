@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Range input with the kit's own track and handle. It is a styled `<input type="range">` and
 nothing more — no ticks, no value bubble, no label.
 
-<ThemedImage alt="Slider" width={790} sources={{ light: require('./slider-light.png').default, dark: require('./slider-dark.png').default }} />
+<ThemedImage alt="Slider" width={790} sources={{ light: require('./slider--primary-light.png').default, dark: require('./slider--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -36,6 +36,53 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the track and handle
 colours.
+
+
+## Stories
+
+### Default
+
+A 0–100 slider with the track filled up to the handle (`withPouring`), the usual choice for a setting such as volume or zoom; drag the handle or change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./slider--default-light.png').default, dark: require('./slider--default-dark.png').default }} />
+
+### Disabled State
+
+For a setting that cannot be changed right now: the handle and the filled part of the track turn paler, the unfilled track stays as it is, and the handle no longer moves by mouse or keyboard (`isDisabled`).
+
+<ThemedImage alt="Disabled State" width={790} sources={{ light: require('./slider--disabled-state-light.png').default, dark: require('./slider--disabled-state-dark.png').default }} />
+
+### With Custom Steps
+
+Slider with a custom step size of 5, allowing values of 0, 5, and 10 only.
+
+<ThemedImage alt="With Custom Steps" width={790} sources={{ light: require('./slider--with-custom-steps-light.png').default, dark: require('./slider--with-custom-steps-dark.png').default }} />
+
+### Without Pouring
+
+Slider without the pouring (filled track) effect. The track remains a single color.
+
+<ThemedImage alt="Without Pouring" width={790} sources={{ light: require('./slider--without-pouring-light.png').default, dark: require('./slider--without-pouring-dark.png').default }} />
+
+### With Custom Size
+
+Slider with larger custom thumb and track dimensions for improved touch targets.
+
+<ThemedImage alt="With Custom Size" width={316} sources={{ light: require('./slider--with-custom-size-light.png').default, dark: require('./slider--with-custom-size-dark.png').default }} />
+
+### Right To Left
+
+In a right-to-left interface the minimum sits at the right edge: the fill starts there and grows to the left as the handle is dragged left.
+
+<ThemedImage alt="Right To Left" width={316} sources={{ light: require('./slider--right-to-left-light.png').default, dark: require('./slider--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+The first slider shows every variable. The second is disabled, to show that the theme does not swap in its own colors there: it mixes the disabled thumb and fill from `--slider-handle-color`, so a custom accent survives as a paler version of itself.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./slider--css-customization-light.png').default, dark: require('./slider--css-customization-dark.png').default }} />
 
 ## Minimal example
 

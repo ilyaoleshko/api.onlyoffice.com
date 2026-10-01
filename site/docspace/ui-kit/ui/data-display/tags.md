@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 One row of tags that keeps to its width, collapsing the rest into an overflow tag. It is what a
 room row and a room card use to show their tags on a single line.
 
-<ThemedImage alt="Tags" width={174} sources={{ light: require('./tags-light.png').default, dark: require('./tags-dark.png').default }} />
+<ThemedImage alt="Tags" width={174} sources={{ light: require('./tags--primary-light.png').default, dark: require('./tags--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,55 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, which the tags and the
 overflow menu both read their colours from.
+
+
+## Stories
+
+### Default
+
+<ThemedImage alt="Default" width={174} sources={{ light: require('./tags--default-light.png').default, dark: require('./tags--default-dark.png').default }} />
+
+### Multiple Tags
+
+Five tags side by side, each given an equal share of the row, for when the column count leaves room for all of them.
+
+<ThemedImage alt="Multiple Tags" width={325} sources={{ light: require('./tags--multiple-tags-light.png').default, dark: require('./tags--multiple-tags-dark.png').default }} />
+
+### With Overflow
+
+Three tags and a `...` tag; click it to list the other three in a drop-down, and click an entry to select it (`onSelectTag`). Switch `removeTagIcon` in the Controls panel below to see the entries lose their leading margin.
+
+<ThemedImage alt="With Overflow" width={188} sources={{ light: require('./tags--with-overflow-light.png').default, dark: require('./tags--with-overflow-dark.png').default }} />
+
+### With Tag Objects
+
+**Design** carries an icon before its label, **Review** a suffix after it, and the third tag is only its icon at a fixed width (`isThirdParty`) — the looks a plain string cannot ask for.
+
+<ThemedImage alt="With Tag Objects" width={226} sources={{ light: require('./tags--with-tag-objects-light.png').default, dark: require('./tags--with-tag-objects-dark.png').default }} />
+
+### Show All
+
+All five tags at their natural width with no overflow tag, for a place where every tag must stay visible (`columnCount={-1}`); tags that do not fit are cut off at the container edge.
+
+<ThemedImage alt="Show All" width={256} sources={{ light: require('./tags--show-all-light.png').default, dark: require('./tags--show-all-dark.png').default }} />
+
+### With Create Tag
+
+A plus tag after the two tags, for offering to add one more (`showCreateTag`); clicking it calls `onOptionTagClick`, and it disappears once the tags overflow.
+
+<ThemedImage alt="With Create Tag" width={210} sources={{ light: require('./tags--with-create-tag-light.png').default, dark: require('./tags--with-create-tag-dark.png').default }} />
+
+### With Custom Option Tag
+
+Two tags and a `+1` count instead of `...`, for when the hidden tags belong in a menu of your own: clicking the count opens no drop-down and calls `onOptionTagClick`, and `optionTagRef` points at it for anchoring.
+
+<ThemedImage alt="With Custom Option Tag" width={144} sources={{ light: require('./tags--with-custom-option-tag-light.png').default, dark: require('./tags--with-custom-option-tag-dark.png').default }} />
+
+### Css Customization
+
+The variable is listed under CSS variables on this page. The example sets it to 24px on the document; click the `...` tag to see the entry **Invoice** start further from the menu's edge.
+
+<ThemedImage alt="Css Customization" width={197} sources={{ light: require('./tags--css-customization-light.png').default, dark: require('./tags--css-customization-dark.png').default }} />
 
 ## Minimal example
 

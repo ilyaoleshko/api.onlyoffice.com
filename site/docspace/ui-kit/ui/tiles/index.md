@@ -264,10 +264,11 @@ The following components are available:
 
 | Component | Description |
 | --- | --- |
-| [`BaseTile`](./base-tile.md) | The tile shell: an icon that turns into a checkbox, a slot for the content, a three-dot menu and a lower half. |
-| [`FileTile`](./file-tile.md) | Tile for a document: a thumbnail with badges over it, and a name row with a checkbox and a menu. |
-| [`FolderTile`](./folder-tile.md) | Tile for a folder, as a single name row or, with one flag, a tall card with a picture on top. |
-| [`RoomTile`](./room-tile.md) | Tile for a room: the logo and name on top, and the room's tags along the bottom. |
-| [`TemplateTile`](./template-tile.md) | Tile for a room template: the name on top, and an owner and storage pair along the bottom. |
-| [`TileContainer`](./tile-container.md) | Grid that sorts the tiles it is given into rooms, templates, folders and files and gives two of them a heading. |
-| [`TileContent`](./tile-content.md) | The title slot of a tile: three nested wrappers that give the name its width and its truncation. |
+| [BaseTile](./base-tile.md) | The tile shell: an icon that turns into a checkbox, a slot for the content, a three-dot menu and a lower half. |
+| [FileTile](./file-tile.md) | Tile for a document: a thumbnail with badges over it, and a name row with a checkbox and a menu. |
+| [FolderTile](./folder-tile.md) | Tile for a folder, as a single name row or, with one flag, a tall card with a picture on top. |
+| [RoomTile](./room-tile.md) | Tile for a room: the logo and name on top, and the room's tags along the bottom. |
+| [TilesSkeleton](./tilesskeleton.md) | Placeholder in the shape of a tile listing, shown while the tiles themselves are loading. The Tiles page describes it in full. |
+| [TemplateTile](./template-tile.md) | Tile for a room template: the name on top, and an owner and storage pair along the bottom. |
+| [TileContainer](./tile-container.md) | Grid that sorts the tiles it is given into rooms, templates, folders and files and gives two of them a heading. |
+| [TileContent](./tile-content.md) | The title slot of a tile: three nested wrappers that give the name its width and its truncation. |

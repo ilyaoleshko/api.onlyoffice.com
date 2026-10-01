@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Full-screen layer behind an overlay, transparent by default, that catches the click meant to
 close it. It dims the page only when you ask, or on a phone.
 
-<ThemedImage alt="Backdrop" width={800} sources={{ light: require('./backdrop-light.png').default, dark: require('./backdrop-dark.png').default }} />
+<ThemedImage alt="Backdrop" width={800} sources={{ light: require('./backdrop--primary-light.png').default, dark: require('./backdrop--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,45 @@ its file path.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the dimming colour, which differs between the light and the dark theme.
+
+
+## Stories
+
+### Default
+
+The common case: a dimmed layer behind a dialog that closes it on a click (`withBackground`). Press the button to open it, then click anywhere to close it; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={209} sources={{ light: require('./backdrop--default-light.png').default, dark: require('./backdrop--default-dark.png').default }} />
+
+### Without Background
+
+For a menu or dropdown that must close on an outside click without darkening the page: the layer stays transparent and still catches the click (`withoutBackground`).
+
+<ThemedImage alt="Without Background" width={209} sources={{ light: require('./backdrop--without-background-light.png').default, dark: require('./backdrop--without-background-dark.png').default }} />
+
+### Multiple Backdrops
+
+For a side panel opened over another one: each panel's layer renders even though a backdrop is already on screen, and the second darkens the page further (`isAside`). Open the first backdrop, then the second from the button above it; a click closes the top layer first.
+
+<ThemedImage alt="Multiple Backdrops" width={193} sources={{ light: require('./backdrop--multiple-backdrops-light.png').default, dark: require('./backdrop--multiple-backdrops-dark.png').default }} />
+
+### Modal Dialog Backdrop
+
+For a modal dialog on a touch screen: the layer keeps catching taps that close the dialog, but no longer blocks touch scrolling (`isModalDialog`).
+
+<ThemedImage alt="Modal Dialog Backdrop" width={176} sources={{ light: require('./backdrop--modal-dialog-backdrop-light.png').default, dark: require('./backdrop--modal-dialog-backdrop-dark.png').default }} />
+
+### With Custom Z Index
+
+When the covered content has to sit above other high layers of the page, raise the backdrop's stacking order and place the content one step above it — here 500 and 501 instead of the default 203 (`zIndex`).
+
+<ThemedImage alt="With Custom Z Index" width={307} sources={{ light: require('./backdrop--with-custom-z-index-light.png').default, dark: require('./backdrop--with-custom-z-index-dark.png').default }} />
+
+### Css Customization
+
+The dimming colour overridden on a wrapper -- the variables are listed under CSS variables on this page. The stacking order is the `zIndex` prop.
+
+<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./backdrop--css-customization-light.png').default, dark: require('./backdrop--css-customization-dark.png').default }} />
 
 ## Minimal example
 

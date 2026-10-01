@@ -13,7 +13,7 @@ Chip with a cross, for a value the user has picked and can take back. It is what
 draws under its input for every active condition, and what [`DatePicker`](../form-controls/date-picker.md)
 becomes once a date is chosen.
 
-<ThemedImage alt="SelectedItem" width={135} sources={{ light: require('./selected-item-light.png').default, dark: require('./selected-item-dark.png').default }} />
+<ThemedImage alt="SelectedItem" width={135} sources={{ light: require('./selected-item--primary-light.png').default, dark: require('./selected-item--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,67 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`; without it the chip has
 no background and the disabled colours resolve to nothing.
+
+
+## Stories
+
+### Default
+
+The chip as a filter shows a picked value: click the cross to see `onClose` in the Actions panel, click the label for `onClick`, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={135} sources={{ light: require('./selected-item--default-light.png').default, dark: require('./selected-item--default-dark.png').default }} />
+
+### Disabled State
+
+For a value the user may see but not take back: the label and the cross grey out and neither handler fires (`isDisabled`).
+
+<ThemedImage alt="Disabled State" width={137} sources={{ light: require('./selected-item--disabled-state-light.png').default, dark: require('./selected-item--disabled-state-dark.png').default }} />
+
+### Block Display
+
+For a list of picked values stacked one per row: the chip fills the width of its container and pushes the cross to the far end (`isInline={false}`).
+
+<ThemedImage alt="Block Display" width={790} sources={{ light: require('./selected-item--block-display-light.png').default, dark: require('./selected-item--block-display-dark.png').default }} />
+
+### All Variants
+
+How the modes sit together in a filter bar:
+
+- **Inline enabled** and **Another item** — inline chips wrapping in a row
+- **Inline disabled** — the same chip with its label and cross greyed out (`isDisabled`)
+- **Block display item** — a chip that fills the row (`isInline={false}`)
+
+<ThemedImage alt="All Variants" width={790} sources={{ light: require('./selected-item--all-variants-light.png').default, dark: require('./selected-item--all-variants-dark.png').default }} />
+
+### With Icon
+
+For a value that is easier to recognise by its kind: a glyph sits before the label (`icon`, here an SVG component; an SVG URL works too).
+
+<ThemedImage alt="With Icon" width={147} sources={{ light: require('./selected-item--with-icon-light.png').default, dark: require('./selected-item--with-icon-dark.png').default }} />
+
+### Active State
+
+For the chip the user is working with right now: the background tints and the label and icon take the accent colour (`isActive`).
+
+<ThemedImage alt="Active State" width={147} sources={{ light: require('./selected-item--active-state-light.png').default, dark: require('./selected-item--active-state-dark.png').default }} />
+
+### Without Cross
+
+For a value the user can pick but not remove from the chip itself: the cross is left out and only a click on the chip is reported (`hideCross`).
+
+<ThemedImage alt="Without Cross" width={101} sources={{ light: require('./selected-item--without-cross-light.png').default, dark: require('./selected-item--without-cross-dark.png').default }} />
+
+### Truncated Label
+
+For values longer than a chip can hold: the label is cut off with an ellipsis; rest the pointer on the chip to read the full text in the tooltip (`title`). The tooltip is the kit's shared one, so the app must mount `RootTooltip` once, as this story does.
+
+<ThemedImage alt="Truncated Label" width={224} sources={{ light: require('./selected-item--truncated-label-light.png').default, dark: require('./selected-item--truncated-label-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The example has three chips: **Custom item** for the colours and sizes (hover it for the hover background), **Disabled** for `--selected-item-disabled-text` (`isDisabled`), and **Active** for the two active variables (`isActive`).
+
+<ThemedImage alt="Css Customization" width={378} sources={{ light: require('./selected-item--css-customization-light.png').default, dark: require('./selected-item--css-customization-dark.png').default }} />
 
 ## Minimal example
 

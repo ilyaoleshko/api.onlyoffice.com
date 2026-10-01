@@ -13,7 +13,7 @@ Anchor styled to the kit's conventions, for navigation or for an in-place action
 `Text` as an `<a>`, so everything that shapes text — size, weight, truncation — comes from
 there.
 
-<ThemedImage alt="Link" width={81} sources={{ light: require('./link-light.png').default, dark: require('./link-dark.png').default }} />
+<ThemedImage alt="Link" width={81} sources={{ light: require('./link--primary-light.png').default, dark: require('./link--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,89 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree. It
 supplies the link colour, which otherwise falls back to plain black.
+
+
+## Stories
+
+### Default
+
+A page link that opens its address in a new tab. Hover it to see the underline, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={81} sources={{ light: require('./link--default-light.png').default, dark: require('./link--default-dark.png').default }} />
+
+### Page Links
+
+Page links navigate to another address; hover the regular one to see the solid underline a page link grows. **Bold page link** (`isBold`), **Hovered page link** keeps the underline on without a pointer (`isHovered`), **Semitransparent page link** is drawn at half opacity (`isSemitransparent`).
+
+<ThemedImage alt="Page Links" width={790} sources={{ light: require('./link--page-links-light.png').default, dark: require('./link--page-links-dark.png').default }} />
+
+### Action Links
+
+Action links run code in place instead of navigating, for filtering a list or opening a menu; hover the regular one to see the dashed underline that sets them apart from page links. The four links show the same states as the page links above.
+
+<ThemedImage alt="Action Links" width={790} sources={{ light: require('./link--action-links-light.png').default, dark: require('./link--action-links-dark.png').default }} />
+
+### All Variants
+
+Page and action links side by side, to compare the two underlines and the states each type shares: bold, hovered and semitransparent.
+
+<ThemedImage alt="All Variants" width={790} sources={{ light: require('./link--all-variants-light.png').default, dark: require('./link--all-variants-dark.png').default }} />
+
+### Hovered State
+
+The link shows its hover underline with no pointer over it, as it should inside a row that highlights its link while the whole row is hovered (`isHovered`).
+
+<ThemedImage alt="Hovered State" width={92} sources={{ light: require('./link--hovered-state-light.png').default, dark: require('./link--hovered-state-dark.png').default }} />
+
+### Semitransparent State
+
+The link at half opacity, to mark an entity that is pending or inactive while keeping it clickable (`isSemitransparent`).
+
+<ThemedImage alt="Semitransparent State" width={142} sources={{ light: require('./link--semitransparent-state-light.png').default, dark: require('./link--semitransparent-state-dark.png').default }} />
+
+### With Text Overflow
+
+A label longer than its 200px container stays on one line and ends with an ellipsis, so it cannot push the layout wider (`isTextOverflow` with `truncate`).
+
+<ThemedImage alt="With Text Overflow" width={216} sources={{ light: require('./link--with-text-overflow-light.png').default, dark: require('./link--with-text-overflow-dark.png').default }} />
+
+### No Hover Effect
+
+Hover the link: no underline appears, for a link whose surroundings already show that it is clickable (`noHover`).
+
+<ThemedImage alt="No Hover Effect" width={134} sources={{ light: require('./link--no-hover-effect-light.png').default, dark: require('./link--no-hover-effect-dark.png').default }} />
+
+### With Tooltip
+
+Hover the link to read what it opens, for a label too short to say it (`title`). The text appears in the app's shared tooltip, not the browser's native one, so it shows only where the app mounts `RootTooltip`.
+
+<ThemedImage alt="With Tooltip" width={98} sources={{ light: require('./link--with-tooltip-light.png').default, dark: require('./link--with-tooltip-dark.png').default }} />
+
+### Keyboard Accessible Action
+
+Press Tab to reach the link: an action link has no address, so without a role and a tab stop the keyboard skips it and a screen reader does not announce it. Here it is announced as a button (`role`), sits in the Tab order (`tabIndex`) and runs its action from the keys the handler checks (`onKeyDown`).
+
+<ThemedImage alt="Keyboard Accessible Action" width={112} sources={{ light: require('./link--keyboard-accessible-action-light.png').default, dark: require('./link--keyboard-accessible-action-dark.png').default }} />
+
+### Custom Color
+
+Colour draws the eye to a link inside plain text: the label takes any CSS colour (`color`). The value `accent` uses the accent colour of the portal instead, which this Storybook does not define, so it is not shown here.
+
+<ThemedImage alt="Custom Color" width={129} sources={{ light: require('./link--custom-color-light.png').default, dark: require('./link--custom-color-dark.png').default }} />
+
+### Text Decorations
+
+A link inside a paragraph is easier to spot when it is underlined before the pointer reaches it. **Underlined link** keeps a solid underline, **Dashed action link** a dashed one (`textDecoration`); the line stays the same on hover.
+
+<ThemedImage alt="Text Decorations" width={790} sources={{ light: require('./link--text-decorations-light.png').default, dark: require('./link--text-decorations-dark.png').default }} />
+
+### Css Customization
+
+Overridable variables set on a wrapper and on the link itself -- the variables are listed under CSS variables on this page.
+
+**Custom color link** is a page link: it takes the colour from the wrapper, and on hover shows no underline (`--link-hover-page-text-decoration`). **Custom action link** is there for the variables an action link reads: hover it for a wavy underline (`--link-hover-text-decoration`); at rest it carries a dotted underline and a taller line (`--link-text-decoration`, `--link-line-height`, through its `style` prop). `--link-display` is not shown: in a column of links its effect cannot be seen.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./link--css-customization-light.png').default, dark: require('./link--css-customization-dark.png').default }} />
 
 ## Minimal example
 

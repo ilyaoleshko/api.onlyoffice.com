@@ -13,7 +13,7 @@ Tile for a room: the logo and name on top, and the room's tags along the bottom.
 [`BaseTile`](./base-tile.md) with a tag row built for it, and the tag row is the part that
 makes it worth using rather than building your own.
 
-<ThemedImage alt="RoomTile" width={316} sources={{ light: require('./room-tile-light.png').default, dark: require('./room-tile-dark.png').default }} />
+<ThemedImage alt="RoomTile" width={316} sources={{ light: require('./room-tile--primary-light.png').default, dark: require('./room-tile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,6 +42,67 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 Needs `ThemeProvider` for its colours and `TranslationProvider` for two labels it asks the kit's
 own translation hook for: the three-dot button's tooltip, and the `NoTags` line an AI agent gets
 when it has no tags.
+
+
+## Stories
+
+### Default
+
+A room with one tag: the logo, the name with a pin badge, the menu, and the tag row below. Hover the logo and tick the checkbox to select the room, click anywhere else or on the tag to see the callbacks in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./room-tile--default-light.png').default, dark: require('./room-tile--default-dark.png').default }} />
+
+### Checked
+
+A selected room, as it looks among others the reader has picked: the checkbox stays ticked in place of the logo and the tile and its tags are tinted (`checked`).
+
+<ThemedImage alt="Checked" width={316} sources={{ light: require('./room-tile--checked-light.png').default, dark: require('./room-tile--checked-dark.png').default }} />
+
+### In Progress
+
+A room that is busy, being created or copied: a small loader stands where the logo and the checkbox were (`inProgress`).
+
+<ThemedImage alt="In Progress" width={316} sources={{ light: require('./room-tile--in-progress-light.png').default, dark: require('./room-tile--in-progress-dark.png').default }} />
+
+### Blocking Operation
+
+A room an operation is running over, which must not be picked or opened until it ends: hover it, click it or right-click it and nothing happens (`isBlockingOperation`). It looks the same as an idle room, so show the operation somewhere else.
+
+<ThemedImage alt="Blocking Operation" width={316} sources={{ light: require('./room-tile--blocking-operation-light.png').default, dark: require('./room-tile--blocking-operation-dark.png').default }} />
+
+### Generated Tags
+
+A room with no tags of its own, kept on a connected storage: the tile makes two tags for it: first the storage, drawn as its icon alone (`providerType`, `thirdPartyIcon`), then the room type (`getRoomTypeName`). Click either to see `selectOption` in the Actions panel.
+
+<ThemedImage alt="Generated Tags" width={316} sources={{ light: require('./room-tile--generated-tags-light.png').default, dark: require('./room-tile--generated-tags-dark.png').default }} />
+
+### With Hotkey Border
+
+The tile the keyboard is on while the reader moves through the grid with the arrow keys: its border turns the accent colour (`showHotkeyBorder`). The tile does not handle the keys itself.
+
+<ThemedImage alt="With Hotkey Border" width={316} sources={{ light: require('./room-tile--with-hotkey-border-light.png').default, dark: require('./room-tile--with-hotkey-border-dark.png').default }} />
+
+### Renaming State
+
+A room whose name is being edited: the logo and the checkbox go, so the name can become a text field, and hovering no longer tints the tile (`isEdit`).
+
+<ThemedImage alt="Renaming State" width={316} sources={{ light: require('./room-tile--renaming-state-light.png').default, dark: require('./room-tile--renaming-state-dark.png').default }} />
+
+### Custom Bottom Row
+
+A room whose bottom row is the host's own: here a line of text that counts the tags and changes when the pointer is over the tile (`customBottomContent`). The tile no longer draws its tags.
+
+<ThemedImage alt="Custom Bottom Row" width={316} sources={{ light: require('./room-tile--custom-bottom-row-light.png').default, dark: require('./room-tile--custom-bottom-row-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page.
+
+Two instances:
+- **Sample Room** — for every variable but the hotkey colour; hover it for `--tile-hover-bg` and `--tile-tag-hover-bg`.
+- **Team Room** — `showHotkeyBorder`, for `--tile-hotkey-color`.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./room-tile--css-customization-light.png').default, dark: require('./room-tile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

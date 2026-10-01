@@ -13,7 +13,7 @@ Sidebar navigation: groups of items, each with an optional sub-menu, a badge and
 form. It owns which section is expanded and nothing else — what is active, and what a click does,
 come from you.
 
-<ThemedImage alt="NavMenu" width={266} sources={{ light: require('./nav-menu-light.png').default, dark: require('./nav-menu-dark.png').default }} />
+<ThemedImage alt="NavMenu" width={266} sources={{ light: require('./nav-menu--primary-light.png').default, dark: require('./nav-menu--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -21,7 +21,7 @@ come from you.
   destinations, some of them with children.
 - Not for a menu that pops open — [`DropDown`](../overlays/drop-down.md) and
   [`ContextMenu`](../overlays/context-menu.md) are the floating ones.
-- Not for the portal's own sidebar chrome — [`Article`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/article/README.md) is the panel with the
+- Not for the portal's own sidebar chrome — [`Article`](../layout/article.md) is the panel with the
   header, the resize handle and the mobile behaviour; this is the list that goes inside it.
 - **There is no router.** Give it `LinkRouter` and each entry with `linkData` becomes your link
   component; without it every entry is a `<button>` and `linkData` is ignored.
@@ -41,6 +41,114 @@ Needs `ThemeProvider` above it in the tree for every colour it paints. In the co
 labels become tooltips through the kit's shared tooltip, which needs `<RootTooltip />` from
 [`Tooltip`](../overlays/tooltip.md) mounted once near the root of the application — without it a
 collapsed rail has no labels at all.
+
+
+## Stories
+
+### Default
+
+The starting point: two captioned groups, the first section open and active. Change the active entry, collapse the menu to a rail or try any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={266} sources={{ light: require('./nav-menu--default-light.png').default, dark: require('./nav-menu--default-dark.png').default }} />
+
+### No Sub Items
+
+For a short menu of plain destinations: one group whose items have no sub-menus, so each entry is a single row with its icon and label.
+
+<ThemedImage alt="No Sub Items" width={266} sources={{ light: require('./nav-menu--no-sub-items-light.png').default, dark: require('./nav-menu--no-sub-items-dark.png').default }} />
+
+### Controlled Active
+
+How a host wires selection: every entry's `onClick` stores its id, and the stored id goes back as `activeItemId`. Click the entries — the highlight follows, and clicking a section without a sub-menu shuts the open one.
+
+<ThemedImage alt="Controlled Active" width={266} sources={{ light: require('./nav-menu--controlled-active-light.png').default, dark: require('./nav-menu--controlled-active-dark.png').default }} />
+
+### Dark Theme
+
+The same menu on a dark surface: inside an element with the `dark` class the captions, labels, icons and highlights switch to the dark palette.
+
+<ThemedImage alt="Dark Theme" width={296} sources={{ light: require('./nav-menu--dark-theme-light.png').default, dark: require('./nav-menu--dark-theme-dark.png').default }} />
+
+### With Badge
+
+To draw attention to an entry with new content:
+
+- **Rooms** — the kit's counter badge with the number 5 (`showBadge`, `labelBadge`)
+- **Agents** — a badge of the host's own in place of the counter (`badgeComponent`)
+
+Press the button below the menu to collapse it to a rail: the badges give way to a dot on each icon.
+
+<ThemedImage alt="With Badge" width={266} sources={{ light: require('./nav-menu--with-badge-light.png').default, dark: require('./nav-menu--with-badge-dark.png').default }} />
+
+### With Animation
+
+To give a click visible feedback while the next page loads: click any entry and its highlight fills from the start of the row to the end (`withAnimation`). Opening another section also shuts the one that was open.
+
+<ThemedImage alt="With Animation" width={266} sources={{ light: require('./nav-menu--with-animation-light.png').default, dark: require('./nav-menu--with-animation-dark.png').default }} />
+
+### With Link Data
+
+For an application with a client-side router: Files, Agents and the two Rooms sub-items render as the router's links to their paths (`LinkRouter`, `linkData`), while Rooms itself stays a button because it opens a sub-menu. Click a link — the path it leads to appears below the menu.
+
+<ThemedImage alt="With Link Data" width={266} sources={{ light: require('./nav-menu--with-link-data-light.png').default, dark: require('./nav-menu--with-link-data-dark.png').default }} />
+
+### Full Sidebar
+
+Two menus assembled into a whole sidebar: the sections at the top scroll, a second menu of settings entries sits at the bottom, followed by a collapse button and the signed-in user. Press the collapse button — both menus switch to the rail together (`iconOnly`), and hovering an icon shows its label.
+
+<ThemedImage alt="Full Sidebar" width={265} sources={{ light: require('./nav-menu--full-sidebar-light.png').default, dark: require('./nav-menu--full-sidebar-dark.png').default }} />
+
+### Collapsed Rail
+
+For a sidebar the user has collapsed to save room (`iconOnly`):
+
+- **Recent** and **Favorites** — the sub-items of Documents, the active section, listed as entries of their own under it, with a gap after the last one
+- **Rooms** — a shut section with a badge, shown as a dot on its icon
+- Hover any icon to read its label; the tooltip is the kit's shared one, so the app mounts `RootTooltip` once, as this story does
+
+<ThemedImage alt="Collapsed Rail" width={56} sources={{ light: require('./nav-menu--collapsed-rail-light.png').default, dark: require('./nav-menu--collapsed-rail-dark.png').default }} />
+
+### With Expand Control
+
+For a touch layout where a section is itself a page: each section gets a chevron at its end (`withExpandControl`). Press the chevron of Rooms — Rooms opens and Documents stays open next to it; press it again to shut Rooms. Clicking a label selects the entry and never shuts a section.
+
+<ThemedImage alt="With Expand Control" width={266} sources={{ light: require('./nav-menu--with-expand-control-light.png').default, dark: require('./nav-menu--with-expand-control-dark.png').default }} />
+
+### Section Badges
+
+For counts that live on sub-items:
+
+- **Documents** — while the section is shut it shows the total, 12, in a badge of its own (`collapsedBadgeComponent`); click it to open the section and the total gives way to the counts inside
+- **Recent** and **Shared** — a counter on each sub-item (`showBadge`, `labelBadge`); click a counter and the sub-item it belongs to is reported below the menu, without selecting it (`onClickBadge`)
+
+<ThemedImage alt="Section Badges" width={266} sources={{ light: require('./nav-menu--section-badges-light.png').default, dark: require('./nav-menu--section-badges-dark.png').default }} />
+
+### With Separator
+
+To set one sub-item apart from the rest without a second section: Trash sits below a gap (`withTopSeparator`). A line is drawn in that gap only once `--nav-menu-separator-color` gives it a colour — the theme sets none, as the CSS Customization story shows.
+
+<ThemedImage alt="With Separator" width={266} sources={{ light: require('./nav-menu--with-separator-light.png').default, dark: require('./nav-menu--with-separator-dark.png').default }} />
+
+### Click Without Expanding
+
+For a section whose click opens a dialog rather than a page: click Invite people — its sub-menu stays shut, because its `onClick` returns `false`, and the message below the menu stands in for the dialog.
+
+<ThemedImage alt="Click Without Expanding" width={266} sources={{ light: require('./nav-menu--click-without-expanding-light.png').default, dark: require('./nav-menu--click-without-expanding-dark.png').default }} />
+
+### Right To Left
+
+The menu in a right-to-left interface: icons and captions start at the right edge, sub-items are indented from the right, and the counter sits at the left end of its row. Below it, the collapsed rail keeps its highlight tile centred on the active icon.
+
+<ThemedImage alt="Right To Left" width={266} sources={{ light: require('./nav-menu--right-to-left-light.png').default, dark: require('./nav-menu--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set through `className` -- the variables, and why a wrapper cannot set them, are listed under CSS variables on this page.
+
+- **The open menu** — every variable but the dot: the caption, the labels, the icons, the active highlight and the line above Trash; hover an entry for the hover colour, and press Tab for the focus outline
+- **The rail** — the dot on the Rooms icon (`--nav-menu-signal-dot-color`), which only the collapsed form shows
+
+<ThemedImage alt="Css Customization" width={266} sources={{ light: require('./nav-menu--css-customization-light.png').default, dark: require('./nav-menu--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -370,6 +478,6 @@ or on the `nav` element.
 
 ## Related
 
-- [`Article`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/article/README.md) — the sidebar panel this list normally sits in.
+- [`Article`](../layout/article.md) — the sidebar panel this list normally sits in.
 - [`DropDown`](../overlays/drop-down.md) — for a menu that floats over the page instead.
 - [`Badge`](../data-display/badge.md) — the counter the entries draw by default.

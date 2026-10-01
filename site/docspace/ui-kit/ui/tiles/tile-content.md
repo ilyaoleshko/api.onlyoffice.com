@@ -13,7 +13,7 @@ The title slot of a tile: three nested wrappers that give the name its width and
 It is what goes in a tile's `children`, and it exists so that every tile in the family lays its
 title out the same way.
 
-<ThemedImage alt="TileContent" width={316} sources={{ light: require('./tile-content-light.png').default, dark: require('./tile-content-dark.png').default }} />
+<ThemedImage alt="TileContent" width={316} sources={{ light: require('./tile-content--primary-light.png').default, dark: require('./tile-content--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,39 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 
 It needs no provider of its own: it sets no colours and reads no context. Whatever you put inside
 it usually does.
+
+
+## Stories
+
+### Default
+
+A file name as a link, the way a tile usually shows it. Click it to see `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./tile-content--default-light.png').default, dark: require('./tile-content--default-dark.png').default }} />
+
+### With Text
+
+A name that should not look clickable, for an item the reader cannot open: plain `Text` in place of a link.
+
+<ThemedImage alt="With Text" width={316} sources={{ light: require('./tile-content--with-text-light.png').default, dark: require('./tile-content--with-text-dark.png').default }} />
+
+### With Multiple Elements
+
+A name with a badge beside it. The slot takes one element, so the name and the badge go inside a wrapper of your own.
+
+<ThemedImage alt="With Multiple Elements" width={316} sources={{ light: require('./tile-content--with-multiple-elements-light.png').default, dark: require('./tile-content--with-multiple-elements-dark.png').default }} />
+
+### Fixed Title Width
+
+A name held to a set width whatever room the tile has, so the names in a grid end at the same point: the slot takes its width from the child's own `containerWidth` prop, and `truncate` on the `Text` cuts the rest off.
+
+<ThemedImage alt="Fixed Title Width" width={316} sources={{ light: require('./tile-content--fixed-title-width-light.png').default, dark: require('./tile-content--fixed-title-width-dark.png').default }} />
+
+### Css Customization
+
+TileContent reads no variables of its own -- the tile's variables it sits in are listed under CSS variables on the BaseTile, FileTile, FolderTile and RoomTile pages. This example sets four of the BaseTile ones on a wrapper; hover the tile to see the hover background.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./tile-content--css-customization-light.png').default, dark: require('./tile-content--css-customization-dark.png').default }} />
 
 ## Minimal example
 

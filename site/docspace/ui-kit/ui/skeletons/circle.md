@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Round loading placeholder with a sweeping highlight, for an avatar or an icon that has not
 arrived yet. Its size comes from `radius`, and the centre has to be moved to match.
 
-<ThemedImage alt="Circle" width={66} sources={{ light: require('./circle-light.png').default, dark: require('./circle-dark.png').default }} />
+<ThemedImage alt="Circle" width={66} sources={{ light: require('./circle--primary-light.png').default, dark: require('./circle--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,57 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 No provider needed: the component draws itself in a fixed black at low opacity and reads
 nothing from the theme.
+
+
+## Stories
+
+### Default
+
+A circle of radius 20 centred in a 50 by 50 box — the radius, the centre and the box size are set together, because the component's own defaults cut the circle off. Change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={66} sources={{ light: require('./circle--default-light.png').default, dark: require('./circle--default-dark.png').default }} />
+
+### Small Avatar
+
+Small avatar-sized circle skeleton, suitable for compact user avatars.
+
+<ThemedImage alt="Small Avatar" width={48} sources={{ light: require('./circle--small-avatar-light.png').default, dark: require('./circle--small-avatar-dark.png').default }} />
+
+### Large Avatar
+
+Large avatar-sized circle skeleton, suitable for profile images.
+
+<ThemedImage alt="Large Avatar" width={96} sources={{ light: require('./circle--large-avatar-light.png').default, dark: require('./circle--large-avatar-dark.png').default }} />
+
+### Custom Colors
+
+A light grey circle for a surface where the default black at low opacity is too faint or the wrong tone, such as a dark one (`backgroundColor`, `foregroundColor` and their opacities).
+
+<ThemedImage alt="Custom Colors" width={66} sources={{ light: require('./circle--custom-colors-light.png').default, dark: require('./circle--custom-colors-dark.png').default }} />
+
+### No Animation
+
+A still circle with no sweeping band, for a page that must not animate or a reader who asked for reduced motion (`animate`).
+
+<ThemedImage alt="No Animation" width={66} sources={{ light: require('./circle--no-animation-light.png').default, dark: require('./circle--no-animation-dark.png').default }} />
+
+### Slow Animation
+
+The band takes 2.5 seconds per sweep instead of 2, for a calmer placeholder on a page that waits longer (`speed`).
+
+<ThemedImage alt="Slow Animation" width={66} sources={{ light: require('./circle--slow-animation-light.png').default, dark: require('./circle--slow-animation-dark.png').default }} />
+
+### Avatar Group
+
+Multiple circle skeletons arranged in a row, simulating an avatar group placeholder.
+
+<ThemedImage alt="Avatar Group" width={200} sources={{ light: require('./circle--avatar-group-light.png').default, dark: require('./circle--avatar-group-dark.png').default }} />
+
+### Css Customization
+
+The component reads no CSS custom property -- see the behaviour notes on this page; its colours come from props. All three circles here set the same four props, at three sizes.
+
+<ThemedImage alt="Css Customization" width={224} sources={{ light: require('./circle--css-customization-light.png').default, dark: require('./circle--css-customization-dark.png').default }} />
 
 ## Minimal example
 

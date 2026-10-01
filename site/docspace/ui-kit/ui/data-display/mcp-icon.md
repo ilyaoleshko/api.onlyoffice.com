@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Square icon for an MCP server: its logo, or the first letter of its name on a grey tile. Four
 fixed sizes, and a fallback that takes over by itself when the image fails to load.
 
-<ThemedImage alt="MCPIcon" width={33} sources={{ light: require('./mcp-icon-light.png').default, dark: require('./mcp-icon-dark.png').default }} />
+<ThemedImage alt="MCPIcon" width={33} sources={{ light: require('./mcp-icon--primary-light.png').default, dark: require('./mcp-icon--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,51 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` above it in the tree for the dark theme, where the tile drops to 10%
 opacity. Without a provider it renders in its light colours.
+
+
+## Stories
+
+### Default
+
+A server with no image of its own: the first letter of its name on a grey tile. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={33} sources={{ light: require('./mcp-icon--default-light.png').default, dark: require('./mcp-icon--default-dark.png').default }} />
+
+### With Image
+
+Use when the server has a logo: the image replaces the letter and fills the whole square (`imgSrc`).
+
+<ThemedImage alt="With Image" width={64} sources={{ light: require('./mcp-icon--with-image-light.png').default, dark: require('./mcp-icon--with-image-dark.png').default }} />
+
+### All Sizes
+
+Pick the size that matches the row it sits in: 16px (Small), 24px (Medium), 32px (Big) and 48px (Large), the letter and the corner radius growing with it (`size`).
+
+<ThemedImage alt="All Sizes" width={212} sources={{ light: require('./mcp-icon--all-sizes-light.png').default, dark: require('./mcp-icon--all-sizes-dark.png').default }} />
+
+### All Sizes With Image
+
+The same four sizes with an image: it is scaled to the square, and no tile is drawn behind it (`imgSrc`).
+
+<ThemedImage alt="All Sizes With Image" width={220} sources={{ light: require('./mcp-icon--all-sizes-with-image-light.png').default, dark: require('./mcp-icon--all-sizes-with-image-dark.png').default }} />
+
+### Broken Image Fallback
+
+Pass a server's image URL without checking it first: when it fails to load, the letter on its tile takes its place (`imgSrc`).
+
+<ThemedImage alt="Broken Image Fallback" width={33} sources={{ light: require('./mcp-icon--broken-image-fallback-light.png').default, dark: require('./mcp-icon--broken-image-fallback-dark.png').default }} />
+
+### With Image Node
+
+Use for an icon your bundler has already inlined as a component: the element is drawn in place of the letter, and nothing replaces it if it is empty (`imgNode`).
+
+<ThemedImage alt="With Image Node" width={64} sources={{ light: require('./mcp-icon--with-image-node-light.png').default, dark: require('./mcp-icon--with-image-node-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. The four sizes share one wrapper that sets all five variables: a round, semi-transparent blue tile with a regular-weight white letter.
+
+<ThemedImage alt="Css Customization" width={212} sources={{ light: require('./mcp-icon--css-customization-light.png').default, dark: require('./mcp-icon--css-customization-dark.png').default }} />
 
 ## Minimal example
 

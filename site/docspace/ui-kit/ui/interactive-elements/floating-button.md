@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Round corner badge that shows the progress of a background operation and opens its panel. It is
 the disc that appears in the bottom corner of the portal while files are uploading.
 
-<ThemedImage alt="FloatingButton" width={71} sources={{ light: require('./floating-button-light.png').default, dark: require('./floating-button-dark.png').default }} />
+<ThemedImage alt="FloatingButton" width={69} sources={{ light: require('./floating-button--primary-light.png').default, dark: require('./floating-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,78 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and specifically its
 colour scheme: the circle's background is the accent colour, and without one it has no
 background at all unless you pass `color`.
+
+
+## Stories
+
+### Default
+
+An upload that has just started, with no progress value yet, so the ring spins; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={71} sources={{ light: require('./floating-button--default-light.png').default, dark: require('./floating-button--default-dark.png').default }} />
+
+### With Progress
+
+Floating button showing upload progress at 45%. The circular progress indicator fills as the percentage increases.
+
+<ThemedImage alt="With Progress" width={64} sources={{ light: require('./floating-button--with-progress-light.png').default, dark: require('./floating-button--with-progress-dark.png').default }} />
+
+### With Alert
+
+A red exclamation mark on the circle's upper edge, for an operation that needs the user's attention, such as one that finished with errors (`alert`).
+
+<ThemedImage alt="With Alert" width={69} sources={{ light: require('./floating-button--with-alert-light.png').default, dark: require('./floating-button--with-alert-dark.png').default }} />
+
+### Completed
+
+A finished operation: the ring fades out, the circle pulses once and a green tick stays on its upper edge (`completed`).
+
+<ThemedImage alt="Completed" width={64} sources={{ light: require('./floating-button--completed-light.png').default, dark: require('./floating-button--completed-dark.png').default }} />
+
+### Stopped
+
+Floating button in stopped state. Shows the minus status icon when the user aborts a running operation, instead of the success checkmark.
+
+<ThemedImage alt="Stopped" width={64} sources={{ light: require('./floating-button--stopped-light.png').default, dark: require('./floating-button--stopped-dark.png').default }} />
+
+### Icon Variants
+
+Floating buttons with different icon variants. Shows the available built-in icons for common operations.
+
+<ThemedImage alt="Icon Variants" width={441} sources={{ light: require('./floating-button--icon-variants-light.png').default, dark: require('./floating-button--icon-variants-dark.png').default }} />
+
+### Without Progress
+
+The bare circle with no ring, for an operation whose progress is not worth showing, or a badge that only opens a panel (`withoutProgress`).
+
+<ThemedImage alt="Without Progress" width={64} sources={{ light: require('./floating-button--without-progress-light.png').default, dark: require('./floating-button--without-progress-dark.png').default }} />
+
+### Without Status Badge
+
+A finished move with no tick on the circle: the ring still fades out, but the badge on the upper edge is hidden whatever the state props say (`withoutStatus`).
+
+<ThemedImage alt="Without Status Badge" width={64} sources={{ light: require('./floating-button--without-status-badge-light.png').default, dark: require('./floating-button--without-status-badge-dark.png').default }} />
+
+### Custom Color
+
+The circle, the ring and the accent parts of the icon in a colour of your own instead of the accent colour, for example one per kind of operation (`color`).
+
+<ThemedImage alt="Custom Color" width={64} sources={{ light: require('./floating-button--custom-color-light.png').default, dark: require('./floating-button--custom-color-dark.png').default }} />
+
+### Custom Icon Image
+
+An image of your own in the middle, 20px wide, for an operation none of the built-in icons fits (`iconUrl`).
+
+<ThemedImage alt="Custom Icon Image" width={71} sources={{ light: require('./floating-button--custom-icon-image-light.png').default, dark: require('./floating-button--custom-icon-image-dark.png').default }} />
+
+### Css Customization
+
+Two buttons under one wrapper that sets the background, the shadow and the icon colour -- the variables are listed under CSS variables on this page.
+
+- **Upload** — the background and the shadow; its icon is one of the accent icons (upload, trash, deletePermanently, other), whose shapes are painted in the background colour, so the icon colour does not reach it
+- **Move** — the icon colour, on an icon that is not an accent one
+
+<ThemedImage alt="Css Customization" width={195} sources={{ light: require('./floating-button--css-customization-light.png').default, dark: require('./floating-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -247,5 +319,5 @@ None of them can be overridden by a prop.
 
 - [`LoadingButton`](../feedback/loading-button.md) — the same idea at 16px, inline in a row.
 - [`ProgressBar`](../status-components/progress-bar.md) — the linear form of the same number.
-- [`OperationsProgressButton`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/operations-progress-button/README.md) — the portal's panel
+- [`OperationsProgressButton`](../feedback/operations-progress-button.md) — the portal's panel
   this badge opens.

@@ -13,7 +13,7 @@ Layout wrapper for one form field: an optional label with a help tooltip, the co
 and its error message. It owns the spacing between fields and the horizontal-versus-vertical
 arrangement of label and control.
 
-<ThemedImage alt="FieldContainer" width={189} sources={{ light: require('./field-container-light.png').default, dark: require('./field-container-dark.png').default }} />
+<ThemedImage alt="FieldContainer" width={189} sources={{ light: require('./field-container--primary-light.png').default, dark: require('./field-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,54 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree:
 the error message takes its colour from a theme-scoped custom property and falls back to an
 unset value without the provider.
+
+
+## Stories
+
+### Default
+
+The label sits in a fixed-width column beside the control, with a help icon that opens a tooltip on click. Click the caption to focus the input (`labelFor`); change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./field-container--default-light.png').default, dark: require('./field-container--default-dark.png').default }} />
+
+### Required
+
+Marks a field the form cannot be sent without: an asterisk follows the caption, and the label is announced as required (`isRequired`).
+
+<ThemedImage alt="Required" width={189} sources={{ light: require('./field-container--required-light.png').default, dark: require('./field-container--required-dark.png').default }} />
+
+### With Error
+
+Tells the user what to correct right under the field: the message appears only while `hasError` is set, in `errorColor`, wrapped at `errorMessageWidth`. The red border belongs to the input, which gets its own `hasError`.
+
+<ThemedImage alt="With Error" width={309} sources={{ light: require('./field-container--with-error-light.png').default, dark: require('./field-container--with-error-dark.png').default }} />
+
+### Vertical Layout
+
+For narrow forms and long captions: the label stacks above the control, and both span the full width of the container (`isVertical`). The label column width does not apply here.
+
+<ThemedImage alt="Vertical Layout" width={189} sources={{ light: require('./field-container--vertical-layout-light.png').default, dark: require('./field-container--vertical-layout-dark.png').default }} />
+
+### With Inline Help
+
+Makes the help icon part of the caption: it is rendered inside the label, after its text, so it follows the caption's own layout instead of standing as a separate element beside it (`inlineHelpButton`).
+
+<ThemedImage alt="With Inline Help" width={189} sources={{ light: require('./field-container--with-inline-help-light.png').default, dark: require('./field-container--with-inline-help-dark.png').default }} />
+
+### Custom Styling
+
+Sets the container apart from the page, here with a background, padding and rounded corners, through `style` and `className`.
+
+<ThemedImage alt="Custom Styling" width={790} sources={{ light: require('./field-container--custom-styling-light.png').default, dark: require('./field-container--custom-styling-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+- **Full Name** — the error message shows the custom colour and top padding
+- **Email** — the gap between the two fields is the custom container margin
+
+<ThemedImage alt="Css Customization" width={309} sources={{ light: require('./field-container--css-customization-light.png').default, dark: require('./field-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 

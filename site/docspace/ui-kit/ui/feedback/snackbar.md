@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Full-width notification bar that sits at the top of a section until it is dismissed. It is the
 portal's "your storage is almost full" strip — a message that stays until the user acts on it.
 
-<ThemedImage alt="SnackBar" width={758} sources={{ light: require('./snackbar-light.png').default, dark: require('./snackbar-dark.png').default }} />
+<ThemedImage alt="SnackBar" width={758} sources={{ light: require('./snackbar--primary-light.png').default, dark: require('./snackbar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,57 @@ spelled `snackbar`/`SnackbarProps`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` — the background and the
 accent stripe come from the theme class it puts on the tree.
+
+
+## Stories
+
+### Default
+
+The bar as most pages show it: a warning icon, a header and a message, with a close cross at the end that calls `onAction`. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={758} sources={{ light: require('./snackbar--default-light.png').default, dark: require('./snackbar--default-dark.png').default }} />
+
+### With Action
+
+When the notice asks for one step, the bar offers it in place of the close cross: the underlined **Take Action** label after the message calls `onAction` (`btnText`).
+
+<ThemedImage alt="With Action" width={758} sources={{ light: require('./snackbar--with-action-light.png').default, dark: require('./snackbar--with-action-dark.png').default }} />
+
+### With Countdown
+
+For a notice that should not outstay its moment: the countdown after the message ticks down from 00:05 and calls `onAction` at zero, where the host removes the bar (`countDownTime`). Here nothing removes it, so only the timer disappears.
+
+<ThemedImage alt="With Countdown" width={758} sources={{ light: require('./snackbar--with-countdown-light.png').default, dark: require('./snackbar--with-countdown-dark.png').default }} />
+
+### With Html Content
+
+When the notice needs bold text or a link, pass it as HTML: it replaces the header and the message, and the markup is sanitized first, which also drops any `style` attribute (`htmlContent`).
+
+<ThemedImage alt="With Html Content" width={758} sources={{ light: require('./snackbar--with-html-content-light.png').default, dark: require('./snackbar--with-html-content-dark.png').default }} />
+
+### Maintenance
+
+A scheduled-maintenance notice is an ordinary bar with its own header and message; there is no separate maintenance look, and `isMaintenance` changes nothing.
+
+<ThemedImage alt="Maintenance" width={758} sources={{ light: require('./snackbar--maintenance-light.png').default, dark: require('./snackbar--maintenance-dark.png').default }} />
+
+### With Additional Header Text
+
+When the header needs a detail such as a time, the smaller **Today, 10:00** line sits right after it (`additionalHeaderText`).
+
+<ThemedImage alt="With Additional Header Text" width={758} sources={{ light: require('./snackbar--with-additional-header-text-light.png').default, dark: require('./snackbar--with-additional-header-text-dark.png').default }} />
+
+### Right To Left
+
+The same bar under a right-to-left interface: the accent stripe moves to the right edge, the icon and header start from the right, and the close cross moves to the left end. The wrapper sets the direction to right-to-left, and the bar's logical properties follow it.
+
+<ThemedImage alt="Right To Left" width={758} sources={{ light: require('./snackbar--right-to-left-light.png').default, dark: require('./snackbar--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The message takes the red text colour while the header keeps the heading colour.
+
+<ThemedImage alt="Css Customization" width={416} sources={{ light: require('./snackbar--css-customization-light.png').default, dark: require('./snackbar--css-customization-dark.png').default }} />
 
 ## Minimal example
 

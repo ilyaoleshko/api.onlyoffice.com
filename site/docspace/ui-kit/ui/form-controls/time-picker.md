@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Two small fields, hours and minutes, that move the caret along as you type. There is no clock,
 no drop-down and — despite the 12-hour option — no AM/PM control.
 
-<ThemedImage alt="TimePicker" width={76} sources={{ light: require('./time-picker-light.png').default, dark: require('./time-picker-dark.png').default }} />
+<ThemedImage alt="TimePicker" width={76} sources={{ light: require('./time-picker--primary-light.png').default, dark: require('./time-picker--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,39 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`.
 
 Times come back as Luxon `DateTime` objects.
+
+
+## Stories
+
+### Default
+
+A 24-hour picker preset to 10:30 (`initialTime`); type `9` in the hours field and watch it become `09` and jump to minutes; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={76} sources={{ light: require('./time-picker--default-light.png').default, dark: require('./time-picker--default-dark.png').default }} />
+
+### With Error
+
+The border turns red to flag a time the form rejected (`hasError`); the fields stay editable so it can be corrected in place.
+
+<ThemedImage alt="With Error" width={76} sources={{ light: require('./time-picker--with-error-light.png').default, dark: require('./time-picker--with-error-dark.png').default }} />
+
+### Twelve Hour Format
+
+Hours stop at 12 (`isTwelveHourFormat`); nothing on screen tells AM from PM, only the `meridiem` behind each box decides what `onChange` receives: the first reports 10:30, the second, showing 02:30, reports 14:30.
+
+<ThemedImage alt="Twelve Hour Format" width={273} sources={{ light: require('./time-picker--twelve-hour-format-light.png').default, dark: require('./time-picker--twelve-hour-format-dark.png').default }} />
+
+### Focus On Render
+
+The picker opens with the hours field selected (`focusOnRender`), so a form that asks for a time first takes the digits without a click; type `14` and the caret moves on to minutes.
+
+<ThemedImage alt="Focus On Render" width={76} sources={{ light: require('./time-picker--focus-on-render-light.png').default, dark: require('./time-picker--focus-on-render-dark.png').default }} />
+
+### Css Customization
+
+The TimePicker and inner TextInput variables set on one wrapper -- the variables are listed under CSS variables on this page. The first box shows the border, background, size and radius variables and the inner fields' text colour; click into it to see `--time-input-focus-border`. The second adds `hasError`, the only state in which `--time-input-error-border` has anything to colour. `--text-input-bg` is set to the same value as `--time-input-bg` so the fields blend into the box.
+
+<ThemedImage alt="Css Customization" width={168} sources={{ light: require('./time-picker--css-customization-light.png').default, dark: require('./time-picker--css-customization-dark.png').default }} />
 
 ## Minimal example
 

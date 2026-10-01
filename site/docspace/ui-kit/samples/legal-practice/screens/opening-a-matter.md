@@ -1,0 +1,68 @@
+---
+custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/docs/samples/legal/opening-a-matter/OpeningAMatter.mdx"
+---
+
+import ThemedImage from '@theme/ThemedImage';
+
+# 05. Opening a matter
+
+The lawyer's side of the whole track in one form. A name, a practice, a
+stage, the client's email and the documents to ask for; press **Open the
+matter** and the room exists, tagged, with its two folders and the client in
+it. Everything the other screens read was written here.
+
+<ThemedImage alt="Default" width={795} sources={{ light: require('./opening-a-matter--default-light.png').default, dark: require('./opening-a-matter--default-dark.png').default }} />
+
+With no portal the matter goes into the demo portal, and the list, the
+cabinet and the client's screens see it at once. Connect a portal and the
+room is made on it, as the owner of the API key; give an email and that
+person is added as a content creator, the role that lets them drop a file
+into a request.
+
+## Four writes, in a lawyer's order
+
+`openMatter` is the same calls the demo-data page makes for the whole
+practice, made once, for one matter, from a form:
+
+| Step          | Call                              | Why it is this call                                                                           |
+| ------------- | --------------------------------- | --------------------------------------------------------------------------------------------- |
+| Room          | `createRoom`                      | a custom room named after the matter; the colour is picked from the demo's palette by name    |
+| Tags          | `createRoomTag`, then `addRoomTags` | `Practice: …` and `Stage: …`; a tag must exist on the portal before a room can carry it       |
+| Checklist     | `createFolder`, once per line     | `From the client`, then a subfolder per ticked request; empty is what "still needed" means    |
+| Firm's folder | `createFolder`                    | `From the firm`, where drafts for the client go                                               |
+| Client        | `setRoomSecurity`                 | the email, as a content creator, the lowest role that may add a file to a folder              |
+
+Each step is reported as it lands, and a refusal stops the run and names
+the step. What was made before it stays: a half-made room is a room in
+ONLYOFFICE that a lawyer finishes by hand, or that
+[Demo data on your portal](../setup/demo-data-on-your-portal.md)
+completes on its next press.
+
+<ThemedImage alt="Source" width={851} sources={{ light: require('./opening-a-matter--block0-light.png').default, dark: require('./opening-a-matter--block0-dark.png').default }} />
+
+## The form, and why these components
+
+- **`ModalDialog` as an aside**, with `withForm`: the body is a form, Enter
+  submits, the footer's primary button is `type="submit"`, and `withBodyScroll`
+  keeps a long form usable on a phone. `isCloseable` is off while the writes
+  run, so a click on the backdrop cannot lose a half-made room out of sight.
+- **`FieldContainer`** around every input: the label, the required mark and
+  the error line in the kit's own spacing. The email field shows its own
+  error; the rest of the form's errors are one sentence under the fields.
+- **`ComboBox`** for practice and stage. Both are closed lists the firm
+  edits in one constant; a free text field would give three spellings of
+  "Real estate" and three matters that never filter together.
+- **`Checkbox`** per request template, and a text field to add one the
+  template does not have. Ticked lines become folders, in this order.
+- **`EmailInput`** for the client, because the portal invites by email and
+  refuses a malformed one after the room is already made; catching it here
+  is cheaper.
+- Not `PeopleSelector`: it browses people already on the portal, and a new
+  client is usually not one yet. The email covers both cases, since the
+  portal resolves an existing account by its address.
+
+<ThemedImage alt="Source" width={851} sources={{ light: require('./opening-a-matter--block1-light.png').default, dark: require('./opening-a-matter--block1-dark.png').default }} />
+
+## The code
+
+<ThemedImage alt="Source" width={851} sources={{ light: require('./opening-a-matter--block2-light.png').default, dark: require('./opening-a-matter--block2-dark.png').default }} />

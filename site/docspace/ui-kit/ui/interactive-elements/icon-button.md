@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Icon that acts as a button, with hover and pressed colours and an optional tooltip. It is the
 control for a row action or a toolbar, where a label would not fit.
 
-<ThemedImage alt="IconButton" width={41} sources={{ light: require('./icon-button-light.png').default, dark: require('./icon-button-dark.png').default }} />
+<ThemedImage alt="IconButton" width={41} sources={{ light: require('./icon-button--primary-light.png').default, dark: require('./icon-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,61 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree for
 the icon's default colour and for `color="accent"`.
+
+
+## Stories
+
+### Default
+
+<ThemedImage alt="Default" width={41} sources={{ light: require('./icon-button--default-light.png').default, dark: require('./icon-button--default-dark.png').default }} />
+
+### With Hover State
+
+Hover over the buttons to see the alternate icon and colour, a cue that the button reacts before it is clicked (`iconHoverName`, `hoverColor`).
+
+<ThemedImage alt="With Hover State" width={120} sources={{ light: require('./icon-button--with-hover-state-light.png').default, dark: require('./icon-button--with-hover-state-dark.png').default }} />
+
+### With Click State
+
+Press and hold the button to see the alternate icon and colour that confirm the press (`iconClickName`, `clickColor`); they stay until the pointer leaves the button.
+
+<ThemedImage alt="With Click State" width={41} sources={{ light: require('./icon-button--with-click-state-light.png').default, dark: require('./icon-button--with-click-state-dark.png').default }} />
+
+### Sizes
+
+Icon buttons at 16, 20, 25, 32 and 40px, so a size can be picked to match the surrounding text or row height (`size`).
+
+<ThemedImage alt="Sizes" width={372} sources={{ light: require('./icon-button--sizes-light.png').default, dark: require('./icon-button--sizes-dark.png').default }} />
+
+### Disabled
+
+Disabled icon buttons ignore clicks and hover and keep their default icon and colour (`isDisabled`). They look the same as enabled ones apart from the arrow cursor, so pair them with a visible reason when the difference matters.
+
+<ThemedImage alt="Disabled" width={120} sources={{ light: require('./icon-button--disabled-light.png').default, dark: require('./icon-button--disabled-dark.png').default }} />
+
+### With Stroke
+
+Stroke mode colours the outlines of the icon's shapes and leaves their own fill as drawn, which suits outline icons (`isStroke`). The two filled icons here show that: each keeps its fill and gains a grey outline.
+
+<ThemedImage alt="With Stroke" width={120} sources={{ light: require('./icon-button--with-stroke-light.png').default, dark: require('./icon-button--with-stroke-dark.png').default }} />
+
+### With Custom Node
+
+A square of initials in place of an SVG icon: any React node can be the icon, rendered inline with no network request (`iconNode`).
+
+<ThemedImage alt="With Custom Node" width={44} sources={{ light: require('./icon-button--with-custom-node-light.png').default, dark: require('./icon-button--with-custom-node-dark.png').default }} />
+
+### With Tooltip
+
+Hover over the button to read what it does: an icon alone rarely says so, and the button renders this tooltip itself, next to the pointer (`tooltipId`, `tooltipContent`).
+
+<ThemedImage alt="With Tooltip" width={41} sources={{ light: require('./icon-button--with-tooltip-light.png').default, dark: require('./icon-button--with-tooltip-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page; here all three are set through the `style` prop, because a value set on a wrapper never arrives. Hover the button to see the hover colour.
+
+<ThemedImage alt="Css Customization" width={48} sources={{ light: require('./icon-button--css-customization-light.png').default, dark: require('./icon-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

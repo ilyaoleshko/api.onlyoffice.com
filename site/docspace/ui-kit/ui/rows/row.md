@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 One row of the file list: an optional checkbox, a start element, the content and a context
 menu. Which parts appear is decided by which props you pass at all, not by their values.
 
-<ThemedImage alt="Row" width={783} sources={{ light: require('./row-light.png').default, dark: require('./row-dark.png').default }} />
+<ThemedImage alt="Row" width={783} sources={{ light: require('./row--primary-light.png').default, dark: require('./row--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -42,6 +42,69 @@ file path.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`, and
 `TranslationProvider` from `@onlyoffice/apps-ui-kit/providers/translation` for the context
 menu's own labels.
+
+
+## Stories
+
+### Default
+
+The row as a file list shows it: click the checkbox to tick and untick it, click the text, open the menu from the three-dot button or with a right-click anywhere on the row, and watch each call in the Actions panel. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={783} sources={{ light: require('./row--default-light.png').default, dark: require('./row--default-dark.png').default }} />
+
+### Modern Layout
+
+A row that keeps its start element where the checkbox would be, so an unselected list shows icons rather than a column of empty boxes (`mode="modern"`). Hover the icon and the checkbox takes its place; tick it and the checkbox stays. Both `checked` and `element` have to be passed, or neither is shown.
+
+<ThemedImage alt="Modern Layout" width={787} sources={{ light: require('./row--modern-layout-light.png').default, dark: require('./row--modern-layout-dark.png').default }} />
+
+### Indeterminate State
+
+A half-ticked checkbox, for a row that stands for a group of which only some items are selected (`indeterminate`).
+
+<ThemedImage alt="Indeterminate State" width={783} sources={{ light: require('./row--indeterminate-state-light.png').default, dark: require('./row--indeterminate-state-dark.png').default }} />
+
+### Disabled State
+
+A row that cannot be selected: the checkbox is greyed out and ignores clicks (`isDisabled`), while a click on the text still reaches `onRowClick` and the three-dot menu still opens.
+
+<ThemedImage alt="Disabled State" width={783} sources={{ light: require('./row--disabled-state-light.png').default, dark: require('./row--disabled-state-dark.png').default }} />
+
+### Loading State
+
+A row that is busy, for example while its file is being copied: a spinner stands in for the checkbox and the icon (`inProgress`), and the text and the three-dot button stay as they are.
+
+<ThemedImage alt="Loading State" width={781} sources={{ light: require('./row--loading-state-light.png').default, dark: require('./row--loading-state-dark.png').default }} />
+
+### Index Editing
+
+A row whose place in a hand-ordered list is being changed: the three-dot button gives way to an up and a down arrow (`isIndexEditingMode`). Click either and the direction arrives in the Actions panel (`onChangeIndex`); moving the row is up to the host.
+
+<ThemedImage alt="Index Editing" width={777} sources={{ light: require('./row--index-editing-light.png').default, dark: require('./row--index-editing-dark.png').default }} />
+
+### With Badges
+
+Extra information at the end of the row, before the three-dot button: the **New** badge (`badgesComponent`) and the **2 versions** note after it (`contentElement`).
+
+<ThemedImage alt="With Badges" width={783} sources={{ light: require('./row--with-badges-light.png').default, dark: require('./row--with-badges-dark.png').default }} />
+
+### Without Border
+
+The last row of a list, or a row that stands alone, usually needs no divider under it: **With a divider** keeps the one-pixel line, **Without a divider** drops it (`withoutBorder`).
+
+<ThemedImage alt="Without Border" width={783} sources={{ light: require('./row--without-border-light.png').default, dark: require('./row--without-border-dark.png').default }} />
+
+### Context Menu Header
+
+A menu that names what it acts on, on a phone-sized screen: tap the three-dot button and a menu taller than 210px opens from the bottom of the screen under a header reading **Quarterly report.docx** with its icon. The row takes the header from the `item` prop of its content, so the content has to accept and carry one; a shorter menu, or any menu on a wide screen, opens beside the row without a header.
+
+<ThemedImage alt="Context Menu Header" width={783} sources={{ light: require('./row--context-menu-header-light.png').default, dark: require('./row--context-menu-header-dark.png').default }} />
+
+### Right To Left
+
+The row in a right-to-left interface: the checkbox and the icon move to the right edge, the text starts from the right, and the badge and the three-dot button sit at the left edge.
+
+<ThemedImage alt="Right To Left" width={776} sources={{ light: require('./row--right-to-left-light.png').default, dark: require('./row--right-to-left-dark.png').default }} />
 
 ## Minimal example
 

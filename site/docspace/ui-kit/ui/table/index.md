@@ -547,3 +547,19 @@ wins over a value set on a wrapper.
 - [`Rows`](../rows/index.md) — the portal's one-line-per-item list.
 - [`ContextMenu`](../overlays/context-menu.md) — the menu every row renders.
 - [`Checkbox`](../form-controls/checkbox.md) — what selection is actually made of.
+
+## In this section
+
+The following components are available:
+
+| Component | Description |
+| --- | --- |
+| [GroupMenuItem](./groupmenuitem.md) | GroupMenuItem is one action button of a TableGroupMenu, the toolbar that replaces the table header while rows are selected. The Table README describes it in full. |
+| [TableCell](./tablecell.md) | TableCell is one cell of a TableRow: a fixed-height box that sits in the column the table's grid gives it. The Table README describes it in full. |
+| [TableHeaderCell](./tableheadercell.md) | TableHeaderCell is the title of one column in a TableHeader, with its sort arrow and the handle that resizes it. The Table README describes it in full. |
+| [TableSettings](./tablesettings.md) | TableSettings is the cog at the end of a TableHeader that opens a list of the columns, each with a checkbox that shows or hides it. The Table README describes it in full. |
+| [TableBody](./tablebody.md) | TableBody holds the rows of a table and, for a long list, renders only the rows in view and asks for the next page as the user scrolls. The Table README describes it in full. |
+| [TableContainer](./tablecontainer.md) | TableContainer is the outer element of a table, the grid that the header, the group menu and the rows are laid out in. The Table README describes it in full. |
+| [TableGroupMenu](./tablegroupmenu.md) | TableGroupMenu is the toolbar that takes the place of the table header while rows are selected, with a select-all checkbox and the actions that apply to the selection. The Table README describes it in full. |
+| [TableHeader](./tableheader.md) | TableHeader is the row of column titles at the top of a table; it also decides the width of every column and writes them onto the table's grid. The Table README describes it in full. |
+| [TableRow](./tablerow.md) | TableRow is one row of a table: its cells followed by a last cell with the row's context menu button. The Table README describes it in full. |

@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Renders a node into another part of the document, after mount, keeping it inside the React
 tree. It is the escape hatch the kit's own overlays use to get out of `overflow: hidden`.
 
-<ThemedImage alt="Portal" width={509} sources={{ light: require('./portal-light.png').default, dark: require('./portal-dark.png').default }} />
+<ThemedImage alt="Portal" width={509} sources={{ light: require('./portal--primary-light.png').default, dark: require('./portal--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,51 @@ import { Portal } from "@onlyoffice/apps-ui-kit/components/portal";
 Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 No provider needed.
+
+
+## Stories
+
+### Default
+
+The content passed in `element` shows inside the dashed container that owns it, not beside the text it was declared next to (`appendTo`). Switch `visible` in the Controls panel below to unmount and mount it again.
+
+<ThemedImage alt="Default" width={509} sources={{ light: require('./portal--default-light.png').default, dark: require('./portal--default-dark.png').default }} />
+
+### Hidden
+
+The container stays empty: with `visible` off the content is not hidden but not mounted at all, so nothing of it reaches the DOM.
+
+<ThemedImage alt="Hidden" width={340} sources={{ light: require('./portal--hidden-light.png').default, dark: require('./portal--hidden-dark.png').default }} />
+
+### Custom Container
+
+Portal rendering into a specific custom container element instead of document.body.
+
+<ThemedImage alt="Custom Container" width={790} sources={{ light: require('./portal--custom-container-light.png').default, dark: require('./portal--custom-container-dark.png').default }} />
+
+### Multiple Portals
+
+Three portals share one container: each is appended after the last, and the portals do nothing about overlap, so every node carries its own position.
+
+<ThemedImage alt="Multiple Portals" width={444} sources={{ light: require('./portal--multiple-portals-light.png').default, dark: require('./portal--multiple-portals-dark.png').default }} />
+
+### Toggle Visibility
+
+Click Show Portal and Close to open and close the content from outside and from inside it. Each close unmounts the content (`visible`), so state held inside it starts over on the next open.
+
+<ThemedImage alt="Toggle Visibility" width={340} sources={{ light: require('./portal--toggle-visibility-light.png').default, dark: require('./portal--toggle-visibility-dark.png').default }} />
+
+### Into Document Body
+
+With no `appendTo`, the content leaves the dashed box it is declared in and lands at the end of the page body, centred on the window by its own fixed position.
+
+<ThemedImage alt="Into Document Body" width={517} sources={{ light: require('./portal--into-document-body-light.png').default, dark: require('./portal--into-document-body-dark.png').default }} />
+
+### Css Customization
+
+Portal has no styles of its own, so the README lists no CSS variables for it: the `--portal-popup-*` variables set here belong to this page's demo popup, and are set on the container the portal appends to so the content picks them up there.
+
+<ThemedImage alt="Css Customization" width={502} sources={{ light: require('./portal--css-customization-light.png').default, dark: require('./portal--css-customization-dark.png').default }} />
 
 ## Minimal example
 

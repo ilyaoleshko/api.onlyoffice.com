@@ -13,7 +13,7 @@ Tile for a folder, as a single name row or, with one flag, a tall card with a pi
 short form is what a folder normally looks like in a tile listing; `isBigFolder` is the form the
 portal uses for a room's own subfolders.
 
-<ThemedImage alt="FolderTile" width={316} sources={{ light: require('./folder-tile-light.png').default, dark: require('./folder-tile-dark.png').default }} />
+<ThemedImage alt="FolderTile" width={316} sources={{ light: require('./folder-tile--primary-light.png').default, dark: require('./folder-tile--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,62 @@ the root barrel `@onlyoffice/apps-ui-kit` as well.
 
 Needs `ThemeProvider` for its colours and `TranslationProvider` for the three-dot button's
 tooltip, which it asks the kit's own translation hook for under the key `TitleShowActions`.
+
+
+## Stories
+
+### Default
+
+A folder as a single row: the icon, the name, and a badge beside the menu. Click the tile to select it, Ctrl- or Shift-click it to see the other callbacks in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={316} sources={{ light: require('./folder-tile--default-light.png').default, dark: require('./folder-tile--default-dark.png').default }} />
+
+### Big
+
+The tall layout, for a grid where folders should stand out as much as files: a picture on top with the badge in its corner, and the name row below it (`isBigFolder`, `temporaryIcon`).
+
+<ThemedImage alt="Big" width={316} sources={{ light: require('./folder-tile--big-light.png').default, dark: require('./folder-tile--big-dark.png').default }} />
+
+### Checked
+
+A selected folder, as it looks among others the reader has picked: the checkbox stays ticked in place of the icon and the whole tile is tinted (`checked`).
+
+<ThemedImage alt="Checked" width={316} sources={{ light: require('./folder-tile--checked-light.png').default, dark: require('./folder-tile--checked-dark.png').default }} />
+
+### In Progress
+
+A folder that is busy, being copied or moved: a small loader stands where the icon and the checkbox were (`inProgress`).
+
+<ThemedImage alt="In Progress" width={316} sources={{ light: require('./folder-tile--in-progress-light.png').default, dark: require('./folder-tile--in-progress-dark.png').default }} />
+
+### With Hotkey Border
+
+The tile the keyboard is on while the reader moves through the grid with the arrow keys: its border turns the accent colour (`showHotkeyBorder`). The tile does not handle the keys itself.
+
+<ThemedImage alt="With Hotkey Border" width={316} sources={{ light: require('./folder-tile--with-hotkey-border-light.png').default, dark: require('./folder-tile--with-hotkey-border-dark.png').default }} />
+
+### Renaming State
+
+A folder whose name is being edited: the icon and the checkbox go, so the name row can hold a text field, and hovering no longer tints the tile (`isEdit`).
+
+<ThemedImage alt="Renaming State" width={316} sources={{ light: require('./folder-tile--renaming-state-light.png').default, dark: require('./folder-tile--renaming-state-dark.png').default }} />
+
+### Right To Left
+
+The same row in a right-to-left layout: the icon moves to the right-hand end, the name is aligned right after it, and the badge and the three-dot button move to the left edge. The wrapper carries `dir="rtl"` for the layout; the side the three-dot menu opens on comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={316} sources={{ light: require('./folder-tile--right-to-left-light.png').default, dark: require('./folder-tile--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page.
+
+Three instances:
+- **My Folder** — the single row, for the border, radius and name variables; hover it for `--tile-hover-bg`, `--tile-hover-text-decoration` and `--tile-bg` behind the icon.
+- **Projects** — the tall layout (`isBigFolder`), for `--tile-bg` and the badge variables.
+- **Archive** — `showHotkeyBorder`, for `--tile-hotkey-color`, in a wrapper of its own that sets `--folder-tile-border-style` to a thicker border.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./folder-tile--css-customization-light.png').default, dark: require('./folder-tile--css-customization-dark.png').default }} />
 
 ## Minimal example
 

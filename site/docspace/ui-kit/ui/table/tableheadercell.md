@@ -1,0 +1,68 @@
+---
+description: "TableHeaderCell is the title of one column in a TableHeader, with its sort arrow and the handle that resizes it.\n\nThe Table README describes it in full."
+custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/table/sub-components/table-header-cell/TableHeaderCell.stories.tsx"
+---
+
+import ThemedImage from '@theme/ThemedImage';
+
+# TableHeaderCell
+
+TableHeaderCell is the title of one column in a TableHeader, with its sort arrow and the handle that resizes it.
+
+The Table README describes it in full.
+
+<ThemedImage alt="TableHeaderCell" width={53} sources={{ light: require('./tableheadercell--primary-light.png').default, dark: require('./tableheadercell--primary-dark.png').default }} />
+
+## Props
+
+<ThemedImage alt="TableHeaderCell props" width={851} sources={{ light: require('./tableheadercell--controls-light.png').default, dark: require('./tableheadercell--controls-dark.png').default }} />
+
+## Stories
+
+### Default
+
+The title of a column the table is not sorted by; hover it to see the arrow that sorts by this column, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={53} sources={{ light: require('./tableheadercell--default-light.png').default, dark: require('./tableheadercell--default-dark.png').default }} />
+
+### Resizable
+
+The short bar at the end of the cell is the handle a user drags to widen the column (`resizable`); here it only reports the press, since TableHeader does the resizing.
+
+<ThemedImage alt="Resizable" width={53} sources={{ light: require('./tableheadercell--resizable-light.png').default, dark: require('./tableheadercell--resizable-dark.png').default }} />
+
+### Sorted By This Column
+
+The column the table is sorted by keeps its arrow on screen without a hover, so the user sees what the list is ordered by (`sortBy` matches the column's `sortBy`).
+
+<ThemedImage alt="Sorted By This Column" width={69} sources={{ light: require('./tableheadercell--sorted-by-this-column-light.png').default, dark: require('./tableheadercell--sorted-by-this-column-dark.png').default }} />
+
+### Without Sorting
+
+A column that cannot sort: no arrow on hover and clicks on the title do nothing, for a list whose order is fixed (`sortingVisible` off).
+
+<ThemedImage alt="Without Sorting" width={157} sources={{ light: require('./tableheadercell--without-sorting-light.png').default, dark: require('./tableheadercell--without-sorting-dark.png').default }} />
+
+### With Unchecked Checkbox
+
+A column with a select-all checkbox that nothing is ticked in yet shows only its title; the checkbox appears once a row is selected.
+
+<ThemedImage alt="With Unchecked Checkbox" width={212} sources={{ light: require('./tableheadercell--with-unchecked-checkbox-light.png').default, dark: require('./tableheadercell--with-unchecked-checkbox-dark.png').default }} />
+
+### With Checked Checkbox
+
+The select-all checkbox before the title once every row is selected (`checkbox.value`); a click on it calls `checkbox.onChange`.
+
+<ThemedImage alt="With Checked Checkbox" width={81} sources={{ light: require('./tableheadercell--with-checked-checkbox-light.png').default, dark: require('./tableheadercell--with-checked-checkbox-dark.png').default }} />
+
+### With Indeterminate Checkbox
+
+The same checkbox partly ticked, for a selection that covers some rows but not all (`checkbox.isIndeterminate`).
+
+<ThemedImage alt="With Indeterminate Checkbox" width={81} sources={{ light: require('./tableheadercell--with-indeterminate-checkbox-light.png').default, dark: require('./tableheadercell--with-indeterminate-checkbox-dark.png').default }} />
+
+### Short Column
+
+A narrow column, such as a row number, keeps 12 pixels before its handle instead of 22, so the title is not cut off (`isShort`).
+
+<ThemedImage alt="Short Column" width={301} sources={{ light: require('./tableheadercell--short-column-light.png').default, dark: require('./tableheadercell--short-column-dark.png').default }} />

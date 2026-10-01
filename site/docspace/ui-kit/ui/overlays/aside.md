@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Panel that slides in from the side of the viewport, with a header and a scrolling body. On a
 phone it comes up from the bottom instead, as a sheet.
 
-<ThemedImage alt="Aside" width={800} sources={{ light: require('./aside-light.png').default, dark: require('./aside-dark.png').default }} />
+<ThemedImage alt="Aside" width={800} sources={{ light: require('./aside--primary-light.png').default, dark: require('./aside--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,65 @@ path.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree, for
 the panel's background and the header's border.
+
+
+## Stories
+
+### Default
+
+The panel with a title and a short text, opened by the button on the page. Close it with the cross or by clicking the dimmed page — that dimming is a `Backdrop` of the story's own, since `Aside` renders none. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={800} sources={{ light: require('./aside--default-light.png').default, dark: require('./aside--default-dark.png').default }} />
+
+### Settings
+
+A short settings form with switches and a save button — the kind of form a side panel holds beside the page it configures.
+
+<ThemedImage alt="Settings" width={800} sources={{ light: require('./aside--settings-light.png').default, dark: require('./aside--settings-dark.png').default }} />
+
+### User Profile
+
+An edit form with an avatar, labelled text fields and two buttons, for changing an item without leaving the page.
+
+<ThemedImage alt="User Profile" width={800} sources={{ light: require('./aside--user-profile-light.png').default, dark: require('./aside--user-profile-dark.png').default }} />
+
+### File Details
+
+The details of a selected file — its properties and the people it is shared with — the most common content of a side panel next to a list.
+
+<ThemedImage alt="File Details" width={800} sources={{ light: require('./aside--file-details-light.png').default, dark: require('./aside--file-details-dark.png').default }} />
+
+### With Back Button
+
+A back arrow before the title, for a panel with several levels: the arrow calls `onBackClick`, logged in the Actions panel, while the cross still closes the panel (`isBackButton`).
+
+<ThemedImage alt="With Back Button" width={800} sources={{ light: require('./aside--with-back-button-light.png').default, dark: require('./aside--with-back-button-dark.png').default }} />
+
+### Without Header
+
+A panel with no header, for content that brings its own title bar. The close cross goes with the header, so the page has to close the panel itself — here a click on the dimmed page does (`withoutHeader`).
+
+<ThemedImage alt="Without Header" width={800} sources={{ light: require('./aside--without-header-light.png').default, dark: require('./aside--without-header-dark.png').default }} />
+
+### Scaled
+
+The panel across the full width of the window instead of 480px, for content that needs the room (`scale`).
+
+<ThemedImage alt="Scaled" width={800} sources={{ light: require('./aside--scaled-light.png').default, dark: require('./aside--scaled-dark.png').default }} />
+
+### Right To Left
+
+The same panel under a right-to-left interface: it is attached to the left edge instead of the right and slides in from there, the back arrow points the other way and the close cross sits on the left of the header. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={800} sources={{ light: require('./aside--right-to-left-light.png').default, dark: require('./aside--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The panel and its header restyled through CSS variables on one wrapper -- the variables are listed under CSS variables on this page, and the header's on the AsideHeader page.
+
+The title here is a node rather than a string, so the color and font-size variables reach it. The back arrow is on to show the gap between it and the title; the phone footer offset shows only in a phone-width window. The margin is left alone because the border does not follow it.
+
+<ThemedImage alt="Css Customization" width={368} sources={{ light: require('./aside--css-customization-light.png').default, dark: require('./aside--css-customization-dark.png').default }} />
 
 ## Minimal example
 

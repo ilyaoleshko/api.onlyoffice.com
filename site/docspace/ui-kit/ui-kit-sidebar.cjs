@@ -17,11 +17,6 @@ const uiKitSidebar = { items: [
       },
       {
         "type": "doc",
-        "id": "docspace/ui-kit/getting-started/installation",
-        "label": "Installation"
-      },
-      {
-        "type": "doc",
         "id": "docspace/ui-kit/getting-started/structure",
         "label": "Structure"
       },
@@ -37,8 +32,18 @@ const uiKitSidebar = { items: [
       },
       {
         "type": "doc",
+        "id": "docspace/ui-kit/getting-started/agent-skills",
+        "label": "Agent skills"
+      },
+      {
+        "type": "doc",
         "id": "docspace/ui-kit/getting-started/api",
         "label": "API"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/getting-started/types-and-roles",
+        "label": "Types and roles"
       },
       {
         "type": "doc",
@@ -66,6 +71,86 @@ const uiKitSidebar = { items: [
     },
     "items": [
       {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/ai-chat",
+        "label": "AI Chat"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/ai-settings",
+        "label": "AI Settings"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/files",
+        "label": "Files"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/rooms",
+        "label": "Rooms"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/forms",
+        "label": "Forms"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/billing",
+        "label": "Billing"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/uploader",
+        "label": "Uploader"
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/components/document-editor",
+        "label": "Document Editor"
+      },
+      {
+        "type": "category",
+        "label": "Selectors",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/components/selectors/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/aiagentselector",
+            "label": "AIAgentSelector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/filesselector",
+            "label": "FilesSelector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/groupsselector",
+            "label": "GroupsSelector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/mcpserversselector",
+            "label": "MCPServersSelector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/peopleselector",
+            "label": "PeopleSelector"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/selectors/roomselector",
+            "label": "RoomSelector"
+          }
+        ]
+      },
+      {
         "type": "category",
         "label": "Providers",
         "link": {
@@ -73,6 +158,11 @@ const uiKitSidebar = { items: [
           "id": "docspace/ui-kit/components/providers/index"
         },
         "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/providers/apiprovider",
+            "label": "ApiProvider"
+          },
           {
             "type": "doc",
             "id": "docspace/ui-kit/components/providers/error-boundary",
@@ -87,6 +177,51 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/components/providers/translation",
             "label": "TranslationProvider"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Errors",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/components/errors/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/accessrestricted",
+            "label": "AccessRestricted"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/error401",
+            "label": "Error401"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/error403",
+            "label": "Error403"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/error404",
+            "label": "Error404"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/errorinvalidlink",
+            "label": "ErrorInvalidLink"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/erroroffline",
+            "label": "ErrorOffline"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/components/errors/errorunavailable",
+            "label": "ErrorUnavailable"
           }
         ]
       }
@@ -285,6 +420,11 @@ const uiKitSidebar = { items: [
           },
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/interactive-elements/image-editor",
+            "label": "ImageEditor"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/interactive-elements/link-with-dropdown",
             "label": "LinkWithDropdown"
           },
@@ -345,6 +485,11 @@ const uiKitSidebar = { items: [
         "items": [
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/article",
+            "label": "Article"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/layout/portal",
             "label": "Portal"
           },
@@ -352,6 +497,11 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/layout/scrollbar",
             "label": "Scrollbar"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout/section",
+            "label": "Section"
           },
           {
             "type": "doc",
@@ -373,6 +523,11 @@ const uiKitSidebar = { items: [
           "id": "docspace/ui-kit/ui/layout-components/index"
         },
         "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/layout-components/articleitem",
+            "label": "ArticleItem"
+          },
           {
             "type": "doc",
             "id": "docspace/ui-kit/ui/layout-components/empty-screen-container",
@@ -410,6 +565,11 @@ const uiKitSidebar = { items: [
           },
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/avatar-editor-dialog",
+            "label": "AvatarEditorDialog"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/overlays/backdrop",
             "label": "Backdrop"
           },
@@ -432,6 +592,11 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/overlays/modal-dialog",
             "label": "ModalDialog"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/overlays/room-logo-cover-dialog",
+            "label": "RoomLogoCoverDialog"
           },
           {
             "type": "doc",
@@ -490,6 +655,11 @@ const uiKitSidebar = { items: [
           },
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/portal-logo",
+            "label": "PortalLogo"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/data-display/quick-actions",
             "label": "QuickActions"
           },
@@ -502,6 +672,11 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/data-display/room-logo",
             "label": "RoomLogo"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/data-display/room-type",
+            "label": "RoomType"
           },
           {
             "type": "doc",
@@ -565,6 +740,11 @@ const uiKitSidebar = { items: [
           },
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/feedback/operations-progress-button",
+            "label": "OperationsProgressButton"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/feedback/public-room-bar",
             "label": "PublicRoomBar"
           },
@@ -600,6 +780,11 @@ const uiKitSidebar = { items: [
         "items": [
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/filter",
+            "label": "Filter"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/navigation/link",
             "label": "Link"
           },
@@ -607,6 +792,11 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/navigation/nav-menu",
             "label": "NavMenu"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/navigation-component",
+            "label": "Navigation"
           },
           {
             "type": "doc",
@@ -622,6 +812,11 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/navigation/tabs",
             "label": "Tabs"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/navigation/two-state-toggle",
+            "label": "TwoStateToggle"
           }
         ]
       },
@@ -647,13 +842,68 @@ const uiKitSidebar = { items: [
             "type": "doc",
             "id": "docspace/ui-kit/ui/rows/row",
             "label": "Row"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/rows/rowsskeleton",
+            "label": "RowsSkeleton"
           }
         ]
       },
       {
-        "type": "doc",
-        "id": "docspace/ui-kit/ui/table/index",
-        "label": "Table"
+        "type": "category",
+        "label": "Table",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/ui/table/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/groupmenuitem",
+            "label": "GroupMenuItem"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablecell",
+            "label": "TableCell"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tableheadercell",
+            "label": "TableHeaderCell"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablesettings",
+            "label": "TableSettings"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablebody",
+            "label": "TableBody"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablecontainer",
+            "label": "TableContainer"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablegroupmenu",
+            "label": "TableGroupMenu"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tableheader",
+            "label": "TableHeader"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/ui/table/tablerow",
+            "label": "TableRow"
+          }
+        ]
       },
       {
         "type": "category",
@@ -685,6 +935,11 @@ const uiKitSidebar = { items: [
           },
           {
             "type": "doc",
+            "id": "docspace/ui-kit/ui/tiles/tilesskeleton",
+            "label": "TilesSkeleton"
+          },
+          {
+            "type": "doc",
             "id": "docspace/ui-kit/ui/tiles/template-tile",
             "label": "TemplateTile"
           },
@@ -699,6 +954,101 @@ const uiKitSidebar = { items: [
             "label": "TileContent"
           }
         ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Samples",
+    "link": {
+      "type": "doc",
+      "id": "docspace/ui-kit/samples/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Legal practice",
+        "link": {
+          "type": "doc",
+          "id": "docspace/ui-kit/samples/legal-practice/index"
+        },
+        "items": [
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/samples/legal-practice/overview",
+            "label": "Overview"
+          },
+          {
+            "type": "doc",
+            "id": "docspace/ui-kit/samples/legal-practice/the-cabinet",
+            "label": "The cabinet"
+          },
+          {
+            "type": "category",
+            "label": "Screens",
+            "link": {
+              "type": "doc",
+              "id": "docspace/ui-kit/samples/legal-practice/screens/index"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/screens/my-matters",
+                "label": "01. My matters"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/screens/inside-a-matter",
+                "label": "02. Inside a matter"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/screens/sending-a-document",
+                "label": "03. Sending a document"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/screens/reading-the-firm-s-draft",
+                "label": "04. Reading the firm's draft"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/screens/opening-a-matter",
+                "label": "05. Opening a matter"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Setup",
+            "link": {
+              "type": "doc",
+              "id": "docspace/ui-kit/samples/legal-practice/setup/index"
+            },
+            "items": [
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/setup/connect-to-a-portal",
+                "label": "Connect to a portal"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/setup/who-is-signed-in",
+                "label": "Who is signed in"
+              },
+              {
+                "type": "doc",
+                "id": "docspace/ui-kit/samples/legal-practice/setup/demo-data-on-your-portal",
+                "label": "Demo data on your portal"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "doc",
+        "id": "docspace/ui-kit/samples/a-small-files-app",
+        "label": "A small Files app"
       }
     ]
   }

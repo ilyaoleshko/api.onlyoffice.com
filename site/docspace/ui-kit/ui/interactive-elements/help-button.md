@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Info icon that opens an explanation on click, for a label that needs more than a label. Unlike
 a tooltip it stays open, so the text inside can hold a link.
 
-<ThemedImage alt="HelpButton" width={28} sources={{ light: require('./help-button-light.png').default, dark: require('./help-button-dark.png').default }} />
+<ThemedImage alt="HelpButton" width={28} sources={{ light: require('./help-button--primary-light.png').default, dark: require('./help-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,57 @@ Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the ico
 tooltip's colours. A **string** tooltip is shown by the shared tooltip, which means
 [`RootTooltip`](../overlays/tooltip.md) has to be mounted somewhere in the application; a node is
 shown by a tooltip this component renders itself and needs nothing.
+
+
+## Stories
+
+### Default
+
+The info icon with a short explanation beside it; click the icon to open it, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={28} sources={{ light: require('./help-button--default-light.png').default, dark: require('./help-button--default-dark.png').default }} />
+
+### Custom Style
+
+An icon larger or in another colour stands out next to a heading rather than a field label. Click each icon to open its tooltip.
+
+<ThemedImage alt="Custom Style" width={136} sources={{ light: require('./help-button--custom-style-light.png').default, dark: require('./help-button--custom-style-dark.png').default }} />
+
+### With Custom Content
+
+An explanation that needs a heading or a list goes in as a React node, which opens in the component's own tooltip with no shared tooltip mounted.
+
+<ThemedImage alt="With Custom Content" width={28} sources={{ light: require('./help-button--with-custom-content-light.png').default, dark: require('./help-button--with-custom-content-dark.png').default }} />
+
+### Tooltip Positions
+
+The side matters when the icon sits at the edge of a form or next to other controls. Click each icon to see its tooltip open on the side written under it.
+
+<ThemedImage alt="Tooltip Positions" width={264} sources={{ light: require('./help-button--tooltip-positions-light.png').default, dark: require('./help-button--tooltip-positions-dark.png').default }} />
+
+### With Text Content
+
+Plain text needs no tooltip of its own: a string is shown by the application's shared tooltip, so it appears only where `RootTooltip` is mounted once, as it is here. Click the icon to open it.
+
+<ThemedImage alt="With Text Content" width={28} sources={{ light: require('./help-button--with-text-content-light.png').default, dark: require('./help-button--with-text-content-dark.png').default }} />
+
+### With Custom Anchor
+
+When the label itself should open the explanation, pass it as children in place of the icon. Click **Storage** to open a tooltip no wider than 240px (`tooltipMaxWidth`).
+
+<ThemedImage alt="With Custom Anchor" width={62} sources={{ light: require('./help-button--with-custom-anchor-light.png').default, dark: require('./help-button--with-custom-anchor-dark.png').default }} />
+
+### Opens On Hover
+
+A one-line hint with nothing to click inside can open on hover instead (`openOnClick={false}`). Point at the icon to open it; the tooltip closes when the pointer leaves.
+
+<ThemedImage alt="Opens On Hover" width={28} sources={{ light: require('./help-button--opens-on-hover-light.png').default, dark: require('./help-button--opens-on-hover-dark.png').default }} />
+
+### Css Customization
+
+The tooltip's variables passed through `tooltipStyle` -- the variables are listed under CSS variables on this page. Click either icon to see the custom colours; the second tooltip's longer text wraps at 180px.
+
+<ThemedImage alt="Css Customization" width={80} sources={{ light: require('./help-button--css-customization-light.png').default, dark: require('./help-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

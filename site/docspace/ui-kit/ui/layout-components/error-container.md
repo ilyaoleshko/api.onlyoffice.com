@@ -13,7 +13,7 @@ Full-screen error page: an animated landscape, a heading, an explanation and one
 It is what the portal shows in place of a page it could not give you — a 404, an expired link,
 a browser it does not support.
 
-<ThemedImage alt="ErrorContainer" width={800} sources={{ light: require('./error-container-light.png').default, dark: require('./error-container-dark.png').default }} />
+<ThemedImage alt="ErrorContainer" width={800} sources={{ light: require('./error-container--primary-light.png').default, dark: require('./error-container--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -27,7 +27,7 @@ a browser it does not support.
 - **The illustration is fixed.** There is no prop for it, it is inlined in the component, and
   its colours are hard-coded: the sky stays pale blue in the dark theme.
 - **Pass `hideLogo` outside a DocSpace portal.** By default the page is topped with
-  [`PortalLogo`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/portal-logo/README.md), which asks a portal endpoint for the white-label mark.
+  [`PortalLogo`](../data-display/portal-logo.md), which asks a portal endpoint for the white-label mark.
 
 ## Import
 
@@ -42,6 +42,51 @@ The component file has a default export, but the folder's `index` re-exports it 
 Needs `ThemeProvider` above it in the tree for the dark theme, where the page background becomes
 black and the muted line lightens. The light values are declared unconditionally, so without a
 provider the page renders correctly in light and never switches.
+
+
+## Stories
+
+### Default
+
+The plain error page: the heading says what happened (`headerText`), the line under it says what to do (`bodyText`), and the muted third line carries a detail such as an error code (`customizedBodyText`). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={800} sources={{ light: require('./error-container--default-light.png').default, dark: require('./error-container--default-dark.png').default }} />
+
+### With Primary Button
+
+**Retry** — a filled button under the message, for the one action that gets the user out of the error (`buttonText` with `onClickButton`). Without the handler the button is not rendered at all.
+
+<ThemedImage alt="With Primary Button" width={800} sources={{ light: require('./error-container--with-primary-button-light.png').default, dark: require('./error-container--with-primary-button-dark.png').default }} />
+
+### In Editor Mode
+
+The same page laid over its host instead of pushing it down (`isEditor`), for a screen such as a document editor that mounts the error on top of a layout of its own.
+
+<ThemedImage alt="In Editor Mode" width={800} sources={{ light: require('./error-container--in-editor-mode-light.png').default, dark: require('./error-container--in-editor-mode-dark.png').default }} />
+
+### With Children
+
+**Please check the following** — a checklist and an error code under the message (`children`), for guidance that does not fit into one line of text.
+
+<ThemedImage alt="With Children" width={800} sources={{ light: require('./error-container--with-children-light.png').default, dark: require('./error-container--with-children-dark.png').default }} />
+
+### With Secondary Button
+
+**Go back** — the same button, outlined (`isPrimaryButton` off), for a page where leaving is the way out rather than an action the user is expected to take.
+
+<ThemedImage alt="With Secondary Button" width={800} sources={{ light: require('./error-container--with-secondary-button-light.png').default, dark: require('./error-container--with-secondary-button-dark.png').default }} />
+
+### Without Logo
+
+The page starts with the illustration, with no logo above it (`hideLogo`), for a host that already shows its own brand or has no portal to take the logo from.
+
+<ThemedImage alt="Without Logo" width={800} sources={{ light: require('./error-container--without-logo-light.png').default, dark: require('./error-container--without-logo-dark.png').default }} />
+
+### Css Customization
+
+Both overridable variables set on one wrapper -- the variables are listed under CSS variables on this page. The example tints the page background and the `customizedBodyText` line.
+
+<ThemedImage alt="Css Customization" width={800} sources={{ light: require('./error-container--css-customization-light.png').default, dark: require('./error-container--css-customization-dark.png').default }} />
 
 ## Minimal example
 
@@ -202,4 +247,4 @@ illustration's pieces carry only their element ids.
 
 - [`EmptyScreenContainer`](./empty-screen-container.md) — for a region with no content rather than a page that failed.
 - [`EmptyView`](./empty-view.md) — the current empty state, with actions as rows.
-- [`PortalLogo`](https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/components/portal-logo/README.md) — the mark this page renders unless you pass `hideLogo`.
+- [`PortalLogo`](../data-display/portal-logo.md) — the mark this page renders unless you pass `hideLogo`.

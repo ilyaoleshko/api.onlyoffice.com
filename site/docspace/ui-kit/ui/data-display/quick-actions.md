@@ -13,7 +13,7 @@ Horizontal strip of large icon tiles that scrolls when the tiles no longer fit. 
 banner of "create a document, create a room, start from a template" at the top of an empty
 section.
 
-<ThemedImage alt="QuickActions" width={776} sources={{ light: require('./quick-actions-light.png').default, dark: require('./quick-actions-dark.png').default }} />
+<ThemedImage alt="QuickActions" width={776} sources={{ light: require('./quick-actions--primary-light.png').default, dark: require('./quick-actions--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,89 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the tile and control
 colours; the dark values are defined on the theme's `.dark` class.
+
+
+## Stories
+
+### Default
+
+Four tiles in a banner 752px wide, the width a content column usually gives it. Click a tile to see its `onClick` in the Actions panel, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={776} sources={{ light: require('./quick-actions--default-light.png').default, dark: require('./quick-actions--default-dark.png').default }} />
+
+### In AI Forms
+
+Four ways to start the same kind of file, each drawn with a different illustration from the set this folder exports: the icons differ in proportions, and each is fitted into the same box without being stretched.
+
+<ThemedImage alt="In AI Forms" width={776} sources={{ light: require('./quick-actions--in-ai-forms-light.png').default, dark: require('./quick-actions--in-ai-forms-dark.png').default }} />
+
+### In AI Chat
+
+Three tiles, fewer than the banner has room for: the row stays centred in the banner and no arrow appears, because there is nothing to scroll.
+
+<ThemedImage alt="In AI Chat" width={584} sources={{ light: require('./quick-actions--in-ai-chat-light.png').default, dark: require('./quick-actions--in-ai-chat-dark.png').default }} />
+
+### Carousel
+
+Five tiles, more than the banner holds. The tiles keep their width and the strip scrolls sideways; wheel, trackpad, touch swipe and the arrows all move the same strip.
+
+At the start only the forward arrow is shown; scroll and the back arrow appears, and at the far end the forward one goes. The arrows float over the strip, so nothing moves when they appear. With a mouse they fade in while the banner is hovered or focused; on a touch screen they stay visible.
+
+<ThemedImage alt="Carousel" width={795} sources={{ light: require('./quick-actions--carousel-light.png').default, dark: require('./quick-actions--carousel-dark.png').default }} />
+
+### Dismissible
+
+The close control in the top corner (`onClose`); hover the banner, then hover the control to read its tooltip, which is also its accessible name (`closeLabel`). A click shows up in the Actions panel.
+
+The control is only rendered when `onClose` is given: a consumer with nowhere to persist the choice would otherwise offer a button that undoes itself on the next load. Hiding the banner is the host's decision to store and to reverse — the component only reports the click.
+
+<ThemedImage alt="Dismissible" width={795} sources={{ light: require('./quick-actions--dismissible-light.png').default, dark: require('./quick-actions--dismissible-dark.png').default }} />
+
+### Link Tiles
+
+Tiles that go somewhere instead of doing something: each is a real link (`href`), so it can be opened in a new tab from the context menu and shows its address in the status bar. **Open the guide** opens a new tab (`target="_blank"`) and gets `rel="noopener noreferrer"` without asking.
+
+<ThemedImage alt="Link Tiles" width={440} sources={{ light: require('./quick-actions--link-tiles-light.png').default, dark: require('./quick-actions--link-tiles-dark.png').default }} />
+
+### Disabled State
+
+**Presentation** is faded and ignores clicks (`disabled`); hover it to read why (`tooltipContent`). Use it to keep an action in its usual place while it cannot be taken, rather than making the row shift by dropping it. A tooltip works the same on an enabled tile.
+
+<ThemedImage alt="Disabled State" width={584} sources={{ light: require('./quick-actions--disabled-state-light.png').default, dark: require('./quick-actions--disabled-state-dark.png').default }} />
+
+### Loading State
+
+Skeleton tiles of the real tiles' size, one per item, while the set of actions is still being worked out (`isLoading`). The banner keeps its height, so the content below does not jump when the tiles arrive. With an empty `items` four skeletons are drawn.
+
+<ThemedImage alt="Loading State" width={776} sources={{ light: require('./quick-actions--loading-state-light.png').default, dark: require('./quick-actions--loading-state-dark.png').default }} />
+
+### Right To Left
+
+The strip in a right-to-left layout: the first tile sits at the right edge, the strip scrolls toward the left, and the fade and the forward arrow move to the left edge with the arrow pointing left. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={795} sources={{ light: require('./quick-actions--right-to-left-light.png').default, dark: require('./quick-actions--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable but the row cap set on one wrapper -- the variables are listed under CSS variables on this page. The example narrows the tiles to 176px and holds the first one 24px off the banner's edge, which still leaves the fourth tile scrolling; hover a tile for the hover background and Tab into the strip for the focus outline.
+
+Set the variables on any ancestor element — they cascade down to all tiles:
+
+```tsx
+<div
+  style={{
+    "--quick-actions-tile-bg": "#1e1b4b",
+    "--quick-actions-tile-bg-hover": "#4338ca",
+    "--quick-actions-tile-color": "#e0e7ff",
+    "--quick-actions-tile-max-width": "176px",
+    "--quick-actions-edge-inset": "24px",
+  } as CSSProperties}
+>
+  <QuickActions items={items} prevLabel="Previous" nextLabel="Next" />
+</div>
+```
+
+<ThemedImage alt="Css Customization" width={744} sources={{ light: require('./quick-actions--css-customization-light.png').default, dark: require('./quick-actions--css-customization-dark.png').default }} />
 
 ## Minimal example
 

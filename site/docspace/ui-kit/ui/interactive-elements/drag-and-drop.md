@@ -13,7 +13,7 @@ Wrapper that turns whatever is inside it into a drop target for files, with no i
 own. It is what the portal puts around a folder row so that files can be dropped onto that
 folder — not a visible upload area.
 
-<ThemedImage alt="DragAndDrop" width={794} sources={{ light: require('./drag-and-drop-light.png').default, dark: require('./drag-and-drop-dark.png').default }} />
+<ThemedImage alt="DragAndDrop" width={794} sources={{ light: require('./drag-and-drop--primary-light.png').default, dark: require('./drag-and-drop--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -39,6 +39,39 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` above it in the tree: the two drag colours are declared only under the
 `.light` and `.dark` classes the provider puts on `<body>`, so without it the highlight resolves to
 an invalid value and nothing is painted.
+
+
+## Stories
+
+### Default
+
+The usual setup: the host keeps its own drag flag and passes it back. Drag files from your desktop over the box to see the background change and the dropped files arrive in the Actions panel (`onDragOver`, `dragging`, `onDrop`).
+
+<ThemedImage alt="Default" width={794} sources={{ light: require('./drag-and-drop--default-light.png').default, dark: require('./drag-and-drop--default-dark.png').default }} />
+
+### With Dragging State
+
+The drag background held on without an actual drag, to check how the highlight looks in each theme (`dragging`). Drag a file over it to see the stronger accept colour on top.
+
+<ThemedImage alt="With Dragging State" width={794} sources={{ light: require('./drag-and-drop--with-dragging-state-light.png').default, dark: require('./drag-and-drop--with-dragging-state-dark.png').default }} />
+
+### Disabled
+
+A target the user may not upload to, faded to 40% (`isDragDisabled`). The fade is only a look: drop a file and it still arrives in the Actions panel, so the host has to ignore it in `onDrop`.
+
+<ThemedImage alt="Disabled" width={794} sources={{ light: require('./drag-and-drop--disabled-light.png').default, dark: require('./drag-and-drop--disabled-dark.png').default }} />
+
+### Nested Targets
+
+A folder row inside a panel that also takes files. Drop a file on the inner box: with `isDropZone` on, the outer counter goes up and the inner one does not, because the drop is handed to the outer target. Turn `isDropZone` off in the Controls panel below and the inner box keeps the drop.
+
+<ThemedImage alt="Nested Targets" width={790} sources={{ light: require('./drag-and-drop--nested-targets-light.png').default, dark: require('./drag-and-drop--nested-targets-dark.png').default }} />
+
+### Css Customization
+
+One wrapper sets all three -- the variables are listed under CSS variables on this page. The first box is held in the dragging state for `--dnd-dragging-bg`; drag a file over it to see `--dnd-accept-bg`. The second box is there for `--dnd-disabled-opacity`, which only `isDragDisabled` switches on.
+
+<ThemedImage alt="Css Customization" width={416} sources={{ light: require('./drag-and-drop--css-customization-light.png').default, dark: require('./drag-and-drop--css-customization-dark.png').default }} />
 
 ## Minimal example
 

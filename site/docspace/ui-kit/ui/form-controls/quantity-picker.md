@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Minus and plus around a number, with an optional slider and quick-add chips. It is the portal's
 "how many users" control, and the number can be typed as well as stepped.
 
-<ThemedImage alt="QuantityPicker" width={790} sources={{ light: require('./quantity-picker-light.png').default, dark: require('./quantity-picker-dark.png').default }} />
+<ThemedImage alt="QuantityPicker" width={790} sources={{ light: require('./quantity-picker--primary-light.png').default, dark: require('./quantity-picker--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,63 @@ subpath: the barrel does not build without four optional peers, see
 [Which import form](../../getting-started/installation.md#which-import-form).
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`.
+
+
+## Stories
+
+### Default
+
+The basic picker: press minus or plus, or type a number between the bounds. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./quantity-picker--default-light.png').default, dark: require('./quantity-picker--default-dark.png').default }} />
+
+### With Slider
+
+A slider under the controls, for covering a wide range quickly: dragging it and pressing the controls move the same number (`showSlider`).
+
+<ThemedImage alt="With Slider" width={793} sources={{ light: require('./quantity-picker--with-slider-light.png').default, dark: require('./quantity-picker--with-slider-dark.png').default }} />
+
+### With Presets
+
+Quick-add tabs for the amounts people pick most: **+10**, **+50** and **+100** each add their amount to the number shown, and stop at the maximum (`items`).
+
+<ThemedImage alt="With Presets" width={790} sources={{ light: require('./quantity-picker--with-presets-light.png').default, dark: require('./quantity-picker--with-presets-dark.png').default }} />
+
+### Disabled
+
+An amount the reader may see but not change: **Unlimited** stands in place of the number as static text that cannot be typed into, and the controls cannot be pressed (`isDisabled`, `disableValue`).
+
+<ThemedImage alt="Disabled" width={790} sources={{ light: require('./quantity-picker--disabled-light.png').default, dark: require('./quantity-picker--disabled-dark.png').default }} />
+
+### With Plus Sign
+
+For a range whose top is open-ended: the number reads **100+**, one step past the maximum, and the slider's far end carries the same label; press minus to come back to 100 (`showPlusSign`).
+
+<ThemedImage alt="With Plus Sign" width={793} sources={{ light: require('./quantity-picker--with-plus-sign-light.png').default, dark: require('./quantity-picker--with-plus-sign-dark.png').default }} />
+
+### With Zero Allowed
+
+For an amount that is either none or at least a minimum: pressing minus at 5 drops straight to 0, and plus from 0 jumps back to 5 (`enableZero`). The line under the number is free text (`underControlsTitle`).
+
+<ThemedImage alt="With Zero Allowed" width={790} sources={{ light: require('./quantity-picker--with-zero-allowed-light.png').default, dark: require('./quantity-picker--with-zero-allowed-dark.png').default }} />
+
+### Minus Locked With Tooltip
+
+When the amount may only grow: pressing minus changes nothing, but the control stays reachable with Tab, and hovering it opens a tooltip that says why (`minusDisabled`, `minusTooltipId`). The tooltip is the host's own.
+
+<ThemedImage alt="Minus Locked With Tooltip" width={790} sources={{ light: require('./quantity-picker--minus-locked-with-tooltip-light.png').default, dark: require('./quantity-picker--minus-locked-with-tooltip-dark.png').default }} />
+
+### Without Controls
+
+The number alone, without the minus and plus controls, for when a slider or typing is the way to change it (`withoutControls`).
+
+<ThemedImage alt="Without Controls" width={793} sources={{ light: require('./quantity-picker--without-controls-light.png').default, dark: require('./quantity-picker--without-controls-dark.png').default }} />
+
+### Right To Left
+
+The picker in a right-to-left layout: plus moves to the left of the number and minus to the right, the slider fills from the right, and the minimum sits at its right end. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={793} sources={{ light: require('./quantity-picker--right-to-left-light.png').default, dark: require('./quantity-picker--right-to-left-dark.png').default }} />
 
 ## Minimal example
 

@@ -13,7 +13,7 @@ Accent button at the top of a side menu that opens a menu of the things a user c
 is the portal's "New document / New folder / Upload" button, and it fills the width it is
 given.
 
-<ThemedImage alt="MainButton" width={226} sources={{ light: require('./main-button-light.png').default, dark: require('./main-button-dark.png').default }} />
+<ThemedImage alt="MainButton" width={226} sources={{ light: require('./main-button--primary-light.png').default, dark: require('./main-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -40,6 +40,63 @@ draws itself with — background, padding, radius, font size and weight — is d
 theme's `.light` / `.dark` class, so without it the button is unstyled text. The menu is a
 [`ContextMenu`](../overlays/context-menu.md), which needs `TranslationProvider` from
 `@onlyoffice/apps-ui-kit/providers/translation` for its own labels.
+
+
+## Stories
+
+### Default
+
+The button with its menu: click it to open the list of things to create, then change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={226} sources={{ light: require('./main-button--default-light.png').default, dark: require('./main-button--default-dark.png').default }} />
+
+### Disabled
+
+MainButton in a disabled state. The button cannot be interacted with and appears with reduced opacity.
+
+<ThemedImage alt="Disabled" width={226} sources={{ light: require('./main-button--disabled-light.png').default, dark: require('./main-button--disabled-dark.png').default }} />
+
+### Disabled With Dropdown
+
+MainButton with a dropdown menu in a disabled state. Both the button and dropdown are non-interactive.
+
+<ThemedImage alt="Disabled With Dropdown" width={326} sources={{ light: require('./main-button--disabled-with-dropdown-light.png').default, dark: require('./main-button--disabled-with-dropdown-dark.png').default }} />
+
+### With Action
+
+For a single action that needs no menu: the button has no arrow, and a click is reported in the Actions panel instead of opening a list (`isDropdown={false}`, `onAction`).
+
+<ThemedImage alt="With Action" width={226} sources={{ light: require('./main-button--with-action-light.png').default, dark: require('./main-button--with-action-dark.png').default }} />
+
+### With Item Descriptions
+
+For choices that need a word of explanation: click the button and each item shows its label with a description under it, while the menu grows wider than the button to fit the text (`description` on the items of `model`).
+
+<ThemedImage alt="With Item Descriptions" width={226} sources={{ light: require('./main-button--with-item-descriptions-light.png').default, dark: require('./main-button--with-item-descriptions-dark.png').default }} />
+
+### With Dropdown
+
+MainButton with a full dropdown menu including icons, nested sub-menus, and separators. Click the button to see the dropdown.
+
+<ThemedImage alt="With Dropdown" width={226} sources={{ light: require('./main-button--with-dropdown-light.png').default, dark: require('./main-button--with-dropdown-dark.png').default }} />
+
+### Without Arrow
+
+For a button whose label alone says it opens a list: the arrow beside the text is gone, yet a click still opens the same menu (`hideArrow`).
+
+<ThemedImage alt="Without Arrow" width={226} sources={{ light: require('./main-button--without-arrow-light.png').default, dark: require('./main-button--without-arrow-dark.png').default }} />
+
+### Right To Left
+
+The button in a right-to-left layout: the text moves to the right edge and the arrow to the left; click it and the menu opens with its icons on the right and the sub-menu chevron on the left. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={226} sources={{ light: require('./main-button--right-to-left-light.png').default, dark: require('./main-button--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on a wrapper around one button -- the variables are listed under CSS variables on this page. Click it to see the menu keep the button's new width.
+
+<ThemedImage alt="Css Customization" width={226} sources={{ light: require('./main-button--css-customization-light.png').default, dark: require('./main-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

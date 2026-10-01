@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Rectangular loading placeholder with a sweeping highlight, sized to the content it stands in
 for. One element per rectangle: a paragraph of three lines is three of these.
 
-<ThemedImage alt="Rectangle" width={216} sources={{ light: require('./rectangle-light.png').default, dark: require('./rectangle-dark.png').default }} />
+<ThemedImage alt="Rectangle" width={216} sources={{ light: require('./rectangle--primary-light.png').default, dark: require('./rectangle--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,51 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 No provider needed: the component draws itself in a fixed black at low opacity and reads
 nothing from the theme.
+
+
+## Stories
+
+### Default
+
+A single placeholder with slightly rounded corners and the sweeping band; change any prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={216} sources={{ light: require('./rectangle--default-light.png').default, dark: require('./rectangle--default-dark.png').default }} />
+
+### Small Circle
+
+A square with half its width as the corner radius turns into a circle (`borderRadius`), for an avatar placeholder that keeps the SSR-safe ids `CircleSkeleton` lacks.
+
+<ThemedImage alt="Small Circle" width={56} sources={{ light: require('./rectangle--small-circle-light.png').default, dark: require('./rectangle--small-circle-dark.png').default }} />
+
+### Custom Colors
+
+A light grey rectangle with a paler band, for a surface where the default black at low opacity does not read, such as a dark theme (`backgroundColor`, `foregroundColor` and their opacities).
+
+<ThemedImage alt="Custom Colors" width={216} sources={{ light: require('./rectangle--custom-colors-light.png').default, dark: require('./rectangle--custom-colors-dark.png').default }} />
+
+### No Animation
+
+The same rectangle without the sweep, for a page that must not animate, such as one shown to a user who asked for reduced motion (`animate`).
+
+<ThemedImage alt="No Animation" width={216} sources={{ light: require('./rectangle--no-animation-light.png').default, dark: require('./rectangle--no-animation-dark.png').default }} />
+
+### Slow Animation
+
+The band takes two and a half seconds to cross instead of two, a calmer pace for a large area (`speed`).
+
+<ThemedImage alt="Slow Animation" width={216} sources={{ light: require('./rectangle--slow-animation-light.png').default, dark: require('./rectangle--slow-animation-dark.png').default }} />
+
+### Grid
+
+Six placeholders filling a three-column grid, each 100% of its cell's width, as a card grid shows while its items load.
+
+<ThemedImage alt="Grid" width={789} sources={{ light: require('./rectangle--grid-light.png').default, dark: require('./rectangle--grid-dark.png').default }} />
+
+### Css Customization
+
+There are no CSS variables to list on this page: the component reads none, as "Behaviour the types don't state" explains, so this example styles three pills of different widths with the same five props: `backgroundColor`, `foregroundColor`, their opacities and `borderRadius`.
+
+<ThemedImage alt="Css Customization" width={296} sources={{ light: require('./rectangle--css-customization-light.png').default, dark: require('./rectangle--css-customization-dark.png').default }} />
 
 ## Minimal example
 

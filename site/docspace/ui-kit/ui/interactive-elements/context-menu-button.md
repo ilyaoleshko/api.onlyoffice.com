@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Icon that opens a menu of actions, built afresh from a callback each time it is clicked. The
 callback is what the menu shows — the `data` prop is read once and then forgotten.
 
-<ThemedImage alt="ContextMenuButton" width={32} sources={{ light: require('./context-menu-button-light.png').default, dark: require('./context-menu-button-dark.png').default }} />
+<ThemedImage alt="ContextMenuButton" width={32} sources={{ light: require('./context-menu-button--primary-light.png').default, dark: require('./context-menu-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,39 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the icon and menu
 colours, and `TranslationProvider` from `@onlyoffice/apps-ui-kit/providers/translation` because
 the items are [`DropDownItem`](../overlays/drop-down-item.md)s.
+
+
+## Stories
+
+### Default
+
+The row-level "more" button: click the dots to open the menu and click again or outside it to close it. Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={32} sources={{ light: require('./context-menu-button--default-light.png').default, dark: require('./context-menu-button--default-dark.png').default }} />
+
+### Disabled
+
+Use it when the actions do not apply to the current item: the icon greys out and a click opens nothing (`isDisabled`).
+
+<ThemedImage alt="Disabled" width={32} sources={{ light: require('./context-menu-button--disabled-light.png').default, dark: require('./context-menu-button--disabled-dark.png').default }} />
+
+### With Icon Border
+
+Gives the icon a larger, boxed click target (`displayIconBorder`): the dots sit in a rounded 32px square. The default theme draws no line around it; set `--cmb-border` to add one, as the CSS customization story does.
+
+<ThemedImage alt="With Icon Border" width={46} sources={{ light: require('./context-menu-button--with-icon-border-light.png').default, dark: require('./context-menu-button--with-icon-border-dark.png').default }} />
+
+### Custom Colors
+
+Matches the icon to the surface it sits on: each button has its own colour, and hovering it shows its hover colour (`color`, `hoverColor`). Click any to open its menu.
+
+<ThemedImage alt="Custom Colors" width={112} sources={{ light: require('./context-menu-button--custom-colors-light.png').default, dark: require('./context-menu-button--custom-colors-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The example opens the menu in a bordered box (`displayIconBorder`), so every variable is on screen at once; hover the dots to see `--cmb-hover-border`. The menu is kept inline (`usePortal={false}`): in a portal it leaves the wrapper, so set the `--dropdown-*` variables on `document.body` instead.
+
+<ThemedImage alt="Css Customization" width={105} sources={{ light: require('./context-menu-button--css-customization-light.png').default, dark: require('./context-menu-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

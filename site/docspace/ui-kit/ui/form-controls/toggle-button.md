@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Switch for one on/off setting, with an optional label beside it. It takes effect the moment it
 is clicked, which is what separates it from a checkbox in a form the user submits later.
 
-<ThemedImage alt="ToggleButton" width={114} sources={{ light: require('./toggle-button-light.png').default, dark: require('./toggle-button-dark.png').default }} />
+<ThemedImage alt="ToggleButton" width={114} sources={{ light: require('./toggle-button--primary-light.png').default, dark: require('./toggle-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,65 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` above it in the tree.
 Without it the switch still renders, in the light palette, and ignores the portal accent
 colour.
+
+
+## Stories
+
+### Default
+
+A single switch with a label, for one setting that takes effect at once; click it to turn it on, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={114} sources={{ light: require('./toggle-button--default-light.png').default, dark: require('./toggle-button--default-dark.png').default }} />
+
+### Checked States
+
+The two positions side by side, so the track colours can be compared; each switch here can be clicked.
+
+- **Unchecked** — grey track, knob at the start
+- **Checked** — accent-coloured track, knob at the end (`isChecked`)
+- The third switch has no `label` and takes only the width of the track
+
+<ThemedImage alt="Checked States" width={575} sources={{ light: require('./toggle-button--checked-states-light.png').default, dark: require('./toggle-button--checked-states-dark.png').default }} />
+
+### Disabled States
+
+A setting that cannot be changed right now, shown in both positions so the reader still sees its value (`isDisabled`):
+
+- **Disabled off** — faded grey track, greyed label
+- **Disabled on** — faded accent track, greyed label; neither responds to a click
+
+<ThemedImage alt="Disabled States" width={387} sources={{ light: require('./toggle-button--disabled-states-light.png').default, dark: require('./toggle-button--disabled-states-dark.png').default }} />
+
+### Loading State
+
+A setting whose change is still being saved: the knob pulses until the work is done (`isLoading`). The switch still takes clicks, so the caller decides whether to ignore them.
+
+- **Loading unchecked** — the knob pulses at the start of the grey track
+- **Loading checked** — the knob pulses at the end of the accent track
+
+<ThemedImage alt="Loading State" width={416} sources={{ light: require('./toggle-button--loading-state-light.png').default, dark: require('./toggle-button--loading-state-dark.png').default }} />
+
+### Without Animation
+
+For a list of many switches or a reduced-motion setting: click either switch and the knob jumps to the other end instead of sliding there (`noAnimation`).
+
+<ThemedImage alt="Without Animation" width={416} sources={{ light: require('./toggle-button--without-animation-light.png').default, dark: require('./toggle-button--without-animation-dark.png').default }} />
+
+### Right To Left
+
+The same switches in a right-to-left interface: the label moves to the left of the switch, and the track is mirrored, so the knob of the off switch sits at the right end and the knob of the on switch at the left. The wrapper carries `dir="rtl"` for the label's side; the mirrored track comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={336} sources={{ light: require('./toggle-button--right-to-left-light.png').default, dark: require('./toggle-button--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page.
+
+- **Off** is there for `--toggle-button-off-color`; hover it to see `--toggle-button-off-hover-color`
+- **On** is there for `--toggle-button-checked-color`
+- Both labels sit 16px from their switch (`--toggle-button-spacing`)
+
+<ThemedImage alt="Css Customization" width={341} sources={{ light: require('./toggle-button--css-customization-light.png').default, dark: require('./toggle-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 

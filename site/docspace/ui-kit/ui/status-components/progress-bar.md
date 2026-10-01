@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 A labelled bar for an operation whose progress you can measure, with a status or error line under
 it. It is three stacked lines — label, bar, status — and it is always as wide as its container.
 
-<ThemedImage alt="ProgressBar" width={790} sources={{ light: require('./progress-bar-light.png').default, dark: require('./progress-bar-dark.png').default }} />
+<ThemedImage alt="ProgressBar" width={790} sources={{ light: require('./progress-bar--primary-light.png').default, dark: require('./progress-bar--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,59 @@ Needs `ThemeProvider` above it in the tree. The track and fill colours are decla
 `light` and `dark` classes it puts on `<body>`, and a colour that does not resolve leaves the
 element with no background at all — **an invisible bar**, not a default-coloured one. Setting
 `--progress-bar-track` and `--progress-bar-fill` yourself is the other way out.
+
+
+## Stories
+
+### Default
+
+Use it for an operation whose progress you can measure: the label names the operation and the fill shows how far it has got (`percent`, `label`). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={790} sources={{ light: require('./progress-bar--default-light.png').default, dark: require('./progress-bar--default-dark.png').default }} />
+
+### With Status
+
+Add a status line when the reader needs more than the fill tells them — how many items are done, what is being processed now (`status`).
+
+<ThemedImage alt="With Status" width={790} sources={{ light: require('./progress-bar--with-status-light.png').default, dark: require('./progress-bar--with-status-dark.png').default }} />
+
+### With Error
+
+When the operation fails, the message takes the place of the status line in the error colour, and the bar stays where it stopped (`error`).
+
+<ThemedImage alt="With Error" width={790} sources={{ light: require('./progress-bar--with-error-light.png').default, dark: require('./progress-bar--with-error-dark.png').default }} />
+
+### Infinite Progress
+
+Use it when the operation cannot report how far it has got: a short strip slides across the track until the bar is removed (`isInfiniteProgress`).
+
+<ThemedImage alt="Infinite Progress" width={790} sources={{ light: require('./progress-bar--infinite-progress-light.png').default, dark: require('./progress-bar--infinite-progress-dark.png').default }} />
+
+### Complete
+
+The finished state: the track is filled completely and the status line confirms the result (`percent={100}`).
+
+<ThemedImage alt="Complete" width={790} sources={{ light: require('./progress-bar--complete-light.png').default, dark: require('./progress-bar--complete-dark.png').default }} />
+
+### Preparation Portal
+
+Use `PreparationPortalProgress` for a full-page wait where the number itself matters: a taller bar with the percentage printed in its middle and a centred caption below (`percent`, `text`). The percentage turns from dark to light once the fill passes 50%; move `percent` in the Controls panel below to see it.
+
+<ThemedImage alt="Preparation Portal" width={790} sources={{ light: require('./progress-bar--preparation-portal-light.png').default, dark: require('./progress-bar--preparation-portal-dark.png').default }} />
+
+### Right To Left
+
+The bar under a right-to-left interface: the label and status line align to the right, the fill grows from the right edge, and the infinite strip in the second bar slides from right to left. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={790} sources={{ light: require('./progress-bar--right-to-left-light.png').default, dark: require('./progress-bar--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page; the example sets every one of them on one wrapper.
+
+The first bar shows the track, fill, size, radius, margin and status colour; the second sets `error` to show `--progress-bar-error-text`, since an error takes the place of the status line.
+
+<ThemedImage alt="Css Customization" width={790} sources={{ light: require('./progress-bar--css-customization-light.png').default, dark: require('./progress-bar--css-customization-dark.png').default }} />
 
 ## Minimal example
 

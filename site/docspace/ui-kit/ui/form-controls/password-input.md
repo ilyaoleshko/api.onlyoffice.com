@@ -13,7 +13,7 @@ Password field with a reveal eye, a strength tooltip and a generator. It is
 [`InputBlock`](./input-block.md) with the eye as its icon and a
 [`Tooltip`](../overlays/tooltip.md) listing the rules the password has to meet.
 
-<ThemedImage alt="PasswordInput" width={206} sources={{ light: require('./password-input-light.png').default, dark: require('./password-input-dark.png').default }} />
+<ThemedImage alt="PasswordInput" width={206} sources={{ light: require('./password-input--primary-light.png').default, dark: require('./password-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -38,6 +38,57 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`. Nothing here is
 translated for you — every label in the tooltip is a prop.
+
+
+## Stories
+
+### Default
+
+The field as a sign-up form uses it: type a character to open the rules tooltip and watch each rule turn green as the value meets it; change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={206} sources={{ light: require('./password-input--default-light.png').default, dark: require('./password-input--default-dark.png').default }} />
+
+### Simple View
+
+A sign-in form only needs the field and the eye button: the simple view drops the rules tooltip and skips rule checking, so the field accepts any value (`simpleView`).
+
+<ThemedImage alt="Simple View" width={336} sources={{ light: require('./password-input--simple-view-light.png').default, dark: require('./password-input--simple-view-dark.png').default }} />
+
+### States
+
+Three fields a form may need side by side: **Normal**, ready for input; **Disabled**, greyed out with typing blocked and no tooltip (`isDisabled`); **With error**, drawn with a red border to flag a value the form rejected (`hasError`).
+
+<ThemedImage alt="States" width={580} sources={{ light: require('./password-input--states-light.png').default, dark: require('./password-input--states-dark.png').default }} />
+
+### Custom Validation
+
+A policy that asks for less: type into the field and the tooltip lists only a minimum length of 8, capital letters and digits, because special characters are switched off (`passwordSettings`).
+
+<ThemedImage alt="Custom Validation" width={210} sources={{ light: require('./password-input--custom-validation-light.png').default, dark: require('./password-input--custom-validation-dark.png').default }} />
+
+### Sizes
+
+Pick the height that matches the other fields of the form: base, middle and large (`size`).
+
+<ThemedImage alt="Sizes" width={735} sources={{ light: require('./password-input--sizes-light.png').default, dark: require('./password-input--sizes-dark.png').default }} />
+
+### With Password Generator
+
+Saves the user from inventing a password that meets every rule: type a character to open the tooltip, then click **Generate password** at its bottom; the field fills with a random password that passes all rules and shows its characters (`generatePasswordTitle`, symbols picked from `generatorSpecial`).
+
+<ThemedImage alt="With Password Generator" width={210} sources={{ light: require('./password-input--with-password-generator-light.png').default, dark: require('./password-input--with-password-generator-dark.png').default }} />
+
+### Right To Left
+
+The field in a right-to-left layout: the hidden characters line up from the right edge and the eye button moves to the left end. The wrapper carries `dir="rtl"`; the direction also comes from the theme's `interfaceDirection` (the Direction toolbar).
+
+<ThemedImage alt="Right To Left" width={336} sources={{ light: require('./password-input--right-to-left-light.png').default, dark: require('./password-input--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The input variables set on one wrapper -- the variables are listed under CSS variables on this page. The example sets every variable but the tooltip width, which a wrapper cannot reach; hover and focus the field to see the border colors.
+
+<ThemedImage alt="Css Customization" width={206} sources={{ light: require('./password-input--css-customization-light.png').default, dark: require('./password-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 

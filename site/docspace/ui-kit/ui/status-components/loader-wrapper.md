@@ -13,7 +13,7 @@ Dims whatever is inside it and stops the mouse reaching it while something is lo
 nothing itself — no spinner, no overlay, no text — so the busy state has to be visible some other
 way.
 
-<ThemedImage alt="LoaderWrapper" width={502} sources={{ light: require('./loader-wrapper-light.png').default, dark: require('./loader-wrapper-dark.png').default }} />
+<ThemedImage alt="LoaderWrapper" width={502} sources={{ light: require('./loader-wrapper--primary-light.png').default, dark: require('./loader-wrapper--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,27 @@ import { LoaderWrapper } from "@onlyoffice/apps-ui-kit/components/loader-wrapper
 Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 It needs no provider above it: everything it sets is an inline style, and it has no colours.
+
+
+## Stories
+
+### Default
+
+The content as it looks when nothing is loading: fully opaque and clickable. Switch `isLoading` in the Controls panel below to watch it fade and back.
+
+<ThemedImage alt="Default" width={502} sources={{ light: require('./loader-wrapper--default-light.png').default, dark: require('./loader-wrapper--default-dark.png').default }} />
+
+### Loading Content
+
+The same card while loading: it stays on screen at half opacity so the reader keeps their place, and the button no longer answers the mouse (`isLoading`). Place a loader beside it to say why.
+
+<ThemedImage alt="Loading Content" width={502} sources={{ light: require('./loader-wrapper--loading-content-light.png').default, dark: require('./loader-wrapper--loading-content-dark.png').default }} />
+
+### Css Customization
+
+Both opacities and the transition set on one wrapper -- the variables are listed under CSS variables on this page. The first card is loading and shows `--loader-wrapper-loading-opacity`; the second is idle and shows `--loader-wrapper-idle-opacity`. `--loader-wrapper-transition` takes effect only when `isLoading` changes on an instance, which these two cards never do.
+
+<ThemedImage alt="Css Customization" width={502} sources={{ light: require('./loader-wrapper--css-customization-light.png').default, dark: require('./loader-wrapper--css-customization-dark.png').default }} />
 
 ## Minimal example
 

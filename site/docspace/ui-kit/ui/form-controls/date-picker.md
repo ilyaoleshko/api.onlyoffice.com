@@ -13,7 +13,7 @@ Button that becomes a removable chip once a date is chosen, with a calendar behi
 [`Calendar`](./calendar.md) wrapped in an [`AddButton`](../interactive-elements/add-button.md) and a
 [`SelectedItem`](../data-display/selected-item.md).
 
-<ThemedImage alt="DatePicker" width={124} sources={{ light: require('./date-picker-light.png').default, dark: require('./date-picker-dark.png').default }} />
+<ThemedImage alt="DatePicker" width={124} sources={{ light: require('./date-picker--primary-light.png').default, dark: require('./date-picker--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -35,6 +35,69 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme`.
 
 Dates are Luxon `DateTime` objects.
+
+
+## Stories
+
+### Default
+
+The picker as a form shows it before a date is chosen: click **Select date** to open the calendar, pick a day to turn the button into a chip, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={124} sources={{ light: require('./date-picker--default-light.png').default, dark: require('./date-picker--default-dark.png').default }} />
+
+### With Initial Date
+
+DatePicker initialized with the current date. The selected date appears as a chip that can be removed.
+
+<ThemedImage alt="With Initial Date" width={150} sources={{ light: require('./date-picker--with-initial-date-light.png').default, dark: require('./date-picker--with-initial-date-dark.png').default }} />
+
+### Future Dates Only
+
+Restricts selection to future dates only by setting minDate to today. Past dates appear disabled in the calendar.
+
+<ThemedImage alt="Future Dates Only" width={165} sources={{ light: require('./date-picker--future-dates-only-light.png').default, dark: require('./date-picker--future-dates-only-dark.png').default }} />
+
+### Specific Year Range
+
+Constrains the calendar to a specific year (2023). Only dates within January 1 - December 31, 2023 are selectable.
+
+<ThemedImage alt="Specific Year Range" width={190} sources={{ light: require('./date-picker--specific-year-range-light.png').default, dark: require('./date-picker--specific-year-range-dark.png').default }} />
+
+### Without Calendar Icon
+
+The calendar icon in the selected date chip can be hidden with showCalendarIcon=\{false\}.
+
+<ThemedImage alt="Without Calendar Icon" width={126} sources={{ light: require('./date-picker--without-calendar-icon-light.png').default, dark: require('./date-picker--without-calendar-icon-dark.png').default }} />
+
+### Without Clear Button
+
+For a date the form requires: the chip has no cross, so a date can be replaced by clicking the chip and picking another day, but not removed (`hideCross`).
+
+<ThemedImage alt="Without Clear Button" width={138} sources={{ light: require('./date-picker--without-clear-button-light.png').default, dark: require('./date-picker--without-clear-button-dark.png').default }} />
+
+### Aligned To Right Edge
+
+For a picker near the right edge of the window, such as the last column of a toolbar: click **Select date** and the calendar opens leftwards from the right edge of the nearest positioned container, here the window, instead of running off the screen (`autoPosition`).
+
+<ThemedImage alt="Aligned To Right Edge" width={124} sources={{ light: require('./date-picker--aligned-to-right-edge-light.png').default, dark: require('./date-picker--aligned-to-right-edge-dark.png').default }} />
+
+### End Of Day Value
+
+For an inclusive end of a period, such as a "valid until" date: pick a day and the value above ends in 23:59:59.999, so the whole day is covered (`useMaxTime`). Without the prop the day is reported at the current time of day.
+
+<ThemedImage alt="End Of Day Value" width={790} sources={{ light: require('./date-picker--end-of-day-value-light.png').default, dark: require('./date-picker--end-of-day-value-dark.png').default }} />
+
+### Right To Left
+
+The picker under a right-to-left interface: the chip starts at the right edge, with the calendar icon on its right and the cross on its left, and the calendar opens under the right end of the picker. The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={153} sources={{ light: require('./date-picker--right-to-left-light.png').default, dark: require('./date-picker--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. They are set on one wrapper around two pickers. The first holds the first day of this month, so it shows the chip; the second has no date, so it shows the **Select date** button. Open either calendar to see the calendar variables: both start at the first of this month (`minDate`), so the days of the previous month and the left arrow show their disabled colours, and the first picker's chosen day differs from today. Hover the chip, the button and a day to see the hover variables.
+
+<ThemedImage alt="Css Customization" width={303} sources={{ light: require('./date-picker--css-customization-light.png').default, dark: require('./date-picker--css-customization-dark.png').default }} />
 
 ## Minimal example
 

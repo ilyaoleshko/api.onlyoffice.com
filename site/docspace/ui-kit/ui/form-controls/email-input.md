@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 Text field that parses what is typed as an email address and colours itself when it does not
 parse. It is [`TextInput`](./text-input.md) with the kit's address parser attached.
 
-<ThemedImage alt="EmailInput" width={189} sources={{ light: require('./email-input-light.png').default, dark: require('./email-input-dark.png').default }} />
+<ThemedImage alt="EmailInput" width={189} sources={{ light: require('./email-input--primary-light.png').default, dark: require('./email-input--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -34,6 +34,57 @@ import { EmailInput } from "@onlyoffice/apps-ui-kit/components/email-input";
 Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the field's colours.
+
+
+## Stories
+
+### Default
+
+An empty field that checks the address as you type: an incomplete one turns the border red, a complete one clears it (`hasError` left out). Change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={189} sources={{ light: require('./email-input--default-light.png').default, dark: require('./email-input--default-dark.png').default }} />
+
+### Sizes
+
+Pick the height that matches the rest of the form: base and middle share 13px text, large grows to 16px (`size`). Type into any of them to see the result of the check under the field.
+
+<ThemedImage alt="Sizes" width={711} sources={{ light: require('./email-input--sizes-light.png').default, dark: require('./email-input--sizes-dark.png').default }} />
+
+### States
+
+The field in each state a form puts it in: **user@example.com** is valid and plain; **disabled@example.com** is greyed out and cannot be focused (`isDisabled`); **readonly@example.com** can be focused and selected but not edited (`isReadOnly`); **invalid-email** has its red border forced on (`hasError`), which the check would also have done on its own.
+
+<ThemedImage alt="States" width={584} sources={{ light: require('./email-input--states-light.png').default, dark: require('./email-input--states-dark.png').default }} />
+
+### With Custom Validation
+
+Enforce a rule the parser does not know, such as a single allowed domain: the function replaces the parser outright and its `isValid` decides the red border (`customValidate`). Type an address that does not end with @custom-domain.com to see the field turn red and the returned error key appear under it.
+
+<ThemedImage alt="With Custom Validation" width={336} sources={{ light: require('./email-input--with-custom-validation-light.png').default, dark: require('./email-input--with-custom-validation-dark.png').default }} />
+
+### Automatic Error State
+
+Without `hasError` the field decides for itself: **name@example.com** parses and stays plain, **name@example** has no top-level domain and is red from the start. Edit either one to watch the border follow the check.
+
+<ThemedImage alt="Automatic Error State" width={584} sources={{ light: require('./email-input--automatic-error-state-light.png').default, dark: require('./email-input--automatic-error-state-dark.png').default }} />
+
+### Accepted Address Forms
+
+Decide which forms of address count as valid: the same address with a display name is refused by the first field and accepted by the second, which allows names (`emailSettings` with `allowName`). Punycode, IP-address domains, spaces and local domain names are switched the same way.
+
+<ThemedImage alt="Accepted Address Forms" width={790} sources={{ light: require('./email-input--accepted-address-forms-light.png').default, dark: require('./email-input--accepted-address-forms-dark.png').default }} />
+
+### Right To Left
+
+Under a right-to-left interface both fields align to the right edge: the placeholder of the empty field and the address in the second one, which still reads left to right because an address is Latin text (`dir="auto"`). The direction comes from the theme's `interfaceDirection` (the Direction toolbar); the wrapper also carries `dir="rtl"` for the rules that read the DOM direction.
+
+<ThemedImage alt="Right To Left" width={189} sources={{ light: require('./email-input--right-to-left-light.png').default, dark: require('./email-input--right-to-left-dark.png').default }} />
+
+### Css Customization
+
+Every overridable variable set on one wrapper -- the variables are listed under CSS variables on this page. The first field shows them all; hover and focus it to see the two border variables. The second holds an address with its error border forced on (`hasError`), where the theme's error colour replaces the border variables and the rest still apply.
+
+<ThemedImage alt="Css Customization" width={316} sources={{ light: require('./email-input--css-customization-light.png').default, dark: require('./email-input--css-customization-dark.png').default }} />
 
 ## Minimal example
 

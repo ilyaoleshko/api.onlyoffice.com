@@ -12,7 +12,7 @@ import APITable from '@site/src/components/APITable/APITable';
 One option of a single-choice set, drawn as a labelled circle. It is a `<label>` wrapping a
 visually hidden `<input type="radio">` and the kit's own circle icon.
 
-<ThemedImage alt="RadioButton" width={163} sources={{ light: require('./radio-button-light.png').default, dark: require('./radio-button-dark.png').default }} />
+<ThemedImage alt="RadioButton" width={163} sources={{ light: require('./radio-button--primary-light.png').default, dark: require('./radio-button--primary-dark.png').default }} />
 
 ## Use this when / not when
 
@@ -37,6 +37,50 @@ Also exported from the root barrel `@onlyoffice/apps-ui-kit`.
 
 Needs `ThemeProvider` from `@onlyoffice/apps-ui-kit/providers/theme` for the circle and text
 colours, which differ between the light and the dark theme.
+
+
+## Stories
+
+### Default
+
+A single labelled button, the starting point for any single-choice option; click it to fill in the circle, and change any other prop live in the Controls panel below.
+
+<ThemedImage alt="Default" width={163} sources={{ light: require('./radio-button--default-light.png').default, dark: require('./radio-button--default-dark.png').default }} />
+
+### Checked States
+
+The two looks a button can take side by side, so the filled-in choice is easy to tell from the rest: an empty circle and a circle with a dot (`isChecked`).
+
+<ThemedImage alt="Checked States" width={355} sources={{ light: require('./radio-button--checked-states-light.png').default, dark: require('./radio-button--checked-states-dark.png').default }} />
+
+### Disabled States
+
+A disabled button, empty or filled in, shows an option the user can see but not change: the circle and the label turn grey and clicks are ignored (`isDisabled`).
+
+<ThemedImage alt="Disabled States" width={409} sources={{ light: require('./radio-button--disabled-states-light.png').default, dark: require('./radio-button--disabled-states-dark.png').default }} />
+
+### Custom Styling
+
+Larger or smaller label text for a button placed in a heading or a dense list: **Custom styled** at 16px semibold, **Small text** at 11px light (`fontSize`, `fontWeight`).
+
+<ThemedImage alt="Custom Styling" width={351} sources={{ light: require('./radio-button--custom-styling-light.png').default, dark: require('./radio-button--custom-styling-dark.png').default }} />
+
+### With Spacing
+
+A set of buttons needs room between them, because without a gap they touch:
+
+- **Vertical** — a column with 12px below every button but the last (`spacing`, the default `orientation`)
+- **Horizontal** — a row with 24px before every button but the first (`spacing`, `orientation="horizontal"`)
+
+The container still lays the buttons out; `orientation` only decides which side the gap goes on. Pick an option in each set with a click or the arrow keys.
+
+<ThemedImage alt="With Spacing" width={458} sources={{ light: require('./radio-button--with-spacing-light.png').default, dark: require('./radio-button--with-spacing-dark.png').default }} />
+
+### Css Customization
+
+The variables are listed under CSS variables on this page. The example is one checked button, so it shows every variable at once: the violet dot and outline, the light violet fill, the dark violet text and the wider gap. Hover it to see the darker outline.
+
+<ThemedImage alt="Css Customization" width={137} sources={{ light: require('./radio-button--css-customization-light.png').default, dark: require('./radio-button--css-customization-dark.png').default }} />
 
 ## Minimal example
 
