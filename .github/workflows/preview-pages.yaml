@@ -1,14 +1,18 @@
-# A preview of the site on GitHub Pages, from a fork: a push to the
-# ui-kit-preview branch (or a manual run) builds the English site and serves
-# it at https://<owner>.github.io/<repo>/. Once, in the fork: Settings ->
-# Pages -> Source: "GitHub Actions" (the workflow's own token may not create
-# the Pages site). noIndex stays on because site_mode is not production.
+# A preview of the site on GitHub Pages, from a fork, built on a runner:
+# run it by hand and the English site is served at
+# https://<owner>.github.io/<repo>/. Once, in the fork: Settings -> Pages ->
+# Source: "GitHub Actions" (the workflow's own token may not create the
+# Pages site). noIndex stays on because site_mode is not production.
+#
+# The whole site does not build on GitHub's free 7 GB runner: the OpenAPI
+# sections push it past that and the job is killed (exit 143). Until the
+# fork has a larger runner, the preview is built locally and pushed to the
+# gh-pages branch (the build/ directory as an orphan commit, with a
+# .nojekyll file) with Pages set to "Deploy from a branch".
 name: Preview on GitHub Pages
 run-name: "Preview ${{ github.ref_name }} on GitHub Pages"
 
 on:
-  push:
-    branches: [ui-kit-preview]
   workflow_dispatch:
 
 permissions:
