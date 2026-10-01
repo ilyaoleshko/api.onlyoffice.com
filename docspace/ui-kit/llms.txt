@@ -1,0 +1,190 @@
+# ONLYOFFICE DocSpace: UI Kit
+
+> The React component library every ONLYOFFICE Apps product and DocSpace plugin is built with.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Overview
+
+- [UI Kit](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit.md): @onlyoffice/apps-ui-kit is the React component library every ONLYOFFICE Apps product is built with, and the UI a DocSpace plugin renders its screens in. Start with Getting started for the two providers and the import forms, then pick a component by what it does.
+
+## Getting started
+
+- [Getting started](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started.md): What the kit is, how to install it, and the pieces every application sets up once: the theme and translation providers, the API client, and the hooks, utilities and constants the components share.
+- [ONLYOFFICE Apps UI Kit](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/welcome.md): Version 4.0.0 • AGPL-3.0-only • not on the public npm registry yet -- How to install it
+- [Structure](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/structure.md): @onlyoffice/apps-ui-kit is a standalone repository. It builds, tests and runs this
+- [Themes](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/themes.md): The UI Kit ships with Base (light) and Dark themes. Styling is SCSS Modules plus CSS
+- [Translation](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/translation.md): The UI Kit uses i18next and react-i18next for internationalization. Translation resources are passed in at the application level via TranslationProvider.
+- [Agent skills](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/agent-skills.md): The ui-kit skill teaches an AI coding agent to build screens with this kit in your own React
+- [API](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/api.md): Portal-internal. Everything on this page needs a DocSpace portal: a URL, an API key and a
+- [Types and roles](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/types-and-roles.md): What a person may do in ONLYOFFICE Apps depends on two separate things. Most access bugs
+- [Hooks](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/hooks.md): Eleven hooks, barrelled in hooks/index.ts and re-exported from the package root. They are
+- [Utils](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/utils.md): utils/ holds the non-visual half of the library: 32 modules of date maths, device
+- [Constants, enums and types](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/getting-started/constants.md): Three small modules carry the values and the vocabulary the rest of the library is written
+
+## Components
+
+- [Components](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components.md): The composites built from the UI components for the portal's screens. Of these, the providers are public; the rest need DocSpace context.
+- [ai-chat](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/ai-chat.md): {/*
+- [AI Settings](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/ai-settings.md): The portal's AI settings screens, from `ai-agent/settings`. Each is a page of `@onlyoffice/ai-chat` with the kit's layout applied, and reads and writes the same AI service the chat talks to, so it has to sit inside `AiAgentProviders`. Without a portal the stories run against the demo portal the mock service worker plays, under a banner that says so: its models, assignments and MCP servers are made up, and a change is saved in memory only, until the page is reloaded. ```tsx import AiAgentProviders from "@onlyoffice/apps-ui-kit/ai-agent/providers"; import { AiModels } from "@onlyoffice/apps-ui-kit/ai-agent/settings"; <AiAgentProviders locale="en" isAvailable> <AiModels /> </AiAgentProviders>; ```
+- [Files](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/files.md): The Files section as the portal draws it: a header, the filter bar and the rows of the caller's
+- [Rooms](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/rooms.md): The Rooms section: the active rooms the caller can see, with a header, the filter bar and the
+- [Forms](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/forms.md): The Forms section: the form-filling rooms the caller can see, with a header, the filter bar and
+- [billing](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/billing.md): {/*
+- [Uploader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/uploader.md): Uploader is a file upload component that supports chunked uploads, folder uploads, and file size validation. It uses the ONLYOFFICE Apps API SDK for upload operations and provides a drag-and-drop interface.
+- [Document Editor](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/document-editor.md): DocumentEditor wraps the \@onlyoffice/document-editor-react\ component, embedding an ONLYOFFICE Document Server editor into the UI.
+- [Selectors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors.md): The portal's pickers: a panel that lists files, rooms, people, groups, AI agents or MCP servers from a portal and hands back what the user chose.
+- [aiagentselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/aiagentselector.md): {/*
+- [filesselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/filesselector.md): {/*
+- [groupsselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/groupsselector.md): {/*
+- [mcpserversselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/mcpserversselector.md): {/*
+- [peopleselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/peopleselector.md): {/*
+- [roomselector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors/roomselector.md): {/*
+- [Providers](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers.md): The providers an application mounts above the components. ThemeProvider and TranslationProvider are required -- without them components render unstyled and without text -- and ErrorBoundary catches a render failure below it.
+- [apiprovider](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers/apiprovider.md): {/*
+- [ErrorBoundary](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers/error-boundary.md): Catches what the subtree throws while rendering and shows something in its place.
+- [ThemeProvider](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers/theme.md): Resolves the light, dark or system theme and writes it onto the document for every component to read.
+- [TranslationProvider](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers/translation.md): Installs the i18next instance the eleven components with labels of their own read from.
+- [Errors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors.md): The full-page states the portal shows when a request fails: access denied, not found, offline, unavailable, an expired link.
+- [accessrestricted](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/accessrestricted.md): {/*
+- [error401](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/error401.md): {/*
+- [error403](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/error403.md): {/*
+- [error404](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/error404.md): {/*
+- [errorinvalidlink](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/errorinvalidlink.md): {/*
+- [erroroffline](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/erroroffline.md): {/*
+- [errorunavailable](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors/errorunavailable.md): {/*
+
+## UI
+
+- [UI](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui.md): The components themselves, grouped by what they do on a page: controls, overlays, data display, navigation, feedback and layout.
+- [Form controls](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls.md): Inputs, pickers and the containers that label them. Every control here is controlled: it renders the value it is given and reports changes through its callback.
+- [AccessRightSelect](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/access-right-select.md): Drop-down for choosing an access level, with an icon, a description and a paid badge on each row.
+- [Calendar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/calendar.md): Month grid for picking a day, with month and year views behind it.
+- [Checkbox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/checkbox.md): Checkbox with a label, an indeterminate state and an optional help button.
+- [ColorInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/color-input.md): Hex field with a swatch that opens a colour picker.
+- [ColorPicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/color-picker.md): Saturation square with a hue strip for choosing a colour, with or without a hex field and buttons.
+- [ComboBox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/combobox.md): Button showing the current choice, with a list of options under it.
+- [DatePicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/date-picker.md): Button that becomes a removable chip once a date is chosen, with a calendar behind it.
+- [DateTimePicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/date-time-picker.md): A date chip and a time beside it, editable in place.
+- [EmailInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/email-input.md): Text field that parses what is typed as an email address and colours itself when it does not parse.
+- [FieldContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/field-container.md): Layout wrapper for one form field: an optional label with a help tooltip, the control itself, and its error message.
+- [FileInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/file-input.md): Read-only field with a folder icon that opens the file dialog and accepts a drop.
+- [FormWrapper](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/form-wrapper.md): White card of a fixed width that the portal's sign-in and wizard forms sit on.
+- [InputBlock](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/input-block.md): Text field with an icon at the end and room for a prefix before it, inside one border.
+- [Label](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/label.md): Caption for a form field, with an optional required asterisk and an error colour.
+- [PasswordInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/password-input.md): Password field with a reveal eye, a strength tooltip and a generator.
+- [QuantityPicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/quantity-picker.md): Minus and plus around a number, with an optional slider and quick-add chips.
+- [RadioButtonGroup](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/radio-button-group.md): A set of radio buttons built from an array, with the selected value handled for you.
+- [RadioButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/radio-button.md): One option of a single-choice set, drawn as a labelled circle.
+- [SearchInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/search-input.md): Search field with a magnifier, an optional clear button and a debounced change callback.
+- [Slider](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/slider.md): Range input with the kit's own track and handle.
+- [TextInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/text-input.md): Controlled single-line text field in three fixed widths, with optional masking, error and warning states.
+- [Textarea](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/textarea.md): Multi-line text field that grows with its content, with optional line numbers, a copy button and a JSON mode.
+- [TimePicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/time-picker.md): Two small fields, hours and minutes, that move the caret along as you type.
+- [ToggleButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/form-controls/toggle-button.md): Switch for one on/off setting, with an optional label beside it.
+- [Interactive elements](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements.md): Buttons in their variants -- plain, icon, floating, main-menu -- and the drag-and-drop surfaces: components whose job is to be clicked or dragged.
+- [ActionButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/action-button.md): Small tinted button for a secondary action, optionally rendered as another element.
+- [AddButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/add-button.md): Square icon button with an optional label beside it, for adding one more of something.
+- [Button](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/button.md): Labelled action button with an optional icon, a loading state and a tooltip, in a primary or secondary variant.
+- [ContextMenuButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/context-menu-button.md): Icon that opens a menu of actions, built afresh from a callback each time it is clicked.
+- [DragAndDrop](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/drag-and-drop.md): Wrapper that turns whatever is inside it into a drop target for files, with no interface of its own.
+- [Dropzone](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/dropzone.md): Dashed upload area with a picture, a prompt and a format list, which turns into a loader while the upload runs.
+- [FloatingButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/floating-button.md): Round corner badge that shows the progress of a background operation and opens its panel.
+- [HelpButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/help-button.md): Info icon that opens an explanation on click, for a label that needs more than a label.
+- [IconButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/icon-button.md): Icon that acts as a button, with hover and pressed colours and an optional tooltip.
+- [ImageEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/image-editor.md): Crop window with drag, zoom and a replace control, for turning an uploaded picture into an avatar or a logo.
+- [LinkWithDropdown](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/link-with-dropdown.md): Dashed link that opens a menu under itself.
+- [MainButtonMobile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/main-button-mobile.md): Floating round button in the corner of the screen that opens a full-width sheet of actions.
+- [MainButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/interactive-elements/main-button.md): Accent button at the top of a side menu that opens a menu of the things a user can create.
+- [Status components](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components.md): Loaders and progress: spinners, the full-screen application loader, the infinite-scroll loader and the progress bar.
+- [AppLoader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components/app-loader.md): The blank first screen: a fixed sheet over the whole viewport with the kit's rombs animation on it.
+- [InfiniteLoader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components/infinite-loader.md): Virtualised list or grid that asks for the next page as the user scrolls towards the end.
+- [LoaderWrapper](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components/loader-wrapper.md): Dims whatever is inside it and stops the mouse reaching it while something is loading.
+- [Loader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components/loader.md): Spinner in one of four animations, for work whose duration is unknown.
+- [ProgressBar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/status-components/progress-bar.md): A labelled bar for an operation whose progress you can measure, with a status or error line under it.
+- [Layout](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout.md): The page's plumbing: portals, scroll areas, the selection rectangle and the theme wrapper.
+- [Article](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/article.md): DocSpace's left panel: a fixed column with a header slot, a main button, a scrolling body and the profile block.
+- [Portal](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/portal.md): Renders a node into another part of the document, after mount, keeping it inside the React tree.
+- [Scrollbar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/scrollbar.md): Scrolling region with the kit's own thin tracks, which fade out when nothing is happening.
+- [Section](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/section.md): DocSpace's page body: a sticky header and filter, a scrolling body, and the info and chat panels beside it.
+- [SelectionArea](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/selection-area.md): Rubber-band selection: a dragged rectangle that reports which items it covers, frame by frame.
+- [ThemeProviderComponent](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout/theme-provider.md): The older theme provider: it writes the theme onto the document and supplies the kit's theme context.
+- [Layout components](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout-components.md): Screens for the moments a view has nothing to show: an empty folder, a search with no results, an error.
+- [ArticleItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout-components/articleitem.md): One catalog entry of the Article panel's body: an icon, a label and an optional badge. The Article page describes it in full.
+- [EmptyScreenContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout-components/empty-screen-container.md): Centred empty state: an illustration, a heading, up to two lines of explanation and a column of actions.
+- [EmptyView](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout-components/empty-view.md): Centred empty state with an icon, a title, a description and a list of things the user can do next.
+- [ErrorContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/layout-components/error-container.md): Full-screen error page: an animated landscape, a heading, an explanation and one action button.
+- [Overlays](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays.md): Everything drawn above the page: modal dialogs and side panels, drop-downs and context menus, tooltips and the selector.
+- [Aside](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/aside.md): Panel that slides in from the side of the viewport, with a header and a scrolling body.
+- [AsideHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/aside-header.md): Title bar of a side panel or a dialog, with a back arrow, extra icons and the close cross.
+- [AvatarEditorDialog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/avatar-editor-dialog.md): Modal that frames an uploaded picture: the kit's crop window between a title and a save and cancel pair.
+- [Backdrop](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/backdrop.md): Full-screen layer behind an overlay, transparent by default, that catches the click meant to close it.
+- [ContextMenu](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/context-menu.md): Menu opened at the pointer through a ref, with submenus, a mobile sheet form and working keyboard navigation.
+- [DropDownItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/drop-down-item.md): One row of a dropdown menu: a label, an optional icon and badges, or a separator.
+- [DropDown](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/drop-down.md): Menu anchored to a control, rendered in a portal and positioned against the element you point it at.
+- [ModalDialog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/modal-dialog.md): Dialog rendered in a portal, as a centred modal or a side panel, assembled from Header, Body, Footer and Container slots.
+- [RoomLogoCoverDialog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/room-logo-cover-dialog.md): Dialog for a room's generated logo: a colour from the palette and an optional glyph, over a live preview.
+- [Selector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/selector.md): Panel for picking one or many things out of a list too long to render at once.
+- [Tooltip](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/overlays/tooltip.md): Floating hint attached to one or more anchors, rendered in a portal and positioned to stay in the viewport.
+- [Data display](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display.md): Components that show a value rather than take one: text and headings, avatars, badges and tags, room icons and logos, and cards.
+- [Avatar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/avatar.md): Round picture of a person or a group, falling back to initials, with an optional role badge and an edit menu.
+- [Badge](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/badge.md): Small coloured pill for a count or a short marker, announced as a live status region.
+- [Card](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/card.md): Grey panel with an optional header row, for a block of related information.
+- [CategoryItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/category-item.md): Settings-page entry: a linked title, a line of explanation, an arrow, and an optional paid badge.
+- [CollapsibleCard](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/collapsible-card.md): Panel whose header is a button that expands and collapses the body under it.
+- [Heading](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/heading.md): Section title rendered as a real heading element, sized by a preset rather than by its level.
+- [MCPIcon](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/mcp-icon.md): Square icon for an MCP server: its logo, or the first letter of its name on a grey tile.
+- [PortalLogo](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/portal-logo.md): The portal's white-label logo, fetched from the DocSpace server and swapped for the theme.
+- [QuickActions](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/quick-actions.md): Horizontal strip of large icon tiles that scrolls when the tiles no longer fit.
+- [RoomIcon](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/room-icon.md): Square room tile that shows the room's logo, or its initials on a colour when there is none.
+- [RoomLogo](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/room-logo.md): Fixed 32px glyph saying which kind of room this is, with an optional selection checkbox.
+- [RoomType](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/room-type.md): Row offering one kind of room, with its glyph, its translated name and its description.
+- [SelectedItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/selected-item.md): Chip with a cross, for a value the user has picked and can take back.
+- [Tag](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/tag.md): Small outlined label for one keyword, clickable and optionally removable.
+- [Tags](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/tags.md): One row of tags that keeps to its width, collapsing the rest into an overflow tag.
+- [Text](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/data-display/text.md): Body text at the kit's size and weight, rendered through whichever element you name.
+- [Skeletons](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/skeletons.md): Placeholder shapes shown while content loads, so the layout does not jump when it arrives.
+- [CircleSkeleton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/skeletons/circle.md): Round loading placeholder with a sweeping highlight, for an avatar or an icon that has not arrived yet.
+- [RectangleSkeleton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/skeletons/rectangle.md): Rectangular loading placeholder with a sweeping highlight, sized to the content it stands in for.
+- [Feedback](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback.md): Components that tell the user what happened or what is happening: toasts and snack bars, status messages, info bars and progress for long operations.
+- [ColumnarInfoBar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/columnar-info-bar.md): Bar of label-and-value columns for context the reader does not have to act on.
+- [LoadingButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/loading-button.md): 16px progress ring with a cross in the middle, for cancelling what it is measuring.
+- [OperationsProgressButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/operations-progress-button.md): Corner badge that reports every background operation of the portal and lists them when there is more than one.
+- [PublicRoomBar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/public-room-bar.md): Grey note above a screen's content: an icon, a bold line and a paragraph, with an optional close cross.
+- [SnackBar](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/snackbar.md): Full-width notification bar that sits at the top of a section until it is dismissed.
+- [StatusMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/status-message.md): A full-width bar with a danger glyph that fades one message out before fading the next one in.
+- [Toast](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/toast.md): Container the transient notifications are stacked in, driven by the imperative `toastr`.
+- [TopLoaderService](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/feedback/top-loading-indicator.md): The thin bar at the top of the page, driven by three static calls rather than by React.
+- [Navigation](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation.md): Links, tabs, paging and the side menu that moves the user between views.
+- [FilterInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/filter.md): The bar above a file listing: search, a filter panel, a sort menu, a view switch and the chips for what is in force.
+- [Link](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/link.md): Anchor styled to the kit's conventions, for navigation or for an in-place action.
+- [NavMenu](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/nav-menu.md): Sidebar navigation: groups of items, each with an optional sub-menu, a badge and a collapsed rail form.
+- [Navigation](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/navigation-component.md): The file manager's header: breadcrumb title, back arrow, and the row of buttons that acts on the current folder.
+- [Paging](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/paging.md): Previous and next buttons with a page selector between them and a page-size selector at the end.
+- [TabItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/tab-item.md): Rounded pill that fills in when it is selected.
+- [Tabs](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/tabs.md): Sticky tab bar that scrolls sideways and renders the selected tab's content under itself.
+- [TwoStateToggle](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/navigation/two-state-toggle.md): Pill that switches the portal between its classic view and the new dashboard.
+- [Rows](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/rows.md): The file list of the DocSpace portal, in three parts: the container, the row and the row's content.
+- [RowContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/rows/row-container.md): Scrolling list the rows go in, virtualised and paged in as the user reaches the end.
+- [RowContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/rows/row-content.md): The text of a row, laid out by the position of its children rather than by named slots.
+- [Row](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/rows/row.md): One row of the file list: an optional checkbox, a start element, the content and a context menu.
+- [RowsSkeleton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/rows/rowsskeleton.md): Placeholder in the shape of a list of rows, shown while the rows themselves are loading. The Rows page describes it in full.
+- [Table](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table.md): Columnar list with resizable, sortable and hideable columns, laid out by a CSS grid the header writes.
+- [GroupMenuItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/groupmenuitem.md): GroupMenuItem is one action button of a TableGroupMenu, the toolbar that replaces the table header while rows are selected. The Table README describes it in full.
+- [TableCell](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablecell.md): TableCell is one cell of a TableRow: a fixed-height box that sits in the column the table's grid gives it. The Table README describes it in full.
+- [TableHeaderCell](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tableheadercell.md): TableHeaderCell is the title of one column in a TableHeader, with its sort arrow and the handle that resizes it. The Table README describes it in full.
+- [TableSettings](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablesettings.md): TableSettings is the cog at the end of a TableHeader that opens a list of the columns, each with a checkbox that shows or hides it. The Table README describes it in full.
+- [TableBody](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablebody.md): TableBody holds the rows of a table and, for a long list, renders only the rows in view and asks for the next page as the user scrolls. The Table README describes it in full.
+- [TableContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablecontainer.md): TableContainer is the outer element of a table, the grid that the header, the group menu and the rows are laid out in. The Table README describes it in full.
+- [TableGroupMenu](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablegroupmenu.md): TableGroupMenu is the toolbar that takes the place of the table header while rows are selected, with a select-all checkbox and the actions that apply to the selection. The Table README describes it in full.
+- [TableHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tableheader.md): TableHeader is the row of column titles at the top of a table; it also decides the width of every column and writes them onto the table's grid. The Table README describes it in full.
+- [TableRow](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/table/tablerow.md): TableRow is one row of a table: its cells followed by a last cell with the row's context menu button. The Table README describes it in full.
+- [Tiles](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles.md): The card view of the DocSpace listing: a sorting container, four kinds of tile and the slot their names go in.
+- [BaseTile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/base-tile.md): The tile shell: an icon that turns into a checkbox, a slot for the content, a three-dot menu and a lower half.
+- [FileTile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/file-tile.md): Tile for a document: a thumbnail with badges over it, and a name row with a checkbox and a menu.
+- [FolderTile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/folder-tile.md): Tile for a folder, as a single name row or, with one flag, a tall card with a picture on top.
+- [RoomTile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/room-tile.md): Tile for a room: the logo and name on top, and the room's tags along the bottom.
+- [TilesSkeleton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/tilesskeleton.md): Placeholder in the shape of a tile listing, shown while the tiles themselves are loading. The Tiles page describes it in full.
+- [TemplateTile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/template-tile.md): Tile for a room template: the name on top, and an owner and storage pair along the bottom.
+- [TileContainer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/tile-container.md): Grid that sorts the tiles it is given into rooms, templates, folders and files and gives two of them a heading.
+- [TileContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/ui/tiles/tile-content.md): The title slot of a tile: three nested wrappers that give the name its width and its truncation.

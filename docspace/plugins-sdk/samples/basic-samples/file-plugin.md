@@ -1,0 +1,128 @@
+---
+description: Add support for a custom file extension with icons.
+tags: ["DocSpace", "Plugins", "Basic"]
+---
+
+# File plugin
+
+This guide walks you through creating a plugin for DocSpace that adds support for a specific file extension, custom icons, and an action when such files are clicked.
+
+## Before you start
+
+Make sure you have a DocSpace server running, and install DocSpace Plugins SDK globally:
+
+``` sh
+npm i -g @onlyoffice/docspace-plugin-sdk
+```
+
+## Step 1: Create a plugin
+
+1. Initialize your plugin using the CLI:
+
+   ``` sh
+   npx create-docspace-plugin
+   ```
+
+2. Fill out [basic metadata](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/creating-plugin-template.md): plugin name, version, author, description, logo, license, homepage.
+
+3. Select the required scopes from the list of available options. Use the arrow keys to highlight `File action`, press `Space` to select it, then press `Enter` to confirm and generate the plugin template.
+
+## Step 2: Confirm plugin configuration
+
+Ensure `package.json` includes all the necessary fields. Most importantly, make sure it contains:
+
+```json
+{
+  "scopes": ["File"]
+}
+```
+
+## Step 3: Review and extend plugin code
+
+By default, the plugin template includes a base implementation in the `src/index.ts` file. Here's an example of a [file plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IFilePlugin.md) for supporting `.md` (Markdown) files:
+
+``` ts
+import {
+  IPlugin,
+  PluginStatus,
+  IFilePlugin,
+  IFileItem,
+  Devices,
+  File
+} from '@onlyoffice/docspace-plugin-sdk'
+
+class Filesplugin implements IPlugin, IFilePlugin {
+  status: PluginStatus = PluginStatus.active;
+  fileItems: Map<string, IFileItem> = new Map();
+
+  onLoadCallback = async () => {};
+
+  updateStatus = (status: PluginStatus) => { this.status = status };
+  getStatus = () => this.status;
+  setOnLoadCallback = (callback: () => Promise<void>) => { this.onLoadCallback = callback };
+  addFileItem = (item: IFileItem ): void => { this.fileItems.set(item.extension, item) };
+  getFileItems = (): Map<string, IFileItem > => this.fileItems;
+  updateFileItem = (item: IFileItem): void => { this.fileItems.set(item.extension, item) };
+}
+
+const plugin = new Filesplugin();
+
+declare global {
+  interface Window {
+    Plugins: any;
+  }
+}
+
+window.Plugins.Filesplugin = plugin || {};
+
+export default plugin;
+```
+
+## Step 4: Add a file item
+
+Create a [file item](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md) and append it to the end of the script:
+
+```ts
+const fileItem: IFileItem = {
+  extension: ".md",
+  fileTypeName: "Markdown",
+  fileRowIcon: "icon.svg",
+  fileTileIcon: "icon.svg",
+  devices: [Devices.desktop, Devices.mobile, Devices.tablet],
+  onClick: (item: File) => {
+    console.log("Markdown file clicked!", item);
+  },
+}
+
+plugin.addFileItem(fileItem)
+```
+
+## Step 5: Build the plugin
+
+From the root of your plugin, run the following command:
+
+``` sh
+npm run build
+```
+
+This compiles `src/index.ts` to `dist/plugin.js`.
+
+## Step 6: Upload to DocSpace
+
+1. Log in as an administrator.
+2. Navigate to: **Settings → Integration → Plugins**.
+3. Click **Upload**, and select the generated `dist/plugin.zip`.
+4. Enable the plugin toggle if it is not already active.
+
+## Step 7: Test the plugin
+
+1. Upload a `.md` file to any room.
+2. You should now see a custom icon for `.md` files.
+3. Clicking the file should trigger the `onClick` function instead of downloading.
+
+## Notes
+
+- The [`extension`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md#extension) must match a file type used in your DocSpace (e.g. `.md`).
+- You can customize both list and tile icons using [`fileRowIcon`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md#fileRowIcon?) and [`fileTileIcon`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md#fileTileIcon?).
+- Without this plugin, unknown file types simply download on click. This plugin runs your [`onClick`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md#onClick) logic instead.
+- You can control where the current file item is shown using [`devices`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md#devices?) (for example, desktop, mobile, and tablet).

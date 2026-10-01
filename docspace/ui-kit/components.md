@@ -1,0 +1,25 @@
+---
+custom_edit_url: "https://github.com/ONLYOFFICE/docspace-ui-kit-react/blob/master/scripts/docs/sections.mjs"
+---
+
+# Components
+
+The composites built from the UI components for the portal's screens. Of these, the providers are public; the rest need DocSpace context.
+
+## Overview
+
+The groups are:
+
+| Group | Description |
+| --- | --- |
+| [AI Chat](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/ai-chat.md) | A conversation with the portal's AI models, about the files and rooms the user is working in. |
+| [AI Settings](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/ai-settings.md) | The portal's AI settings screens, from `ai-agent/settings`. Each is a page of `@onlyoffice/ai-chat` with the kit's layout applied, and reads and writes the same AI service the chat talks to, so it has to sit inside `AiAgentProviders`. Without a portal the stories run against the demo portal the mock service worker plays, under a banner that says so: its models, assignments and MCP servers are made up, and a change is saved in memory only, until the page is reloaded. ```tsx import AiAgentProviders from "@onlyoffice/apps-ui-kit/ai-agent/providers"; import { AiModels } from "@onlyoffice/apps-ui-kit/ai-agent/settings"; <AiAgentProviders locale="en" isAvailable> <AiModels /> </AiAgentProviders>; ``` |
+| [Files](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/files.md) | The Files section as the portal draws it: a header, the filter bar and the rows of the caller's personal folder. |
+| [Rooms](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/rooms.md) | The Rooms section: the active rooms the caller can see, with a header, the filter bar and the rows. |
+| [Forms](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/forms.md) | The Forms section: the form-filling rooms the caller can see, with a header, the filter bar and the rows. |
+| [Billing](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/billing.md) | Complete billing and subscription management system for ONLYOFFICE Apps SaaS. |
+| [Uploader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/uploader.md) | Uploader is a file upload component that supports chunked uploads, folder uploads, and file size validation. |
+| [Document Editor](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/document-editor.md) | DocumentEditor wraps the \`@onlyoffice/document-editor-react\` component, embedding an ONLYOFFICE Document Server editor into the UI. |
+| [Selectors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/selectors.md) | The portal's pickers: a panel that lists files, rooms, people, groups, AI agents or MCP servers from a portal and hands back what the user chose. |
+| [Providers](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/providers.md) | The providers an application mounts above the components. |
+| [Errors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/components/errors.md) | The full-page states the portal shows when a request fails: access denied, not found, offline, unavailable, an expired link. |

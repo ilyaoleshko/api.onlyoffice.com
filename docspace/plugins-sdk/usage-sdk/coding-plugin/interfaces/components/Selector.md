@@ -1,0 +1,965 @@
+---
+custom_edit_url: https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/release/v4.0.0/src/interfaces/components/Selector/index.ts
+---
+
+# TSelector
+
+```ts
+type TSelector = 
+  | {
+  type: Base;
+  props: TBaseSelector;
+}
+  | {
+  type: Files;
+  props: TFilesSelector;
+}
+  | {
+  type: Groups;
+  props: TGroupsSelector;
+}
+  | {
+  type: People;
+  props: TPeopleSelector;
+}
+  | {
+  type: Room;
+  props: TRoomSelector;
+};
+```
+
+Provides selector components for choosing files, rooms, users, and groups within DocSpace.
+
+Set `type` to the desired [SelectorType](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Selector.md) value and `props` to the matching
+selector props interface ([TBaseSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tbaseselector), [TFilesSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tfilesselector),
+[TGroupsSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tgroupsselector), [TPeopleSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tpeopleselector), or [TRoomSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#troomselector)).
+
+To display a selector, return an [`IMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#imessage) with
+[`Actions.showSelector`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Actions.md#showselector) in `actions`
+and pass the configuration in `selectorProps`.
+Use [`Actions.updateSelector`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Actions.md#updateselector) and
+[`Actions.closeSelector`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Actions.md#closeselector) to update or close it.
+
+![selector](https://ilyaoleshko.github.io/assets/images/docspace/selector.png#gh-light-mode-only)![selector](https://ilyaoleshko.github.io/assets/images/docspace/selector.dark.png#gh-dark-mode-only)
+
+## Example
+
+```typescript
+import { TSelector, TBaseSelector, SelectorType, Actions, ToastType } from "@onlyoffice/docspace-plugin-sdk";
+
+const selector: TSelector = {
+  type: SelectorType.Base,
+  props: {
+    submitButtonLabel: "Select",
+    items: [{ id: "item-1", label: "First Item" }],
+    onSubmit: ({ selectedIds }) => ({
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{ type: ToastType.success, title: `Selected ${selectedIds.length} items` }],
+    }),
+  },
+};
+```
+
+## TBaseSelector
+
+```ts
+type TBaseSelector = TSelectorBreadCrumbs & TSelectorPagination & TSelectorHeader & TSelectorCancelButton & TSelectorSubmitButton & TSelectorCheckbox & TSelectorBaseProps & TSelectorLifecycleEvents & TSelectorEmptyScreen & {
+  isLoading?: boolean;
+  isMultiSelect?: boolean;
+  maxSelectedItems?: number;
+  selectedItems?: TSelectorItem[];
+  descriptionText?: string;
+  searchEmptyScreenHeader?: string;
+  searchEmptyScreenDescription?: string;
+  onSelect?: (params: {
+     selectedId?: string | number;
+     isDoubleClick: boolean;
+  }) => TReturnMessage;
+};
+```
+
+Defines the base properties for all selector components.
+
+### Example
+
+```typescript
+// This example demonstrates how to create a basic selector with a list of items,
+// a header, and a submit button. It also includes an item that, when clicked,
+// dynamically adds a new input item to the list.
+
+const selectorProps: TBaseSelector = {
+  // Defines the text and visibility of the header.
+  withHeader: true,
+  headerProps: {
+    label: "Plugin Base Selector",
+  },
+
+  // The text to display on the main action button.
+  submitButtonLabel: "Submit",
+
+  // An array of items to display in the selector.
+  items: [
+    {
+      id: "create-new",
+      label: "Create new item",
+      isCreateNewItem: true, // Renders this item as a button for creating new entries.
+      onCreateClick: () => {
+        // When clicked, this function returns a message to the host application
+        // with an `updateSelector` action. This action provides new props to
+        // re-render the selector, in this case, adding a new item to the list.
+        const updatedItems = [...selectorProps.items, { id: "new-item", label: "Newly Added Item" }];
+
+        return {
+          actions: [Actions.updateSelector], // Specifies the action to perform.
+          selectorProps: { // Provides the new properties for the selector.
+             type: SelectorType.Base,
+             props: { ...selectorProps, items: updatedItems }
+          }
+        };
+
+      },
+    },
+    {
+      id: "item-1",
+      label: "First Item",
+      icon: "your-icon-url.svg", // Specify an icon for the item.
+    },
+  ],
+
+  // A callback function that is executed when the user clicks the submit button.
+  onSubmit: ({ selectedIds }) => {
+    // The `selectedIds` parameter contains an array of the IDs of the selected items.
+    console.log("Items submitted:", selectedIds);
+
+    // After submission, you can perform actions like closing the selector
+    // and showing a success message.
+    return {
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{
+        type: ToastType.success,
+        title: `Selected ${selectedIds.length} items`,
+      }],
+    };
+  },
+};
+```
+
+***
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isLoading?` | `boolean` | If true, shows a loading indicator for the entire selector. |
+| `isMultiSelect?` | `boolean` | If true, allows multiple items to be selected. |
+| `maxSelectedItems?` | `number` | The maximum number of items that can be selected. |
+| `selectedItems?` | [`TSelectorItem`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoritem)[] | An array of initially selected items. |
+| `descriptionText?` | `string` | A descriptive text displayed within the selector. |
+| `searchEmptyScreenHeader?` | `string` | The header text to display when a search yields no results. |
+| `searchEmptyScreenDescription?` | `string` | The description text to display when a search yields no results. |
+| `onSelect()?` | (`params`: \{ `selectedId?`: `string` \| `number`; `isDoubleClick`: `boolean`; \}) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when an item is selected. |
+
+### See
+
+ - [TSelectorBreadCrumbs](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbreadcrumbs) - Breadcrumb navigation properties
+ - [TSelectorPagination](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorpagination) - Pagination and item loading properties
+ - [TSelectorHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorheader) - Header configuration properties
+ - [TSelectorCancelButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorcancelbutton) - Cancel button properties
+ - [TSelectorSubmitButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsubmitbutton) - Submit button properties
+ - [TSelectorCheckbox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorcheckbox) - Footer checkbox properties
+ - [TSelectorBaseProps](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbaseprops) - Common base properties (id, className)
+ - [TSelectorLifecycleEvents](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorlifecycleevents) - Lifecycle callbacks (onLoad, onClose)
+ - [TSelectorEmptyScreen](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoremptyscreen) - Empty state messages
+
+## TSelectorItem
+
+```ts
+type TSelectorItem = {
+  label: string;
+  id?: string | number;
+} & Partial<TSelectorItemFile> & Partial<TSelectorItemInput> & Partial<TSelectorItemNew>;
+```
+
+Represents a single item within a selector component.
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `label` | `string` | The display text for the item. |
+| `id?` | `string` \| `number` | A unique identifier for the item. |
+
+### See
+
+ - [TSelectorItemFile](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoritemfile) - File item properties
+ - [TSelectorItemInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoriteminput) - Input item properties
+ - [TSelectorItemNew](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoritemnew) - New item properties
+
+***
+
+## TSelectorItemFile
+
+```ts
+type TSelectorItemFile = {
+  icon: string;
+  fileExst: FilesExst | string;
+  fileType: FilesType;
+  security: FilesSecurity;
+};
+```
+
+Defines properties for an item that represents a file.
+
+### Properties
+
+import APITable from '@site/src/components/APITable/APITable';
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `icon` | `string` | The URL or identifier for the item's icon. |
+| `fileExst` | [`FilesExst`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filesexst) \| `string` | The file extension (e.g., 'docx', 'pdf'). |
+| `fileType` | [`FilesType`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filestype) | The general type of the file (e.g., 'text', 'spreadsheet'). |
+| `security` | [`FilesSecurity`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filessecurity) | The security or access level of the file. |
+
+</APITable>
+
+***
+
+## TSelectorItemInput
+
+```ts
+type TSelectorItemInput = {
+  isInputItem: boolean;
+  defaultInputValue: string;
+  onAcceptInput: (value: string) => TReturnMessage;
+  onCancelInput: () => TReturnMessage;
+};
+```
+
+Defines properties for an item that functions as an input field.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `isInputItem` | `boolean` | If true, this item will be rendered as an input field. |
+| `defaultInputValue` | `string` | The default value to display in the input field. |
+| `onAcceptInput` | (`value`: `string`) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the user accepts the input value. |
+| `onCancelInput` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the user cancels the input. |
+
+</APITable>
+
+***
+
+## TSelectorItemNew
+
+```ts
+type TSelectorItemNew = {
+  isCreateNewItem: boolean;
+  onCreateClick: () => TReturnMessage;
+};
+```
+
+Defines properties for an item that allows creating a new entity.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `isCreateNewItem` | `boolean` | If true, this item will be rendered as a 'create new' button. |
+| `onCreateClick` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the user clicks the 'create new' button. |
+
+</APITable>
+
+***
+
+## TBreadCrumbItem
+
+```ts
+type TBreadCrumbItem = {
+  label: string;
+  id: string | number;
+  isRoom?: boolean;
+};
+```
+
+Represents a single item in a breadcrumb trail.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `label` | `string` | The display text for the breadcrumb item. |
+| `id` | `string` \| `number` | A unique identifier for the breadcrumb item. |
+| `isRoom?` | `boolean` | If true, indicates that the breadcrumb item represents a room. |
+
+</APITable>
+
+***
+
+## TSelectorBreadCrumbs
+
+```ts
+type TSelectorBreadCrumbs = {
+  withBreadCrumbs?: boolean;
+  isBreadCrumbsLoading?: boolean;
+  breadCrumbs?: TBreadCrumbItem[];
+  onSelectBreadCrumb?: (id: string | number) => TReturnMessage;
+};
+```
+
+Defines properties for configuring breadcrumbs in a selector.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `withBreadCrumbs?` | `boolean` | If true, displays the breadcrumb navigation. |
+| `isBreadCrumbsLoading?` | `boolean` | If true, shows a loading indicator for the breadcrumbs. |
+| `breadCrumbs?` | [`TBreadCrumbItem`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tbreadcrumbitem)[] | An array of breadcrumb items to display. |
+| `onSelectBreadCrumb?` | (`id`: `string` \| `number`) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when a breadcrumb item is selected. |
+
+</APITable>
+
+***
+
+## TSelectorPagination
+
+```ts
+type TSelectorPagination = {
+  items: TSelectorItem[];
+  hasNextPage?: boolean;
+  isNextPageLoading?: boolean;
+  onLoadNextPage?: () => TReturnMessage;
+  totalItems?: number;
+};
+```
+
+Defines properties for pagination within a selector.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `items` | [`TSelectorItem`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoritem)[] | The list of items to display on the current page. |
+| `hasNextPage?` | `boolean` | If true, indicates that more items are available on subsequent pages. |
+| `isNextPageLoading?` | `boolean` | If true, shows a loading indicator while the next page is being loaded. |
+| `onLoadNextPage?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered to load the next page of items. |
+| `totalItems?` | `number` | The total number of items available. |
+
+</APITable>
+
+***
+
+## TSelectorHeader
+
+```ts
+type TSelectorHeader = {
+  withHeader?: boolean;
+  headerProps?: {
+     label: string;
+     isCloseable?: boolean;
+     onCloseClick?: () => TReturnMessage;
+     withBackButton?: boolean;
+     onBackClick?: () => TReturnMessage;
+  };
+};
+```
+
+Defines properties for the selector's header.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `withHeader?` | `boolean` | If true, displays the header. |
+| `headerProps?` | \{ `label`: `string`; `isCloseable?`: `boolean`; `onCloseClick?`: () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage); `withBackButton?`: `boolean`; `onBackClick?`: () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage); \} | An object containing properties for the header. |
+| `headerProps.label` | `string` | The title text to display in the header. |
+| `headerProps.isCloseable?` | `boolean` | If true, displays a close button in the header. |
+| `headerProps.onCloseClick?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the close button is clicked. |
+| `headerProps.withBackButton?` | `boolean` | If true, displays a back button in the header. |
+| `headerProps.onBackClick?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the back button is clicked. |
+
+</APITable>
+
+***
+
+## TSelectorCheckbox
+
+```ts
+type TSelectorCheckbox = {
+  withCheckbox?: boolean;
+  footerCheckboxLabel?: string;
+  isChecked?: boolean;
+};
+```
+
+Defines properties for a checkbox in the selector's footer.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `withCheckbox?` | `boolean` | If true, displays a checkbox in the footer. |
+| `footerCheckboxLabel?` | `string` | The label for the footer checkbox. |
+| `isChecked?` | `boolean` | The initial checked state of the footer checkbox. |
+
+</APITable>
+
+***
+
+## TSelectorCancelButton
+
+```ts
+type TSelectorCancelButton = {
+  withCancelButton?: boolean;
+  cancelButtonLabel?: string;
+  onCancel?: () => TReturnMessage;
+};
+```
+
+Defines properties for the cancel button in the selector.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `withCancelButton?` | `boolean` | If true, displays the cancel button. |
+| `cancelButtonLabel?` | `string` | The text label for the cancel button. |
+| `onCancel?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the cancel button is clicked. |
+
+</APITable>
+
+***
+
+## TSelectorBaseProps
+
+```ts
+type TSelectorBaseProps = {
+  id?: string;
+  className?: string;
+};
+```
+
+Common base properties shared across all selector types.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `id?` | `string` | A unique identifier for the selector component. |
+| `className?` | `string` | A CSS class name to apply to the selector component. |
+
+</APITable>
+
+***
+
+## TSelectorLifecycleEvents
+
+```ts
+type TSelectorLifecycleEvents = {
+  onLoad?: () => TReturnMessage;
+  onClose?: () => TReturnMessage;
+};
+```
+
+Lifecycle callback properties for selectors.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `onLoad?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the selector is loaded. |
+| `onClose?` | () => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the selector is closed. |
+
+</APITable>
+
+***
+
+## TSelectorEmptyScreen
+
+```ts
+type TSelectorEmptyScreen = {
+  emptyScreenHeader?: string;
+  emptyScreenDescription?: string;
+};
+```
+
+Empty screen message properties for selectors.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `emptyScreenHeader?` | `string` | The header text to display when there are no items to show. |
+| `emptyScreenDescription?` | `string` | The description text to display when there are no items to show. |
+
+</APITable>
+
+***
+
+## TSelectorSearchCreate
+
+```ts
+type TSelectorSearchCreate = {
+  withSearch?: boolean;
+  withCreate?: boolean;
+};
+```
+
+Search and create functionality properties for selectors.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `withSearch?` | `boolean` | If true, displays a search input field. |
+| `withCreate?` | `boolean` | If true, allows users to create new items. |
+
+</APITable>
+
+***
+
+## TSelectorSubmitButton
+
+```ts
+type TSelectorSubmitButton = {
+  submitButtonLabel: string;
+  disabledSubmitButton?: boolean;
+  onSubmit: (params: {
+     selectedIds: (string | number)[];
+     fileName: string;
+     isFooterCheckboxChecked: boolean;
+  }) => TReturnMessage;
+};
+```
+
+Defines properties for the submit button in the selector.
+
+### Properties
+
+<APITable>
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `submitButtonLabel` | `string` | The text label for the submit button. |
+| `disabledSubmitButton?` | `boolean` | If true, the submit button will be disabled. |
+| `onSubmit` | (`params`: \{ `selectedIds`: (`string` \| `number`)[]; `fileName`: `string`; `isFooterCheckboxChecked`: `boolean`; \}) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the submit button is clicked. |
+
+</APITable>
+
+***
+
+## TFilesSelector
+
+```ts
+type TFilesSelector = TSelectorHeader & TSelectorBaseProps & TSelectorLifecycleEvents & TSelectorSearchCreate & TSelectorCancelButton & Pick<TSelectorSubmitButton, "submitButtonLabel"> & {
+  isMultiSelect?: boolean;
+  withBreadCrumbs?: boolean;
+  currentFolderId?: string | number;
+  isRoomsOnly?: boolean;
+  openRoot?: boolean;
+  descriptionText?: string;
+  withFooterInput?: boolean;
+  footerInputHeader?: string;
+  currentFooterInputValue?: string;
+  withFooterCheckbox?: boolean;
+  footerCheckboxLabel?: string;
+  filterParam?: FilterType;
+  getIsDisabled: (params: {
+     selectedItemId: string | number | undefined;
+     selectedItemType?: "rooms" | "files";
+     selectedItemSecurity?:   | FilesSecurity
+        | Security;
+     selectedFileInfo:   | {
+        id: string | number;
+        title: string;
+        fileExst?: FilesExst | string;
+      }
+        | null;
+     isFirstLoad: boolean;
+     isDisabledFolder?: boolean;
+     isRoot: boolean;
+  }) => boolean;
+  onSubmit?: (params: {
+     selectedItemId: string | number | undefined;
+     folderTitle: string;
+     fileName: string;
+     isChecked: boolean;
+     selectedFileInfo:   | {
+        id: string | number;
+        title: string;
+        fileExst?: FilesExst | string;
+      }
+        | null;
+     breadCrumbs?: TBreadCrumbItem[];
+  }) => TReturnMessage;
+  onSelect?: (id: string | number | undefined) => TReturnMessage;
+};
+```
+
+Defines the properties for a file and folder selector component.
+
+### Example
+
+```typescript
+// This example demonstrates a file selector for choosing a location to save a file.
+// It includes a footer input for the filename, breadcrumbs for navigation, and
+// custom logic to disable the submit button in the root directory.
+
+const filesSelectorProps: TFilesSelector = {
+  // Defines the text and visibility of the header.
+  withHeader: true,
+  headerProps: {
+    label: "Save File As",
+  },
+
+  // The text to display on the main action button.
+  submitButtonLabel: "Save",
+  // Enables and sets the text for the cancel button.
+  withCancelButton: true,
+  cancelButtonLabel: "Cancel",
+
+  // Enables breadcrumbs for easy navigation through folders.
+  withBreadCrumbs: true,
+  // Enables the search functionality.
+  withSearch: true,
+  // Allows users to create new folders within the selector.
+  withCreate: true,
+
+  // Adds an input field in the footer, typically for a filename.
+  withFooterInput: true,
+  footerInputHeader: "File name",
+  currentFooterInputValue: "Untitled Document",
+
+  // A callback function to determine if the submit button should be disabled.
+  getIsDisabled: ({ isRoot }) => {
+    // In this case, disable the submit button if the user is in the root directory.
+    return isRoot;
+  },
+
+  // A callback function that is executed when the user clicks the submit button.
+  onSubmit: (payload) => {
+    // The `payload` object contains information about the selected location and filename.
+    console.log("File save details:", payload);
+
+    // After submission, close the selector and show a confirmation message.
+    return {
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{
+        type: ToastType.success,
+        title: `File saved as ${payload.fileName}`,
+      }],
+    };
+  },
+};
+```
+
+***
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isMultiSelect?` | `boolean` | If true, allows multiple items to be selected. |
+| `withBreadCrumbs?` | `boolean` | If true, displays breadcrumb navigation. |
+| `currentFolderId?` | `string` \| `number` | The ID of the folder to open by default. |
+| `isRoomsOnly?` | `boolean` | If true, displays only rooms at the root level. |
+| `openRoot?` | `boolean` | If true, opens the root directory by default. |
+| `descriptionText?` | `string` | A descriptive text displayed within the selector. |
+| `withFooterInput?` | `boolean` | If true, displays an input field in the footer. |
+| `footerInputHeader?` | `string` | The header text for the footer input. |
+| `currentFooterInputValue?` | `string` | The initial value for the footer input. |
+| `withFooterCheckbox?` | `boolean` | If true, displays a checkbox in the footer. |
+| `footerCheckboxLabel?` | `string` | The label for the footer checkbox. |
+| `filterParam?` | [`FilterType`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Utility.md) | File type filter. |
+| `getIsDisabled()` | (`params`: \{ `selectedItemId`: `string` \| `number` \| `undefined`; `selectedItemType?`: `"rooms"` \| `"files"`; `selectedItemSecurity?`: \| [`FilesSecurity`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filessecurity) \| [`Security`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Security.md); `selectedFileInfo`: \| \{ `id`: `string` \| `number`; `title`: `string`; `fileExst?`: [`FilesExst`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filesexst) \| `string`; \} \| `null`; `isFirstLoad`: `boolean`; `isDisabledFolder?`: `boolean`; `isRoot`: `boolean`; \}) => `boolean` | A callback function to determine if the submit button should be disabled. |
+| `onSubmit()?` | (`params`: \{ `selectedItemId`: `string` \| `number` \| `undefined`; `folderTitle`: `string`; `fileName`: `string`; `isChecked`: `boolean`; `selectedFileInfo`: \| \{ `id`: `string` \| `number`; `title`: `string`; `fileExst?`: [`FilesExst`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md#filesexst) \| `string`; \} \| `null`; `breadCrumbs?`: [`TBreadCrumbItem`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tbreadcrumbitem)[]; \}) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the submit button is clicked. |
+| `onSelect()?` | (`id`: `string` \| `number` \| `undefined`) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when an item is selected. |
+
+### See
+
+ - [TSelectorHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorheader) - Header configuration properties
+ - [TSelectorBaseProps](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbaseprops) - Common base properties (id, className)
+ - [TSelectorLifecycleEvents](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorlifecycleevents) - Lifecycle callbacks (onLoad, onClose)
+ - [TSelectorSearchCreate](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsearchcreate) - Search and create functionality
+ - [TSelectorCancelButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorcancelbutton) - Cancel button properties
+ - [TSelectorSubmitButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsubmitbutton) - Submit button properties (partial)
+
+## TGroupsSelector
+
+```ts
+type TGroupsSelector = TSelectorHeader & TSelectorBaseProps & TSelectorLifecycleEvents & {
+  onSubmit: (params: {
+     selectedIds: (string | number)[];
+     fileName?: string;
+     isFooterCheckboxChecked?: boolean;
+  }) => TReturnMessage;
+};
+```
+
+Defines the properties for a group selector component.
+
+### Example
+
+```typescript
+// This example shows how to set up a group selector with a custom header and submit logic.
+
+const groupsSelectorProps: TGroupsSelector = {
+  // Defines the text and visibility of the header.
+  withHeader: true,
+  headerProps: {
+    label: "Select Groups",
+  },
+
+  // A callback function that is executed when the user clicks the submit button.
+  onSubmit: (payload) => {
+    // The `payload` object contains the `selectedIds` of the chosen groups.
+    console.log("Selected groups:", payload.selectedIds);
+
+    // After submission, close the selector and display a toast notification.
+    return {
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{
+        type: ToastType.success,
+        title: "Groups selected successfully",
+      }],
+    };
+  },
+};
+```
+
+***
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `onSubmit()` | (`params`: \{ `selectedIds`: (`string` \| `number`)[]; `fileName?`: `string`; `isFooterCheckboxChecked?`: `boolean`; \}) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the submit button is clicked. |
+
+### See
+
+ - [TSelectorHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorheader) - Header configuration properties
+ - [TSelectorBaseProps](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbaseprops) - Common base properties (id, className)
+ - [TSelectorLifecycleEvents](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorlifecycleevents) - Lifecycle callbacks (onLoad, onClose)
+
+## TPeopleSelector
+
+```ts
+type TPeopleSelector = TSelectorHeader & TSelectorCancelButton & TSelectorSubmitButton & TSelectorBaseProps & TSelectorLifecycleEvents & TSelectorEmptyScreen & {
+  targetEntityType?: "file" | "folder" | "room";
+  withGroups?: boolean;
+  isGroupsOnly?: boolean;
+  withGuests?: boolean;
+  isGuestsOnly?: boolean;
+  isMultiSelect?: boolean;
+  currentUserId?: string;
+  excludeItems?: string[];
+  disableInvitedUsers?: string[];
+  disableDisabledUsers?: boolean;
+  roomId?: string | number;
+  alwaysShowFooter?: boolean;
+  onlyRoomMembers?: boolean;
+};
+```
+
+Defines the properties for a user and group selector component.
+
+### Example
+
+```typescript
+// This example demonstrates how to configure a selector for choosing users and groups.
+// It allows multi-selection, includes groups, and provides clear labels and descriptions.
+
+const peopleSelectorProps: TPeopleSelector = {
+  // Defines the text and visibility of the header.
+  withHeader: true,
+  headerProps: {
+    label: "Share Document",
+  },
+
+  // The text to display on the main action button.
+  submitButtonLabel: "Share",
+  // The text for the cancel button.
+  cancelButtonLabel: "Cancel",
+
+  // If true, the footer with action buttons is always visible.
+  alwaysShowFooter: true,
+
+  // Custom text to display when no users or groups are found.
+  emptyScreenHeader: "No users found",
+  emptyScreenDescription: "There are no users or groups matching your search.",
+
+  // Allows the selection of multiple users and groups.
+  isMultiSelect: true,
+  // Includes groups in the selection list.
+  withGroups: true,
+
+  // A callback function that is executed when the user clicks the submit button.
+  onSubmit: (payload) => {
+    // The `payload` object contains the `selectedIds` of the chosen users and groups.
+    console.log("Selected users and groups:", payload.selectedIds);
+
+    // After submission, close the selector and show a confirmation toast.
+    return {
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{
+        type: ToastType.success,
+        title: "Document shared successfully",
+      }],
+    };
+  },
+};
+```
+
+***
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `targetEntityType?` | `"file"` \| `"folder"` \| `"room"` | The type of entity for which the user is being selected (e.g., for sharing a file). **Example** `"file" \| "folder" \| "room"` |
+| `withGroups?` | `boolean` | If true, allows the selection of groups. **Default** `false` |
+| `isGroupsOnly?` | `boolean` | If true, displays only groups in the selector. **Default** `false` |
+| `withGuests?` | `boolean` | If true, includes guest users in the selector. **Default** `false` |
+| `isGuestsOnly?` | `boolean` | If true, displays only guest users in the selector. **Default** `false` |
+| `isMultiSelect?` | `boolean` | If true, allows multiple users and/or groups to be selected. **Default** `false` |
+| `currentUserId?` | `string` | The ID of the current user, to be excluded from the list. **Example** `"user-1234"` |
+| `excludeItems?` | `string`[] | An array of user or group IDs to exclude from the list. **Example** `["user-1234", "group-5678"]` |
+| `disableInvitedUsers?` | `string`[] | An array of user IDs that are already invited and should be disabled. **Example** `["user-1234", "user-5678"]` |
+| `disableDisabledUsers?` | `boolean` | If true, users with a 'disabled' status will not be displayed. **Default** `false` |
+| `roomId?` | `string` \| `number` | The ID of the room to which the selector is related. **Example** `"room-1234"` |
+| `alwaysShowFooter?` | `boolean` | If true, the footer will always be visible, even if no users are selected. **Default** `false` |
+| `onlyRoomMembers?` | `boolean` | If true, displays only the members of the current room. **Default** `false` |
+
+### See
+
+ - [TSelectorHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorheader) - Header configuration properties
+ - [TSelectorCancelButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorcancelbutton) - Cancel button properties
+ - [TSelectorSubmitButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsubmitbutton) - Submit button properties
+ - [TSelectorBaseProps](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbaseprops) - Common base properties (id, className)
+ - [TSelectorLifecycleEvents](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorlifecycleevents) - Lifecycle callbacks (onLoad, onClose)
+ - [TSelectorEmptyScreen](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoremptyscreen) - Empty state messages
+
+## TRoomSelector
+
+```ts
+type TRoomSelector = TSelectorHeader & TSelectorCancelButton & TSelectorBaseProps & TSelectorLifecycleEvents & TSelectorEmptyScreen & TSelectorSearchCreate & Pick<TSelectorSubmitButton, "submitButtonLabel"> & {
+  isMultiSelect?: boolean;
+  roomType?:   | RoomsType
+     | RoomsType[];
+  searchArea?: RoomSearchArea;
+  excludeItems?: (number | string | undefined)[];
+  createDefineRoomLabel?: string;
+  createDefineRoomType?: RoomsType;
+  onSubmit?: (selectedIds: (string | number)[]) => TReturnMessage;
+};
+```
+
+Defines the properties for a room selector component.
+
+### Example
+
+```typescript
+// This example demonstrates how to create a room selector that allows users to
+// select multiple public or custom rooms. It includes search and create functionalities.
+
+const roomSelectorProps: TRoomSelector = {
+  // Defines the text and visibility of the header.
+  withHeader: true,
+  headerProps: {
+    label: "Select a Room",
+  },
+
+  // The text to display on the main action button.
+  submitButtonLabel: "Open Rooms",
+  // Enables and sets the text for the cancel button.
+  withCancelButton: true,
+  cancelButtonLabel: "Close",
+
+  // Custom text to display when no rooms are found.
+  emptyScreenHeader: "No Rooms Available",
+  emptyScreenDescription: "You can create a new room or try a different search.",
+
+  // Allows the selection of multiple rooms.
+  isMultiSelect: true,
+  // Filters the list to show only public and custom rooms.
+  roomType: [RoomsType.PublicRoom, RoomsType.CustomRoom],
+  // Sets the search scope to active rooms.
+  searchArea: RoomSearchArea.Active,
+
+  // Enables the search bar and the create room button.
+  withCreate: true,
+  withSearch: true,
+  // Label for the create room button.
+  createDefineRoomLabel: "Create a new collaboration room",
+  // Default type for a newly created room.
+  createDefineRoomType: RoomsType.EditingRoom,
+
+  // A callback function that is executed when the user clicks the submit button.
+  onSubmit: (selectedIds) => {
+    // The `selectedIds` parameter is an array of the selected room IDs.
+    console.log("Selected rooms:", selectedIds);
+
+    // After submission, close the selector and show a success message.
+    return {
+      actions: [Actions.closeSelector, Actions.showToast],
+      toastProps: [{
+        type: ToastType.success,
+        title: `${selectedIds.length} rooms selected`,
+      }],
+    };
+  },
+};
+```
+
+***
+
+### Type Declaration
+
+| Name | Type | Description |
+| ------ | ------ | ------ |
+| `isMultiSelect?` | `boolean` | If true, allows multiple rooms to be selected. |
+| `roomType?` | \| [`RoomsType`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Rooms.md#roomstype) \| [`RoomsType`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Rooms.md#roomstype)[] | The type of rooms to display (e.g., 'collaboration', 'custom'). Can be a single type or an array of types. |
+| `searchArea?` | [`RoomSearchArea`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Rooms.md#roomsearcharea) | The area to search for rooms within (e.g., 'myRooms', 'allRooms'). |
+| `excludeItems?` | (`number` \| `string` \| `undefined`)[] | An array of room IDs to exclude from the list. |
+| `createDefineRoomLabel?` | `string` | The label for the 'create new room' option. |
+| `createDefineRoomType?` | [`RoomsType`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Rooms.md#roomstype) | The default type for newly created rooms. |
+| `onSubmit()?` | (`selectedIds`: (`string` \| `number`)[]) => [`TReturnMessage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md#treturnmessage) | A callback function that is triggered when the submit button is clicked. |
+
+### See
+
+ - [TSelectorHeader](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorheader) - Header configuration properties
+ - [TSelectorCancelButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorcancelbutton) - Cancel button properties
+ - [TSelectorBaseProps](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorbaseprops) - Common base properties (id, className)
+ - [TSelectorLifecycleEvents](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorlifecycleevents) - Lifecycle callbacks (onLoad, onClose)
+ - [TSelectorEmptyScreen](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectoremptyscreen) - Empty state messages
+ - [TSelectorSearchCreate](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsearchcreate) - Search and create functionality
+ - [TSelectorSubmitButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md#tselectorsubmitbutton) - Submit button properties (partial)
+

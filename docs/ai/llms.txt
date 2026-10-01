@@ -1,0 +1,56 @@
+# ONLYOFFICE Docs: AI
+
+> Build AI-powered editor extensions that combine the plugin framework with an AI provider integration.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Get started
+
+- [Overview](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/get-started/overview.md): ONLYOFFICE custom AI tools are editor extensions that combine the plugin framework with an AI provider integration to deliver intelligent, context-aware features directly inside the editors.
+- [Quick start](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/get-started/quick-start.md): Add an AI-generated comment or footnote to selected text using the ONLYOFFICE AI agent.
+- [Playground](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## Guides
+
+- [AI plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/ai-plugin.md): AI is a background plugin that connects an AI provider (e.g., OpenAI, DeepSeek) to ONLYOFFICE editors, enabling intelligent text generation, editing, summarization, and automatic macro creation.
+- [Adding custom providers](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/custom-providers.md): Any custom provider can be added to the AI plugin. To do this, follow the instructions below.
+- [AI agent (beta)](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/ai-agent.md): Starting from version 2.4.2, the AI plugin brings the new AI agent functionality.
+- [Custom AI tools (beta)](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/custom-ai-tools.md): Custom AI tools are functions that define the functionality of the AI agent. They specify:
+- [Converting VBA macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/converting-vba-macros.md): ONLYOFFICE macros are different from Microsoft macros because the latter use the Visual Basic for Applications (VBA) scripting language. JavaScript is more flexible and can be used with any platform (which is important as ONLYOFFICE editors are supported on Windows, Linux, and macOS).
+- [Text annotations API guide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/text-annotations-guide.md): ONLYOFFICE 9.2.0 introduced an API extension for working with text annotations - visual underlines that highlight text sections and allow you to associate metadata with them.
+- [Configuring Ollama with CORS](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/guides/configuring-ollama-with-cors.md): Configuring OLLAMA_ORIGINS for local requests
+
+## Custom AI tools
+
+- [Change paragraph style](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/change-paragraph-style.md): Change the style of a specified paragraph.
+- [Change text style](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/change-text-style.md): Modify the style of selected or current text.
+- [Comment text](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/comment-text.md): Add a comment to the selected text.
+- [Describe image](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/describe-image.md): Generate a description for images in a document.
+- [Extract action items](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/extract-action-items.md): Extract action items from selected text.
+- [Generate hashtags](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/generate-hashtags.md): Generate hashtags from selected text.
+- [Insert list](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/insert-list.md): Insert a formatted list into a document.
+- [Insert page](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/insert-page.md): Insert a new page into a document.
+- [Insert table](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/insert-table.md): Insert a table into a document.
+- [Rename form keys](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/rename-form-keys.md): Rename form field keys in a document.
+- [Rewrite text](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/rewrite-text.md): Rewrite selected text with AI assistance.
+- [Smart headline generator](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/document-editor/smart-headline-generator.md): Generate a headline from document content.
+- [Add chart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/add-chart.md): Create a chart from a spreadsheet data range.
+- [Calculate values](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/calculate-values.md): Perform math operations on a cell range.
+- [Explain error](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/explain-error.md): Explain a cell error in natural language.
+- [Explain formula](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/explain-formula.md): Explain a cell formula in natural language.
+- [Insert pivot table](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/insert-pivot-table.md): Create a pivot table from a selected range.
+- [Set auto filter](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/set-auto-filter.md): Apply an auto filter to a selected range.
+- [Set sort](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/spreadsheet-editor/set-sort.md): Sort a selected range by column.
+- [Add chart to slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/add-chart-to-slide.md): Add a chart to a presentation slide.
+- [Add new slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/add-new-slide.md): Add a new slide to a presentation.
+- [Add shape to slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/add-shape-to-slide.md): Add a shape with text to a slide.
+- [Add table to slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/add-table-to-slide.md): Add a table to a presentation slide.
+- [Add text to placeholder](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/add-text-to-placeholder.md): Add text to a slide placeholder.
+- [Change slide background](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/change-slide-background.md): Change the background color of a slide.
+- [Delete slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/delete-slide.md): Delete a specified slide from a presentation.
+- [Describe image](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/describe-image.md): Generate a description for images on a slide.
+- [Duplicate slide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/samples/presentation-editor/duplicate-slide.md): Duplicate a specified slide in a presentation.
+
+## More information
+
+- [FAQ](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/more-information/faq.md): Which AI providers are supported?

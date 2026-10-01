@@ -1,0 +1,53 @@
+---
+sidebar_position: -3
+---
+
+import APITable from '@site/src/components/APITable/APITable';
+
+# How to call methods
+
+To execute certain editor methods using the plugin, define the **executeMethod** method.
+
+The *callback* is the result that the method returns. It is an optional parameter. In case it is missing, the *window.Asc.plugin.onMethodReturn* function will be used to return the result of the method execution.
+
+## executeMethod
+
+### Parameters
+
+<APITable>
+
+| Name     | Type     | Description                                               |
+|----------|----------|-----------------------------------------------------------|
+| name     | string   | The name of the specific method that must be executed.    |
+| params   | array    | The arguments that the method in use has (if it has any). |
+| callback | function | The result that the method returns.                       |
+
+</APITable>
+
+### Returns
+
+Type boolean
+
+### Example
+
+```ts
+Asc.plugin.executeMethod("methodName", [param1, param2], (returnValue) => {
+  console.log(returnValue);
+});
+```
+
+## Debugging
+
+To log all `executeMethod` and [`callCommand`](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md) calls to the browser console, set the `asc_plugin_commands_log` key in the browser's local storage:
+
+```js
+localStorage.setItem("asc_plugin_commands_log", "true");
+```
+
+To disable logging, remove the key:
+
+```js
+localStorage.removeItem("asc_plugin_commands_log");
+```
+
+The setting persists across page reloads.

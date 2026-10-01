@@ -1,0 +1,68 @@
+---
+description: Integrate ONLYOFFICE Docs into Moodle for document editing and collaboration.
+tags: ["Docs", "Integration", "Ready-to-use"]
+sidebar_custom_props:
+  icon: /assets/images/editor/connectors/moodle.svg
+---
+
+import YoutubeVideo from '@site/src/components/YoutubeVideo/YoutubeVideo';
+
+# Moodle integration
+
+<YoutubeVideo videoId="JudgGPQo1nQ"/>
+
+This [plugin](https://github.com/ONLYOFFICE/moodle-mod_onlyofficeeditor) enables users to edit office documents from [Moodle](https://moodle.org/) using ONLYOFFICE Docs.
+
+## Features
+
+- Currently, the following document formats can be opened and edited: DOCX, XLSX, PPTX, PDF.
+- The following formats are available for viewing only: TXT, CSV.
+- The plugin will create a new **ONLYOFFICE document** activity as one of the edit modes for the necessary course page. This allows multiple users to collaborate in real time and to save back those changes to Moodle.
+
+## Installing ONLYOFFICE Docs
+
+You will need an instance of ONLYOFFICE Docs (Document Server) that is resolvable and connectable both from Moodle and any end clients. If that is not the case, use the official [ONLYOFFICE Docs documentation page](https://helpcenter.onlyoffice.com/server/linux/document/linux-installation.aspx). ONLYOFFICE Docs must also be able to POST to Moodle directly.
+
+The easiest way to start an instance of ONLYOFFICE Docs is to use [Docker](https://github.com/ONLYOFFICE/Docker-DocumentServer).
+
+## Installing ONLYOFFICE plugin for Moodle
+
+This plugin is an **activity module**.
+
+Follow the usual Moodle plugin installation steps to install this plugin into your *mod/onlyoffice* directory. Please see [Moodle Documentation](https://docs.moodle.org/en/Installing_plugins) for more information.
+
+The latest compiled package files are available [here](https://github.com/ONLYOFFICE/moodle-mod_onlyofficeeditor/releases).
+
+## Configuring ONLYOFFICE plugin for Moodle
+
+Once the plugin is installed, the settings page will be opened. Alternatively, you can find the installed plugin on the **Plugins overview** page and click **Settings**.
+
+- Enter the name of the server with ONLYOFFICE Docs installed in the **Document Editing Service address** field:
+
+  ``` sh
+  https://<documentserver>/
+  ```
+
+  where **documentserver** is the name of the server with **ONLYOFFICE Docs** installed. The address must be accessible from both the user's browser and the Moodle server. The Moodle server address must also be accessible from **ONLYOFFICE Docs** for correct work. You can [register](https://www.onlyoffice.com/docs-registration?from=api) a free ONLYOFFICE Cloud and use its public IP address or public DNS that can be found in the **Instances** section of the cloud console.
+
+- Starting from version 7.2, JWT is enabled by default and the secret key is generated automatically to restrict access to ONLYOFFICE Docs and for security reasons and data integrity. Specify your own **Document Server Secret** on the Moodle **Settings** page. In the ONLYOFFICE Docs [config file](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/additional-api/signature.md), specify the same secret key and enable the validation.
+
+## Using ONLYOFFICE plugin for Moodle
+
+Once the plugin is installed and configured, you can add instances of ONLYOFFICE activity to your course pages as per usual Moodle practice:
+
+1. Open the necessary course page.
+2. Activate the **Edit Mode** using the switcher at the top right corner.
+3. Click **Add an activity or resource**.
+4. Select the **ONLYOFFICE document** activity in the pop-up window.
+5. Type in the activity name, upload or drag-and-drop the necessary document from your PC, and click the **Save and display** button.
+
+Admins and teachers can choose whether or not documents can be downloaded or printed from inside the ONLYOFFICE editor. This can be done in the **Document permissions** section.
+
+Clicking the activity name or link on the course page opens the ONLYOFFICE editor in the user's browser, ready for collaborative editing.
+
+## How it works
+
+The ONLYOFFICE integration follows the API documented [here](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/basic-concepts.md).
+
+Download the ONLYOFFICE plugin for Moodle [here](https://github.com/ONLYOFFICE/moodle-mod_onlyofficeeditor).

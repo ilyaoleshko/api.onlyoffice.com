@@ -1,0 +1,52 @@
+---
+sidebar_position: -4
+---
+
+import APITable from '@site/src/components/APITable/APITable';
+
+# Opening documents
+
+After [registering](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/desktop-editors/usage-api/adding-a-dms-provider/login-and-logout.md) in the cloud, you can start working on documents stored there.
+
+Connecting ONLYOFFICE Desktop Editors to your cloud allows you to edit documents, spreadsheets, presentations, PDFs, and fillable forms without having a constant Internet connection and easily switch to the online mode for real-time co-editing (in case [ONLYOFFICE Docs](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/basic-concepts.md) is integrated with your cloud).
+
+Besides, using ONLYOFFICE Desktop Editors you are no longer limited by your browser resources. It means you can:
+
+- copy and paste from/into another document using the editor toolbar buttons and context menu options;
+- print the document directly from the app using the **Print** option;
+- use all the fonts available on the local computer;
+- work with documents without prior manual language setting (it is set automatically).
+
+To open a document in a new window / tab correctly:
+
+**Option 1.** Use the *window\.open("http\://url.to.document")* JavaScript command, where URL to the document is validated by the *editorPage* value of the [config](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/desktop-editors/usage-api/adding-a-dms-provider.md). The document will be opened upon successful validation.
+
+**Option 2.** Use the *open:document* command of the [execCommand](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/desktop-editors/usage-api/adding-a-dms-provider/execcommand.md) method. When this command is sent, the document is opened. Parameters are specified in the format of a string with the serialized *json* as follows:
+
+```json
+{
+  "url": "url to document",
+  "type": "type",
+  "provider": "provider"
+} 
+```
+
+<APITable>
+| Parameter | Type   | Example                                            | Description                                                                                                                                    |
+| --------- | ------ | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| url       | string | `https://example.com/url-to-example-document.docx` | The absolute URL to the opened document.                                                                                               |
+| type      | string | `"word"`                                           | The type of the opened document if it is possible to define: **word**, **cell**, **slide**, or **pdf**.                                |
+| provider  | string | `"onlyoffice"`                                     | The provider id used to refer to the desktop app in the JavaScript commands (the same as in the [config](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/desktop-editors/usage-api/adding-a-dms-provider.md)). |
+
+</APITable>
+
+## Example
+
+```ts
+const params = {
+  url: "https://example.com/url-to-example-document.docx",
+  type: "word",
+  provider: "onlyoffice",
+};
+window.AscDesktopEditor.execCommand("open:document", JSON.stringify(params));
+```

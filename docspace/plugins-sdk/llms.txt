@@ -1,0 +1,110 @@
+# ONLYOFFICE DocSpace: Plugins SDK
+
+> Extend the DocSpace portal with your own plugins: context menu items, main button actions, or third-party services.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Get started
+
+- [Get started](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/get-started.md): DocSpace Plugins SDK allows developers to create their own plugins and add them to the DocSpace portal.
+
+## SDK usage
+
+- [Preparing](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/preparing.md): Before you start developing a plugin, you should go through the following preparation steps.
+- [Creating plugin template](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/creating-plugin-template.md): Before starting plugin development, create a plugin template and configure its settings, which will be displayed in the DocSpace plugin settings.
+- [Plugin structure](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/plugin-structure.md): Each DocSpace plugin is a folder with files. It must contain the following files required for the plugin to work.
+- [Coding plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin.md): Develop a plugin. Follow the plugin structure described here.
+- [Components](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components.md): UI components for building plugin interfaces — dialogs, buttons, inputs, and other visual elements. Compose them with IModalDialog, IBox, or other layout containers; overlays such as dialogs, toasts and selectors are displayed by returning an IMessage with the matching Actions value from an event handler.
+- [Component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Component.md): A component that is used to add components into Box.
+- [IBox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IBox.md): A container that lays out its contents in one direction.
+- [IButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IButton.md): A component that is used for an action on a page.
+- [ICheckbox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ICheckbox.md): Custom checkbox.
+- [IComboBox](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IComboBox.md): Custom combo box input.
+- [ICreateDialog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ICreateDialog.md): Modal dialog for creating certain item (file, folder, etc.).
+- [IFloatingOperationsButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IFloatingOperationsButton.md): Configuration for the floating operations button.
+- [IFrame](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IFrame.md): A component that is used to embed a third-party website into a modal window or the settings page.
+- [IIconButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IIconButton.md): A component that displays an interactive icon button with hover and click states.
+- [IImage](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IImage.md): A component that is used to embed an image not from the assets folder into a modal window or the settings page.
+- [IInput](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IInput.md): Input field for single-line strings.
+- [ILabel](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ILabel.md): Field name in the form.
+- [ILink](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ILink.md): Defines the link component properties.
+- [IMediaViewer](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IMediaViewer.md): Properties for the Media Viewer component that allows plugins to display custom content.
+- [IModalDialog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IModalDialog.md): Modal dialog.
+- [ISkeleton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ISkeleton.md): A component that is used to hide components during uploading.
+- [IText](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IText.md): Plain text.
+- [ITextArea](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ITextArea.md): Custom textarea.
+- [IToast](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IToast.md): A brief notification that appears on the screen.
+- [IToggleButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IToggleButton.md): Custom toggle button input for binary state controls.
+- [TSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/Selector.md): Provides selector components for choosing files, rooms, users, and groups within DocSpace.
+- [Items](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items.md): Plugin items that extend specific DocSpace UI locations — context menus, file rows, info panels, profile menus, and navigation buttons.
+- [IArticleButtonItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IArticleButtonItem.md): Describes a button item that will be embedded in the article sidebar.
+- [IArticleNavigationItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IArticleNavigationItem.md): Describes a navigation item that will be embedded in the article sidebar as a first-class
+- [IContextMenuItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IContextMenuItem.md): Describes an item that will be embedded in the context menu.
+- [IEventListenerItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IEventListenerItem.md): Describes an event listener that reacts to portal events.
+- [IFileItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IFileItem.md): Describes an item that will be embedded in the file list.
+- [IInfoPanelItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IInfoPanelItem.md): The info panel item that is displayed in the info panel.
+- [IMainButtonItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IMainButtonItem.md): Describes an item that will be embedded in the More item of the main button menu. It is available only inside a room (folder) and is not available for the room list.
+- [IProfileMenuItem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/items/IProfileMenuItem.md): Describes an item that will be embedded in the profile menu.
+- [Plugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins.md): Core plugin interfaces that define the contract for each plugin type supported by DocSpace. Every plugin must implement IPlugin plus one or more type-specific interfaces.
+- [IApiPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IApiPlugin.md): The plugin that is provided with the origin, proxy, and prefix to make requests to the portal server.
+- [IArticleButtonPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IArticleButtonPlugin.md): Describes a plugin that adds custom button items to the article sidebar.
+- [IArticleNavigationPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IArticleNavigationPlugin.md): Describes a plugin that adds navigation items to the article sidebar.
+- [IContextMenuPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IContextMenuPlugin.md): The plugin that is embedded in the context menu of files, folders, rooms, images, video (audio).
+- [IEventListenerPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IEventListenerPlugin.md): The plugin that is given the access to the portal events.
+- [IFilePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IFilePlugin.md): The plugin that can interact with the file list.
+- [IInfoPanelPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IInfoPanelPlugin.md): The plugin that is embedded as a separate tab in the file info panel.
+- [IMainButtonPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IMainButtonPlugin.md): The plugin that can add items to the main button menu.
+- [IPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IPlugin.md): The default plugin.
+- [IPostMessagePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IPostMessagePlugin.md): The plugin that is given the access to handle postMessage events from iframe components.
+- [IProfileMenuPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/IProfileMenuPlugin.md): Plugin for embedding items in the profile menu.
+- [ISettingsPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/plugins/ISettingsPlugin.md): The plugin that manages settings for the administrator or owner.
+- [ISettings](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/settings/ISettings.md): Defines the administrator or owner settings block that is embedded in the side panel of the plugin.
+- [Utils](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/utils.md): Utility types for plugin messaging, return values, and panel navigation.
+- [React](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react.md): Hooks and runtime types for plugin UI written as React components. A component is handed to DocSpace through one of the *Component props on an item, a modal dialog or the settings block, and reads the portal selection, user, API and actions through these hooks.
+- [PluginActions](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react/actions.md): Portal-side actions available to a React plugin component.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react/api.md): The portal API as a plugin sees it: the client every request goes through,
+- [Hooks](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react/hooks.md): React hooks for plugin components rendered inside the DocSpace application tree.
+- [Runtime](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react/runtime.md): What DocSpace hands a React plugin component: the current selection, the
+- [PluginSettingsClient](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/react/settings.md): Client for persisting and retrieving plugin-specific settings.
+- [Enums](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums.md): Enumerations for actions, component types, events, file types, security permissions, room types and other SDK-wide constants.
+- [Actions](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Actions.md): A collection of events that will be processed on the portal side.
+- [Components](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md): Defines the available UI component.
+- [Devices](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Devices.md): Defines the supported device types.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Events.md): Defines the supported event types for the plugin system.
+- [Files](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Files.md): Enumerations for file types, supported extensions, and security permissions.
+- [Plugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Plugins.md): Enumerations for plugin status and supported locales.
+- [Rooms](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Rooms.md): Enumerations for DocSpace room types and search scopes.
+- [Section](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Section.md): Defines the portal sections in which an article navigation item can appear.
+- [Security](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Security.md): Defines the supported room/folder security parameters.
+- [SelectorType](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Selector.md): Defines the types of selector components that can be rendered.
+- [UsersType](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/UsersType.md): Defines the supported user types.
+- [FilterType](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Utility.md): Enum for filter type used in file selectors.
+- [Styling plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/styling-plugin.md): You can style your plugin components by importing CSS files directly into the .ts source files.
+- [Building plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/building-plugin.md): To build a plugin, you need to have npm (included with Node.js) installed. After that, follow the instructions below:
+- [Config](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/config.md): The config.json file is generated based on the data from the package.json file.
+- [Adding plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/adding-plugin.md): You can upload your own plugins to your server or to the DocSpace SaaS solution. System plugins created by our developers are available by default in both the server and SaaS versions of ONLYOFFICE DocSpace.
+
+## Samples
+
+- [API plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/api-plugin.md): Create a plugin that makes authorized API requests.
+- [Box component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/box-component.md): Configure and use the Box layout component.
+- [Button component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/button-component.md): Render and configure the Button component.
+- [ComboBox component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/combobox-component.md): Configure and use the ComboBox dropdown component.
+- [Context menu plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/context-menu-plugin.md): Add a custom item to the file context menu.
+- [File plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/file-plugin.md): Add support for a custom file extension with icons.
+- [Main button plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/main-button-plugin.md): Add a custom button to the main toolbar.
+- [Profile menu plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/profile-menu-plugin.md): Add a custom item to the user profile menu.
+- [Settings plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/settings-plugin.md): Add a configuration panel to the plugin settings area.
+- [Text component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/text-component.md): Configure and use the Text display component.
+- [ToggleButton component](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/basic-samples/togglebutton-component.md): Configure and use the ToggleButton component.
+- [File extension filter plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/advanced-samples/file-extension-filter.md): Filter and display files by extension in a modal dialog.
+- [Modal dialog plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/advanced-samples/modal-dialog-plugin.md): Create files through a modal dialog with API calls.
+- [Settings plugin UI](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/advanced-samples/settings-plugin-ui.md): Build an admin settings interface with form controls.
+- [Draw.io](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/ready-to-use-samples/drawio.md): Create diagrams and flowcharts with the Draw.io plugin.
+- [Markdown](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/ready-to-use-samples/markdown.md): View, edit, and create Markdown files in DocSpace.
+- [PDF converter](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/ready-to-use-samples/pdf-converter.md): Convert documents, spreadsheets, and presentations to PDF.
+- [Speech to text](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/samples/ready-to-use-samples/speech-to-text.md): Recognize and convert spoken speech into text.
+
+## More information
+
+- [Changelog](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/more-information/changelog.md): The list of changes for ONLYOFFICE DocSpace Plugins SDK.

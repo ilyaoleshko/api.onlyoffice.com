@@ -1,0 +1,86 @@
+---
+sidebar_position: -1
+sidebar_label: Self-hosted
+---
+
+# Installation - Self-hosted
+
+ONLYOFFICE Docs is available for Windows, Linux and Docker.
+
+To install it on your local server:
+
+1. [Download](https://www.onlyoffice.com/download?from=api#docs-developer) ONLYOFFICE Docs Developer and install it on your local server following the instructions in ONLYOFFICE Help Center:
+
+   - [Install ONLYOFFICE Docs on Windows](https://helpcenter.onlyoffice.com/installation/docs-developer-install-windows.aspx?from=api)
+   - [Install ONLYOFFICE Docs on Linux](https://helpcenter.onlyoffice.com/installation/docs-developer-install-ubuntu.aspx?from=api)
+   - [Install ONLYOFFICE Docs using Docker](https://helpcenter.onlyoffice.com/installation/docs-developer-install-docker.aspx?from=api)
+
+2. In the target HTML file where the editors are to be embedded, specify a placeholder `div` tag, where all the information about the editor parameters will be passed:
+
+   ```html
+   <div id="placeholder"></div>
+   <script type="text/javascript" src="https://documentserver/web-apps/apps/api/documents/api.js"></script>
+   ```
+
+   Where **documentserver** is the name of the server with the ONLYOFFICE Docs installed. In this case, this is an address of your local server (`http://localhost`). You can [register](https://www.onlyoffice.com/docs-registration?from=api) a free ONLYOFFICE Cloud and use its public IP address or public DNS that can be found in the **Instances** section of the cloud console.
+
+   `https://documentserver/web-apps/apps/api/documents/api.js` is the address where the API JavaScript file can normally be found.
+
+   :::info
+   Starting from version 8.1, it is recommended to add the [shardkey](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/configuration/shard-key.md) parameter to the query string with the `key` value in it. For example, `?shardkey=Khirz6zTPdfd7`. This allows you to load balance requests.
+
+   Starting from version 9.0, you can [preload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/configuration/preload.md) static assets (HTML, CSS, JS, fonts) into the browser cache before opening a document to speed up the first-time loading of the document editor.
+   :::
+
+3. Specify the page code containing the changeable parameters:
+
+   ``` ts
+   const config = {
+     document: {
+       fileType: "docx",
+       key: "Khirz6zTPdfd7",
+       title: "Example Document Title.docx",
+       url: "https://example.com/url-to-example-document.docx",
+     },
+     documentType: "word",
+     editorConfig: {
+       callbackUrl: "https://example.com/url-to-callback",
+     },
+   };
+
+   const docEditor = new DocsAPI.DocEditor("placeholder", config);
+   ```
+
+
+   From now on, the [`docEditor`](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/doceditor.md) object can be used to call the **document editor** [Methods](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/methods.md).
+
+   The example above includes all the parameters necessary for ONLYOFFICE Docs correct startup.
+
+4. Specify the additional non-obligatory parameters that can be changed to achieve different goals with your document (change access rights for the document, display different information about the document, etc.). See the [Advanced parameters](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/advanced-parameters.md) section to find out what these parameters are and how you can change them.
+
+5. Add an encrypted signature to the requests in the form of [token](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/additional-api/signature.md) to prevent the substitution of important parameters. 
+
+## Before you start
+
+Before working with ONLYOFFICE Docs API documentation, it is recommended to make the following settings if necessary:
+
+- open additional [ports](https://helpcenter.onlyoffice.com/installation/docs-developer-open-ports.aspx?from=api);
+- configure [ONLYOFFICE Docs server settings](https://ilyaoleshko.github.io/docs/docs-api/get-started/configuration/server-config) in ONLYOFFICE Docs configuration file;
+- switch ONLYOFFICE Docs to the HTTPS protocol for secure connection using [SSL Certificates](https://helpcenter.onlyoffice.com/installation/docs-community-https-linux.aspx?from=api);
+- add additional [fonts](https://helpcenter.onlyoffice.com/installation/docs-community-install-fonts-linux.aspx?from=api) to ONLYOFFICE Docs to enhance the work with the editors;
+- add your own [color themes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/how-it-works/customizing-themes.md) for the application interface.
+
+## Health check
+
+To check if the editors are available, send the GET request to `/healthcheck`. This request checks the availability of the databases, message broker, Redis connection, and storage.
+
+The response must be **true**, which means that the editors are ready to use.
+
+If something went wrong, make sure that you have followed the installation instructions above.
+
+## Next steps
+
+- [How to enable document forcesaving](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/get-started/how-it-works/saving-file.md#force-saving)
+- [How to customize the editor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/config/editor/customization/customization-standard-branding.md)
+- [How to manage the editor through Automation API](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/automation-api.md)
+- [How to install / disable plugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/usage-api/config/editor/plugins.md)

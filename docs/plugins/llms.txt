@@ -1,0 +1,519 @@
+# ONLYOFFICE Docs: Plugins
+
+> Build interactive tools with HTML, CSS, and JavaScript that embed native-feeling features directly into the editors.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Get started
+
+- [Overview](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/get-started/overview.md): ONLYOFFICE plugins are interactive tools built with HTML, CSS, and JavaScript that embed native-feeling features directly into the editors. Install them once and make them available to all users.
+- [Quick start](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/get-started/quick-start.md): Build the simplest possible plugin — a button that inserts "Hello World" into your document.
+- [Playground](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## Configuration
+
+- [Configuration](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration.md): The config.json file is a plugin configuration file containing the information about the main plugin data needed to register the plugin in the editors.
+- [Entry point](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/entry-point.md): Each plugin acts in its own iframe. The editor will connect the index.html file, specified in the config.json plugin configuration file. The index.html file is the plugin entry point, connecting the plugin.js file - the base file needed for work with plugins in the editors.
+- [Icons](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/icons-and-branding.md): Learn how to add and configure icons for your ONLYOFFICE plugins.
+- [Localization](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/localization.md): All the plugins are created in English by default. If you want them to be available in your language, you can add translations to them.
+- [Types](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/types.md): The plugin type is specified with the type parameter in the config.json file. The available values are system, background, window, panel, panelRight, and unvisible.
+- [Styles](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/styles-and-theming.md): Learn how to style your ONLYOFFICE plugin interface using the provided CSS classes and components.
+- [Variations](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/configuration/variations.md): Plugin variations - subplugins that are created inside the origin plugin for the following purposes:
+
+## Customization
+
+- [Context menu](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/context-menu.md): The plugin can be accessed via the context menu.
+- [Toolbar](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/toolbar.md): Plugins can be placed on the toolbar: create their own tabs and fill them, add buttons to the standard tabs.
+- [Windows and panels](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/windows-and-panels.md): Plugins can be represented as modal windows or panels.
+- [Input helper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/input-helper.md): Learn how to create and use input helpers in ONLYOFFICE plugins.
+- [Buttons](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/custom-buttons.md): To process buttons which are specified in the plugin variations (not in the modal windows / panels), use the button method. This function is called when any of the plugin buttons is clicked.
+- [Content control buttons](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/customization/content-control-buttons.md): Starting from version 9.0, you can add custom buttons to content controls using the Asc.ButtonContentControl class:
+
+## Interacting with editors
+
+- [Overview](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview.md): The plugins and macros can interact with the editors using the Asc.plugin object — its events, methods, and commands. Here you will find how to use them.
+- [Asc.plugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/asc-plugin.md): window.Asc.plugin is the main object of the ONLYOFFICE Plugin SDK. It is available in every plugin and provides methods, properties, and events for interacting with the editor.
+- [How to customize themes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-customize-themes.md): Plugins can detect and react to the current editor theme to keep their appearance consistent with the interface. Theme information is provided through the onThemeChanged event, which is triggered when the plugin loads and whenever the user switches themes.
+- [How to call methods](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-call-methods.md): To execute certain editor methods using the plugin, define the executeMethod method.
+- [How to call commands](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md): To call commands and send the data back to the editor, define the callCommand method. It allows the plugin to send structured data that can be inserted to the resulting document file (formatted paragraphs, tables, text parts, and separate words, etc.).
+- [How to attach events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/overview/how-to-attach-events.md): There are two options to attach events from the editor.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods.md): Represents the Api class.
+- [AcceptReviewChanges](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AcceptReviewChanges.md): Accepts review changes.
+- [AddAddinField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddAddinField.md): Creates a new addin field with the data specified in the request.
+- [AddComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddComment.md): Adds a comment to the document.
+- [AddContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddContentControl.md): Adds an empty content control to the document.
+- [AddContentControlCheckBox](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddContentControlCheckBox.md): Adds an empty content control checkbox to the document.
+- [AddContentControlDatePicker](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddContentControlDatePicker.md): Adds an empty content control datepicker to the document.
+- [AddContentControlList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddContentControlList.md): Adds an empty content control list to the document.
+- [AddContentControlPicture](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddContentControlPicture.md): Adds an empty content control picture to the document.
+- [AddOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AddOleObject.md): Adds an OLE object to the current document position.
+- [AnnotateParagraph](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/AnnotateParagraph.md): Adds annotations to the specified paragraph.
+- [CanRedo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/CanRedo.md): Checks if it possible to revert the user's last undone action.
+- [CanUndo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/CanUndo.md): Checks if it is possible to undo the user's last action.
+- [ChangeComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ChangeComment.md): Changes the specified comment.
+- [ChangeOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ChangeOleObject.md): Changes the OLE object with the InternalId specified in OLE object data.
+- [ChangeOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ChangeOleObjects.md): Changes multiple OLE objects with the InternalIds specified in OLE object data.
+- [CoAuthoringChatSendMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [ConvertDocument](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ConvertDocument.md): Converts a document to Markdown or HTML text.
+- [EditOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/EditOleObject.md): Edits an OLE object in the document.
+- [EndAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [FocusEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllAddinFields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetAllAddinFields.md): Returns all addin fields from the current document.
+- [GetAllComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetAllComments.md): Returns all the comments from the document.
+- [GetAllContentControls](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetAllContentControls.md): Returns information about all the content controls that have been added to the page.
+- [GetAllForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetAllForms.md): Returns information about all the forms that have been added to the document.
+- [GetAllOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetAllOleObjects.md): Returns all OLE object data for objects which can be opened by the specified plugin.
+- [GetCurrentAddinField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentAddinField.md): Returns the current addin field from the document.
+- [GetCurrentBookmark](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentBookmark.md): Returns the current bookmark.
+- [GetCurrentContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentContentControl.md): Returns an identifier of the selected content control (i.e. the content control where the mouse cursor is currently positioned).
+- [GetCurrentContentControlPr](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentContentControlPr.md): Returns the current content control properties.
+- [GetCurrentSentence](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentSentence.md): Returns the current sentence.
+- [GetCurrentWord](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetCurrentWord.md): Returns the current word.
+- [GetDocumentLang](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetDocumentLang.md): Returns the document language.
+- [GetFields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFields.md): Returns all fields as a text.
+- [GetFileHTML](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFileHTML.md): Returns file content in the HTML format.
+- [GetFileToDownload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetFormValue](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFormValue.md): Returns a value of the specified form.
+- [GetFormsByTag](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetFormsByTag.md): Returns information about all the forms that have been added to the document with specified tag.
+- [GetImageDataFromSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetImageDataFromSelection.md): Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+- [GetInstalledPlugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetMacros.md): Returns the document macros.
+- [GetSelectedContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetSelectedContent.md): Returns the selected content in the specified format.
+- [GetSelectedOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetSelectedOleObjects.md): Returns an array of the selected OLE objects.
+- [GetSelectedText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetSelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetSelectionType.md): Returns the type of the current selection.
+- [GetVBAMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetVBAMacros.md): Returns all VBA macros from the document.
+- [GetVersion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/GetVersion.md): Returns the editor version.
+- [InputText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/InputText.md): Inserts text into the document.
+- [InsertAndReplaceContentControls](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/InsertAndReplaceContentControls.md): Inserts the content control containing data. The data is specified by the JS code for Document, or by a link to the shared document.
+- [InsertOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/InsertOleObject.md): Inserts the OLE object at the current document position.
+- [InstallPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [IsEditingOFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/IsEditingOFormMode.md): Checks if the document is in the editing OForm mode.
+- [IsFillingFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/IsFillingFormMode.md): Checks if the document is in the filling form mode.
+- [IsFillingOFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/IsFillingOFormMode.md): Checks if the document is in the filling OForm mode.
+- [IsFormSigned](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/IsFormSigned.md): Checks whether the specified form has been digitally signed.
+- [MouseMoveWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [MoveCursorOutsideField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveCursorOutsideField.md): Moves the cursor outside a field to the position before or after it.
+- [MoveCursorToContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveCursorToContentControl.md): Moves a cursor to the specified content control.
+- [MoveCursorToEnd](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveCursorToEnd.md): Moves a cursor to the end of the current editing area (document body, footer/header, footnote, or autoshape).
+- [MoveCursorToField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveCursorToField.md): Moves the cursor to the beginning or end of a field.
+- [MoveCursorToStart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveCursorToStart.md): Moves a cursor to the beginning of the current editing area (document body, footer/header, footnote, or autoshape).
+- [MoveToComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveToComment.md): Moves a cursor to the specified comment.
+- [MoveToNextReviewChange](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/MoveToNextReviewChange.md): Navigates through the review changes.
+- [OnDropEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [OnEncryption](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/OnEncryption.md): Encrypts the document.
+- [OpenFile](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/OpenFile.md): Opens a file with fields.
+- [PasteHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/PasteText.md): Pastes text into the document.
+- [PutImageDataToSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/PutImageDataToSelection.md): Replaces the first selected drawing with the image specified in the parameters.
+- [Redo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/Redo.md): Reverts the user's last undone action.
+- [RejectReviewChanges](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RejectReviewChanges.md): Rejects review changes.
+- [RemoveAddinField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveAddinField.md): Removes the specified add-in field.
+- [RemoveAnnotationRange](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveAnnotationRange.md): Remove a specific annotation range from the document.
+- [RemoveComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveComments.md): Removes the specified comments.
+- [RemoveContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveContentControl.md): Removes the currently selected content control retaining all its contents. The content control where the mouse cursor is currently positioned will be removed.
+- [RemoveContentControls](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveContentControls.md): Removes several content controls.
+- [RemoveFieldWrapper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveFieldWrapper.md): Removes a field wrapper, leaving only the field content.
+- [RemoveOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveOleObject.md): Removes the OLE object from the document by its internal ID.
+- [RemoveOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveOleObjects.md): Removes several OLE objects from the document by their internal IDs.
+- [RemovePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [RemoveSelectedContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/RemoveSelectedContent.md): Removes the selected content from the document.
+- [ReplaceCurrentSentence](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ReplaceCurrentSentence.md): Replaces the current sentence with the specified string.
+- [ReplaceCurrentWord](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ReplaceCurrentWord.md): Replaces the current word with the specified string.
+- [ReplaceTextSmart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+- [SearchAndReplace](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SearchAndReplace.md): Finds and replaces the text.
+- [SearchNext](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SearchNext.md): Finds and selects the next occurrence of the text starting at the current position.
+- [SelectAddinField](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SelectAddinField.md): Selects the specified add-in field.
+- [SelectAnnotationRange](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SelectAnnotationRange.md): Selects text in a document using a given annotation.
+- [SelectContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SelectContentControl.md): Selects the specified content control.
+- [SelectOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SelectOleObject.md): Selects the specified OLE object.
+- [SetDisplayModeInReview](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetDisplayModeInReview.md): Sets the display mode for track changes.
+- [SetEditingRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetEditingRestrictions.md): Sets the document editing restrictions.
+- [SetFormValue](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetFormValue.md): Sets a value to the specified form.
+- [SetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetParagraphHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetParagraphHtml.md): Replaces all content of the specified paragraph with the content parsed from the given HTML string.
+- [SetPluginsOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetPluginsOptions.md): Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+- [SetProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [UnShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [Undo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/Undo.md): Undoes the user's last action.
+- [UpdateAddinFields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/UpdateAddinFields.md): Updates the addin fields with the specified data.
+- [UpdatePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events.md): | Event | Description |
+- [onAddComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onAddComment.md): The function called when a comment is added to the document with the AddComment method.
+- [onBlurAnnotation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onBlurAnnotation.md): The function called when an annotation loses focus.
+- [onBlurContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onBlurContentControl.md): The function called to show which content control has been blurred.
+- [onChangeCommentData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onChangeCommentData.md): The function called when the specified comment is changed with the ChangeComment method.
+- [onChangeContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onChangeContentControl.md): The function called to show which content control has been changed.
+- [onChangeCurrentPage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onChangeCurrentPage.md): The function called when the current page has changed.
+- [onChangeRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onClick.md): The function called when the user clicks the element.
+- [onClickAnnotation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onClickAnnotation.md): The function called when the user clicks an annotation.
+- [onDocumentContentReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onFocusAnnotation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onFocusAnnotation.md): The function called when an annotation receives focus.
+- [onFocusContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onFocusContentControl.md): The function called to show which content control has been focused.
+- [onHideContentControlTrack](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onHideContentControlTrack.md): The function called when the content control loses focus in the document.
+- [onInsertOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onInsertOleObjects.md): The function called when one or more OLE objects are inserted into the document.
+- [onParagraphText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onParagraphText.md): The function called when the paragraph text is updated in the document.
+- [onRemoveComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onRemoveComment.md): The function called when the specified comment is removed with the RemoveComments method.
+- [onShowContentControlTrack](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onShowContentControlTrack.md): The function called when the content control receives focus and its track appears.
+- [onSubmitForm](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onSubmitForm.md): The function called when the user clicks the "Complete & Submit" button.
+- [onTargetPositionChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+- [AddinFieldData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/AddinFieldData.md): The addin field data.
+- [Color](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Color.md): Represents an RGBA color with components in the range [0, 255].
+- [CommentData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/CommentData.md): The comment data.
+- [ContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControl.md): The content control object.
+- [ContentControlCheckBoxProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlCheckBoxProperties.md): The content control checkbox properties.
+- [ContentControlDatePickerProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlDatePickerProperties.md): The content control datepicker properties.
+- [ContentControlListElement](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlListElement.md): The content control list element.
+- [ContentControlLock](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlLock.md): A value that defines if it is possible to delete and/or edit the content control or not:
+- [ContentControlParentPr](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlParentPr.md): The content control parent properties.
+- [ContentControlProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlProperties.md): The content control properties.
+- [ContentControlPropertiesAndContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlPropertiesAndContent.md): The content control properties and contents.
+- [ContentControlType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ContentControlType.md): A numeric value that specifies the content control type:
+- [DocumentEditingRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/DocumentEditingRestrictions.md): The document editing restrictions:
+- [Event_CommentData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Event_CommentData.md): The comment data.
+- [Event_ContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Event_ContentControl.md): The content control object.
+- [Event_ContentControlLock](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Event_ContentControlLock.md): Defines the access restrictions for a content control.
+- [Event_comment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Event_comment.md): The comment object.
+- [FontInfo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/FontInfo.md): An object containing the font information.
+- [ImageData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ImageData.md): An object containing the information about the base64 encoded png image.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [OLEObjectData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/OLEObjectData.md): The OLE object data.
+- [OLEProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/OLEProperties.md): The OLE object properties
+- [PluginData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/PluginOptions.md): The plugin options.
+- [ReplaceImageMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ReplaceImageMode.md): Specifies how to adjust the image object in case of replacing the selected image.
+- [SelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/SelectionType.md): The current selection type ("none", "text", "drawing", or "slide").
+- [ShapeType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [TextAnnotation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/TextAnnotation.md): Identifies an annotation range within a paragraph.
+- [TextAnnotationRange](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/TextAnnotationRange.md): Defines a text range within a paragraph to be highlighted as an annotation.
+- [TextPartType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/TextPartType.md): Specifies if the whole text or only its part will be returned or replaced:
+- [comment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/comment.md): Comment object.
+- [fillForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/fillForms.md): An object containing the form properties.
+- [watermark_on_draw](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/document-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods.md): Represents the Api class.
+- [AddComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/AddComment.md): Adds a comment to the workbook.
+- [AddOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/AddOleObject.md): Adds an OLE object to the current document position.
+- [ChangeComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/ChangeComment.md): Changes the specified comment.
+- [CoAuthoringChatSendMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [EditOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/EditOleObject.md): Edits an OLE object in the document.
+- [EndAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [FocusEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetAllComments.md): Returns all the comments from the document.
+- [GetCustomFunctions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetCustomFunctions.md): Returns a library of local custom functions.
+- [GetFileToDownload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetImageDataFromSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetImageDataFromSelection.md): Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+- [GetInstalledPlugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetMacros.md): Returns the document macros.
+- [GetSelectedContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetSelectedContent.md): Returns the selected content in the specified format.
+- [GetSelectedOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetSelectedOleObjects.md): Returns an array of the selected OLE objects.
+- [GetSelectedText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetSelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetSelectionType.md): Returns the type of the current selection.
+- [GetVBAMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetVBAMacros.md): Returns all VBA macros from the document.
+- [GetVersion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/GetVersion.md): Returns the editor version.
+- [InputText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/InputText.md): Inserts text into the document.
+- [InstallPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [MouseMoveWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [OnDropEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [OnEncryption](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/OnEncryption.md): Encrypts the document.
+- [PasteHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/PasteText.md): Pastes text into the document.
+- [PutImageDataToSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/PutImageDataToSelection.md): Replaces the first selected drawing with the image specified in the parameters.
+- [RemoveComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/RemoveComments.md): Removes the specified comments.
+- [RemoveOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/RemoveOleObject.md): Removes the OLE object from the workbook by its internal ID.
+- [RemovePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [ReplaceTextSmart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+- [SetCustomFunctions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/SetCustomFunctions.md): Updates a library of local custom functions.
+- [SetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetPluginsOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/SetPluginsOptions.md): Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+- [SetProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [UnShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [UpdatePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events.md): | Event | Description |
+- [onChangeCurrentSheet](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onChangeCurrentSheet.md): The function called when the current sheet has changed.
+- [onChangeRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onClick.md): The function called when the user clicks the element.
+- [onDocumentContentReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onTargetPositionChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+- [CommentData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/CommentData.md): The comment data.
+- [FontInfo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/FontInfo.md): An object containing the font information.
+- [ImageData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/ImageData.md): An object containing the information about the base64 encoded png image.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [OLEProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/OLEProperties.md): The OLE object properties
+- [PluginData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/PluginOptions.md): The plugin options.
+- [ReplaceImageMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/ReplaceImageMode.md): Specifies how to adjust the image object in case of replacing the selected image.
+- [SelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/SelectionType.md): The current selection type ("none", "text", "drawing", or "slide").
+- [ShapeType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [comment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/comment.md): Comment object.
+- [fillForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/fillForms.md): An object containing the form properties.
+- [watermark_on_draw](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/spreadsheet-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods.md): Represents the Api class.
+- [AddComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/AddComment.md): Adds a comment to the presentation.
+- [AddOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/AddOleObject.md): Adds an OLE object to the current document position.
+- [ApplyTheme](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ApplyTheme.md): Applies a theme to the presentation by index or name.
+- [ChangeComment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ChangeComment.md): Changes the specified comment.
+- [CoAuthoringChatSendMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [EditOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/EditOleObject.md): Edits an OLE object in the document.
+- [EndAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [EndSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/EndSlideShow.md): Ends the current slide show.
+- [FocusEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetAllComments.md): Returns all the comments from the document.
+- [GetDocumentLang](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetDocumentLang.md): Returns the document language.
+- [GetEditorThemes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetEditorThemes.md): Returns the list of available editor themes.
+- [GetFileToDownload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetImageDataFromSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetImageDataFromSelection.md): Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+- [GetInstalledPlugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetMacros.md): Returns the document macros.
+- [GetSelectedContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetSelectedContent.md): Returns the selected content in the specified format.
+- [GetSelectedOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetSelectedOleObjects.md): Returns an array of the selected OLE objects.
+- [GetSelectedText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetSelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetSelectionType.md): Returns the type of the current selection.
+- [GetVBAMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetVBAMacros.md): Returns all VBA macros from the document.
+- [GetVersion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GetVersion.md): Returns the editor version.
+- [GoToNextSlideInSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GoToNextSlideInSlideShow.md): Displays the slide following the current slide in the slide show.
+- [GoToPreviousSlideInSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GoToPreviousSlideInSlideShow.md): Displays the slide following the current slide in the slide show.
+- [GoToSlide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GoToSlide.md): Sets the active slide in the editor by its index.
+- [GoToSlideInSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/GoToSlideInSlideShow.md): Displays the slide with the specific index.
+- [InputText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/InputText.md): Inserts text into the document.
+- [InstallPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [MouseMoveWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [OnDropEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [OnEncryption](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/OnEncryption.md): Encrypts the document.
+- [PasteHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/PasteText.md): Pastes text into the document.
+- [PauseSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/PauseSlideShow.md): Pauses the current slide show.
+- [PutImageDataToSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/PutImageDataToSelection.md): Replaces the first selected drawing with the image specified in the parameters.
+- [RemoveComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/RemoveComments.md): Removes the specified comments.
+- [RemoveOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/RemoveOleObject.md): Removes the OLE object from the presentation by its internal ID.
+- [RemovePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [ReplaceTextSmart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+- [ResumeSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ResumeSlideShow.md): Resumes the current slide show.
+- [SetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetPluginsOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/SetPluginsOptions.md): Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+- [SetProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [StartSlideShow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/StartSlideShow.md): Starts the presentation slide show.
+- [UnShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [UpdatePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events.md): | Event | Description |
+- [onChangeCurrentSlide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onChangeCurrentSlide.md): The function called when the current slide has changed.
+- [onChangeRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onClick.md): The function called when the user clicks the element.
+- [onDocumentContentReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onSlideShowBegin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onSlideShowBegin.md): The function called when a slide show presentation starts.
+- [onSlideShowEnd](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onSlideShowEnd.md): The function called when a slide show presentation ends.
+- [onSlideShowNextSlide](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onSlideShowNextSlide.md): The function called after a slide has been changed and displayed during a slide show presentation. Fires before the slide content is actually displayed.
+- [onSlideShowSlideChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onSlideShowSlideChanged.md): The function called when slide changes during a slide show presentation. Provides information about both the current and previous slide.
+- [onTargetPositionChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+- [CommentData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/CommentData.md): The comment data.
+- [FontInfo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/FontInfo.md): An object containing the font information.
+- [ImageData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/ImageData.md): An object containing the information about the base64 encoded png image.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [OLEProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/OLEProperties.md): The OLE object properties
+- [PluginData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/PluginOptions.md): The plugin options.
+- [ReplaceImageMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/ReplaceImageMode.md): Specifies how to adjust the image object in case of replacing the selected image.
+- [SelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/SelectionType.md): The current selection type ("none", "text", "drawing", or "slide").
+- [ShapeType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [comment](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/comment.md): Comment object.
+- [fillForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/fillForms.md): An object containing the form properties.
+- [watermark_on_draw](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/presentation-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods.md): Represents the Api class.
+- [AddOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/AddOleObject.md): Adds an OLE object to the current document position.
+- [CoAuthoringChatSendMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [ConvertDocument](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/ConvertDocument.md): Converts a document to Markdown or HTML text.
+- [EditOleObject](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/EditOleObject.md): Edits an OLE object in the document.
+- [EndAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [FocusEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetAllForms.md): Returns information about all the forms that have been added to the document.
+- [GetDocumentLang](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetDocumentLang.md): Returns the document language.
+- [GetFileToDownload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetFormValue](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetFormValue.md): Returns a value of the specified form.
+- [GetFormsByTag](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetFormsByTag.md): Returns information about all the forms that have been added to the document with specified tag.
+- [GetImageDataFromSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetImageDataFromSelection.md): Returns the image data from the first of the selected drawings. If there are no drawings selected, the method returns a white rectangle.
+- [GetInstalledPlugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetMacros.md): Returns the document macros.
+- [GetSelectedContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedContent.md): Returns the selected content in the specified format.
+- [GetSelectedOleObjects](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedOleObjects.md): Returns an array of the selected OLE objects.
+- [GetSelectedText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetSelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectionType.md): Returns the type of the current selection.
+- [GetVBAMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetVBAMacros.md): Returns all VBA macros from the document.
+- [GetVersion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/GetVersion.md): Returns the editor version.
+- [InputText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/InputText.md): Inserts text into the document.
+- [InstallPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [IsEditingOFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/IsEditingOFormMode.md): Checks if the document is in the editing OForm mode.
+- [IsFillingFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/IsFillingFormMode.md): Checks if the document is in the filling form mode.
+- [IsFillingOFormMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/IsFillingOFormMode.md): Checks if the document is in the filling OForm mode.
+- [IsFormSigned](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/IsFormSigned.md): Checks whether the specified form has been digitally signed.
+- [MouseMoveWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [OnDropEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [OnEncryption](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/OnEncryption.md): Encrypts the document.
+- [PasteHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/PasteText.md): Pastes text into the document.
+- [PutImageDataToSelection](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/PutImageDataToSelection.md): Replaces the first selected drawing with the image specified in the parameters.
+- [RemovePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [ReplaceTextSmart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+- [SetFormValue](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/SetFormValue.md): Sets a value to the specified form.
+- [SetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetPluginsOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/SetPluginsOptions.md): Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+- [SetProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [UnShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [UpdatePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events.md): | Event | Description |
+- [onChangeRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onClick.md): The function called when the user clicks the element.
+- [onDocumentContentReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onSubmitForm](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onSubmitForm.md): The function called when the user clicks the "Complete & Submit" button.
+- [onTargetPositionChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+- [ContentControl](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/ContentControl.md): The content control object.
+- [ContentControlLock](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/ContentControlLock.md): A value that defines if it is possible to delete and/or edit the content control or not:
+- [FontInfo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/FontInfo.md): An object containing the font information.
+- [ImageData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/ImageData.md): An object containing the information about the base64 encoded png image.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [OLEProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/OLEProperties.md): The OLE object properties
+- [PluginData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/PluginOptions.md): The plugin options.
+- [ReplaceImageMode](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/ReplaceImageMode.md): Specifies how to adjust the image object in case of replacing the selected image.
+- [SelectionType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/SelectionType.md): The current selection type ("none", "text", "drawing", or "slide").
+- [ShapeType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [fillForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/fillForms.md): An object containing the form properties.
+- [watermark_on_draw](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/form-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.
+- [Api](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods.md): Represents the Api class.
+- [CoAuthoringChatSendMessage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [EndAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [FocusEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllComments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetAllComments.md): Returns all the comments from the document.
+- [GetCurrentPage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetCurrentPage.md): Returns the current page index.
+- [GetFileToDownload](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetInstalledPlugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetMacros.md): Returns the document macros.
+- [GetPageImage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetPageImage.md): Returns the page image.
+- [GetSelectedText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetVersion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GetVersion.md): Returns the editor version.
+- [GoToPage](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/GoToPage.md): Moves to specified page.
+- [InstallPlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [MouseMoveWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [OnDropEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [PasteHtml](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/PasteText.md): Pastes text into the document.
+- [RemovePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [ReplacePageContent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/ReplacePageContent.md): Replaces the page content with the specified parameters.
+- [SetMacros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetPluginsOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/SetPluginsOptions.md): Configures plugins from an external source. The settings can be set for all plugins or for a specific plugin.
+- [SetProperties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [UnShowInputHelper](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [UpdatePlugin](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+- [Events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events.md): | Event | Description |
+- [onChangeRestrictions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onClick.md): The function called when the user clicks the element.
+- [onDocumentContentReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onTargetPositionChanged](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+- [FontInfo](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/FontInfo.md): An object containing the font information.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [PluginData](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/PluginOptions.md): The plugin options.
+- [Rect](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/Rect.md): Axis-aligned rectangle represented as a tuple.
+- [ReplaceHtmlOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/ReplaceHtmlOptions.md): Options to replace the HTML page content.
+- [ReplaceXmlOptions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/ReplaceXmlOptions.md): Options to replace the XML page content.
+- [ShapeType](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [fillForms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/fillForms.md): An object containing the form properties.
+- [pt](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/pt.md): A point.
+- [watermark_on_draw](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/interacting-with-editors/pdf-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.
+
+## Development workflow
+
+- [ONLYOFFICE Desktop Editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md): There are two ways to add plugins: through the plugin manager and through the plugin folder.
+- [ONLYOFFICE Docs on-premises](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md): There are three ways to add plugins: through the plugin manager, through the sdkjs-plugins folder, or through the config.json file.
+- [ONLYOFFICE Cloud](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md): You can add a plugin to the Cloud service as an extension. It can be done for Google Chrome, Opera, or Microsoft Edge browsers.
+- [For web editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/developing/for-web-editors.md): To develop a plugin for ONLYOFFICE web editors, follow the instructions below.
+- [For desktop editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/developing/for-desktop-editors.md): To develop a plugin for ONLYOFFICE desktop editors, follow the instructions below.
+- [For web editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/debugging/for-web-editors.md): To debug ONLYOFFICE plugins in the web editors, follow the instructions below,
+- [For desktop editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/debugging/for-desktop-editors.md): To debug ONLYOFFICE plugins in the desktop editors, use the --ascdesktop-support-debug-info flag. To do this, follow the instructions here depending on the operating system you use.
+- [Common errors and solutions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/debugging/common-errors-solutions.md): This guide covers the most common errors encountered during ONLYOFFICE plugin development and their solutions.
+- [Submit to marketplace](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/publishing/submit-to-marketplace.md): If you want your plugin to be available to other users in the ONLYOFFICE Plugin Marketplace, suggest it for publishing:
+- [Preparing for release](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/publishing/preparing-for-release.md): Before distributing your plugin, verify that it is complete, stable, and ready for other users.
+- [Private distribution](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/publishing/private-distribution.md): Distribute your plugin within your organization without publishing to the public marketplace.
+- [Versioning and updates](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/development-workflow/publishing/versioning-and-updates.md): Once your plugin is published in the ONLYOFFICE Plugin Marketplace, you will need to release updates to fix bugs, add features, or maintain compatibility with new ONLYOFFICE versions.
+
+## Samples
+
+- [Add comment in cell](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/add-comment-in-cell.md): Add comments to spreadsheet cells.
+- [Add custom fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/add-custom-fields.md): Insert custom text fields and dropdowns into a document.
+- [AI](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/ai.md): Use AI models for text generation, editing, and summarization.
+- [Autocomplete](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/autocomplete.md): Provide input suggestions from a dictionary while typing.
+- [Chess](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/chess.md): Embed a chess board as an OLE object in the editor.
+- [Clippy](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/clippy.md): Add an animated clippy assistant to the editor.
+- [Content controls navigation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/content-controls-navigation.md): Navigate and select content controls in a document.
+- [Context menu and events](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/context-menu-and-events.md): Track context menu events and cursor position changes.
+- [Count words and characters](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/count-words-and-characters.md): Count paragraphs, words, and characters in a document.
+- [Extended comments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/extended-comments.md): Manage comments with categories and severity levels.
+- [Get and paste html](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/get-and-paste-html.md): Get, modify, and paste back HTML content in the editor.
+- [Hello world](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/hello-world.md): Insert 'Hello world!' text on button click.
+- [Highlight code](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/highlight-code.md): Apply syntax highlighting to code snippets.
+- [Invoices](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/invoices.md): Insert template fields for invoice information.
+- [Language tool](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/language-tool.md): Check grammar, spelling, and style using LanguageTool.
+- [Load custom fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/load-custom-fields.md): Load custom fields with questions and dropdowns.
+- [Move cursor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/move-cursor.md): Move the cursor to the document start or end.
+- [OCR](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/ocr.md): Extract text from images using TesseractJS OCR.
+- [OData Import](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/odata.md): Import external data via the OData protocol.
+- [Photo editor](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/photo-editor.md): Edit images using the Toast UI Image Editor.
+- [Search and change background](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/search-and-change-background.md): Search for text and change its background color.
+- [Search and replace on start](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/search-and-replace-on-start.md): Search and replace text automatically on document open.
+- [Search and replace](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/search-and-replace.md): Search for text and replace it interactively.
+- [Settings](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/settings.md): Protect documents with a watermark overlay.
+- [Speech](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/speech.md): Convert selected text to speech using Web Speech API.
+- [Symbol table](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/symbol-table.md): Insert special symbols from a character table.
+- [Telegram](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/telegram.md): Connect Telegram for instant messaging in the editor.
+- [Templates](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/templates.md): Insert document templates from Document Builder scripts.
+- [Thesaurus](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/thesaurus.md): Search for word synonyms and antonyms.
+- [Translator](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/translator.md): Translate text using machine translation services.
+- [Typograf](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/typograf.md): Fix typography and grammar issues in text.
+- [Work with content controls content](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/work-with-content-controls-content.md): Copy content between content controls.
+- [Work with content controls tags](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/work-with-content-controls-tags.md): Get a list of content control tags in a document.
+- [YouTube](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/youtube.md): Embed YouTube videos as OLE objects in the editor.
+- [Zotero](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/samples/zotero.md): Add references and citations from a Zotero library.
+
+## More information
+
+- [FAQ](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/more-information/faq.md): How to install plugins to the ONLYOFFICE editors?
+- [Changelog](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/more-information/changelog.md): The list of changes for ONLYOFFICE Plugins and Macros API.

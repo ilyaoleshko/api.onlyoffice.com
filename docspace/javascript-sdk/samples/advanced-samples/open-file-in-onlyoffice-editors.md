@@ -1,0 +1,137 @@
+---
+description: Select a file and open it in ONLYOFFICE editors via the SDK.
+tags: ["DocSpace", "Embed SDK", "Integration"]
+---
+
+import Video from '@site/src/components/Video/Video';
+
+# Open file in ONLYOFFICE editors
+
+This example opens a file in [ONLYOFFICE editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initeditor) using the [file selector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initfileselector).
+
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/open-file-in-onlyoffice-editors.html)
+
+## Before you start
+
+Please make sure you are using a server environment to run the HTML file because the Embed SDK must be launched on the server.
+You need to [add the URL](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/get-started/authentication-security.md#registering-allowed-embed-origins) of your server's root directory to the **Developer Tools** section of DocSpace.
+
+<details>
+  <summary>Full example</summary>
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DocSpace Embed SDK</title>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+    ...
+  </head>
+  <body>
+    <div id="ds-frame"></div>
+    ...
+  </body>
+  <script>
+    function onSelectCallback() {
+      docSpace = DocSpace.SDK.initEditor({
+        id: e.id,
+        height: "700px",
+      })
+    }
+
+    function onAppReady() {
+      const frame = DocSpace.SDK.frames["ds-frame"]
+    }
+
+    const config = {
+      events: {
+        onSelectCallback,
+        onAppReady,
+      },
+      height: "700px",
+      width: "100%",
+    }
+
+    const docSpace = DocSpace.SDK.initFileSelector(config)
+  </script>
+</html>
+```
+
+</details>
+
+![Open editors sample](https://ilyaoleshko.github.io/assets/images/docspace/open-editors.svg)
+
+## Script execution steps
+
+### 1. Set HTML structure
+
+Create an HTML file. It must include a *div* tag where we specify the DocSpace connection parameters:
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DocSpace Embed SDK</title>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+    ...
+  </head>
+  <body>
+    <div id="ds-frame"></div>
+    ...
+  </body>
+</html>
+```
+
+:::info
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.2.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+:::
+
+### 2. Add the file selector
+
+Add a script to initialize the [file selector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initfileselector).
+
+1. Add an event handler for [onAppReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameEvents.md#onAppReady), which fires when initialization is successful:
+
+    ``` ts
+    function onAppReady() {
+      const frame = DocSpace.SDK.frames["ds-frame"]
+    }
+    ```
+
+2. Add an event handler for [onSelectCallback](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameEvents.md#onSelectCallback). When the user selects a file, **ONLYOFFICE editors** are initialized by passing the ID of the file selected in the **file selector** to the [initEditor](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initeditor) method:
+
+    ``` ts
+    function onSelectCallback() {
+      docSpace = DocSpace.SDK.initEditor({
+        id: e.id,
+        height: "700px",
+      })
+    }
+    ```
+
+3. Create a configuration for the **file selector**:
+
+    ``` ts
+    const config = {
+      events: {
+        onSelectCallback,
+        onAppReady,
+      },
+      height: "700px",
+      width: "100%",
+    }
+    ```
+
+4. Initialize the **file selector** with the [initFileSelector](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initfileselector) method:
+
+    ``` ts
+    const docSpace = DocSpace.SDK.initFileSelector(config)
+    ```
+
+### 3. Run the sample
+
+Run our HTML file and make sure everything works.
+
+<Video src="https://ilyaoleshko.github.io/assets/images/docspace/webm/open-editors" />

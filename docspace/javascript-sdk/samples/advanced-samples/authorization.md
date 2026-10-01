@@ -1,0 +1,143 @@
+---
+description: Log in to a DocSpace account using email and password hash.
+tags: ["DocSpace", "Embed SDK", "Integration"]
+---
+
+import Video from '@site/src/components/Video/Video';
+
+# Authorization
+
+This examples logs in to the DocSpace account using the specified email and password hash.
+
+## Before you start
+
+Please make sure you are using a server environment to run the HTML file because the Embed SDK must be launched on the server.
+You need to [add the URL](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/get-started/authentication-security.md#registering-allowed-embed-origins) of your server's root directory to the **Developer Tools** section of DocSpace.
+
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/advanced-samples/authorization.html)
+
+<details>
+  <summary>Full example</summary>
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DocSpace Embed SDK</title>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+  </head>
+  <body>
+    <label>Login</label><br />
+    <input type="text" id="login"><br />
+    <label>Password</label><br />
+    <input type="text" id="password" style="-webkit-text-security: circle"><br />
+    <button id="startButton" onclick="onButtonClick()" style="margin-top: 20px;">Login</button>
+    <div id="ds-frame"></div>
+    <script>
+      function onButtonClick() {
+        const frame = DocSpace.SDK.frames["ds-frame"]
+        const login = document.querySelector("#login").value
+        const password = document.querySelector("#password").value
+        const hashSettings = await frame.getHashSettings()
+        const passwordHash = await frame.createHash(password, hashSettings)
+        frame.login(login, passwordHash)
+      }
+
+      function onAppReady() {
+        const frame = DocSpace.SDK.frames["ds-frame"]
+      }
+
+      const config = {
+        events: {
+          onAppReady,
+        },
+      }
+      const docSpace = DocSpace.SDK.initSystem(config);   
+    </script>
+  </body>
+</html>
+```
+
+</details>
+
+![Authorization sample](https://ilyaoleshko.github.io/assets/images/docspace/js-sdk-authorization-sample.svg)
+
+## Script execution steps
+
+### 1. Set HTML structure
+
+Create an HTML file. Add two text fields and a button. The HTML file must include a *div* tag where we specify the DocSpace connection parameters:
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>DocSpace Embed SDK</title>
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+  </head>
+  <body>
+    <label for="login">Login</label><br>
+    <input type="text" id="login"><br>
+    <label for="password">Password</label><br>
+    <input type="password" id="password"><br>
+    <button id="startButton" onclick="onButtonClick()">Login</button>
+    <div id="ds-frame"></div>
+  </body>
+</html>
+```
+
+:::info
+The API JavaScript file can normally be found in the following DocSpace folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.2.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE DocSpace installed.
+:::
+
+### 2. Initialize the System mode
+
+Add a script to initialize the [System](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initsystem) mode.
+
+1. Add an event handler for [onAppReady](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameEvents.md#onAppReady), which fires when initialization is successful:
+
+    ``` ts
+    function onAppReady() {
+      const frame = DocSpace.SDK.frames["ds-frame"]
+    }
+    ```
+
+2. Create a configuration for the **System** mode:
+
+    ``` ts
+    const config = {
+      events: {
+        onAppReady,
+      },
+    }
+    ```
+
+3. Initialize the **System** mode with the [initSystem](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDK.md#initsystem) method:
+
+    ``` ts
+    const docSpace = DocSpace.SDK.initSystem(config)
+    ```
+
+### 3. Add a method to log in
+
+Add the **onButtonClick()** event handler for the button. Using the [getHashSettings](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#gethashsettings) method, return the password hash settings
+and generate the password hash using the [createHash](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#createhash) method. After this, authorize the user using the [login](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#login) method:
+
+``` ts
+function onButtonClick() {
+  const frame = DocSpace.SDK.frames["ds-frame"]
+  const login = document.querySelector("#login").value
+  const password = document.querySelector("#password").value
+  const hashSettings = await frame.getHashSettings()
+  const passwordHash = await frame.createHash(password, hashSettings)
+  frame.login(login, passwordHash)
+}
+```
+
+### 4. Add a method to log in
+
+Run our HTML file and make sure everything works.
+
+<Video src="https://ilyaoleshko.github.io/assets/images/docspace/webm/js-sdk-authorization-sample" />

@@ -1,0 +1,63 @@
+# ONLYOFFICE DocSpace: MCP Server
+
+> Connect AI tools directly to ONLYOFFICE DocSpace to execute actions through natural language interactions.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Getting started
+
+- [About the DocSpace MCP server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started.md): Model Context Protocol is a standardized protocol for managing context between large language models (LLMs) and external systems.
+- [Getting started with the DocSpace MCP server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started/quickstart.md): Connect the DocSpace MCP server to Claude Desktop and start interacting with your DocSpace through natural language.
+- [Installing the DocSpace MCP server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started/installation.md): Before interacting with the DocSpace MCP server, you need to install or connect to it. DocSpace offers two ways to do this:
+- [Authentication with the DocSpace MCP Server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started/auth.md): The DocSpace MCP server acts as an OAuth proxy between MCP clients and the DocSpace authorization server, handling compatibility gaps in dynamic client registration and scope handling automatically.
+- [Connect DocSpace MCP server to MCP clients](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/getting-started/clients.md): The DocSpace MCP server allows you to connect numerous MCP clients, offering flexibility to choose between interfaces when interacting with your DocSpace. This guide demonstrates how to connect the DocSpace MCP server to the following clients:
+
+## Get DocSpace MCP server
+
+- [Distribution overview](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/distribution.md): The DocSpace MCP server is available in several formats from different distribution sources.
+- [Get the MCP server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/distribution/distribution-combined.md): The DocSpace MCP server can be obtained in several ways depending on your environment and requirements.
+
+## Reference
+
+- [Tools](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/tools.md): The DocSpace MCP server implements the Tools concept from the MCP specification.
+- [Global configuration](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/global-configuration.md): All available configuration options for the DocSpace MCP server provided through environment variables, organized by their functional area.
+- [Request configuration](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/request-configuration.md): Configure the DocSpace MCP server behavior at the request level using query parameters and custom headers.
+- [Authentication resolution](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/authentication-resolution.md): The DocSpace MCP server resolves authentication methods based on transport configuration and available authentication options.
+- [Tools resolution](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/tools-resolution.md): The DocSpace MCP server resolves which tools are available based on toolset configuration and enabled/disabled tool options.
+- [Glossary](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/reference/glossary.md): Terms used across the DocSpace MCP Server documentation, grouped by category.
+
+## Tutorial
+
+- [How to set up a project room](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/tutorials/setup-project-room.md): Managing multiple projects, each with numerous moving parts, can be taxing and, without careful management, can lead to inefficient processes. ONLYOFFICE DocSpace provides you with rooms to work and collaborate with team members.
+- [How to successfully onboard a distributed team into your project](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/tutorials/onboarding.md): With businesses increasingly adopting remote work, managing these teams efficiently without sacrificing security and access becomes a priority.
+- [How to effectively manage your project documentation throughout its lifecycle](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/tutorials/doc-lifecycle-management.md): Creating content requires numerous reviews and iterations from editors and other team members before a final draft, and without proper management to keep track of these files and versions, it can get confusing. The DocSpace MCP server facilitates this process, improving efficiency throughout the process.
+- [How to archive projects and offboard team members after project completion](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/tutorials/project-archival.md): After project completion, practicing archiving and offboarding ensures that the project data remains searchable and secure for any future use. It also:
+
+## Use cases
+
+- [Analyze Excel and generate report](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/analyze-excel-and-generate-report.md): Analyze an Excel file and generate an executive summary report.
+- [Archive drafts and old versions](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/archive-drafts-and-old-versions.md): Move drafts and old file versions into an archive folder.
+- [Create contract register spreadsheet](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/create-contract-register-spreadsheet.md): Create a contract register spreadsheet from multiple files.
+- [Create onboarding workspace](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/create-onboarding-workspace.md): Set up an onboarding workspace for a new employee.
+- [Create review folder with reviewers](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/create-review-folder-with-reviewers.md): Create a review folder and grant reviewers access.
+- [Create room with team access](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/create-room-with-team-access.md): Create a project room with folder structure and team access.
+- [Create task tracker from notes](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/create-task-tracker-from-notes.md): Convert meeting notes into a task tracker spreadsheet.
+- [Find file and extract key details](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/find-file-and-extract-key-details.md): Find a file in a room and extract key details.
+- [Generate document digest](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/generate-document-digest.md): Generate a digest from all documents in a folder.
+- [Generate monthly report from Excel](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/generate-monthly-report-from-excel.md): Generate a monthly report from an Excel spreadsheet.
+- [Generate NDA document](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/generate-nda-document.md): Generate an NDA document and save it to a folder.
+- [Generate project presentation](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/generate-project-presentation.md): Generate a project presentation from folder documents.
+- [Prepare client delivery package](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/prepare-client-delivery-package.md): Collect project files into a delivery folder with a share link.
+- [Review access and archive room](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/review-access-and-archive-room.md): Review room access, update permissions, and archive the room.
+- [Summarize chat and save to DocSpace](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/use-cases/summarize-chat-and-save-to-docspace.md): Summarize the current chat and save the summary text to DocSpace.
+
+## Troubleshooting
+
+- [DocSpace MCP server troubleshooting](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting.md): This section helps you diagnose and resolve issues when configuring and interacting with the DocSpace MCP server. It covers both common issues that apply to any MCP client and client-specific guidance for popular integrations:
+- [Common issues](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/common-issues.md): The following issues can occur with any MCP client when connecting to or using the DocSpace MCP server.
+- [Resolving errors with the ONLYOFFICE Desktop Editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/onlyoffice-troubleshooting.md): The following issues can occur when connecting the ONLYOFFICE Desktop Editors to the DocSpace MCP server.
+- [Resolving issues with Claude](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/claude-troubleshooting.md): The following issues can occur with Claude Web and Claude Desktop clients.
+- [Troubleshooting issues with Cursor client](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/cursor-troubleshooting.md): The following issues can occur when connecting the DocSpace MCP server to the Cursor client via the local MCP server.
+- [Troubleshooting issues with Le Chat MCP client](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/le-chat-troubleshooting.md): The following issues can occur when connecting the DocSpace MCP server to the Le Chat client.
+- [Resolving issues with VS Code client](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/vs-code-troubleshooting.md): The following issues can occur when connecting the DocSpace MCP server to VS Code.
+- [Troubleshooting issues with Windsurf MCP client](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/troubleshooting/windsurf-troubleshooting.md): The following issues can occur when connecting the DocSpace MCP server to the Windsurf client.

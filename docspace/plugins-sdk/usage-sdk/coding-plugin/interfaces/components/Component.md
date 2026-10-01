@@ -1,0 +1,793 @@
+---
+custom_edit_url: https://github.com/ONLYOFFICE/docspace-plugin-sdk/blob/release/v4.0.0/src/interfaces/components/Component.ts
+---
+
+# Component
+
+```ts
+type Component = 
+  | BoxGroup
+  | ButtonGroup
+  | CheckboxGroup
+  | ComboBoxGroup
+  | IFrameGroup
+  | ImageGroup
+  | InputGroup
+  | LabelGroup
+  | SkeletonGroup
+  | TextGroup
+  | TextAreaGroup
+  | ToggleButtonGroup
+  | IconButtonGroup
+  | LinkGroup;
+```
+
+A component that is used to add components into Box.
+Only components that are embedded into DOM can be wrapped (toast, modal dialog, etc. cannot be wrapped).
+
+## Example
+
+```typescript
+import {
+  IBox,
+  IText,
+  IButton,
+  ButtonSize,
+  Components,
+  Component,
+  Actions,
+  IToast,
+  ToastType,
+} from "@onlyoffice/docspace-plugin-sdk";
+
+const title: IText = {
+  text: "Plugin Settings",
+  fontSize: "18px",
+  fontWeight: 600,
+};
+
+const button: IButton = {
+  label: "Save Changes",
+  onClick: () => {
+    return {
+      actions: [Actions.showToast],
+      toastProps: [{
+        title: "Success",
+        type: ToastType.success,
+      }]
+    };
+  },
+  size: ButtonSize.normal,
+  primary: true
+};
+
+// Create a settings panel with text and button
+const container: IBox = {
+  paddingProp: "16px",
+  backgroundProp: "#f8f9f9",
+  children: [
+    {
+      component: Components.text,
+      props: title
+    },
+    {
+      component: Components.button,
+      props: button
+    }
+  ]
+};
+
+// Combine components into a layout
+const settingsPanel: Component = {
+  component: Components.box,
+  props: container
+};
+```
+
+***
+
+## BoxGroup
+
+```ts
+type BoxGroup = {
+  component: box;
+  props: IBox;
+  contextName?: string;
+};
+```
+
+Defines the box component.
+
+### Example
+
+```typescript
+import { IBox, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const box: IBox = {
+  widthProp: "200px",
+  paddingProp: "16px",
+  displayProp: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  borderProp: {
+    color: "#333333",
+    radius: "8px",
+    style: "solid",
+    width: "1px"
+  },
+  backgroundProp: "#f8f9f9"
+};
+
+const boxGroup: Component = {
+  component: Components.box,
+  props: box,
+  contextName: "container"
+};
+```
+
+### Properties
+
+import APITable from '@site/src/components/APITable/APITable';
+
+<APITable name="BoxGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`box`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#box) | Defines the "box" component type |
+| `props` | [`IBox`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IBox.md) | Defines the box component properties |
+| `contextName?` | `string` | Defines the box component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## ButtonGroup
+
+```ts
+type ButtonGroup = {
+  component: button;
+  props: IButton;
+  contextName?: string;
+};
+```
+
+Defines the button component.
+
+### Example
+
+```typescript
+import { IButton, Components, Component, ButtonSize } from "@onlyoffice/docspace-plugin-sdk";
+
+const button: IButton = {
+  size: ButtonSize.normal,
+  label: "Click me!",
+  onClick: () => {
+    console.log("Button clicked!");
+  },
+};
+
+const buttonGroup: Component = {
+  component: Components.button,
+  props: button,
+  contextName: "button",
+};
+```
+
+### Properties
+
+<APITable name="ButtonGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`button`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#button) | Defines the "button" component type |
+| `props` | [`IButton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IButton.md) | Defines the button component properties |
+| `contextName?` | `string` | Defines the button component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## CheckboxGroup
+
+```ts
+type CheckboxGroup = {
+  component: checkbox;
+  props: ICheckbox;
+  contextName?: string;
+};
+```
+
+Defines the checkbox component.
+
+### Example
+
+```typescript
+import { ICheckbox, Components, Component, Actions } from "@onlyoffice/docspace-plugin-sdk";
+
+const checkbox: ICheckbox = {
+  isChecked: false,
+  label: "Enable notifications",
+  onChange: () => {
+    return {
+      actions: [Actions.updateProps],
+      newProps: {
+        isChecked: !checkbox.isChecked
+      }
+    };
+  },
+  truncate: false,
+  tabIndex: 1,
+  hasError: false,
+  name: "notifications",
+  value: "enabled",
+  isDisabled: false,
+  title: "Notification preferences"
+};
+
+const checkboxGroup: Component = {
+  component: Components.checkbox,
+  props: checkbox,
+  contextName: "notificationToggle"
+};
+```
+
+### Properties
+
+<APITable name="CheckboxGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`checkbox`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#checkbox) | Defines the "checkbox" component type |
+| `props` | [`ICheckbox`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ICheckbox.md) | Defines the checkbox component properties |
+| `contextName?` | `string` | Defines the checkbox component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## ComboBoxGroup
+
+```ts
+type ComboBoxGroup = {
+  component: comboBox;
+  props: IComboBox;
+  contextName?: string;
+};
+```
+
+Defines the combo box component.
+
+### Example
+
+```typescript
+import { IComboBox, IComboBoxItem, Components, Component, Actions } from "@onlyoffice/docspace-plugin-sdk";
+
+const comboBox: IComboBox = {
+  options: [
+    { key: "light", label: "Light Theme", icon: "theme-light.svg" },
+    { key: "dark", label: "Dark Theme", icon: "theme-dark.svg" },
+    { key: "system", label: "System Theme", icon: "theme-auto.svg" }
+  ],
+  selectedOption: { key: "light", label: "Light Theme", icon: "theme-light.svg" },
+  onSelect: (item) => {},
+  scaled: true,
+  directionX: "right",
+  directionY: "bottom",
+  displayType: "default",
+  modernView: true
+};
+
+const comboBoxGroup: Component = {
+  component: Components.comboBox,
+  props: comboBox,
+  contextName: "themeSelector"
+};
+```
+
+### Properties
+
+<APITable name="ComboBoxGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`comboBox`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#combobox) | Defines the "comboBox" component type |
+| `props` | [`IComboBox`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IComboBox.md) | Defines the combo box component properties |
+| `contextName?` | `string` | Defines the combo box component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## IFrameGroup
+
+```ts
+type IFrameGroup = {
+  component: iFrame;
+  props: IFrame;
+  contextName?: string;
+};
+```
+
+Defines the iframe component.
+
+### Example
+
+```typescript
+import { IFrame, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const iframe: IFrame = {
+  src: "https://example.com/embedded-content",
+  width: "100%",
+  height: "500px",
+  name: "content-frame",
+  sandbox: "allow-scripts allow-same-origin",
+  id: "content-iframe",
+  style: {
+    border: "1px solid #eceef1",
+    borderRadius: "4px",
+    backgroundColor: "#ffffff"
+  }
+};
+
+const iframeGroup: Component = {
+  component: Components.iFrame,
+  props: iframe,
+  contextName: "embeddedContent"
+};
+```
+
+### Properties
+
+<APITable name="IFrameGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`iFrame`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#iframe) | Defines the "iFrame" component type |
+| `props` | [`IFrame`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IFrame.md) | Defines the iFrame component properties |
+| `contextName?` | `string` | Defines the iFrame component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## ImageGroup
+
+```ts
+type ImageGroup = {
+  component: img;
+  props: IImage;
+  contextName?: string;
+};
+```
+
+Defines the image component.
+
+### Example
+
+```typescript
+import { IImage, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const image: IImage = {
+  src: "https://example.com/plugin-banner.png",
+  alt: "Plugin Banner",
+  width: "100%",
+  height: "auto",
+  name: "plugin-banner",
+  id: "banner-image",
+  style: {
+    borderRadius: "8px",
+    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+    maxWidth: "600px"
+  }
+};
+
+const imageGroup: Component = {
+  component: Components.img,
+  props: image,
+  contextName: "bannerImage"
+};
+```
+
+### Properties
+
+<APITable name="ImageGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`img`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#img) | Defines the "img" component type |
+| `props` | [`IImage`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IImage.md) | Defines the image component properties |
+| `contextName?` | `string` | Defines the image component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## InputGroup
+
+```ts
+type InputGroup = {
+  component: input;
+  props: IInput;
+  contextName?: string;
+};
+```
+
+Defines the input component.
+
+### Example
+
+```typescript
+import { IInput, Components, Component, Actions, InputSize } from "@onlyoffice/docspace-plugin-sdk";
+
+const input: IInput = {
+  value: "",
+  onChange: (value) => {},
+  placeholder: "Enter text...",
+  size: InputSize.middle,
+  name: "search-input",
+  isAutoFocused: true,
+  iconName: "search",
+  iconSize: 16,
+  scale: true,
+  onIconClick: () => {
+    console.log("Search icon clicked");
+  }
+};
+
+const inputGroup: Component = {
+  component: Components.input,
+  props: input,
+  contextName: "searchInput"
+};
+```
+
+### Properties
+
+<APITable name="InputGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`input`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#input) | Defines the "input" component type |
+| `props` | [`IInput`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IInput.md) | Defines the input component properties |
+| `contextName?` | `string` | Defines the input component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## LabelGroup
+
+```ts
+type LabelGroup = {
+  component: label;
+  props: ILabel;
+  contextName?: string;
+};
+```
+
+Defines the label component.
+
+### Example
+
+```typescript
+import { ILabel, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const label: ILabel = {
+  text: "Plugin Settings",
+  isRequired: true,
+  error: false,
+  title: "Configure plugin settings",
+  htmlFor: "settings-form",
+  display: "block",
+  truncate: true
+};
+
+const labelGroup: Component = {
+  component: Components.label,
+  props: label,
+  contextName: "settingsLabel"
+};
+```
+
+### Properties
+
+<APITable name="LabelGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`label`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#label) | Defines the "label" component type |
+| `props` | [`ILabel`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ILabel.md) | Defines the label component properties |
+| `contextName?` | `string` | Defines the label component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## SkeletonGroup
+
+```ts
+type SkeletonGroup = {
+  component: skeleton;
+  props: ISkeleton;
+  contextName?: string;
+};
+```
+
+Defines the skeleton component.
+
+### Example
+
+```typescript
+import { ISkeleton, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const skeleton: ISkeleton = {
+  width: "100%",
+  height: "200px",
+  borderRadius: "8px"
+};
+
+const skeletonGroup: Component = {
+  component: Components.skeleton,
+  props: skeleton,
+  contextName: "loadingState"
+};
+```
+
+### Properties
+
+<APITable name="SkeletonGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`skeleton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#skeleton) | Defines the "skeleton" component type |
+| `props` | [`ISkeleton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ISkeleton.md) | Defines the skeleton component properties |
+| `contextName?` | `string` | Defines the skeleton component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## TextGroup
+
+```ts
+type TextGroup = {
+  component: text;
+  props: IText;
+  contextName?: string;
+};
+```
+
+Defines the text component.
+
+### Example
+
+```typescript
+import { IText, Components, Component } from "@onlyoffice/docspace-plugin-sdk";
+
+const text: IText = {
+  text: "Welcome to DocSpace Plugin",
+  fontSize: "18px",
+  fontWeight: 500,
+  lineHeight: "24px",
+  color: "#333333",
+  isBold: false,
+  textAlign: "left",
+  truncate: true,
+  title: "Welcome to DocSpace Plugin"
+};
+
+const textGroup: Component = {
+  component: Components.text,
+  props: text,
+  contextName: "welcomeText"
+};
+```
+
+### Properties
+
+<APITable name="TextGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`text`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#text) | Defines the "text" component type |
+| `props` | [`IText`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IText.md) | Defines the text component properties |
+| `contextName?` | `string` | Defines the text component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## TextAreaGroup
+
+```ts
+type TextAreaGroup = {
+  component: textArea;
+  props: ITextArea;
+  contextName?: string;
+};
+```
+
+Defines the textarea component.
+
+### Example
+
+```typescript
+import { ITextArea, Components, Component, Actions } from "@onlyoffice/docspace-plugin-sdk";
+
+const textarea: ITextArea = {
+  value: "",
+  onChange: (value) => {},
+  placeholder: "Enter description...",
+  heightTextArea: 150,
+  fontSize: 14,
+  isFullHeight: true,
+  heightScale: true,
+  maxLength: 1000,
+  hasNumeration: false
+};
+
+const textAreaGroup: Component = {
+  component: Components.textArea,
+  props: textarea,
+  contextName: "descriptionEditor"
+};
+```
+
+### Properties
+
+<APITable name="TextAreaGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`textArea`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#textarea) | Defines the "textArea" component type |
+| `props` | [`ITextArea`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ITextArea.md) | Defines the textarea component properties |
+| `contextName?` | `string` | Defines the textarea component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## ToggleButtonGroup
+
+```ts
+type ToggleButtonGroup = {
+  component: toggleButton;
+  props: IToggleButton;
+  contextName?: string;
+};
+```
+
+Defines the toggle button component.
+
+### Example
+
+```typescript
+import { IToggleButton, Components, Component, Actions } from "@onlyoffice/docspace-plugin-sdk";
+
+const toggleButton: IToggleButton = {
+  label: "Auto-sync",
+  isChecked: true,
+  onChange: () => {},
+  style: {
+    backgroundColor: "#f8f9f9",
+    padding: "8px 12px",
+    borderRadius: "4px"
+  }
+};
+
+const toggleButtonGroup: Component = {
+  component: Components.toggleButton,
+  props: toggleButton,
+  contextName: "syncToggle"
+};
+```
+
+### Properties
+
+<APITable name="ToggleButtonGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`toggleButton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#togglebutton) | Defines the "toggleButton" component type |
+| `props` | [`IToggleButton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IToggleButton.md) | Defines the toggle button component properties |
+| `contextName?` | `string` | Defines the toggle button component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## IconButtonGroup
+
+```ts
+type IconButtonGroup = {
+  component: iconButton;
+  props: IIconButton;
+  contextName?: string;
+};
+```
+
+Defines the icon button component.
+
+### Example
+
+```typescript
+import { IIconButton, Components, Component, Actions } from "@onlyoffice/docspace-plugin-sdk";
+
+const iconButton: IIconButton = {
+  iconName: "settings.svg",
+  size: 32,
+  color: "#333333",
+  hoverColor: "accent",
+  onClick: () => {
+    console.log("Settings clicked");
+  },
+  title: "Open settings",
+  isDisabled: false
+};
+
+const iconButtonGroup: Component = {
+  component: Components.iconButton,
+  props: iconButton,
+  contextName: "settingsButton"
+};
+```
+
+### Properties
+
+<APITable name="IconButtonGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`iconButton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#iconbutton) | Defines the "iconButton" component type |
+| `props` | [`IIconButton`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/IIconButton.md) | Defines the icon button component properties |
+| `contextName?` | `string` | Defines the icon button component context name that updates the component via React context |
+
+</APITable>
+
+***
+
+## LinkGroup
+
+```ts
+type LinkGroup = {
+  component: link;
+  props: ILink;
+  contextName?: string;
+};
+```
+
+Defines the link component.
+
+### Example
+
+```typescript
+import { ILink, Components, Component, LinkType, LinkTarget } from "@onlyoffice/docspace-plugin-sdk";
+
+const link: ILink = {
+  href: "https://example.com",
+  text: "Visit Example",
+  type: LinkType.page,
+  target: LinkTarget.blank,
+  color: "accent",
+  fontSize: "14px",
+  isBold: false
+};
+
+const linkGroup: Component = {
+  component: Components.link,
+  props: link,
+  contextName: "exampleLink"
+};
+```
+
+### Properties
+
+<APITable name="LinkGroup">
+
+| Property | Type | Description |
+| ------ | ------ | ------ |
+| `component` | [`link`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/enums/Components.md#link) | Defines the "link" component type |
+| `props` | [`ILink`](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/usage-sdk/coding-plugin/interfaces/components/ILink.md) | Defines the link component properties |
+| `contextName?` | `string` | Defines the link component context name that updates the component via React context |
+
+</APITable>

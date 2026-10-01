@@ -1,0 +1,23 @@
+# ONLYOFFICE API Documentation
+
+> API documentation for ONLYOFFICE Docs and ONLYOFFICE DocSpace: editor integration and configuration, plugins, macros, and the Office JavaScript API.
+
+Each section below links to its own llms.txt, a full index of the pages under that section. Any page is also available as Markdown by appending `.md` to its URL.
+
+## ONLYOFFICE Docs
+
+- [Docs API](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/docs-api/llms.txt): Integrate and configure ONLYOFFICE Docs into your web app to enable document editing, co-authoring, and sharing for your users.
+- [Office API](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/office-api/llms.txt): Use our JavaScript library to build plugins, macros, and scripts across all document types: documents, spreadsheets, presentations, and forms.
+- [Plugins](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/plugins/llms.txt): Build interactive tools with HTML, CSS, and JavaScript that embed native-feeling features directly into the editors.
+- [Macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/llms.txt): Write lightweight JavaScript scripts that run directly inside documents to automate repetitive tasks.
+- [AI](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/ai/llms.txt): Build AI-powered editor extensions that combine the plugin framework with an AI provider integration.
+- [Document Builder](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/document-builder/llms.txt): Add document generation, editing, and conversion to your application: DOCX, XLSX, PPTX, and PDF via the CLI, Python, Java, .NET, or C++.
+- [Desktop Editors](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/desktop-editors/llms.txt): Extend and customize ONLYOFFICE Desktop Editors by integrating with document management systems.
+
+## ONLYOFFICE DocSpace
+
+- [API Reference](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/api-backend/llms.txt): Integrate ONLYOFFICE DocSpace into your application to interact with its REST API using GET, POST, PUT, and DELETE methods.
+- [Embed SDK](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/javascript-sdk/llms.txt): Embed DocSpace in your web app: the full workspace, a room, a document editor or viewer, or a file picker.
+- [Plugins SDK](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/plugins-sdk/llms.txt): Extend the DocSpace portal with your own plugins: context menu items, main button actions, or third-party services.
+- [MCP Server](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/mcp-server/llms.txt): Connect AI tools directly to ONLYOFFICE DocSpace to execute actions through natural language interactions.
+- [UI Kit](https://ilyaoleshko.github.io/api.onlyoffice.com/docspace/ui-kit/llms.txt): The React component library every ONLYOFFICE Apps product and DocSpace plugin is built with.

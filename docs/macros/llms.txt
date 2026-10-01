@@ -1,0 +1,132 @@
+# ONLYOFFICE Docs: Macros
+
+> Write lightweight JavaScript scripts that run directly inside documents to automate repetitive tasks.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://ilyaoleshko.github.io/api.onlyoffice.com/llms.txt).
+
+## Get started
+
+- [Overview](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/get-started/overview.md): ONLYOFFICE macros are lightweight JavaScript scripts that run directly inside documents using the Office JavaScript API. No installation required - write the code, run it, done.
+- [Quick start](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/get-started/quick-start.md): Macros are quite simple - pure JavaScript with no installation required.
+- [Playground](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## Guides
+
+- [Getting started](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/getting-started.md): Macros are small scripts used to facilitate your day-to-day routine work with different types of documents. ONLYOFFICE macros use the JavaScript syntax and Office JavaScript API scripting notation.
+- [Writing macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/writing-macros.md): Now that you know how macros work, try to write your own macro. We have a table and need to color the alternate table rows (odd will be colored green, even will become red). The table contains 200 rows and columns from A to S. It would take a lot of time to do that manually. So, using macros will be the best solution for this problem.
+- [Adding custom functions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/adding-custom-functions.md): Custom functions are JavaScript functions that you write in the Macros plugin and then call in a spreadsheet like any built-in function. They are available in the spreadsheet editor starting from version 8.1.
+- [Debugging](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/debugging.md): To debug ONLYOFFICE macros, follow the instructions below.
+- [Converting VBA macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/converting-vba-macros.md): ONLYOFFICE macros are different from Microsoft macros because the latter use the Visual Basic for Applications (VBA) scripting language. JavaScript is more flexible and can be used with any platform (which is important as ONLYOFFICE editors are supported on Windows, Linux and macOS platforms).
+- [Recording macros](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/guides/recording-macros.md): ONLYOFFICE Editors allow you to record macros. Recording a macro captures your actions, clicks, and movements in the editor and saves them as a macro to automate the process.
+
+## Samples
+
+- [Acronym full forms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/acronym-full-forms.md): Expand acronyms to their full forms in a document.
+- [Automatic bookmark generation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/automatic-bookmark-generation.md): Auto-generate bookmarks from document headings.
+- [Bookmark last view](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/bookmark-last-view.md): Bookmark the last viewed position in a document.
+- [Calculate time to read](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/calculate-time-to-read.md): Calculate the estimated reading time of a document.
+- [Create content control list](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/create-content-control-list.md): Create a list of content controls in a document.
+- [Create custom header](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/create-custom-header.md): Create a custom header with formatted text.
+- [Custom header and footer](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/custom-header-footer.md): Generate custom headers and footers for a document.
+- [Delete bookmark](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/delete-bookmark.md): Delete a specified bookmark from a document.
+- [Generate hyperlinks](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/generate-hyperlinks.md): Generate hyperlinks from URLs found in text.
+- [Generate table of contents](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/generate-table-of-contents.md): Generate a table of contents from document headings.
+- [Generate word definitions](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/generate-word-definitions.md): Generate definitions for words in a document.
+- [Highlight predefined keywords](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/highlight-predefined-keywords.md): Highlight predefined keywords in a document.
+- [Identify overused words](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/identify-overused-words.md): Find and highlight overused words in a document.
+- [Insert text](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/insert-text.md): Insert text at the current cursor position.
+- [Insert unique id](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/insert-unique-id.md): Insert a unique ID into the document.
+- [Insert watermark](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/insert-watermark.md): Insert a text watermark into a document.
+- [Paragraphs to table](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/paragraphs-to-table.md): Convert paragraphs into a table structure.
+- [Remove empty tables](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/remove-empty-tables.md): Remove all empty tables from a document.
+- [Remove extra spaces](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/remove-extra-spaces.md): Remove extra spaces from document text.
+- [Replace words in document](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/replace-words-in-document.md): Find and replace words throughout a document.
+- [Reset text properties](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/reset-text-properties.md): Reset text formatting to default properties.
+- [Search for keyword in comments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/search-for-keyword-in-comments.md): Search for a keyword in document comments.
+- [Sort tables](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/document-editor/sort-tables.md): Sort table rows by column values.
+- [Add chart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/add-chart.md): Add a chart to a spreadsheet from cell data.
+- [Calculate World Bank indicator](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/calculate-world-bank-indicator.md): Calculate indicators using World Bank data.
+- [Change cell background color](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/change-cell-background-color.md): Change the background color of specified cells.
+- [Change cell font color](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/change-cell-font-color.md): Change the font color of specified cells.
+- [Change cell value](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/change-cell-value.md): Change the value of specified cells.
+- [Check data mismatch](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/check-data-mismatch.md): Check for data mismatches between cells or ranges.
+- [Commenting and coloring cells](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/commenting-and-coloring-cells.md): Add comments to cells and change their background color.
+- [Complete address information](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/complete-address-information.md): Auto-complete address fields from partial data.
+- [Conditional formatting rules](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/conditional-formatting-rules.md): Apply conditional formatting rules to a cell range.
+- [Convert formulas into values](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/convert-formulas-into-values.md): Convert cell formulas into their computed values.
+- [Currency conversion](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/currency-conversion.md): Convert currency values between different currencies.
+- [Delete comments](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/delete-comments.md): Delete all comments from a spreadsheet.
+- [Find company logos](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/find-company-logos.md): Find and insert company logos into spreadsheet cells.
+- [Find invalid emails](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/find-invalid-emails.md): Find and highlight invalid email addresses in cells.
+- [Format range as table](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/format-range-as-a-table.md): Format a cell range as a styled table.
+- [Freeze panes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/freeze-panes.md): Freeze rows and columns in a spreadsheet.
+- [Hide or unhide rows and columns](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/hide-or-unhide-rows-and-columns.md): Hide or unhide rows and columns in a spreadsheet.
+- [Highlight duplicates](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/highlight-duplicates.md): Highlight duplicate values in a cell range.
+- [Import CSV/TXT data](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/import-csv-or-txt-data.md): Import data from CSV or TXT files into a spreadsheet.
+- [Import hyperlinks](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/import-hyperlinks.md): Import hyperlinks into spreadsheet cells.
+- [Insert formulas row](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/insert-formulas-row.md): Insert formulas into a row of cells.
+- [Make cell font bold](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/make-cell-font-bold.md): Make the font bold for specified cells.
+- [Merge cell range](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/merge-cell-range.md): Merge a range of cells in a spreadsheet.
+- [Next blank row](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/next-blank-row.md): Find the next blank row in a spreadsheet.
+- [Recalculate worksheet values](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/recalculate-worksheet-values.md): Recalculate all formulas in a worksheet.
+- [Remove duplicate sheet](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/remove-duplicate-sheet.md): Remove duplicate sheets from a workbook.
+- [Set column width](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/set-column-width.md): Set the width of specified columns.
+- [Sheet merger](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/sheet-merger.md): Merge data from multiple sheets into one.
+- [Sort range](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/sort-range.md): Sort a cell range by column values.
+- [Split data sheets](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/split-data-sheets.md): Split data into separate sheets by criteria.
+- [Sum of highlighted cells](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/sum-of-highlighted-cells.md): Calculate the sum of highlighted cells.
+- [Unhide all rows](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/unhide-all-rows-and-columns.md): Unhide all hidden rows.
+- [Unmerge all cells](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/unmerge-all-cells.md): Unmerge all merged cells in a spreadsheet.
+- [Unmerge cell range](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/unmerge-cell-range.md): Unmerge cells in a specified range.
+- [Weighted average function](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/weighted-average-function.md): Calculate a weighted average from cell values.
+- [Wrap characters with dashes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/wrap-characters-with-dashes.md): Wrap each character in selected cells with dashes.
+- [Write data to worksheet cell](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/spreadsheet-editor/write-data-to-worksheet-cell.md): Write data to a specific worksheet cell.
+- [Adjust indentation](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/adjust-indentation.md): Adjust paragraph indentation on all slides.
+- [Align charts](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/align-charts.md): Align chart positions across presentation slides.
+- [Apply corporate branding](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/apply-corporate-branding.md): Apply corporate fonts and colors to all slides.
+- [Apply font style](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/apply-font-style.md): Apply a font style to all text on slides.
+- [Autoplaceholder](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/auto-placeholder.md): Auto-fill placeholders with predefined text.
+- [Bold bullet points](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/bold-bullet-points.md): Make all bullet point text bold on slides.
+- [Change background color](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/change-background-color.md): Change the background color of presentation slides.
+- [Change font family and size](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/change-font-family-and-size.md): Change font family and size across all slides.
+- [Content alignment tool](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/content-alignment-tool.md): Align text content within slide text boxes.
+- [Count number of shapes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/count-number-of-shapes.md): Count the number of shapes on each slide.
+- [Create slides from list items](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/create-slides-from-list-items.md): Create individual slides from list items.
+- [Format bullet points](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/format-bullet-points.md): Format bullet point styles on presentation slides.
+- [Format slide titles](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/format-slide-titles.md): Format the title text on all slides.
+- [Generate outline](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/generate-outline.md): Generate a presentation outline from slide titles.
+- [Hyperlinks to QR codes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/hyperlinks-to-qr-codes.md): Convert hyperlinks on slides to QR codes.
+- [Remove duplicate slides](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-duplicate-slides.md): Remove duplicate slides from a presentation.
+- [Remove empty paragraphs](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-empty-paragraphs.md): Remove empty paragraphs from slide text boxes.
+- [Remove empty text boxes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-empty-text-boxes.md): Remove empty text boxes from slides.
+- [Remove extra spaces](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-extra-spaces.md): Remove extra spaces from text on slides.
+- [Remove shapes from slides](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-shapes-from-slides.md): Remove all shapes from presentation slides.
+- [Remove slides](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/remove-slides.md): Remove specific slides from a presentation.
+- [Split slides](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/split-slides.md): Split slide content into multiple slides.
+- [Table to chart](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/presentation-editor/table-to-chart.md): Convert a table on a slide to a chart.
+- [Add state from zip code](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/add-state-from-zip-code.md): Auto-fill the state field based on the entered zip code.
+- [Add watermark to all pages](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/add-watermark-to-all-pages.md): Add a diagonal text watermark to all PDF pages.
+- [Autofill fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/autofill-fields.md): Auto-fill text fields that share the same placeholder text.
+- [Autofit text fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/autofit-text-fields.md): Enable auto-fit for all text form fields.
+- [Change validation rules](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/change-validation-rules.md): Change validation rules for phone and email form fields.
+- [Clear checkboxes](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/clear-checkboxes.md): Clear all checkboxes in a PDF form.
+- [Count form fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/count-form-fields.md): Count form fields grouped by type.
+- [Delete annotations](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/delete-annotations.md): Remove annotations containing a specified keyword.
+- [Insert calculations](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/insert-calculations.md): Perform calculations on form field values.
+- [Keyword match in form keys](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/keyword-match-in-form-keys.md): Highlight form fields matching a keyword in their key.
+- [Limit number of characters](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/limit-number-of-characters.md): Set a character limit for text form fields.
+- [Mask card numbers](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/mask-card-numbers.md): Mask credit card numbers showing only first and last digits.
+- [Modify list values](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/modify-list-values.md): Remove specific values from combo box option lists.
+- [Remove all drawings](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/remove-all-drawings.md): Remove all drawing objects from all PDF pages.
+- [Remove default values](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/remove-default-values.md): Clear specific default values from text form fields.
+- [Reset all forms](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/reset-all-forms.md): Reset all form fields to empty values.
+- [Set checkbox tip text](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/set-checkbox-tip-text.md): Set tip text for all checkboxes with a specified key.
+- [Set form background color](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/set-form-background-color.md): Change the background color of all form fields.
+- [Set placeholder](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/set-placeholder.md): Set a placeholder for combo box fields with a specified key.
+- [Set USA date format](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/set-usa-date-format.md): Set all date form fields to the USA date format.
+- [Update date field](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/update-date-field.md): Set the current date in all date form fields.
+- [Validate form fields](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/samples/pdf-editor/validate-form-fields.md): Validate and highlight empty optional form fields.
+
+## More information
+
+- [FAQ](https://ilyaoleshko.github.io/api.onlyoffice.com/docs/macros/more-information/faq.md): What scripting language do macros use?
